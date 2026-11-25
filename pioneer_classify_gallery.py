@@ -32,6 +32,13 @@ def verified_bytes(path, expected_hash):
     return data
 
 
+def whoi_input(image):
+    # WHOIGit/ifcb-inference v0.4.0, IfcbBinImageTransformer (Pillow path).
+    gray = image.convert("L").resize((299, 299), Image.Resampling.BICUBIC)
+    rgb = np.asarray(gray.convert("RGB"), dtype=np.float32)
+    return rgb.transpose(2, 0, 1) / np.float32(255.0)
+
+
 def iter_gallery(gallery):
     manifest = json.loads((gallery / "pioneer-ifcb-manifest.json").read_text(encoding="utf-8"))
     for sample in manifest["bins"]:
@@ -39,15 +46,13 @@ def iter_gallery(gallery):
             path = gallery / entry["filename"]
             data = verified_bytes(path, entry["sha256"])
             with Image.open(BytesIO(data)) as image:
-                # WHOIGit/ifcb-inference v0.4.0, IfcbBinImageTransformer (Pillow path).
-                gray = image.convert("L").resize((299, 299), Image.Resampling.BICUBIC)
-                rgb = np.asarray(gray.convert("RGB"), dtype=np.float32)
+                tensor = whoi_input(image)
             row = {
                 "bin_id": sample["id"], "sample_utc": sample["time_utc"], "roi_id": path.stem,
                 "source_url": entry["source_url"], "roi_sha256": entry["sha256"],
                 "status": "provisional_model_prediction_unreviewed", "model_revision": REVISION,
             }
-            yield row, rgb.transpose(2, 0, 1) / np.float32(255.0)
+            yield row, tensor
 
 
 def classify(gallery, weights, output, batch_size):
