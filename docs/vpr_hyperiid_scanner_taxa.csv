@@ -1,0 +1,23 @@
+collection,subgroup,source_taxon,n,eligible,old_called,new_called,added,lost
+polarstern-ps136,amphipod,Themisto,63,63,14,34,20,0
+polarstern-ps136,amphipod,Themisto abyssorum,130,130,54,102,48,0
+polarstern-ps136,amphipod,Themisto libellula,2,2,2,2,0,0
+polarstern-ps136,other_organism,Calanoida,34,34,5,6,1,0
+polarstern-ps136,other_organism,Calanus,33,33,8,10,2,0
+polarstern-ps136,other_organism,Chaetognatha<Animalia,39,39,0,0,0,0
+polarstern-ps136,other_organism,Copepoda<Multicrustacea,1,1,1,1,0,0
+polarstern-ps136,other_organism,Euphausiacea,1,1,0,0,0,0
+polarstern-ps136,other_organism,Gaetanus tenuispinus,8,8,4,4,0,0
+polarstern-ps136,other_organism,Metridia longa,8,8,3,3,0,0
+polarstern-ps136,other_organism,Ostracoda,37,37,5,16,11,0
+polarstern-ps136,other_organism,Paraeuchaeta,34,34,14,14,0,0
+polarstern-ps78,amphipod,Themisto abyssorum,97,97,75,80,5,0
+polarstern-ps78,amphipod,Themisto libellula,14,14,10,12,2,0
+polarstern-ps78,other_organism,Calanoida,34,34,10,11,1,0
+polarstern-ps78,other_organism,Calanus,11,11,1,1,0,0
+polarstern-ps78,other_organism,Chaetognatha<Animalia,11,11,0,1,1,0
+polarstern-ps78,other_organism,Copepoda<Multicrustacea,9,9,4,4,0,0
+polarstern-ps78,other_organism,Euphausiacea,5,5,1,1,0,0
+polarstern-ps78,other_organism,Gaetanus tenuispinus,11,11,3,3,0,0
+polarstern-ps78,other_organism,Ostracoda,18,18,1,5,4,0
+polarstern-ps78,other_organism,Paraeuchaeta,16,16,8,8,0,0

@@ -1,0 +1,106 @@
+role,instrument,collection,subgroup,source_taxon,n,acquisition_groups,amphipod_n,larva_n,bubble_n,other_organism_n,incumbent_amphipod_tp,incumbent_amphipod_fp,incumbent_larva_tp,incumbent_larva_retained,incumbent_bubble_tp,native_amphipod_tp,native_amphipod_fp,native_larva_tp,native_larva_retained,native_bubble_tp,mixed_amphipod_tp,mixed_amphipod_fp,mixed_larva_tp,mixed_larva_retained,mixed_bubble_tp,native_net_true_promotions,native_net_false_promotions,mixed_net_true_promotions,mixed_net_false_promotions
+diagnostic,VPR,jamstec-hly1601,amphipod,Themisto abyssorum,6,2,6,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0
+diagnostic,VPR,jamstec-hly1601,bubble,bubble,50,2,0,0,50,0,0,0,0,0,49,0,0,0,0,49,0,0,0,0,49,0,0,0,0
+diagnostic,VPR,jamstec-hly1601,other_organism,Aglantha digitale,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+diagnostic,VPR,jamstec-hly1601,other_organism,Calanoida,2,2,0,0,0,2,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0
+diagnostic,VPR,jamstec-hly1601,other_organism,Calanus,2,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+diagnostic,VPR,jamstec-hly1601,other_organism,Calanus hyperboreus,1,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0
+diagnostic,VPR,jamstec-hly1601,other_organism,Ctenophora<Animalia,2,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+diagnostic,VPR,jamstec-hly1601,other_organism,Cydippida,3,1,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+diagnostic,VPR,jamstec-hly1601,other_organism,Dimophyes arctica,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+diagnostic,VPR,jamstec-hly1601,other_organism,Fritillariidae,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+diagnostic,VPR,jamstec-hly1601,other_organism,Halocyprididae,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+diagnostic,VPR,jamstec-hly1601,other_organism,Hydrozoa,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+diagnostic,VPR,jamstec-hly1601,other_organism,Mertensia ovum,5,1,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+diagnostic,VPR,jamstec-hly1601,other_organism,Metridia longa,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+diagnostic,VPR,jamstec-hly1601,other_organism,Oikopleura,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+diagnostic,VPR,jamstec-hly1601,other_organism,Paraeuchaeta,2,2,0,0,0,2,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0
+diagnostic,VPR,jamstec-hly1601,other_organism,Phaeodaria,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Acantharia,2,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Aglaura hemistoma,10,1,0,0,0,10,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Anthoathecata,11,1,0,0,0,11,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Calycophorae,12,1,0,0,0,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Chaetognatha<Animalia,3,1,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Copepoda<Multicrustacea,127,2,0,0,0,127,0,3,0,0,0,0,4,0,0,0,0,3,0,0,0,0,1,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Cydippida,2,1,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Decapoda,1,1,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Foraminifera,3,1,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Leptothecata,4,1,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Lobata,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Ostracoda,4,2,0,0,0,4,0,2,0,0,0,0,2,0,0,0,0,2,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Phaeodaria,33,2,0,0,0,33,0,2,0,0,0,0,2,0,0,0,0,2,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Polychaeta,3,1,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Rhizaria,4,2,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Solmundella bitentaculata,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+fresh,VPR,jamstec-hokuto2017,other_organism,Sphaeronectes,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+fresh,VPR,mfri-af072020,amphipod,amphipod,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0
+fresh,VPR,noaa-de11-10,larva,Atlantic herring larva,1,1,0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+fresh,VPR,noaa-rusalca2004,larva,ophiuroid larva,1,1,0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+fresh,VPR,whoi-oc404-01,larva,"larva, unspecified",1,1,0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+guard,VPR,dfo-car2022299,larva,fish larvae,65,33,0,65,0,0,0,5,45,62,0,0,5,45,62,0,0,5,45,62,0,0,0,0,0
+guard,VPR,dfo-car2022299,larva,pilidium<Nemertea,22,13,0,22,0,0,0,20,0,22,0,0,20,0,22,0,0,21,0,22,0,0,0,0,1
+guard,VPR,dfo-car2022299,larva,veliger<Mollusca,35,23,0,35,0,0,0,21,0,27,0,0,21,0,27,0,0,22,0,27,0,0,0,0,1
+guard,VPR,dfo-car2022299,larva,zoea<Brachyura<Pleocyemata<Decapoda,64,41,0,64,0,0,0,22,39,64,0,0,22,39,64,0,0,22,39,64,0,0,0,0,0
+guard,VPR,dfo-car2022299,larva,zoea<Decapoda,64,18,0,64,0,0,0,23,41,64,0,0,23,41,64,0,0,23,41,64,0,0,0,0,0
+guard,VPR,hamburg-vpr-multicruise-reference,amphipod,amphipods,95,1,95,0,0,0,95,0,0,0,0,95,0,0,0,0,95,0,0,0,0,0,0,0,0
+guard,VPR,jamstec-mr17-07c,amphipod,Gammaridea,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+guard,VPR,jamstec-mr17-07c,amphipod,Hyperiidea,2,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+guard,VPR,jamstec-mr17-07c,amphipod,Primno,2,1,2,0,0,0,1,0,0,0,0,1,0,0,0,0,2,0,0,0,0,0,0,1,0
+guard,VPR,jamstec-mr17-07c,bubble,bubble,160,2,0,0,160,0,0,0,0,0,160,0,0,0,0,160,0,0,0,0,160,0,0,0,0
+guard,VPR,jamstec-mr17-07c,other_organism,Actinopterygii,3,1,0,0,0,3,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0
+guard,VPR,jamstec-mr17-07c,other_organism,Calanoida,15,2,0,0,0,15,0,5,0,0,0,0,5,0,0,0,0,5,0,0,0,0,0,0,0
+guard,VPR,jamstec-mr17-07c,other_organism,Collodaria,3,1,0,0,0,3,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0
+guard,VPR,jamstec-mr17-07c,other_organism,Decapoda,2,1,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+guard,VPR,jamstec-mr17-07c,other_organism,Euphausia,2,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+guard,VPR,jamstec-mr17-07c,other_organism,Halocyprididae,4,1,0,0,0,4,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0
+guard,VPR,jamstec-mr17-07c,other_organism,Oncaeidae,2,1,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+new_guard,VPR,dfo-car2022299,larva,fish larvae,5,5,0,5,0,0,0,0,3,3,0,0,0,3,3,0,0,0,3,3,0,0,0,0,0
+new_guard,VPR,dfo-car2022299,larva,zoea<Brachyura<Pleocyemata<Decapoda,29,29,0,29,0,0,0,5,23,29,0,0,5,23,29,0,0,5,23,29,0,0,0,0,0
+new_guard,VPR,dfo-car2022299,larva,zoea<Decapoda,6,6,0,6,0,0,0,2,4,6,0,0,2,4,6,0,0,2,4,6,0,0,0,0,0
+new_guard,VPR,jamstec-hly1601,bubble,bubble,30,2,0,0,30,0,0,0,0,0,29,0,0,0,0,29,0,0,0,0,29,0,0,0,0
+new_guard,VPR,jamstec-hly1601,other_organism,Calanoida,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+new_guard,VPR,jamstec-hly1601,other_organism,Calanus,20,2,0,0,0,20,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0
+new_guard,VPR,jamstec-hly1601,other_organism,Calanus hyperboreus,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+new_guard,VPR,jamstec-hly1601,other_organism,Metridia longa,7,1,0,0,0,7,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0
+new_guard,VPR,jamstec-hly1601,other_organism,Paraeuchaeta,3,2,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+new_native,VPR,meteor-m153,amphipod,Themisto gaudichaudii,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0
+new_native,VPR,meteor-m153,larva,fish larva,1,1,0,1,0,0,0,0,1,1,0,0,0,1,1,0,0,0,1,1,0,0,0,0,0
+new_native,VPR,meteor-m153,other_organism,Chaetognatha,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+new_native,VPR,meteor-m153,other_organism,Copepoda,1,1,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0
+new_native,VPR,meteor-m153,other_organism,Ostracoda,1,1,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0
+new_native,VPR,meteor-m153,other_organism,Radiolaria,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+new_transfer,UVP5HD,palmer-nbp1802,amphipod,Hyperia,10,8,10,0,0,0,4,0,0,0,0,4,0,0,0,0,6,0,0,0,0,0,0,2,0
+new_transfer,UVP5HD,palmer-nbp1802,other_organism,Chaetognatha<Animalia,7,5,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+new_transfer,UVP5HD,palmer-nbp1802,other_organism,Hydrozoa,12,8,0,0,0,12,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0
+new_transfer,UVP5HD,palmer-nbp1802,other_organism,Salpida,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+new_transfer,UVP6,discovery-dy180,amphipod,Amphipoda,55,20,55,0,0,0,29,0,0,0,0,29,0,0,0,0,31,0,0,0,0,0,0,2,0
+new_transfer,UVP6,discovery-dy180,amphipod,Themisto,9,5,9,0,0,0,7,0,0,0,0,7,0,0,0,0,8,0,0,0,0,0,0,1,0
+new_transfer,UVP6,discovery-dy180,larva,larvae<Echinodermata,2,1,0,2,0,0,0,2,0,2,0,0,2,0,2,0,0,2,0,2,0,0,0,0,0
+new_transfer,UVP6,discovery-dy180,larva,leptocephalus,1,1,0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+new_transfer,UVP6,discovery-dy180,other_organism,Actinopterygii,14,6,0,0,0,14,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,2
+new_transfer,UVP6,discovery-dy180,other_organism,Chaetognatha<Animalia,24,14,0,0,0,24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+new_transfer,UVP6,discovery-dy180,other_organism,Clionidae,4,3,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+new_transfer,UVP6,discovery-dy180,other_organism,Lobata,5,4,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+new_transfer,UVP6,discovery-dy180,other_organism,Ostracoda,50,18,0,0,0,50,0,4,0,0,0,0,4,0,0,0,0,4,0,0,0,0,0,0,0
+new_transfer,UVP6,discovery-dy180,other_organism,Salpida,3,3,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+new_transfer,UVP6,discovery-dy180,other_organism,Tomopteridae,17,13,0,0,0,17,0,2,0,0,0,0,2,0,0,0,0,3,0,0,0,0,0,0,1
+new_transfer,Zooscan,polarstern-ps80,amphipod,Themisto,92,27,92,0,0,0,41,0,0,0,0,41,0,0,0,0,54,0,0,0,0,0,0,13,0
+new_transfer,Zooscan,polarstern-ps80,amphipod,Themisto abyssorum,99,30,99,0,0,0,64,0,0,0,0,64,0,0,0,0,69,0,0,0,0,0,0,5,0
+new_transfer,Zooscan,polarstern-ps80,amphipod,Themisto libellula,44,21,44,0,0,0,36,0,0,0,0,36,0,0,0,0,38,0,0,0,0,0,0,2,0
+new_transfer,Zooscan,polarstern-ps80,larva,calyptopsis,73,24,0,73,0,0,0,5,10,73,0,0,5,10,73,0,0,16,10,73,0,0,0,0,11
+new_transfer,Zooscan,polarstern-ps80,larva,furcilia,3,1,0,3,0,0,0,0,1,3,0,0,0,1,3,0,0,0,1,3,0,0,0,0,0
+new_transfer,Zooscan,polarstern-ps80,other_organism,Euphausiacea,8,6,0,0,0,8,0,2,0,0,0,0,2,0,0,0,0,2,0,0,0,0,0,0,0
+new_transfer,Zooscan,polarstern-ps80,other_organism,Metridia longa,54,26,0,0,0,54,0,7,0,0,0,0,7,0,0,0,0,10,0,0,0,0,0,0,3
+new_transfer,Zooscan,polarstern-ps80,other_organism,Ostracoda X,70,24,0,0,0,70,0,2,0,0,0,0,2,0,0,0,0,7,0,0,0,0,0,0,5
+new_transfer,Zooscan,polarstern-ps80,other_organism,female<Calanus glacialis,34,18,0,0,0,34,0,5,0,0,0,0,5,0,0,0,0,5,0,0,0,0,0,0,0
+new_transfer,Zooscan,polarstern-ps80,other_organism,female<Calanus hyperboreus,69,32,0,0,0,69,0,12,0,0,0,0,12,0,0,0,0,13,0,0,0,0,0,0,1
+new_transfer,Zooscan,polarstern-ps85,amphipod,Themisto,7,6,7,0,0,0,5,0,0,0,0,5,0,0,0,0,7,0,0,0,0,0,0,2,0
+new_transfer,Zooscan,polarstern-ps85,amphipod,Themisto abyssorum,30,8,30,0,0,0,22,0,0,0,0,22,0,0,0,0,25,0,0,0,0,0,0,3,0
+new_transfer,Zooscan,polarstern-ps85,amphipod,Themisto libellula,2,2,2,0,0,0,2,0,0,0,0,2,0,0,0,0,2,0,0,0,0,0,0,0,0
+new_transfer,Zooscan,polarstern-ps85,larva,calyptopsis,21,6,0,21,0,0,0,3,10,21,0,0,3,10,21,0,0,7,10,21,0,0,0,0,4
+new_transfer,Zooscan,polarstern-ps85,larva,furcilia,2,2,0,2,0,0,0,1,1,2,0,0,1,1,2,0,0,1,1,2,0,0,0,0,0
+new_transfer,Zooscan,polarstern-ps85,other_organism,Euphausiacea,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+new_transfer,Zooscan,polarstern-ps85,other_organism,Metridia longa,2,2,0,0,0,2,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0
+new_transfer,Zooscan,polarstern-ps85,other_organism,Ostracoda X,5,4,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+new_transfer,Zooscan,polarstern-ps85,other_organism,female<Calanus glacialis,4,3,0,0,0,4,0,4,0,0,0,0,4,0,0,0,0,4,0,0,0,0,0,0,0
+new_transfer,Zooscan,polarstern-ps85,other_organism,female<Calanus hyperboreus,20,8,0,0,0,20,0,14,0,0,0,0,14,0,0,0,0,15,0,0,0,0,0,0,1

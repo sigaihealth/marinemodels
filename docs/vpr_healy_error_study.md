@@ -45,3 +45,5 @@ The team added 58 expert-validated controls from JAMSTEC’s *Mirai* MR11-03, 91
 ## Blinded visual review after the model was frozen
 
 An AI reviewer working in chat labeled anonymized VPR images and recorded its decisions before seeing the source annotations. On 32 previously studied, expert-labeled images, eight from each of four groups, it matched the expert on **27/32 overall** and **27/28 of the images it classified**. It abstained on four and mistook one Fritillariidae larvacean for a bubble. The small panel deliberately included difficult Healy acquisitions. In a separate review of 120 survey images, the reviewer proposed nine bubbles, all from two *Oceanus* OC415-01 tows, and marked 104 images uncertain. Expert confirmation of those nine candidates is pending. Fresh-cruise bubble recall remains unknown. [Original EDDIES VPR archive](https://www.bco-dmo.org/dataset/3033)
+
+A later study revisits the five missed *Themisto* frames and compares training by imaging instrument. [Follow-up Arctic amphipod results](vpr_hyperiid_recognition.md)
