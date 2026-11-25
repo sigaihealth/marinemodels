@@ -2,6 +2,8 @@
 
 Marine Models explores how open ocean observations can support local models and digital twins. The first pilot replays Winter Storm Gianna at OOI's Pioneer Mid-Atlantic Bight Central Surface Mooring (`CP10CNSM`) off North Carolina. The [research brief](docs/ocean_digital_twin_research.md) covers five model ideas, complementary datasets, and the validation questions each project would need to answer.
 
+Explore the [public SIG.AI Ocean project](https://ocean.sig.ai/) and the [plankton classification and forecasting roadmap](docs/pioneer_roadmap.md). The public site is served from the static files in `site/`. To preview a checkout locally, run `python3 -m http.server 8000 --directory site` and open `http://localhost:8000`.
+
 ## Run the Pioneer event replay
 
 The sensor download and offline playback builder use Python 3.10 or newer. The image sampler also uses Pillow. To execute the analysis notebook, use a Python 3 kernel with pandas and Matplotlib, and install Jupyter nbconvert. Run these commands in a local shell or the OOI JupyterHub terminal.
