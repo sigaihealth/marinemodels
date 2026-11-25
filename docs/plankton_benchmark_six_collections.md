@@ -64,6 +64,8 @@ The OOI NVIDIA L40S was used to learn a correction to the rankings from frozen i
 
 The original model labeled 2,589 of the 3,254 expert-mapped test organisms as bubble/wave. This included 1,301 of 1,346 Bay of Biscay samples and 412 of 419 Baltic samples. The optional source-specific comparison reduced the overall number to 2,267. Paired examples of actual bubbles and organisms from the PlankScope instrument would help determine whether image background, magnification or the original annotation criteria explain this pattern.
 
+A follow-up tested the bubble error directly on new Baltic ZooScan and Belgian North Sea VPR images. The improvement was concentrated in ZooScan. [Bubble discrimination by instrument](plankton_bubble_transfer.md)
+
 ## An independent test in the Pacific
 
 After the six-collection study was frozen, we tested 95 expert-validated Tara Pacific ZooScan specimens from 65 stations. None matched an image or acquisition identifier used in the six-collection study. The exact taxonomic challenge contained 68 hyperiid amphipods, 15 caprellid amphipods and two siphonophores. On all 85, the original model missed the annotation even in its top three. It assigned the bubble/wave category to 82 as its first choice. The private experimental gate gave the same results. The collection-specific comparison was inactive because Tara Pacific was outside its fitting sources.
