@@ -1,0 +1,42 @@
+{
+  "name": "PML IFCB CLIP-LoRA",
+  "paper": "https://arxiv.org/abs/2609.11673",
+  "model_source": "https://huggingface.co/danielaivanova/dino_plankton_classifier/tree/2963115132bf29fef94ef9b3eea8d010884b4741",
+  "author_implementation": "https://huggingface.co/danielaivanova/dino_plankton_classifier/blob/2963115132bf29fef94ef9b3eea8d010884b4741/clip_model.py",
+  "base_source": "https://huggingface.co/timm/vit_base_patch16_clip_224.openai/tree/977e3dd0ec55ab8da155f2fbeb6b5f54948b6e3d",
+  "model_revision": "2963115132bf29fef94ef9b3eea8d010884b4741",
+  "base_revision": "977e3dd0ec55ab8da155f2fbeb6b5f54948b6e3d",
+  "scope": "Single-specimen IFCB micrographs. The 145 candidates are those of the PML reference library. Image mode ranks the mean embeddings of labeled PML training images. Text mode ranks the supplied taxonomic lineage embeddings. Scores are cosine similarities; comparisons across datasets require local expert validation.",
+  "license_sources": {
+    "model_package": "The author model card marks the released package MIT. clip_weights.pt contains LoRA parameters, final LayerNorms and both prototype banks. No separate terms specific to the prototypes were identified. The upstream training images are not distributed by this runner.",
+    "base_checkpoint": "The timm card for the OpenCLIP-format ViT-B/16 OpenAI checkpoint marks it Apache-2.0. Upstream OpenAI CLIP code is MIT, https://github.com/openai/CLIP/blob/main/LICENSE."
+  },
+  "preprocessing": {
+    "colorspace": "RGB",
+    "crop": "OpenCLIP evaluation transform, bicubic shorter-side resize then center crop",
+    "size_px": 224,
+    "mean": [0.48145466, 0.4578275, 0.40821073],
+    "std": [0.26862954, 0.26130258, 0.27577711],
+    "vision_architecture": "ViT-B-16 using GELU, matching the adapter authors’ explicit choice with OpenAI weights."
+  },
+  "artifacts": [
+    {
+      "file": "open_clip_model.safetensors",
+      "bytes": 598516980,
+      "sha256": "4b8699299b1e8997753c64b052ba32031449d5d853f55a039148560ee02b820f",
+      "url": "https://huggingface.co/timm/vit_base_patch16_clip_224.openai/resolve/977e3dd0ec55ab8da155f2fbeb6b5f54948b6e3d/open_clip_model.safetensors"
+    },
+    {
+      "file": "clip_weights.pt",
+      "bytes": 16409715,
+      "sha256": "f44453c0d1c860c4c6f2d4a8ed0554513084ea56869b82016f6b24208036e937",
+      "url": "https://huggingface.co/danielaivanova/dino_plankton_classifier/resolve/2963115132bf29fef94ef9b3eea8d010884b4741/clip_weights.pt"
+    },
+    {
+      "file": "id2label.json",
+      "bytes": 4442,
+      "sha256": "307312a59e7dfe873f0790c268ff107df7b2b8ab2141dadfcf140f08c69d222d",
+      "url": "https://huggingface.co/danielaivanova/dino_plankton_classifier/resolve/2963115132bf29fef94ef9b3eea8d010884b4741/id2label.json"
+    }
+  ]
+}
