@@ -1,7 +1,8 @@
 const samples = {
   early: {id: "D20260201T002546_IFCB200_00139", title: "Pioneer region 139"},
   late: {id: "D20260201T152545_IFCB200_04627", title: "Pioneer region 4627"},
-  whoi: {id: "whoi-coscinodiscus-reference", title: "WHOI reference · Coscinodiscus"}
+  whoi: {id: "whoi-coscinodiscus-reference", title: "WHOI reference · Coscinodiscus",
+         roi: "IFCB5_2017_103_164054_01283", source: "https://doi.org/10.57967/hf/10839"}
 };
 const maxBytes = 2 * 1024 * 1024;
 const get = id => document.getElementById(id);
@@ -110,6 +111,8 @@ function publicResult(data, image, sha, size, useReference) {
   return {
     model: data.model, version: data.version, status: "provisional_model_suggestions",
     image: image.file ? image.title : image.id, input_sha256: sha, size_px: [size.width, size.height],
+    ...(image.file ? {} : {roi_id: image.roi || image.id,
+                           source: image.source || "https://ifcb-data.oceanobservatories.org/data/" + image.id + ".png"}),
     candidates, ...(useReference ? {reference: referenceResult(data.reference)} : {})
   };
 }

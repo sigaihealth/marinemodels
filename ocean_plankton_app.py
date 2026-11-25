@@ -57,6 +57,11 @@ def runner(family, root):
             return dict(record, model=MODELS["mobilenet"], score_type="softmax", candidate_count=10,
                         checkpoint_sha256=digest, device=device)
         return mobilenet
+    if family == "sigai":
+        from ooi_reference import load_predictor
+
+        predict = load_predictor(models / "sigai-plankton-1.1")
+        return lambda path, mode: predict(path, include_reference=True)
     if family == "plankscope":
         from private_plankscope_runtime import load_classifier
 
@@ -95,6 +100,8 @@ def runner(family, root):
 
 def installed_models(root):
     choices = dict(MODELS)
+    if find_spec("ooi_reference") and (root / "models/sigai-plankton-1.1/release.json").is_file():
+        choices["sigai-ifcb"] = "SIG.AI Plankton Classifier + IFCB reference check"
     if find_spec("private_plankscope_runtime") is None:
         return choices
     from private_plankscope_runtime import available
@@ -201,6 +208,11 @@ def show_workspace(root=ROOT):
                     display(HTML(f"<table><caption>{escape(result['model'])} · {escape(result['device'])}</caption>"
                                  f"<thead><tr><th>Category</th><th>{escape(score.replace('_', ' '))}</th></tr></thead>"
                                  f"<tbody>{rows}</tbody></table>"))
+                    if result.get("reference"):
+                        ref = result["reference"]
+                        suggestion = ref["suggestion"] or "Expert review"
+                        display(HTML(f"<p><b>IFCB reference check:</b> {escape(suggestion)}<br>"
+                                     f"{escape(ref['reason'])}</p>"))
                 if len(results) > 1:
                     print("Identical source pixels. Each model ranks its own categories. Expert labels are needed to measure accuracy.")
                 print(f"Provisional identification. Saved {destination}")
