@@ -1,0 +1,93 @@
+panel,collection,investigator_group,scored,nets,eligible_for_recovery,previous_amphipod_calls,source_only_amphipod_calls,candidate_amphipod_calls,added_amphipod_calls
+genus voucher,pelgas-themisto-vouchers,themisto,13,13,0,8,8,8,0
+genus voucher,pointb-20140423,themisto,1,1,0,1,1,1,0
+untouched cruise,tara-20131020z,hyperiid,22,5,0,20,20,20,0
+untouched cruise,tara-20131020z,calanoid,300,6,69,6,6,6,0
+untouched cruise,tara-20131020z,ostracod,128,8,0,0,0,0,0
+untouched cruise,tara-20131020z,other,50,5,18,0,0,0,0
+historical,merian-msm108,themisto,128,31,0,105,105,105,0
+historical,merian-msm108,calanoid,34,24,10,1,1,1,0
+historical,merian-msm108,ostracod,154,35,0,0,0,0,0
+historical,merian-msm108,other,46,29,1,5,5,5,0
+historical,pnmir-iroise-201609,themisto,3,3,0,3,3,3,0
+historical,pnmir-iroise-genus-201205-201607,themisto,2,2,0,2,2,2,0
+historical,polarstern-ps121,themisto,94,26,0,89,89,89,0
+historical,polarstern-ps121,calanoid,66,36,22,1,1,1,0
+historical,polarstern-ps121,ostracod,159,35,0,1,1,1,0
+historical,polarstern-ps121,other,14,13,0,4,4,4,0
+historical,polarstern-ps126,themisto,111,21,2,83,85,85,2
+historical,polarstern-ps126,calanoid,36,22,9,0,0,0,0
+historical,polarstern-ps126,ostracod,156,25,0,0,0,0,0
+historical,polarstern-ps126,other,43,23,0,9,9,9,0
+historical,polarstern-ps131,themisto,44,13,0,38,38,38,0
+historical,polarstern-ps131,calanoid,63,19,17,0,0,0,0
+historical,polarstern-ps131,ostracod,159,15,0,0,0,0,0
+historical,polarstern-ps131,other,17,11,0,3,3,3,0
+historical,polarstern-ps136,themisto,195,41,1,127,128,128,1
+historical,polarstern-ps136,calanoid,117,38,32,0,0,0,0
+historical,polarstern-ps136,ostracod,37,15,0,0,0,0,0
+historical,polarstern-ps136,other,41,12,1,0,0,0,0
+historical,polarstern-ps78,themisto,111,25,0,92,92,92,0
+historical,polarstern-ps78,calanoid,72,22,17,1,1,1,0
+historical,polarstern-ps78,ostracod,18,13,0,0,0,0,0
+historical,polarstern-ps78,other,25,18,1,2,2,2,0
+historical,polarstern-ps80,themisto,235,41,3,176,177,179,3
+historical,polarstern-ps80,calanoid,157,39,22,2,2,2,0
+historical,polarstern-ps80,ostracod,70,24,0,0,0,0,0
+historical,polarstern-ps80,other,84,25,3,5,5,5,0
+historical,polarstern-ps85,themisto,39,10,0,34,34,34,0
+historical,polarstern-ps85,calanoid,26,9,17,0,0,0,0
+historical,polarstern-ps85,ostracod,5,4,0,0,0,0,0
+historical,polarstern-ps85,other,24,6,0,7,7,7,0
+historical,tara-20100905z,themisto,4,1,0,4,4,4,0
+historical,tara-20100905z,calanoid,21,17,6,0,0,0,0
+historical,tara-20100905z,ostracod,200,40,0,0,0,0,0
+historical,tara-20100905z,other,39,25,3,13,13,13,0
+historical,tara-20130519z,hyperiid,120,5,0,100,100,100,0
+historical,tara-20130519z,calanoid,20,5,5,0,0,0,0
+historical,tara-20130519z,ostracod,199,10,0,0,0,0,0
+historical,tara-20130519z,other,40,9,7,3,3,3,0
+historical,tara-20130629z,hyperiid,46,14,0,44,44,44,0
+historical,tara-20130629z,calanoid,360,20,120,6,6,6,0
+historical,tara-20130629z,ostracod,107,11,0,1,1,1,0
+historical,tara-20130629z,other,60,21,12,4,4,4,0
+historical,tara-20130921z,hyperiid,20,6,0,17,17,17,0
+historical,tara-20130921z,calanoid,30,11,8,0,0,0,0
+historical,tara-20130921z,ostracod,199,15,1,0,0,0,0
+historical,tara-20130921z,other,30,12,9,0,0,0,0
+historical,all earlier collections,themisto,966,214,6,753,757,759,6
+historical,all earlier collections,hyperiid,186,25,0,161,161,161,0
+historical,all earlier collections,calanoid,1002,262,285,11,11,11,0
+historical,all earlier collections,ostracod,1463,242,1,2,2,2,0
+historical,all earlier collections,other,463,204,37,55,55,55,0
+extra-fresh,tara-20101126z,hyperiid,107,7,4,69,69,69,0
+extra-fresh,tara-20101126z,calanoid,50,7,11,0,0,0,0
+extra-fresh,tara-20101126z,ostracod,162,6,0,1,1,1,0
+extra-fresh,tara-20101231z,hyperiid,22,11,0,9,9,9,0
+extra-fresh,tara-20101231z,calanoid,50,19,16,1,1,1,0
+extra-fresh,tara-20101231z,ostracod,171,11,0,0,0,0,0
+extra-fresh,tara-20130801z,hyperiid,31,6,0,26,26,26,0
+extra-fresh,tara-20130801z,calanoid,50,12,15,0,0,0,0
+extra-fresh,tara-20130907z,hyperiid,11,5,0,11,11,11,0
+extra-fresh,tara-20130907z,calanoid,50,11,12,1,1,1,0
+extra-fresh,tara-20130907z,ostracod,28,4,0,0,0,0,0
+extra-fresh,all sampled collections,hyperiid,171,29,4,115,115,115,0
+extra-fresh,all sampled collections,calanoid,200,49,54,2,2,2,0
+extra-fresh,all sampled collections,ostracod,361,21,0,1,1,1,0
+extra-genus,polarstern-ps126,calanoid,40,22,14,2,2,2,0
+extra-genus,polarstern-ps126,ostracod,36,19,0,0,0,0,0
+extra-genus,polarstern-ps131,calanoid,40,18,9,0,0,0,0
+extra-genus,polarstern-ps131,ostracod,40,9,0,0,0,0,0
+extra-genus,polarstern-ps136,calanoid,40,34,14,1,1,1,0
+extra-genus,polarstern-ps136,ostracod,38,33,0,0,0,0,0
+extra-genus,polarstern-ps80,themisto,63,19,1,56,57,57,1
+extra-genus,polarstern-ps80,calanoid,40,20,14,1,1,1,0
+extra-genus,polarstern-ps80,ostracod,40,27,0,0,0,0,0
+Polarstern leg,ARK-XXVII/2,themisto,63,19,1,56,57,57,1
+Polarstern leg,ARK-XXVII/2,calanoid,27,13,10,1,1,1,0
+Polarstern leg,ARK-XXVII/2,ostracod,34,22,0,0,0,0,0
+Polarstern leg,ARK-XXVII/1 controls,calanoid,13,7,4,0,0,0,0
+Polarstern leg,ARK-XXVII/1 controls,ostracod,6,5,0,0,0,0,0
+extra-genus,all sampled collections,themisto,63,19,1,56,57,57,1
+extra-genus,all sampled collections,calanoid,160,94,51,4,4,4,0
+extra-genus,all sampled collections,ostracod,154,88,0,0,0,0,0
