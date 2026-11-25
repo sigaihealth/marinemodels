@@ -65,6 +65,8 @@ def listen_address_available():
 
 
 def serve():
+    # A group stop reaches llama.cpp directly. Keep the supervisor until its child finishes.
+    signal.signal(signal.SIGTERM, lambda *_: None)
     env = os.environ.copy()
     env["LD_LIBRARY_PATH"] = str(RUNTIME) + (":" + env["LD_LIBRARY_PATH"] if env.get("LD_LIBRARY_PATH") else "")
     args = [str(RUNTIME / "llama-server"), "-m", str(MODEL), "--alias", "Qwen3-32B",
