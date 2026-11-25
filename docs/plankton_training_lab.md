@@ -38,6 +38,8 @@ If the manifest is already prepared, start with the training command. `model.pt`
 
 The private workspace stores the original approved checkpoint and ordered label map in an owner-accessible directory. The notebook verifies their fingerprints before loading the model. The public repository includes the loader and the comparison procedure. With the same 24 original Pioneer PNGs, both the OOI CPU and NVIDIA L40S reproduced all 24 top labels from the native Windows run. This tests agreement across implementations. Expert annotations are needed to measure identification accuracy. [Loader](../private_plankscope_runtime.py) · [Reproduction check](../validate_private_plankscope.py)
 
+For score-level reproduction against the original CPU run, start the GPU verification in a fresh process with `NVIDIA_TF32_OVERRIDE=0`. On the 24 matched crops the maximum absolute difference in the top score was 0.00000203 in full-precision GPU mode, 0.00418 with the default GPU settings, and 0.00000101 on the OOI CPU. All three modes returned the same top label for every crop. The override applies only to the process running the verification.
+
 ## Use the GPU-trained model on your own device
 
 In the identification notebook, choose **download your ONNX model**, then **open the local browser runner**. The launch link carries the export fingerprint. Pick your downloaded file and a crop. ONNX Runtime performs inference in the tab. The setup keeps the trained weights and the export receipt in your signed-in workspace at `~/data/ocean-platform/models/mobilenet-ifcb-pilot/`. [Browser runner](https://ocean.sig.ai/try-mobilenet.html) · [Export code](../export_plankton_mobilenet.py)
