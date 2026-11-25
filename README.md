@@ -15,6 +15,8 @@ The [SIG.AI Ocean platform](https://ocean.sig.ai/) offers scientific task worksp
 
 The public site is served from `site/`. Run `python3 -m http.server 8000 --directory site` and open `http://localhost:8000` to preview it. Task definitions and model records live in `site/assets/model-catalog.json`. The plankton trial fetches pinned weights from their publisher. Uploaded images and prediction files stay in the user's browser. OOI GPU batch execution is a proposed backend for authorized research jobs.
 
+To reproduce the archived forecast used by the physics explorer, run `uv run extract_glonet_subset.py --output forecast.json --audit-manifest forecast-audit.json` from the repository root. The script retrieves the selected OceanBench chunks and records their URLs and checksums. Compare the result with `site/assets/glonet-midatlantic-2024.json`.
+
 ## Run the Pioneer event replay
 
 The sensor download and offline playback builder use Python 3.10 or newer. The image sampler also uses Pillow. To execute the analysis notebook, use a Python 3 kernel with pandas and Matplotlib, and install Jupyter nbconvert. Run these commands in a local shell or the OOI JupyterHub terminal.
