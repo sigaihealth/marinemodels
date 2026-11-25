@@ -1,0 +1,96 @@
+{
+  "dataset_doi": "10.57967/hf/10839",
+  "model_doi": "10.57967/hf/10838",
+  "files": [
+    {
+      "url": "https://huggingface.co/datasets/sosiklab/NES-plankton-IFCB-classifier-2022-dataset/resolve/89b22c10739e8ef91bde18e7d5a81c21edddba9b/data/train-00000.parquet",
+      "path": "datasets/whoi-nes-2022/source/data/train-00000.parquet",
+      "bytes": 173506602,
+      "sha256": "5a0be6cc63dfd76a42f360a9fc885aa90dd7bddd4237b91bf846ea08bb5a4288"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sosiklab/NES-plankton-IFCB-classifier-2022-dataset/resolve/89b22c10739e8ef91bde18e7d5a81c21edddba9b/data/train-00001.parquet",
+      "path": "datasets/whoi-nes-2022/source/data/train-00001.parquet",
+      "bytes": 135519938,
+      "sha256": "a8295b0d9fe9f081145a4f1478ca5c8a963ef6604c3c4e80203cca4b1ca17d5a"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sosiklab/NES-plankton-IFCB-classifier-2022-dataset/resolve/89b22c10739e8ef91bde18e7d5a81c21edddba9b/data/train-00002.parquet",
+      "path": "datasets/whoi-nes-2022/source/data/train-00002.parquet",
+      "bytes": 232731004,
+      "sha256": "6e49a5643f3408da311d38048a4fb943985bf299b392f8ae107af29bea37c221"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sosiklab/NES-plankton-IFCB-classifier-2022-dataset/resolve/89b22c10739e8ef91bde18e7d5a81c21edddba9b/data/train-00003.parquet",
+      "path": "datasets/whoi-nes-2022/source/data/train-00003.parquet",
+      "bytes": 159815256,
+      "sha256": "4ab12255537a58a3a228d16efcb75392b51de7113996c0bb73e61d127d252596"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sosiklab/NES-plankton-IFCB-classifier-2022-dataset/resolve/89b22c10739e8ef91bde18e7d5a81c21edddba9b/data/train-00004.parquet",
+      "path": "datasets/whoi-nes-2022/source/data/train-00004.parquet",
+      "bytes": 214047859,
+      "sha256": "df6666c3a0d9a8802917a219a5da78aa04c911982e7bb25ccace282f8708c31c"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sosiklab/NES-plankton-IFCB-classifier-2022-dataset/resolve/89b22c10739e8ef91bde18e7d5a81c21edddba9b/data/train-00005.parquet",
+      "path": "datasets/whoi-nes-2022/source/data/train-00005.parquet",
+      "bytes": 175044871,
+      "sha256": "83113aa02e82664d3d1da79a290c7d49bbe1ae08376685c198eb9973d42bb4eb"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sosiklab/NES-plankton-IFCB-classifier-2022-dataset/resolve/89b22c10739e8ef91bde18e7d5a81c21edddba9b/data/train-00006.parquet",
+      "path": "datasets/whoi-nes-2022/source/data/train-00006.parquet",
+      "bytes": 122570436,
+      "sha256": "a9e92b0cd09310e34787155be997c0a7083e07e7c039003bbadc3220593b978a"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sosiklab/NES-plankton-IFCB-classifier-2022-dataset/resolve/89b22c10739e8ef91bde18e7d5a81c21edddba9b/data/train-00007.parquet",
+      "path": "datasets/whoi-nes-2022/source/data/train-00007.parquet",
+      "bytes": 46288845,
+      "sha256": "34e34ee0065048f61eead8fce95d12fc9b60324a15dc06ce6827b93674252127"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sosiklab/NES-plankton-IFCB-classifier-2022-dataset/resolve/89b22c10739e8ef91bde18e7d5a81c21edddba9b/data/validation-00000.parquet",
+      "path": "datasets/whoi-nes-2022/source/data/validation-00000.parquet",
+      "bytes": 177038896,
+      "sha256": "a50922b015c5e28f72e5a1c9bdace4f9530ff581f971b66655aca2ccae8e225d"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sosiklab/NES-plankton-IFCB-classifier-2022-dataset/resolve/89b22c10739e8ef91bde18e7d5a81c21edddba9b/data/validation-00001.parquet",
+      "path": "datasets/whoi-nes-2022/source/data/validation-00001.parquet",
+      "bytes": 139780602,
+      "sha256": "581a46570592e30e9ab310e2cb57c7fe8d81ef7dad12592474041edb918a203c"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sosiklab/NES-plankton-IFCB-classifier-2022-dataset/resolve/89b22c10739e8ef91bde18e7d5a81c21edddba9b/README.md",
+      "path": "datasets/whoi-nes-2022/source/README.md",
+      "bytes": 18353,
+      "sha256": "3b165bec8e33f53a4467b928f94e63da59a74ce2a40049dce1943a99cb2bf36e"
+    },
+    {
+      "url": "https://huggingface.co/sosiklab/NES-plankton-IFCB-classifier-2022/resolve/71bc362e8c75014c27692a8f10637d36f411962e/20220209_Jan2022_NES_2.4.onnx",
+      "path": "models/whoi-nes-v2.4/20220209_Jan2022_NES_2.4.onnx",
+      "bytes": 88391200,
+      "sha256": "d95db6614d7ccb94738404cf3250506b15b55e853fad09c8a87debdf0e2a0901"
+    },
+    {
+      "url": "https://huggingface.co/sosiklab/NES-plankton-IFCB-classifier-2022/resolve/71bc362e8c75014c27692a8f10637d36f411962e/README.md",
+      "path": "models/whoi-nes-v2.4/README.md",
+      "bytes": 18491,
+      "sha256": "08aaeadf28aabc197a61580935fec9025ab0cb10d0f34ef054a91ead4f6ac484"
+    },
+    {
+      "url": "https://huggingface.co/sosiklab/NES-plankton-IFCB-classifier-2022/resolve/71bc362e8c75014c27692a8f10637d36f411962e/labels.json",
+      "path": "models/whoi-nes-v2.4/labels.json",
+      "bytes": 4393,
+      "sha256": "e20ed2a59c672b2af10b1cda6743694f52ce728412d9c344ef90c5cb2cc02d03"
+    },
+    {
+      "url": "https://huggingface.co/sosiklab/NES-plankton-IFCB-classifier-2022/resolve/71bc362e8c75014c27692a8f10637d36f411962e/LICENSE",
+      "path": "models/whoi-nes-v2.4/LICENSE",
+      "bytes": 1093,
+      "sha256": "f0504d567396eb6078f8bc32d310e888291a6a121a4540db1344326c038f1bb7"
+    }
+  ]
+}
