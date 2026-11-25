@@ -7,6 +7,7 @@ The public lab accepts a microscope crop and offers two browser models. The OOI 
 | WHOI Northeast Shelf IFCB v2.4 | [Browser](https://ocean.sig.ai/try-plankton.html) or identification notebook | Softmax over 155 model categories, including debris. The browser returns three provisional suggestions. |
 | Ten-class morphology baseline | [Browser](https://ocean.sig.ai/try-trained-plankton.html) | Each class is represented by its average standardized training measurements. Smaller distances indicate closer matches in size, brightness and shape. |
 | MobileNetV3-Small | Identification or training notebook, or [browser with your personal ONNX export](https://ocean.sig.ai/try-mobilenet.html) | A linear head trained on frozen ImageNet features returns softmax scores across ten WHOI categories. Keep the image and model versions when comparing runs. |
+| PlankScope ResNet-50 | Identification notebook in an authorized workspace | Ranks 101 native categories. Choose **Compare WHOI + private PlankScope** to save both models’ results, their separate vocabularies and the shared image checksum in one JSON. |
 | PML IFCB CLIP-LoRA | Identification notebook | Ranks 145 categories by cosine similarity. Image mode compares a crop with the mean image embedding for each class. Text mode compares the same crop with embeddings of taxonomic lineages. |
 
 ## Open the OOI notebooks
@@ -32,6 +33,10 @@ python plankton_workspace.py predict --checkpoint "$model_run/model.pt" \
 ```
 
 If the manifest is already prepared, start with the training command. `model.pt` contains the frozen backbone, fitted class head, feature scaling and label order. `metrics.json` records the per-class support, precision, recall, F1 and confusion matrix. `validation_predictions.csv` pairs each held-out suggestion with its source label. The morphology baseline can also be fitted from the same manifest. [MobileNet training code](../plankton_workspace.py) · [Morphology training code](../train_morphology_baseline.py)
+
+## Verify the private PlankScope installation
+
+The private workspace stores the original approved checkpoint and ordered label map in an owner-accessible directory. The notebook verifies their fingerprints before loading the model. The public repository includes the loader and the comparison procedure. With the same 24 original Pioneer PNGs, both the OOI CPU and NVIDIA L40S reproduced all 24 top labels from the native Windows run. This tests agreement across implementations. Expert annotations are needed to measure identification accuracy. [Loader](../private_plankscope_runtime.py) · [Reproduction check](../validate_private_plankscope.py)
 
 ## Use the GPU-trained model on your own device
 

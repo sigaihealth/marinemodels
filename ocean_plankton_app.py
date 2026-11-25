@@ -33,7 +33,7 @@ def read_png(data):
     with Image.open(io.BytesIO(data)) as image:
         if image.format != "PNG" or image.width * image.height > 4_000_000:
             raise ValueError("Choose a single PNG crop of at most four megapixels.")
-        if image.is_animated or image.mode not in ("L", "RGB"):
+        if image.is_animated or image.mode not in ("L", "RGB") or "transparency" in image.info:
             raise ValueError("Use an opaque 8-bit grayscale or RGB PNG.")
         image.load()
         return image.size
@@ -114,15 +114,27 @@ def run_crop(method, path, *, source, root=ROOT, persist=True):
     result.update(method=method, status="provisional_model_prediction_unreviewed",
                   input_sha256=hashlib.sha256(data).hexdigest(), input_size_px=list(size),
                   input_source=source, created_utc=datetime.now(timezone.utc).isoformat())
-    destination = None
-    if persist:
-        directory = root / "results"
-        directory.mkdir(parents=True, exist_ok=True)
-        destination = directory / f"{method}-{uuid4().hex}.json"
-        with destination.open("x", encoding="utf-8") as file:
-            json.dump(result, file, indent=2, allow_nan=False)
-            file.write("\n")
-    return result, destination
+    return result, save_result(result, method, root) if persist else None
+
+
+def save_result(result, method, root):
+    directory = root / "results"
+    directory.mkdir(parents=True, exist_ok=True)
+    destination = directory / f"{method}-{uuid4().hex}.json"
+    with destination.open("x", encoding="utf-8") as file:
+        json.dump(result, file, indent=2, allow_nan=False)
+        file.write("\n")
+    return destination
+
+
+def compare_crop(path, *, source, root=ROOT):
+    results = [run_crop(method, path, source=source, root=root, persist=False)[0]
+               for method in ("whoi", "plankscope")]
+    if results[0]["input_sha256"] != results[1]["input_sha256"]:
+        raise ValueError("The image changed between the two predictions.")
+    pair = dict(status="paired_unreviewed_predictions", input_sha256=results[0]["input_sha256"],
+                input_source=source, models=results)
+    return results, save_result(pair, "whoi-plankscope", root)
 
 
 def show_workspace(root=ROOT):
@@ -143,7 +155,10 @@ def show_workspace(root=ROOT):
                                        (dataset / row["path"], f"WHOI NES 2022 · {row['roi_id']}"))
     style = {"description_width": "60px"}
     layout = widgets.Layout(width="auto")
-    model = widgets.Dropdown(description="Model", options=[(v, k) for k, v in installed_models(root).items()],
+    choices = installed_models(root)
+    if "plankscope" in choices:
+        choices["compare"] = "Compare WHOI + private PlankScope"
+    model = widgets.Dropdown(description="Model", options=[(v, k) for k, v in choices.items()],
                              style=style, layout=layout)
     source = widgets.Dropdown(description="Image", options=[*sources, "My uploaded PNG"], style=style, layout=layout)
     upload = widgets.FileUpload(accept=".png,image/png", multiple=False, description="Choose PNG")
@@ -171,14 +186,21 @@ def show_workspace(root=ROOT):
                     origin = "User upload"
                 else:
                     path, origin = sources[source.value]
-                result, destination = run_crop(model.value, path, source=origin, root=root)
+                if model.value == "compare":
+                    results, destination = compare_crop(path, source=origin, root=root)
+                else:
+                    result, destination = run_crop(model.value, path, source=origin, root=root)
+                    results = [result]
                 display(widgets.Image(value=path.read_bytes(), format="png", layout=widgets.Layout(max_width="280px", max_height="160px")))
-                score = result["score_type"]
-                rows = "".join(f"<tr><td>{escape(r['label'])}</td><td>{r[score]:.4f}</td></tr>"
-                               for r in result["candidates"])
-                display(HTML(f"<table><caption>Top suggestions · {escape(result['device'])}</caption>"
-                             f"<thead><tr><th>Category</th><th>{escape(score.replace('_', ' '))}</th></tr></thead>"
-                             f"<tbody>{rows}</tbody></table>"))
+                for result in results:
+                    score = result["score_type"]
+                    rows = "".join(f"<tr><td>{escape(r['label'])}</td><td>{r[score]:.4f}</td></tr>"
+                                   for r in result["candidates"])
+                    display(HTML(f"<table><caption>{escape(result['model'])} · {escape(result['device'])}</caption>"
+                                 f"<thead><tr><th>Category</th><th>{escape(score.replace('_', ' '))}</th></tr></thead>"
+                                 f"<tbody>{rows}</tbody></table>"))
+                if len(results) > 1:
+                    print("Identical source pixels. Each model ranks its own categories. Expert labels are needed to measure accuracy.")
                 print(f"Provisional identification. Saved {destination}")
                 prefix = os.environ.get("JUPYTERHUB_SERVICE_PREFIX")
                 if prefix and destination.is_relative_to(Path.home()):
