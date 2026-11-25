@@ -4,21 +4,36 @@ Marine Models explores how open ocean observations can support local models and 
 
 ## Run the Pioneer event replay
 
-The replay uses Python 3.10 or newer and public OOI ERDDAP endpoints. Clone the repository and run the replay from a local shell or the OOI JupyterHub terminal.
+The sensor download and offline playback builder use Python 3.10 or newer. The image sampler also uses Pillow. To execute the analysis notebook, use a Python 3 kernel with pandas and Matplotlib, and install Jupyter nbconvert. Run these commands in a local shell or the OOI JupyterHub terminal.
 
 ```sh
 git clone https://github.com/sigaihealth/marinemodels.git
 cd marinemodels
-python3 ooi_replay.py --output-dir ../pioneer-gianna
+run_dir="$HOME/data/pioneer-gianna"
+python3 ooi_replay.py --output-dir "$run_dir"
+python3 pioneer_images.py --output-dir "$run_dir/ifcb"
+python3 pioneer_playback.py "$run_dir"
+PIONEER_REPLAY_DIR="$run_dir" jupyter nbconvert --to notebook --execute \
+  --output-dir "$run_dir" --output pioneer_storm_replay.ipynb pioneer_storm_replay.ipynb
 ```
 
-To keep the output in your JupyterHub data directory, use `--output-dir "$HOME/data/pioneer-gianna"`. Choose a new output directory for each run. The default replay window runs from January 29, 2026 at 00:00 UTC up to February 4 at 00:00 UTC. Set `--start` and `--end` to UTC dates to request another window of up to 31 days. The start date is inclusive and the end date is exclusive.
+Open `pioneer_playback.html` from the output directory in a browser. The file embeds its observations and image crops, so it also works offline. Use the slider to select an hour or the two sample buttons to inspect imagery. In JupyterLab, open the executed `pioneer_storm_replay.ipynb` in the data directory for the source-resolution comparison, sampling offsets, and four-panel figure.
+
+The default window runs from January 29, 2026 at 00:00 UTC up to February 4 at 00:00 UTC. The two download commands expect new output directories. If a completed download is already present, proceed with the remaining commands. The sensor downloader also accepts `--start` and `--end` for other windows up to 31 days. The image sampler and the event comparisons in the notebook are specific to February 1.
 
 The pilot brings together IFCB image-region counts and sampled volume, fluorometer chlorophyll, CTD salinity, and buoy air pressure. It uses recovered observations and telemetry to align measurements in time for a historical replay. IFCB image regions per milliliter can include particles. Images are available after recovery through OOI’s IFCB archive for visual comparison and future image models. [OOI’s Gianna case study and image links](https://oceanobservatories.org/2026/09/ooi-plankton-imagery-and-co-located-environmental-data-now-ready-for-analysis/)
 
 - `plims.csv`, `fluorometer.csv`, `ctd.csv`, and `meteorology.csv` contain source observations, timestamps, and aggregate QC flags.
 - `replay.csv` contains hourly UTC medians, counts of contributing observations, and counts of contributing flag-2 observations. Values with flag 1 (pass) or 2 (not evaluated) can contribute. Missing observations produce blank values and are never interpolated.
 - `summary.json` records the exact source queries, units, coverage, QC counts, platform DOI, and retrieval time. A window with no observations eligible for the replay returns an error.
+- `ifcb/` contains 24 unclassified image crops, a contact sheet, and a manifest with the original URLs, sample volumes, selection method, and SHA-256 checksums. Twelve crops were selected at evenly spaced positions within each sample's sorted list of image targets. The contact sheet resizes each crop independently.
+- `pioneer_storm.png` shows the six-day time series. IFCB observations are available in 42 of the 144 hourly bins in this replay.
+
+## What happened on February 1
+
+The 00:25:46 UTC sample contained 1,065 image regions in 4.615 mL (231 ROIs/mL). At 15:25:45 UTC there were 5,164 in 3.005 mL (1,718 ROIs/mL), a 7.45-fold difference. The buoy recorded its lowest pressure that day at 08:34 UTC, 995.02 mbar. The nearest CTD measurements to the two image samples showed practical salinity falling from 35.061 to 34.582. Both ROI concentrations and the pressure minimum carried aggregate QC flag 2 (not evaluated). The matched salinity values carried flag 1 (pass).
+
+The higher count coincided with fresher water at the mooring. ROI counts include plankton, aggregates, and other suspended particles. Distinguishing a community shift from changes in transported or resuspended material requires classifying a larger image sample. [OOI event description and original samples](https://oceanobservatories.org/2026/09/ooi-plankton-imagery-and-co-located-environmental-data-now-ready-for-analysis/)
 
 ## Research directions
 

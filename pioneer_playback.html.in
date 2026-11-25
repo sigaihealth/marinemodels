@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pioneer plankton storm replay</title>
+<style>
+* { box-sizing: border-box }
+body { margin: auto; max-width: 1000px; padding: 28px clamp(14px,4vw,40px); color: #18323a; background: #fafbf8; font: 16px/1.45 Inter, "Helvetica Neue", sans-serif }
+h1 { font-family: "Source Serif 4", Georgia, serif; font-size: clamp(30px,5vw,44px); font-weight: 500; line-height: 1.08; margin: 0 0 7px }
+h2 { font-size: 1.2rem; margin-bottom: 3px }
+p { margin: 6px 0 14px }
+button { font: inherit; cursor: pointer; background: white; color: #18323a; border: 1px solid #91a4a5; padding: 6px 12px; border-radius: 5px }
+#play { background: #16534e; color: white; min-width: 5em }
+input { width: 100%; accent-color: #17695c; margin: 8px 0 }
+output,.reading { font-variant-numeric: tabular-nums }
+.controls,.heading,#samples { display: flex; gap: .7em; align-items: center; flex-wrap: wrap }
+.controls { margin-top: 15px }
+.heading { justify-content: space-between; font-weight: 600 }
+.reading { font-weight: 500 }
+.panel { border-top: 1px solid #cfdbd6; padding: 8px 0 3px }
+canvas { display: block; width: 100%; height: 89px }
+.muted,footer { color: #496068; font-size: .9rem }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit,minmax(92px,1fr)); gap: 7px }
+figure { text-align: center; margin: 0; background: white; padding: 7px; border: 1px solid #d6dfdc }
+figure img { width: 100%; height: 84px; object-fit: contain } figcaption { font-size: 12px }
+a { color: #155c66 } footer { margin-top: 20px }
+</style>
+<main>
+  <h1>Pioneer plankton storm replay</h1>
+  <p>Winter Storm Gianna at the OOI Central Surface Mooring, off North Carolina</p>
+  <div class="controls"><button type="button" id="play">Play</button><output id="clock" for="hour"></output></div>
+  <input type="range" id="hour" min="0" value="0" step="1" aria-label="Replay hour, UTC">
+  <div id="panels"></div>
+  <p class="muted">Hourly medians. Open circles mark hours containing QC flag 2 (not evaluated). Gaps have no eligible observations. Select an hour with the slider or arrow keys.</p>
+  <section id="imagery" hidden><h2>Recovered IFCB images</h2><div id="samples"></div><p id="sample-info"></p><div class="gallery" id="gallery"></div></section>
+  <footer>Data from the NSF Ocean Observatories Initiative, CP10CNSM. ROIs are image regions that can include plankton, aggregates, and other particles. <a href="https://oceanobservatories.org/2026/09/ooi-plankton-imagery-and-co-located-environmental-data-now-ready-for-analysis/">OOI event and data sources</a></footer>
+</main>
+<script id="data" type="application/json">__REPLAY_JSON__</script>
+<script>
+"use strict";
+const {hours, series, pictures} = JSON.parse(document.querySelector("#data").textContent);
+const slider = document.querySelector("#hour");
+const play = document.querySelector("#play");
+slider.max = hours.length - 1;
+let timer = null;
+const panels = series.map(s => {
+  const panel = document.createElement("div");
+  panel.className = "panel";
+  const heading = document.createElement("div");
+  heading.className = "heading";
+  heading.textContent = s.label;
+  const reading = document.createElement("span");
+  reading.className = "reading";
+  heading.append(reading);
+  const canvas = document.createElement("canvas");
+  canvas.setAttribute("aria-label", s.label + " through time");
+  panel.append(heading, canvas);
+  document.querySelector("#panels").append(panel);
+  return {canvas, reading};
+});
+function trace(s, canvas, selected) {
+  const width = canvas.clientWidth, height = 89, ratio = devicePixelRatio || 1;
+  canvas.width = width * ratio; canvas.height = height * ratio;
+  const ctx = canvas.getContext("2d"); ctx.scale(ratio,ratio);
+  const present = s.values.filter(Number.isFinite);
+  if (!present.length) return;
+  const low = Math.min(...present), high = Math.max(...present);
+  const x = i => 56 + i * (width - 73) / Math.max(hours.length-1,1);
+  const y = v => 60 - 48 * (v-low)/(high-low || 1);
+  ctx.font = "11px sans-serif"; ctx.fillStyle = "#496068";
+  ctx.fillText(high.toFixed(2), 2, 14); ctx.fillText(low.toFixed(2), 2, 62);
+  ctx.strokeStyle = "#d3ddda"; ctx.beginPath(); ctx.moveTo(56,61); ctx.lineTo(width-17,61); ctx.stroke();
+  let lastLabel = -100;
+  for (let i=0;i<hours.length;i++) {
+    if (hours[i].slice(11,13)==="00" && x(i)-lastLabel>55) {
+      ctx.fillStyle = "#496068"; ctx.fillText(hours[i].slice(5,10),x(i)-13,84); lastLabel=x(i);
+    }
+  }
+  s.values.forEach((v,i) => {
+    if (v===null) return;
+    ctx.strokeStyle=i<=selected?s.color:"#c3cfcb"; ctx.lineWidth=1.25;
+    if (s.label!=="Image regions" && i>0 && s.values[i-1]!==null) {
+      ctx.beginPath(); ctx.moveTo(x(i-1),y(s.values[i-1])); ctx.lineTo(x(i),y(v)); ctx.stroke();
+    }
+    ctx.beginPath(); ctx.arc(x(i),y(v),i===selected?3.7:1.9,0,Math.PI*2);
+    ctx.fillStyle=s.qc2[i]?"#fafbf8":ctx.strokeStyle; ctx.fill(); ctx.stroke();
+  });
+  ctx.strokeStyle="#526868"; ctx.setLineDash([2,3]); ctx.beginPath();
+  ctx.moveTo(x(selected),0); ctx.lineTo(x(selected),68); ctx.stroke();
+}
+const gallery=document.querySelector("#gallery"), info=document.querySelector("#sample-info");
+function showHour(index) {
+  slider.value=index;
+  document.querySelector("#clock").textContent=hours[index].slice(0,16).replace("T"," ")+" UTC";
+  series.forEach((s,j) => {
+    const v=s.values[index];
+    panels[j].reading.textContent=v===null?"No sample":v.toFixed(2)+" "+s.unit+(s.qc2[index]?" · QC 2":"");
+    trace(s,panels[j].canvas,index);
+  });
+  gallery.replaceChildren();
+  const sample=pictures.find(p=>p.index===index);
+  info.textContent="Select a sample time to view recovered images.";
+  if (!sample) return;
+  info.textContent=sample.count.toLocaleString()+" image regions in "+sample.volume.toFixed(2)+" mL. Twelve evenly spaced examples, each resized to fit. ";
+  const link=document.createElement("a"); link.href=sample.url; link.textContent="Full OOI sample"; info.append(link);
+  sample.crops.forEach(c=>{
+    const figure=document.createElement("figure"), img=document.createElement("img"), caption=document.createElement("figcaption");
+    img.src=c.png; img.alt="Unclassified IFCB image region "+c.target; caption.textContent="ROI "+c.target;
+    figure.append(img,caption); gallery.append(figure);
+  });
+}
+function pause() { clearInterval(timer); timer=null; play.textContent="Play"; }
+play.onclick=()=>{
+  if (timer!==null) { pause(); return; }
+  if (+slider.value===hours.length-1) showHour(0);
+  play.textContent="Pause";
+  timer=setInterval(()=>{ if (+slider.value===hours.length-1) pause(); else showHour(+slider.value+1); },350);
+};
+slider.oninput=()=>{ pause(); showHour(+slider.value); };
+document.querySelector("#imagery").hidden=!pictures.length;
+pictures.forEach(p=>{
+  const b=document.createElement("button"); b.textContent=p.time.slice(5,16).replace("T"," ")+" UTC";
+  b.onclick=()=>{pause();showHour(p.index);}; document.querySelector("#samples").append(b);
+});
+window.addEventListener("resize",()=>showHour(+slider.value));
+showHour(pictures.length?pictures[0].index:0);
+</script>
+</html>
