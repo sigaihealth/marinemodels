@@ -1,0 +1,118 @@
+role,cruise,expert_taxon,reference_group,supplied,excluded,scored,physical_nets,eligible,legacy_amphipod_calls,scanner_amphipod_calls,predecessor_amphipod_calls,inherited_amphipod_calls,primary_amphipod_calls,parent_amphipod_calls,candidate_amphipod_calls,source_only_candidate_amphipod_calls,withdrawn_amphipod_calls,added_amphipod_calls,explicit_larvae,previous_larvae_correct,candidate_larvae_correct
+replay,merian-msm108,Calanoida,calanoid,11,0,11,10,2,3,3,3,2,2,2,0,0,2,0,0,0,0
+replay,merian-msm108,Calanus,calanoid,12,0,12,10,5,5,5,5,5,5,5,1,1,4,0,0,0,0
+replay,merian-msm108,Copepoda<Multicrustacea,other,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+replay,merian-msm108,Euphausiacea,other,3,0,3,3,2,2,2,2,2,2,2,2,2,0,0,0,0,0
+replay,merian-msm108,Gaetanus tenuispinus,calanoid,5,0,5,5,3,3,3,3,3,3,3,0,0,3,0,0,0,0
+replay,merian-msm108,Metridia longa,calanoid,3,0,3,3,1,1,1,1,1,1,1,0,0,1,0,0,0,0
+replay,merian-msm108,Ostracoda,ostracod,124,0,124,34,0,27,71,27,0,0,0,0,0,0,0,0,0,0
+replay,merian-msm108,Ostracoda X,ostracod,30,0,30,17,0,1,5,1,0,0,0,0,0,0,0,0,0,0
+replay,merian-msm108,Paraeuchaeta,calanoid,3,0,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+replay,merian-msm108,Themisto,themisto,22,0,22,10,16,11,16,16,15,15,16,16,16,0,0,0,0,0
+replay,merian-msm108,Themisto abyssorum,themisto,104,1,103,28,86,83,86,86,86,86,86,86,86,0,0,0,0,0
+replay,merian-msm108,Themisto libellula,themisto,3,0,3,3,3,3,3,3,3,3,3,3,3,0,0,0,0,0
+replay,merian-msm108,calyptopsis,other,30,0,30,20,4,4,4,4,4,4,4,3,3,1,0,30,17,17
+replay,merian-msm108,furcilia,other,12,0,12,9,0,0,0,0,0,0,0,0,0,0,0,12,12,12
+replay,pnmir-iroise-201609,Themisto,themisto,3,0,3,3,3,2,3,3,3,3,3,3,3,0,0,0,0,0
+replay,polarstern-ps121,Calanoida,calanoid,25,0,25,21,11,11,14,13,11,11,11,1,1,10,0,0,0,0
+replay,polarstern-ps121,Calanus,calanoid,27,0,27,21,9,9,9,9,9,9,9,0,0,9,0,0,0,0
+replay,polarstern-ps121,Copepoda<Multicrustacea,other,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps121,Euphausiacea,other,6,0,6,6,2,2,2,2,2,2,2,2,2,0,0,0,0,0
+replay,polarstern-ps121,Metridia longa,calanoid,13,0,13,12,2,3,3,3,2,2,2,0,0,2,0,0,0,0
+replay,polarstern-ps121,Ostracoda,ostracod,141,0,141,35,1,27,72,27,1,1,1,1,1,0,0,0,0,0
+replay,polarstern-ps121,Ostracoda X,ostracod,18,0,18,14,0,2,4,2,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps121,Paraeuchaeta,calanoid,1,0,1,1,1,1,1,1,1,1,1,0,0,1,0,0,0,0
+replay,polarstern-ps121,Themisto,themisto,6,0,6,4,5,5,5,5,5,5,5,5,5,0,0,0,0,0
+replay,polarstern-ps121,Themisto abyssorum,themisto,83,0,83,24,80,79,80,80,80,80,80,80,80,0,0,0,0,0
+replay,polarstern-ps121,Themisto libellula,themisto,5,0,5,3,4,4,4,4,4,4,4,4,4,0,0,0,0,0
+replay,polarstern-ps121,calyptopsis,other,4,0,4,4,2,1,2,2,2,2,2,2,2,0,0,4,1,1
+replay,polarstern-ps121,furcilia,other,3,0,3,3,0,0,0,0,0,0,0,0,0,0,0,3,3,3
+replay,polarstern-ps126,Calanoida,calanoid,18,0,18,13,2,2,4,2,1,1,2,0,1,2,0,0,0,0
+replay,polarstern-ps126,Calanus,calanoid,10,0,10,9,4,4,4,4,4,4,4,0,0,4,0,0,0,0
+replay,polarstern-ps126,Euphausiacea,other,4,1,3,3,1,1,1,1,1,1,1,1,1,0,0,0,0,0
+replay,polarstern-ps126,Gaetanus tenuispinus,calanoid,5,0,5,5,3,3,3,3,3,3,3,0,0,3,0,0,0,0
+replay,polarstern-ps126,Metridia longa,calanoid,3,0,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps126,Ostracoda,ostracod,142,0,142,25,0,27,81,27,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps126,Ostracoda X,ostracod,14,0,14,10,0,0,3,0,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps126,Themisto,themisto,40,0,40,13,30,21,31,30,29,29,30,29,29,1,0,0,0,0
+replay,polarstern-ps126,Themisto abyssorum,themisto,66,0,66,16,51,47,51,51,51,51,51,50,50,1,0,0,0,0
+replay,polarstern-ps126,Themisto libellula,themisto,5,0,5,5,4,4,4,4,4,4,4,4,4,0,0,0,0,0
+replay,polarstern-ps126,calyptopsis,other,34,0,34,23,6,6,7,7,6,6,6,6,6,0,0,34,21,21
+replay,polarstern-ps126,furcilia,other,6,0,6,6,2,1,2,2,2,2,2,2,2,0,0,6,1,1
+replay,polarstern-ps131,Calanoida,calanoid,30,0,30,14,7,9,11,9,7,7,7,0,0,7,0,0,0,0
+replay,polarstern-ps131,Calanus,calanoid,24,0,24,14,7,7,7,7,7,7,7,0,0,7,0,0,0,0
+replay,polarstern-ps131,Copepoda<Multicrustacea,other,3,0,3,3,0,1,1,1,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps131,Euphausiacea,other,1,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0
+replay,polarstern-ps131,Gaetanus tenuispinus,calanoid,4,0,4,4,1,1,1,1,1,1,1,0,0,1,0,0,0,0
+replay,polarstern-ps131,Metridia longa,calanoid,5,0,5,4,2,2,2,2,2,2,2,0,0,2,0,0,0,0
+replay,polarstern-ps131,Ostracoda,ostracod,140,0,140,15,0,25,79,25,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps131,Ostracoda X,ostracod,19,0,19,7,0,2,7,2,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps131,Themisto,themisto,4,0,4,4,3,2,3,2,3,3,3,3,3,0,0,0,0,0
+replay,polarstern-ps131,Themisto abyssorum,themisto,35,0,35,10,30,30,30,30,30,30,30,30,30,0,0,0,0,0
+replay,polarstern-ps131,Themisto libellula,themisto,5,0,5,3,5,4,5,5,5,5,5,5,5,0,0,0,0,0
+replay,polarstern-ps131,calyptopsis,other,7,0,7,5,1,1,1,1,1,1,1,1,1,0,0,7,6,6
+replay,polarstern-ps131,furcilia,other,6,0,6,5,1,1,1,1,1,1,1,1,1,0,0,6,3,3
+replay,polarstern-ps136,Calanoida,calanoid,34,0,34,16,4,5,6,5,4,4,4,0,0,4,0,0,0,0
+replay,polarstern-ps136,Calanus,calanoid,33,0,33,18,8,8,10,8,8,8,8,0,0,8,0,0,0,0
+replay,polarstern-ps136,Chaetognatha<Animalia,other,39,0,39,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps136,Copepoda<Multicrustacea,other,1,0,1,1,1,1,1,1,1,1,1,0,0,1,0,0,0,0
+replay,polarstern-ps136,Euphausiacea,other,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps136,Gaetanus tenuispinus,calanoid,8,0,8,5,4,4,4,4,4,4,4,0,0,4,0,0,0,0
+replay,polarstern-ps136,Metridia longa,calanoid,8,0,8,7,2,3,3,3,2,2,2,0,0,2,0,0,0,0
+replay,polarstern-ps136,Ostracoda,ostracod,37,0,37,15,0,5,16,5,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps136,Paraeuchaeta,calanoid,34,0,34,9,14,14,14,14,14,14,14,0,0,14,0,0,0,0
+replay,polarstern-ps136,Themisto,themisto,63,0,63,22,28,14,34,29,28,28,28,27,27,1,0,0,0,0
+replay,polarstern-ps136,Themisto abyssorum,themisto,130,0,130,28,98,54,102,98,97,97,98,98,98,0,0,0,0,0
+replay,polarstern-ps136,Themisto libellula,themisto,2,0,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0
+replay,polarstern-ps78,Calanoida,calanoid,34,0,34,6,6,10,11,11,6,6,6,1,1,5,0,0,0,0
+replay,polarstern-ps78,Calanus,calanoid,11,0,11,8,1,1,1,1,1,1,1,0,0,1,0,0,0,0
+replay,polarstern-ps78,Chaetognatha<Animalia,other,11,0,11,10,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps78,Copepoda<Multicrustacea,other,9,0,9,7,2,4,4,4,2,2,2,1,1,1,0,0,0,0
+replay,polarstern-ps78,Euphausiacea,other,5,0,5,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0
+replay,polarstern-ps78,Gaetanus tenuispinus,calanoid,11,0,11,9,3,3,3,3,3,3,3,0,0,3,0,0,0,0
+replay,polarstern-ps78,Ostracoda,ostracod,18,0,18,13,0,1,5,1,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps78,Paraeuchaeta,calanoid,16,0,16,7,8,8,8,8,8,8,8,0,0,8,0,0,0,0
+replay,polarstern-ps78,Themisto abyssorum,themisto,97,0,97,24,80,75,80,80,80,80,80,80,80,0,0,0,0,0
+replay,polarstern-ps78,Themisto libellula,themisto,14,0,14,5,12,10,12,12,12,12,12,12,12,0,0,0,0,0
+replay,polarstern-ps80,Euphausiacea,other,8,0,8,6,2,2,2,2,2,2,2,2,2,0,0,0,0,0
+replay,polarstern-ps80,Metridia longa,calanoid,54,0,54,26,7,7,7,7,7,7,7,0,0,7,0,0,0,0
+replay,polarstern-ps80,Ostracoda X,ostracod,70,0,70,24,0,2,5,2,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps80,Themisto,themisto,92,0,92,27,65,41,65,64,65,65,65,63,63,2,0,0,0,0
+replay,polarstern-ps80,Themisto abyssorum,themisto,99,0,99,30,74,64,74,74,74,74,74,73,73,1,0,0,0,0
+replay,polarstern-ps80,Themisto libellula,themisto,44,0,44,21,40,36,40,40,40,40,40,40,40,0,0,0,0,0
+replay,polarstern-ps80,calyptopsis,other,73,0,73,24,6,5,6,6,6,6,6,3,3,3,0,73,10,10
+replay,polarstern-ps80,female<Calanus glacialis,calanoid,34,0,34,18,5,5,5,5,5,5,5,2,2,3,0,0,0,0
+replay,polarstern-ps80,female<Calanus hyperboreus,calanoid,69,0,69,32,12,12,12,12,12,12,12,0,0,12,0,0,0,0
+replay,polarstern-ps80,furcilia,other,3,0,3,1,0,0,0,0,0,0,0,0,0,0,0,3,1,1
+replay,polarstern-ps85,Euphausiacea,other,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps85,Metridia longa,calanoid,2,0,2,2,1,1,1,1,1,1,1,0,0,1,0,0,0,0
+replay,polarstern-ps85,Ostracoda X,ostracod,5,0,5,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+replay,polarstern-ps85,Themisto,themisto,7,0,7,6,7,5,7,6,7,7,7,7,7,0,0,0,0,0
+replay,polarstern-ps85,Themisto abyssorum,themisto,30,0,30,8,25,22,25,25,24,25,25,25,25,0,0,0,0,0
+replay,polarstern-ps85,Themisto libellula,themisto,2,0,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0
+replay,polarstern-ps85,calyptopsis,other,21,0,21,6,6,3,8,6,6,6,6,6,6,0,0,21,10,10
+replay,polarstern-ps85,female<Calanus glacialis,calanoid,4,0,4,3,3,4,4,4,3,3,3,0,0,3,0,0,0,0
+replay,polarstern-ps85,female<Calanus hyperboreus,calanoid,20,0,20,8,13,14,14,14,13,13,13,0,0,13,0,0,0,0
+replay,polarstern-ps85,furcilia,other,2,0,2,2,1,1,1,1,1,1,1,1,1,0,0,2,1,1
+replay,tara-20100905z,Calanoida,calanoid,21,0,21,17,6,7,7,7,6,6,6,0,0,6,0,0,0,0
+replay,tara-20100905z,Copepoda<Multicrustacea,other,3,0,3,2,1,1,1,1,1,1,1,1,1,0,0,0,0,0
+replay,tara-20100905z,Euphausiacea,other,14,0,14,13,4,4,4,4,4,4,4,4,4,0,0,0,0,0
+replay,tara-20100905z,Ostracoda,ostracod,200,0,200,40,0,21,107,21,0,0,0,0,0,0,0,0,0,0
+replay,tara-20100905z,Themisto,themisto,5,1,4,1,4,4,4,4,4,4,4,4,4,0,0,0,0,0
+replay,tara-20100905z,calyptopsis,other,22,0,22,18,11,10,12,12,11,11,11,8,8,3,0,22,6,6
+replay,tara-20130519z,Calanoida,calanoid,20,0,20,5,5,5,5,5,5,5,5,0,0,5,0,0,0,0
+replay,tara-20130519z,Copepoda<Multicrustacea,other,31,0,31,5,7,7,7,7,7,7,7,0,0,7,0,0,0,0
+replay,tara-20130519z,Hyperiidea,hyperiid,120,0,120,5,100,85,101,100,99,99,100,100,100,0,0,0,0,0
+replay,tara-20130519z,Ostracoda,ostracod,199,0,199,10,0,37,64,37,0,0,0,0,0,0,0,0,0,0
+replay,tara-20130519z,calyptopsis,other,9,0,9,4,3,3,3,3,3,3,3,3,3,0,0,9,4,4
+replay,tara-20130921z,Calanoida,calanoid,30,0,30,11,8,9,9,9,8,8,8,0,0,8,0,0,0,0
+replay,tara-20130921z,Copepoda<Multicrustacea,other,29,0,29,11,9,9,9,9,9,9,9,0,0,9,0,0,0,0
+replay,tara-20130921z,Hyperiidea,hyperiid,28,8,20,6,17,17,18,18,17,17,17,17,17,0,0,0,0,0
+replay,tara-20130921z,Ostracoda,ostracod,199,0,199,15,1,35,58,35,1,1,1,0,0,1,0,0,0,0
+replay,tara-20130921z,calyptopsis,other,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+test,pnmir-iroise-genus-201205-201607,Themisto,themisto,2,0,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0
+test,tara-20130629z,Calanoida,calanoid,360,0,360,20,126,126,131,128,126,126,126,6,6,120,0,0,0,0
+test,tara-20130629z,Copepoda<Multicrustacea,other,32,0,32,10,11,11,11,11,11,11,11,0,0,11,0,0,0,0
+test,tara-20130629z,Hyperiidea,hyperiid,46,0,46,14,44,40,44,43,43,43,44,44,44,0,0,0,0,0
+test,tara-20130629z,Ostracoda,ostracod,107,0,107,11,1,13,37,13,1,1,1,1,1,0,0,0,0,0
+test,tara-20130629z,calyptopsis,other,28,0,28,11,5,5,5,5,5,5,5,4,4,1,0,28,17,17
