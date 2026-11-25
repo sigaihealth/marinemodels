@@ -1,0 +1,12 @@
+.api-key
+.server-state.*
+.service.lock
+.install.lock
+.qwen-runtime-*
+.transfer/
+runtime/
+*.gguf*
+*.tar.gz
+*.log
+.ipynb_checkpoints/
+__pycache__/
