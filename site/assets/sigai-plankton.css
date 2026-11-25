@@ -19,3 +19,11 @@
 .reference-sample input{grid-column:1;grid-row:1}
 .reference-sample img{grid-column:2;grid-row:1;height:4.25rem}
 .reference-sample span{grid-column:3;grid-row:1}
+
+#source-picker {margin:.65rem 0 0 1.55rem}
+#source-picker .caption {margin-left:0}
+#source-picker select {display:block;max-width:100%;font:inherit;margin-top:.35rem}
+#source-result {margin:1.3rem 0 0;border-top:1px solid #9db5a9;padding-top:1rem}
+#original-title, #source-result-title {font-size:clamp(1.6rem,2.6vw,2.1rem);margin:.75rem 0 .55rem}
+#source-ranks {padding:0 0 0 1.45rem;margin:.6rem 0}
+#source-ranks li {padding:.2rem 0;font-weight:600;overflow-wrap:anywhere}

@@ -4,10 +4,18 @@ const samples = {
   whoi: {id: "whoi-coscinodiscus-reference", title: "WHOI reference · Coscinodiscus",
          roi: "IFCB5_2017_103_164054_01283", source: "https://doi.org/10.57967/hf/10839"}
 };
+const sampleHashes = {
+  early: "7dd6c14fba2e62c3eaeafb0863ca52c385937aff45dc3dc31ada87508f13872b",
+  late: "891ed7ceb9b97620367225ff9bd1cb8622b7c78a09d802cb26b0a2bf0c5afe55",
+  whoi: "ee17e94ed8473fb1debf7273340974bd70fc5efb86d9866484a79628cdb12ad7"
+};
 const maxBytes = 2 * 1024 * 1024;
 const get = id => document.getElementById(id);
 const upload = get("crop");
 const submit = get("run");
+const sourceOptIn = get("source-opt-in");
+const sourcePicker = get("source-id");
+const sourceNames = new Map(Array.from(sourcePicker.options).filter(o => o.value).map(o => [o.value, o.text]));
 const status = get("status");
 let downloadUrl;
 let currentRequest;
@@ -31,12 +39,35 @@ function clearResult() {
   get("download").removeAttribute("href");
 }
 
+function selectedSource(image) {
+  if (!sourceOptIn.checked || sourceOptIn.disabled) return null;
+  if (image === samples.whoi) return "whoi_nes";
+  if (image?.file && sourceNames.has(sourcePicker.value)) return sourcePicker.value;
+  return null;
+}
+
+function resetSource() {
+  sourceOptIn.checked = false;
+  sourcePicker.value = "";
+}
+
 function changed() {
   const image = selection();
   clearResult();
   get("selected").textContent = image ? "Selected image · " + image.title : "Choose an image.";
   message(image ? "Ready to classify." : "Select a Pioneer sample or a PNG.");
-  submit.disabled = !image;
+  const eligible = Boolean(image?.file || image === samples.whoi);
+  if (!eligible) resetSource();
+  sourceOptIn.disabled = !eligible;
+  get("source-help").textContent = image === samples.whoi
+    ? "This image is from the WHOI Northeast U.S. Shelf IFCB collection. Select the comparison to see how a model fitted to that source ranks it."
+    : image?.file
+      ? "Select this if the image came from a fitted collection and you know which one."
+      : "The Pioneer samples have no fitted source-specific ranking.";
+  get("source-picker").hidden = !(image?.file && sourceOptIn.checked);
+  const needsSource = sourceOptIn.checked && !selectedSource(image);
+  submit.disabled = !image || needsSource;
+  if (needsSource) message("Choose the recorded source collection, or clear the source comparison.");
 }
 
 function validatePng(buffer) {
@@ -95,7 +126,21 @@ function referenceResult(data) {
           reference_score: data.reference_score, reason: data.reason};
 }
 
-function publicResult(data, image, sha, size, useReference) {
+function sourceComparison(data, expectedSource, original) {
+  if (!data || data.mode !== "source-opt-in" || data.source !== expectedSource ||
+      !["unchanged", "reordered"].includes(data.status) || !Array.isArray(data.ranked_labels) ||
+      data.ranked_labels.length !== 3 || data.ranked_labels.some(s => typeof s !== "string" || !s.trim()) ||
+      new Set(data.ranked_labels).size !== 3) return null;
+  const [pick, ...rest] = data.ranked_labels;
+  const native = original.map(row => row.label);
+  const changed = pick !== native[0];
+  if (changed !== (data.status === "reordered")) return null;
+  const remainder = native.filter(label => label !== pick).slice(0, 2);
+  if (!rest.every((label, i) => label === remainder[i])) return null;
+  return {mode: data.mode, source: expectedSource, status: data.status, ranked_labels: [pick, ...rest]};
+}
+
+function publicResult(data, image, sha, size, useReference, source) {
   const badResponse = "The service returned an incomplete prediction. Please try again.";
   if (data?.model !== "SIG.AI Plankton Classifier" ||
       typeof data.version !== "string" || !data.version.trim() ||
@@ -113,7 +158,11 @@ function publicResult(data, image, sha, size, useReference) {
     image: image.file ? image.title : image.id, input_sha256: sha, size_px: [size.width, size.height],
     ...(image.file ? {} : {roi_id: image.roi || image.id,
                            source: image.source || "https://ifcb-data.oceanobservatories.org/data/" + image.id + ".png"}),
-    candidates, ...(useReference ? {reference: referenceResult(data.reference)} : {})
+    candidates, ...(useReference ? {reference: referenceResult(data.reference)} : {}),
+    ...(source ? {
+      source_candidate_request: {source, source_basis: image.file ? "user_selected_collection" : "verified_example_collection"},
+      source_candidate: sourceComparison(data.source_candidate, source, candidates)
+    } : {})
   };
 }
 
@@ -138,6 +187,24 @@ function show(result) {
     get("reference-score").textContent = ref ?
       "Reference score · " + ref.reference_score.toFixed(4) + ". This score comes from a separate model." : "";
   }
+  const requestedScope = result.source_candidate_request;
+  get("original-title").hidden = !requestedScope;
+  get("source-result").hidden = !requestedScope;
+  if (requestedScope) {
+    const comparison = result.source_candidate;
+    const scope = sourceNames.get(requestedScope.source);
+    get("source-result-note").textContent = !comparison
+      ? scope + " · Comparison unavailable for this run. The original suggestions are shown above."
+      : scope + (comparison.status === "reordered" ? " · The first suggestion changed." : " · The first suggestion stayed the same.");
+    const entries = (comparison?.ranked_labels || []).map(label => {
+      const li = document.createElement("li");
+      li.textContent = label;
+      return li;
+    });
+    get("source-ranks").replaceChildren(...entries);
+    get("source-result-score").textContent = comparison
+      ? "The comparison returns an ordering. The scores above belong to the original 101-category model." : "";
+  }
   get("version").textContent = "Model version · " + result.version;
   downloadUrl = URL.createObjectURL(new Blob([JSON.stringify(result, null, 2) + "\n"], {type: "application/json"}));
   get("download").href = downloadUrl;
@@ -147,20 +214,32 @@ function show(result) {
 
 document.querySelectorAll('input[name="sample"]').forEach(input => input.addEventListener("change", () => {
   upload.value = "";
+  resetSource();
   changed();
 }));
 upload.addEventListener("change", () => {
+  resetSource();
   if (upload.files[0]) {
     document.querySelectorAll('input[name="sample"]').forEach(input => { input.checked = false; });
   }
   changed();
 });
 get("ifcb-context").addEventListener("change", changed);
+sourceOptIn.addEventListener("change", () => {
+  if (!sourceOptIn.checked) sourcePicker.value = "";
+  changed();
+});
+sourcePicker.addEventListener("change", changed);
 get("cancel").addEventListener("click", () => currentRequest?.abort());
 get("classify").addEventListener("submit", async event => {
   event.preventDefault();
   const image = selection();
   if (currentRequest || !image) return;
+  const source = selectedSource(image);
+  if (sourceOptIn.checked && !source) {
+    changed();
+    return;
+  }
   const controller = new AbortController();
   currentRequest = controller;
   let timedOut = false;
@@ -173,7 +252,16 @@ get("classify").addEventListener("submit", async event => {
     const {buffer, size, sha} = await readImage(image, controller.signal);
     message("Waiting for the classifier…");
     const useReference = get("ifcb-context").checked;
-    const url = "/api/plankton/predict" + (useReference ? "?context=ifcb" : "");
+    if (source && [sampleHashes.early, sampleHashes.late].includes(sha)) {
+      throw new Error("This image matches a Pioneer sample. Clear the source comparison to classify it.");
+    }
+    if (source && sha === sampleHashes.whoi && source !== "whoi_nes") {
+      throw new Error("This image matches the WHOI reference crop. Choose the WHOI collection or clear the comparison.");
+    }
+    const params = new URLSearchParams();
+    if (useReference) params.set("context", "ifcb");
+    if (source) params.set("source_candidate", source);
+    const url = "/api/plankton/predict" + (params.size ? "?" + params.toString() : "");
     const response = await fetch(url, {
       method: "POST", headers: {"Content-Type": "image/png", "Accept": "application/json"},
       body: buffer, signal: controller.signal, cache: "no-store", credentials: "omit", redirect: "error"
@@ -187,7 +275,7 @@ get("classify").addEventListener("submit", async event => {
     }
     if (!response.headers.get("Content-Type")?.includes("application/json")) throw new Error(responseError(503));
     const data = await response.json();
-    show(publicResult(data, image, sha, size, useReference));
+    show(publicResult(data, image, sha, size, useReference, source));
   } catch (error) {
     if (controller.signal.aborted) {
       message(timedOut ? "The classifier timed out. Please try again." : "Run canceled.", timedOut);
@@ -198,7 +286,7 @@ get("classify").addEventListener("submit", async event => {
     clearTimeout(timeout);
     currentRequest = undefined;
     get("inputs").disabled = false;
-    submit.disabled = !selection();
+    submit.disabled = !selection() || (sourceOptIn.checked && !selectedSource(selection()));
     get("cancel").hidden = true;
   }
 });

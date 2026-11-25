@@ -17,3 +17,7 @@ The evaluation used expert-labeled images from Heidi M. Sosik, Emily E. Peacock,
 The 88 in-scope crops included 22 per group. The baseline comparison pooled related native *Phaeocystis* categories to account for differences in taxonomic granularity. The balanced sample and the four-group scope limit what these numbers establish about other waters, instruments and categories. Biological accuracy across all 101 categories and on Pioneer storm imagery still needs independent expert labels.
 
 As an implementation check, the hosted model reproduced the original Windows classifier's top labels on all 24 byte-matched Pioneer replay crops. The storm samples are supplied without an independent biological identification. [Pioneer case study](https://ocean.sig.ai/pioneer-storm.html)
+
+## Six-collection benchmark
+
+The expanded study tested the 101-way ranking on 3,254 annotated images with reference labels for 28 categories. Two entire collections were held out to measure transfer. [Results by collection and evaluation methods](plankton_benchmark_six_collections.md)
