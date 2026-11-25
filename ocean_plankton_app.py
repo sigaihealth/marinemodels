@@ -6,6 +6,7 @@ from functools import lru_cache
 import hashlib
 from html import escape
 import io
+from importlib.util import find_spec
 import json
 import os
 from pathlib import Path
@@ -60,7 +61,7 @@ def runner(family, root):
         from private_plankscope_runtime import load_classifier
 
         predict = load_classifier(models / "private-plankscope-v1", device="auto")
-        return lambda path, mode: predict(path)
+        return lambda path, mode: dict(predict(path), model="SIG.AI Plankton Classifier")
     if family == "pml":
         from pioneer_ifcb_prototypes import load_classifier
 
@@ -93,11 +94,12 @@ def runner(family, root):
 
 
 def installed_models(root):
-    from private_plankscope_runtime import available
-
     choices = dict(MODELS)
+    if find_spec("private_plankscope_runtime") is None:
+        return choices
+    from private_plankscope_runtime import available
     if available(root / "models/private-plankscope-v1"):
-        choices["plankscope"] = "PlankScope · 101 categories (private)"
+        choices["plankscope"] = "SIG.AI Plankton Classifier · 101 categories"
     return choices
 
 
@@ -157,7 +159,7 @@ def show_workspace(root=ROOT):
     layout = widgets.Layout(width="auto")
     choices = installed_models(root)
     if "plankscope" in choices:
-        choices["compare"] = "Compare WHOI + private PlankScope"
+        choices["compare"] = "Compare WHOI + SIG.AI Plankton Classifier"
     model = widgets.Dropdown(description="Model", options=[(v, k) for k, v in choices.items()],
                              style=style, layout=layout)
     source = widgets.Dropdown(description="Image", options=[*sources, "My uploaded PNG"], style=style, layout=layout)

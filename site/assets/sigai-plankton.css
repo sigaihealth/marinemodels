@@ -1,0 +1,4 @@
+.send-note{margin-top:1.25rem;color:var(--ink);font-size:1rem}
+.inputs button.primary{margin-top:.8rem}
+#results .text-link{display:inline-block;margin-top:1rem}
+#version{font-variant-numeric:tabular-nums}

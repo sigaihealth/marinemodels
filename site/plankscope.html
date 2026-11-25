@@ -5,15 +5,15 @@
 <div class="masthead"><header class="topbar wrap"><a class="wordmark" href="index.html" aria-label="SIG.AI Ocean home"><strong>SIG.AI</strong><span>Ocean</span></a><nav aria-label="Main navigation"><a href="model-catalog.html#plankton">Plankton models</a><a href="collaborate.html">Contribute</a></nav></header></div>
 <main id="main" class="wrap tool-page">
 <h1>Connect PlankScope</h1>
-<p class="tool-lead">Bring predictions from your PlankScope instrument or standalone crop classifier. Match them to WHOI predictions on the same original images and inspect the two suggestions side by side.</p>
+<p class="tool-lead">Bring predictions from your PlankScope instrument and match them with WHOI on the same original images. To classify a new crop, <a href="sigai-plankton.html">open the SIG.AI Plankton Classifier</a>.</p>
 <form id="compare-form" class="input-panel">
 <label>PlankScope predictions CSV<input type="file" id="scope-file" required accept=".csv,text/csv"></label>
 <label>WHOI predictions CSV (optional)<input type="file" id="whoi-file" accept=".csv,text/csv"></label>
 <p>Leave the WHOI field empty to use the 24 published Pioneer predictions. Both files must cover the same image checksums. Files are read in your browser.</p>
 <button class="action" type="submit">Compare predictions</button></form>
 <p id="result-status" role="status"></p><div id="result"></div>
-<section class="tool-note"><h2>From instrument to review</h2><p>The camera pipeline detects objects before classifying crops. For the Pioneer test, the standalone 101-class ResNet-50 received the same pre-cropped images as WHOI. Both produced predictions for all 24 images. Their label vocabularies differ. A blind review will establish which groups can be compared and how often each model is correct.</p>
-<p>An authorized OOI workspace can run the 101-class PlankScope model directly on its GPU. In the <a href="plankton-lab.html#notebooks">identification notebook</a>, choose <strong>Compare WHOI + private PlankScope</strong> to run both on one image. This page also compares existing CSV exports on your device.</p>
+<section class="tool-note"><h2>From instrument to review</h2><p>The camera pipeline detects objects before classifying crops. For the Pioneer comparison, the 101-category SIG.AI Plankton Classifier received the same crops as WHOI. Both produced predictions for all 24 images. Their label vocabularies differ. A blind review will establish which groups can be compared and how often each model is correct.</p>
+<p>Authorized instrument workspaces can also run a paired comparison in Jupyter. In the <a href="plankton-lab.html#notebooks">identification notebook</a>, choose the paired WHOI and PlankScope comparison to run both on one image. This page also compares existing CSV exports on your device.</p>
 <details><summary>Required CSV fields</summary><p>PlankScope needs <code>image_sha256</code>, <code>label</code> and <code>confidence</code>. WHOI needs <code>roi_sha256</code>, <code>roi_id</code>, <code>label_1</code> and <code>softmax_1</code>. Each image must occur once per file with a score between 0 and 1. Use the offline comparison tool for large batches or a reviewed class mapping.</p></details>
 <div class="links"><a href="try-plankton.html">Run WHOI on an image</a><a href="pioneer-storm.html">Pioneer case study</a><a href="https://github.com/sigaihealth/marinemodels#compare-whoi-and-plankscope-predictions">Offline comparison tool</a></div></section>
 </main></body></html>

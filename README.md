@@ -7,6 +7,7 @@ The [SIG.AI Ocean platform](https://ocean.sig.ai/) offers scientific task worksp
 | Workspace | What runs or opens |
 | --- | --- |
 | [Plankton lab](https://ocean.sig.ai/plankton-lab.html) | Try the WHOI or morphology model in your browser. Compare WHOI, MobileNetV3 and PML image/text rankings on OOI JupyterHub. [Methods, training and validation](docs/plankton_training_lab.md) |
+| [SIG.AI Plankton Classifier](https://ocean.sig.ai/sigai-plankton.html) | Send a single microscope crop for private server-side inference and inspect three suggestions across 101 categories. |
 | [PlankScope integration](https://ocean.sig.ai/plankscope.html) | Pairs a local PlankScope prediction export with WHOI's public pilot or a local WHOI file by image checksum. |
 | [Satellite ocean color](https://ocean.sig.ai/try-ocean-color.html) | Runs NASA's published MODIS OC3M band-ratio calculation with editable reflectance inputs. |
 | [Ocean physics](https://ocean.sig.ai/try-forecast.html) | Explores two archived GLONET forecast runs with matched GLO12 persistence at three sites and three depths. |

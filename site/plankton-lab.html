@@ -20,7 +20,7 @@
   <div class="cover"><section class="hub-hero wrap">
     <div><p class="eyebrow station">Imaging FlowCytobot</p><h1>Plankton lab</h1>
       <p class="standfirst">What’s in a drop of shelf water? Start with a single microscope crop. Compare a label suggested by its size and texture with one suggested by a deep learning model.</p>
-      <div class="hub-actions"><a class="primary" href="try-trained-plankton.html">Try a sample in your browser</a><a class="text-link" href="#notebooks">Work in Jupyter</a></div>
+      <div class="hub-actions"><a class="primary" href="sigai-plankton.html">Try the SIG.AI classifier</a><a class="text-link" href="#notebooks">Work in Jupyter</a></div>
     </div>
     <figure class="instrument-plate lab-plate">
       <div class="plate-header"><span>Pioneer mooring</span><span>Region 139</span></div>
@@ -31,6 +31,9 @@
   <section class="wrap hub-section" aria-labelledby="browser-heading">
     <h2 id="browser-heading">Identify a crop in your browser</h2>
     <div class="lab-choices">
+      <article><p class="tool-kind">Hosted classifier · 101 categories</p><h3>SIG.AI Plankton Classifier</h3>
+        <p>Send a microscope crop to SIG.AI and inspect the three leading suggestions. Start with a public Pioneer sample or choose your own PNG.</p>
+        <a class="text-link" href="sigai-plankton.html">Classify a crop</a></article>
       <article><p class="tool-kind">Shape and texture · 10 categories</p><h3>Morphology baseline</h3>
         <p>Compare the crop’s dimensions, brightness distribution and shape with the averages for ten groups. Inspect which groups have the nearest measurements.</p>
         <a class="text-link" href="try-trained-plankton.html">Try the morphology model</a></article>
@@ -38,7 +41,7 @@
         <p>The Sosik Lab classifier recognizes plankton groups, debris and imaging artifacts. Run it on the same crop to inspect its top three suggestions and save their scores.</p>
         <a class="text-link" href="try-plankton.html">Try the WHOI classifier</a></article>
     </div>
-    <p class="lab-note">Both trials process selected images on your device. A model can assign an unfamiliar organism to a familiar category. Treat the suggestions as candidates for expert review.</p>
+    <p class="lab-note">The morphology and WHOI trials process images on your device. The SIG.AI classifier processes the selected image on its server. A model can assign an unfamiliar organism to a familiar category. Treat the suggestions as candidates for expert review.</p>
   </section>
   <section class="model-band" id="notebooks"><div class="hub-split wrap lab-notebooks">
     <div><p class="eyebrow">OOI JupyterHub</p><h2>Compare models<br> on one image</h2>
@@ -48,7 +51,7 @@
     <dl class="lab-models">
       <div><dt>WHOI Northeast Shelf</dt><dd>Rank 155 labels with the model used in the public WHOI trial. Keep the same crop when you change models.</dd></div>
       <div><dt>MobileNetV3-Small</dt><dd>Use the supervised ten-class model fitted to specialist-labeled WHOI crops. The classification head was trained on the OOI server’s NVIDIA L40S using frozen ImageNet features. Download your personal ONNX export from the notebook to <a href="try-mobilenet.html">run MobileNet on your own device</a>.</dd></div>
-      <div><dt>PlankScope ResNet-50 · private workspaces</dt><dd>Authorized instruments can use their 101-category classifier here. Compare WHOI and PlankScope on the same pixels and save both sets of suggestions in one result. <a href="plankscope.html">Compare exported predictions</a>.</dd></div>
+      <div><dt>SIG.AI Plankton Classifier</dt><dd>Authorized instrument workspaces can compare the SIG.AI and WHOI suggestions on the same pixels and save them together. <a href="plankscope.html">Compare exported predictions</a>.</dd></div>
       <div><dt>PML IFCB CLIP-LoRA</dt><dd>Rank 145 categories by similarity to reference images or to their taxonomic descriptions. The two modes share an image encoder. Their cosine scores differ in meaning from classifier probabilities.</dd></div>
     </dl>
   </div></section>

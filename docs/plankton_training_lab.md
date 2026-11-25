@@ -1,13 +1,13 @@
 # Plankton identification and training lab
 
-The public lab accepts a microscope crop and offers two browser models. The OOI identification notebook adds a supervised MobileNetV3 model and image–text retrieval. Choose models whose training images, label vocabulary and scores fit the scientific question. [Open the plankton lab](https://ocean.sig.ai/plankton-lab.html)
+The public lab offers hosted and on-device classifiers for individual microscope crops. The OOI identification notebook adds a supervised MobileNetV3 model and image–text retrieval. Choose models whose training images, label vocabulary and scores fit the scientific question. [Open the plankton lab](https://ocean.sig.ai/plankton-lab.html)
 
 | Model | Where to run it | How to read its scores |
 | --- | --- | --- |
 | WHOI Northeast Shelf IFCB v2.4 | [Browser](https://ocean.sig.ai/try-plankton.html) or identification notebook | Softmax over 155 model categories, including debris. The browser returns three provisional suggestions. |
 | Ten-class morphology baseline | [Browser](https://ocean.sig.ai/try-trained-plankton.html) | Each class is represented by its average standardized training measurements. Smaller distances indicate closer matches in size, brightness and shape. |
 | MobileNetV3-Small | Identification or training notebook, or [browser with your personal ONNX export](https://ocean.sig.ai/try-mobilenet.html) | A linear head trained on frozen ImageNet features returns softmax scores across ten WHOI categories. Keep the image and model versions when comparing runs. |
-| PlankScope ResNet-50 | Identification notebook in an authorized workspace | Ranks 101 native categories. Choose **Compare WHOI + private PlankScope** to save both models’ results, their separate vocabularies and the shared image checksum in one JSON. |
+| SIG.AI Plankton Classifier | [Browser trial](https://ocean.sig.ai/sigai-plankton.html) and identification notebook in an authorized workspace | Ranks 101 categories. In the notebook, choose **Compare WHOI + SIG.AI Plankton Classifier** to save both models’ results, their separate vocabularies and the shared image checksum in one JSON. |
 | PML IFCB CLIP-LoRA | Identification notebook | Ranks 145 categories by cosine similarity. Image mode compares a crop with the mean image embedding for each class. Text mode compares the same crop with embeddings of taxonomic lineages. |
 
 ## Open the OOI notebooks
@@ -36,7 +36,7 @@ If the manifest is already prepared, start with the training command. `model.pt`
 
 ## Verify the private PlankScope installation
 
-The private workspace stores the original approved checkpoint and ordered label map in an owner-accessible directory. The notebook verifies their fingerprints before loading the model. The public repository includes the loader and the comparison procedure. With the same 24 original Pioneer PNGs, both the OOI CPU and NVIDIA L40S reproduced all 24 top labels from the native Windows run. This tests agreement across implementations. Expert annotations are needed to measure identification accuracy. [Loader](../private_plankscope_runtime.py) · [Reproduction check](../validate_private_plankscope.py)
+The private workspace stores the original approved checkpoint and ordered label map in an owner-accessible directory. The notebook verifies their fingerprints before loading the model. The public trial accepts a crop and returns three candidates. Authorized OOI workspaces can also use an independently installed private runtime. With the same 24 original Pioneer PNGs, both the OOI CPU and NVIDIA L40S reproduced all 24 top labels from the native Windows run. This tests agreement across implementations. Expert annotations are needed to measure identification accuracy.
 
 For score-level reproduction against the original CPU run, start the GPU verification in a fresh process with `NVIDIA_TF32_OVERRIDE=0`. On the 24 matched crops the maximum absolute difference in the top score was 0.00000203 in full-precision GPU mode, 0.00418 with the default GPU settings, and 0.00000101 on the OOI CPU. All three modes returned the same top label for every crop. The override applies only to the process running the verification.
 

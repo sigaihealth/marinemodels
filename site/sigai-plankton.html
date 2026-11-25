@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#092e34">
+  <meta name="description" content="Classify a single plankton microscope crop with the 101-category SIG.AI Plankton Classifier.">
+  <title>SIG.AI Plankton Classifier · SIG.AI Ocean</title>
+  <link rel="stylesheet" href="assets/ocean.css">
+  <link rel="stylesheet" href="assets/try-plankton.css">
+  <link rel="stylesheet" href="assets/sigai-plankton.css">
+  <script type="module" src="assets/sigai-plankton.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="masthead"><header class="topbar wrap">
+  <a class="wordmark" href="index.html" aria-label="SIG.AI Ocean home"><strong>SIG.AI</strong><span>Ocean</span></a>
+  <nav aria-label="Main navigation"><a href="plankton-lab.html">Plankton lab</a><a href="model-catalog.html">Model workspace</a></nav>
+</header></div>
+<main id="main">
+  <div class="cover"><div class="wrap trial-intro">
+    <p class="eyebrow station">Microscope imagery · 101 categories</p>
+    <h1>SIG.AI Plankton Classifier</h1>
+    <p class="standfirst">Start with a Pioneer water sample or choose a crop from your microscope. See the three categories the classifier ranks highest for that image.</p>
+  </div></div>
+  <section class="wrap trial" aria-label="Classify a microscope image">
+    <form id="classify" class="inputs">
+      <fieldset id="inputs">
+        <legend>Choose a crop</legend>
+        <div class="choices">
+          <label class="choice">
+            <input type="radio" name="sample" value="early" checked>
+            <img src="assets/D20260201T002546_IFCB200_00139.png" width="288" height="138" alt="Dark particles in a microscope crop from the early sample">
+            <span>00:25 UTC<small>Region 139</small></span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="sample" value="late">
+            <img src="assets/D20260201T152545_IFCB200_04627.png" width="120" height="74" alt="Rounded particles in a crop from the afternoon sample">
+            <span>15:25 UTC<small>Region 4627</small></span>
+          </label>
+        </div>
+        <p class="caption">OOI Pioneer Mid-Atlantic Bight, February 1, 2026. Each image is shown at its own scale.</p>
+        <label class="file-label" for="crop">Or choose your own microscope crop</label>
+        <input id="crop" type="file" accept="image/png,.png" aria-describedby="crop-help">
+        <p class="caption" id="crop-help">Use one opaque 8-bit grayscale or RGB PNG, up to 2 MiB and 4 megapixels.</p>
+      </fieldset>
+      <p class="send-note">Selecting <strong>Classify crop</strong> sends the image to SIG.AI for processing.</p>
+      <button class="primary" type="submit" id="run" disabled>Classify crop</button>
+      <button id="cancel" type="button" hidden>Cancel</button>
+      <noscript><p>Enable JavaScript to submit the image and view the result.</p></noscript>
+    </form>
+    <section class="result-panel" aria-labelledby="suggestions">
+      <h2 id="suggestions">Model suggestions</h2>
+      <p id="selected" class="selected">Selected image · Pioneer region 139</p>
+      <p id="status" role="status" aria-live="polite">Ready to classify.</p>
+      <div id="results" hidden>
+        <div class="result-labels"><span>Suggested category</span><span>Model score</span></div>
+        <ol id="scores"></ol>
+        <p class="score-note">Scores express the model’s relative preference among its 101 categories. An unfamiliar organism can still receive a high score.</p>
+        <p id="version" class="caption"></p>
+        <a id="download" class="text-link" download="sigai-plankton-prediction.json">Download result as JSON</a>
+      </div>
+    </section>
+  </section>
+</main>
+<footer><div class="wrap">
+  <div class="footer-head"><a href="index.html" class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></a><div class="links"><a href="plankton-lab.html">Compare plankton models</a><a href="plankscope.html">PlankScope instrument</a></div></div>
+  <p>Example imagery from the NSF Ocean Observatories Initiative. <a href="https://doi.org/10.58046/OOI-CP10CNSM">Pioneer mooring and citation</a></p>
+</div></footer>
+</body>
+</html>
