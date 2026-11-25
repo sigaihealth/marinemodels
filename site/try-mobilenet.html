@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#092e34">
+<title>MobileNet plankton classifier · SIG.AI Ocean</title>
+<meta name="description" content="Open a personal MobileNetV3 plankton classifier export and classify grayscale IFCB crops in your browser.">
+<link rel="stylesheet" href="assets/ocean.css"><link rel="stylesheet" href="assets/try-plankton.css">
+<link rel="stylesheet" href="assets/try-mobilenet.css">
+<script defer src="assets/ifcb-runtime/ort.wasm.min.js"></script>
+<script type="module" src="assets/try-mobilenet.js"></script>
+</head><body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="masthead"><header class="topbar wrap"><a class="wordmark" href="index.html" aria-label="SIG.AI Ocean home"><strong>SIG.AI</strong><span>Ocean</span></a>
+<nav aria-label="Main navigation"><a href="model-catalog.html">Model workspace</a><a href="try-trained-plankton.html">Morphology trial</a></nav></header></div>
+<main id="main"><section class="cover"><div class="wrap trial-intro"><p class="eyebrow station">Plankton classification</p>
+<h1>Run your MobileNet<br>plankton export</h1><p class="standfirst">Use your personal ten-class model to identify candidates in an IFCB microscope crop. Your browser reads the model and image directly from your device.</p></div></section>
+<section class="wrap trial"><div class="inputs"><fieldset id="inputs"><legend>Choose your model</legend>
+<p class="caption">The <a href="plankton-lab.html#notebooks">signed-in OOI workspace</a> runs MobileNet directly. To use it here, download your personal ONNX export and copy the SHA-256 shown by the exporter.</p>
+<label class="file-label" for="model-file">Personal ONNX file</label><input type="file" id="model-file" accept=".onnx">
+<label class="file-label" for="expected">Export SHA-256</label><input id="expected" type="text" placeholder="64 hexadecimal characters" autocomplete="off" spellcheck="false">
+<p class="caption" id="model-status" aria-live="polite">Choose the model file and enter its fingerprint.</p>
+<h2 class="image-legend">Choose a microscope crop</h2><div class="choices">
+<label class="choice"><input type="radio" name="specimen" value="early" checked><img src="assets/D20260201T002546_IFCB200_00139.png" alt="Early Pioneer microscope crop"><span>00:25 UTC<small>Region 139</small></span></label>
+<label class="choice"><input type="radio" name="specimen" value="late"><img src="assets/D20260201T152545_IFCB200_04627.png" alt="Afternoon Pioneer microscope crop"><span>15:25 UTC<small>Region 4627</small></span></label></div>
+<p class="caption">Pioneer Mid-Atlantic Bight, February 1, 2026. Samples are displayed at different scales.</p>
+<label class="file-label" for="image-file">Or choose an 8-bit grayscale PNG</label><input type="file" accept=".png,image/png" id="image-file">
+<p class="caption">Use an opaque PNG up to 4 megapixels, 8192 pixels per side and 16 MiB.</p></fieldset>
+<button type="button" id="run" class="primary" disabled>Run MobileNet</button><noscript><p>Enable JavaScript for local inference.</p></noscript></div>
+<div class="result-panel"><h2>Model suggestions</h2><p id="selected" class="selected"></p><p role="status" aria-live="polite" id="status">Waiting for a model.</p>
+<div id="results" hidden><div class="result-labels"><span>Class</span><span>Softmax score</span></div><ol id="scores"></ol>
+<p class="score-note">Scores rank the ten available classes. An unfamiliar organism can still receive a high score.</p>
+<a id="download" class="text-link" download="mobilenet-ifcb-result.json">Download result</a></div></div></section>
+<section class="model-band"><div class="wrap trial-method"><h2>Interpreting this pilot</h2>
+<div><p>This project trained a classification head on 1,280 labeled WHOI crops using frozen TorchVision MobileNetV3-Small image features. A reference CPU fit matched 221 of 250 held-out labels (88.4%), with macro-F1 of 0.884. Those scores describe the balanced ten-class WHOI subset. Accuracy on Pioneer samples requires independent expert labels.</p>
+<p>Preprocessing preserves the crop’s aspect ratio, resizes it with bilinear interpolation, pads to 224 × 224 using the median of the corners and applies ImageNet normalization.</p>
+<p><a href="https://github.com/sigaihealth/marinemodels/blob/main/export_plankton_mobilenet.py">Personal export script</a> · <a href="try-trained-plankton.html">Run the ten-class morphology model</a> · <a href="try-plankton.html">Run the WHOI classifier</a></p></div></div></section></main>
+<footer><div class="wrap"><div class="footer-head"><a class="wordmark" href="index.html"><strong>SIG.AI</strong><span>Ocean</span></a></div>
+<p>Training subset derived from Heidi M. Sosik, Emily E. Peacock, Sidney Batchelder and Joe Futrelle (2026), Woods Hole Oceanographic Institution. <a href="https://doi.org/10.57967/hf/10839">Dataset</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · <a href="https://pytorch.org/vision/stable/models/generated/torchvision.models.mobilenet_v3_small.html">TorchVision backbone</a> · <a href="assets/ifcb-runtime/pillow-license.txt">Pillow resampler</a> · <a href="assets/ifcb-runtime/ort-license.txt">ONNX Runtime</a> · <a href="https://doi.org/10.58046/OOI-CP10CNSM">NSF OOI sample images</a></p></div></footer>
+</body></html>

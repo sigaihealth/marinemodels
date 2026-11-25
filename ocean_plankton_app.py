@@ -176,4 +176,18 @@ def show_workspace(root=ROOT):
                 run.disabled = False
 
     run.on_click(click)
-    return widgets.VBox([model, source, widgets.HBox([upload, run]), output])
+    controls = [model, source, widgets.HBox([upload, run]), output]
+    receipt = root / "models/mobilenet-ifcb-pilot/onnx-export.json"
+    prefix = os.environ.get("JUPYTERHUB_SERVICE_PREFIX")
+    if prefix and receipt.is_file() and receipt.is_relative_to(Path.home()):
+        metadata = json.loads(receipt.read_text())
+        portable = receipt.with_name("mobilenet-pilot.onnx")
+        digest = metadata["onnx_sha256"]
+        if portable.is_file() and len(digest) == 64 and all(c in "0123456789abcdef" for c in digest):
+            url = prefix.rstrip("/") + "/files/" + quote(portable.relative_to(Path.home()).as_posix())
+            controls.append(widgets.HTML(
+                f'<p>To use this trained MobileNet on your own device, '
+                f'<a href="{escape(url, quote=True)}?download=1" download>download your ONNX model</a>, then '
+                f'<a href="https://ocean.sig.ai/try-mobilenet.html#sha256={digest}" target="_blank" '
+                f'rel="noopener">open the local browser runner</a>.</p>'))
+    return widgets.VBox(controls)
