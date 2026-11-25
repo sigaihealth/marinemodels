@@ -1,0 +1,7 @@
+evaluation,cruise,supplied,rejected,scored,net_samples,themisto,themisto_called_amphipod_legacy,themisto_called_amphipod_current,themisto_called_amphipod_candidate,themisto_prior_promotions,themisto_prior_promotions_retained,ostracods,ostracods_called_amphipod_legacy,ostracods_called_amphipod_current,ostracods_called_amphipod_candidate,ostracods_prior_promotions,ostracods_prior_promotions_retained,other_controls,other_controls_called_amphipod_legacy,other_controls_called_amphipod_current,other_controls_called_amphipod_candidate,other_controls_prior_promotions,other_controls_prior_promotions_retained,legacy_bubble_calls,legacy_larva_calls,themisto_amphipod_rate_change_samp_95_lo_pp,themisto_amphipod_rate_change_samp_95_hi_pp,ostracod_amphipod_rate_change_samp_95_lo_pp,ostracod_amphipod_rate_change_samp_95_hi_pp
+test,polarstern-ps121,333,0,333,40,94,88,89,89,1,1,159,29,76,29,47,0,80,27,31,30,4,3,21,27,0.0,0.0,-36.42,-22.76
+test,polarstern-ps131,283,0,283,20,44,36,38,37,2,1,159,27,86,27,59,0,80,23,25,23,2,0,15,27,-10.71,0.0,-47.59,-26.75
+replay,polarstern-ps136,390,0,390,44,195,70,138,129,68,59,37,5,16,5,11,0,158,35,38,35,3,0,53,44,-8.13,0.0,-52.17,-16.67
+replay,polarstern-ps78,226,0,226,40,111,85,92,92,7,7,18,1,5,1,4,0,97,27,29,28,2,1,6,24,0.0,0.0,-41.67,0.0
+replay,polarstern-ps80,546,0,546,41,235,141,179,178,38,37,70,2,5,2,3,0,241,31,32,32,1,1,13,65,-1.32,0.0,-9.62,0.0
+replay,polarstern-ps85,94,0,94,10,39,29,34,33,5,4,5,0,0,0,0,0,50,23,28,26,5,3,2,15,-10.34,0.0,0.0,0.0
