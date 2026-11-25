@@ -53,8 +53,8 @@ function start(data) {
     for (const item of list.children) item.setAttribute("aria-current", String(item.hash === "#" + lane.slug));
     const models = data.models.filter(model => model.lane === lane.id);
     const trials = node("div", "", "lane-actions");
-    for (const model of models.filter(item => item.actionUrl)) {
-      const action = link(model.action, model.actionUrl);
+    for (const entry of [lane, ...models].filter(item => item.actionUrl)) {
+      const action = link(entry.action, entry.actionUrl);
       action.className = "primary";
       trials.append(action);
     }

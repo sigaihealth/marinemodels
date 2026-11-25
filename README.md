@@ -1,5 +1,7 @@
 # Marine Models
 
+[Review the ROV transect trial](https://ocean.sig.ai/visual-transect.html) or [reproduce the Qwen, Ecotype and SAM 2 comparison](transect/README.md).
+
 Marine Models explores how open ocean observations can support local models and digital twins. The first pilot replays Winter Storm Gianna at OOI's Pioneer Mid-Atlantic Bight Central Surface Mooring (`CP10CNSM`) off North Carolina. The [research brief](docs/ocean_digital_twin_research.md) covers five model ideas, complementary datasets, and the validation questions each project would need to answer.
 
 The [SIG.AI Ocean platform](https://ocean.sig.ai/) offers scientific task workspaces, model trials and research contributions. The [Pioneer storm study](https://ocean.sig.ai/pioneer-storm.html) is the first use case. See the [Pioneer evaluation plan](docs/pioneer_roadmap.md) and the [collaboration and compute design](docs/research_collaboration.md).

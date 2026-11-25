@@ -1,0 +1,440 @@
+{
+  "method": "sam2",
+  "metadata": {
+    "model": "facebook/sam2.1-hiera-small",
+    "model_revision": "ee5bba1d82bb8749febdf90f45e84b687142ba03",
+    "source_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+    "weight_sha256": "6d1aa6f30de5c92224f8172114de081d104bbd23dd9dc5c58996f0cad5dc4d38",
+    "sequence_id": "mbari-bs",
+    "device": "cpu",
+    "seed_frame_id": "mbari-bs-001",
+    "seed_sightings": [
+      "ecotype:mbari-bs-001:1",
+      "ecotype:mbari-bs-001:2",
+      "ecotype:mbari-bs-001:3"
+    ],
+    "mask_threshold_logit": 0.0,
+    "manifest_sha256": "aedcd56a9936736dc770de452b66333b82e774b9ee6698f22c7b637be1ee516c",
+    "detector_sha256": "ff043df6c8484886b8c6135a3ca5c38aad1943402b8a5bd26a260ac698ec8f99"
+  },
+  "frames": [
+    {
+      "frame_id": "mbari-bs-001",
+      "inference_ok": true
+    },
+    {
+      "frame_id": "mbari-bs-061",
+      "inference_ok": true
+    },
+    {
+      "frame_id": "mbari-bs-121",
+      "inference_ok": true
+    },
+    {
+      "frame_id": "mbari-bs-181",
+      "inference_ok": true
+    },
+    {
+      "frame_id": "mbari-bs-241",
+      "inference_ok": true
+    },
+    {
+      "frame_id": "mbari-bs-301",
+      "inference_ok": true
+    },
+    {
+      "frame_id": "mbari-bs-361",
+      "inference_ok": true
+    },
+    {
+      "frame_id": "mbari-bs-421",
+      "inference_ok": true
+    }
+  ],
+  "sightings": [
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-001",
+      "sighting_id": "sam2:mbari-bs-001:1",
+      "track_id": "sam2-T0001",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1158,
+        70,
+        1250,
+        151
+      ],
+      "mask_path": "sam2-masks/0000-01.png",
+      "mask_area_pixels": 5685,
+      "seed_sighting_id": "ecotype:mbari-bs-001:1"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-001",
+      "sighting_id": "sam2:mbari-bs-001:2",
+      "track_id": "sam2-T0002",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1426,
+        575,
+        1537,
+        674
+      ],
+      "mask_path": "sam2-masks/0000-02.png",
+      "mask_area_pixels": 8288,
+      "seed_sighting_id": "ecotype:mbari-bs-001:2"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-001",
+      "sighting_id": "sam2:mbari-bs-001:3",
+      "track_id": "sam2-T0003",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        988,
+        515,
+        1106,
+        614
+      ],
+      "mask_path": "sam2-masks/0000-03.png",
+      "mask_area_pixels": 8672,
+      "seed_sighting_id": "ecotype:mbari-bs-001:3"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-061",
+      "sighting_id": "sam2:mbari-bs-061:1",
+      "track_id": "sam2-T0001",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1078,
+        53,
+        1166,
+        131
+      ],
+      "mask_path": "sam2-masks/0001-01.png",
+      "mask_area_pixels": 5381,
+      "seed_sighting_id": "ecotype:mbari-bs-001:1"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-061",
+      "sighting_id": "sam2:mbari-bs-061:2",
+      "track_id": "sam2-T0002",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1340,
+        554,
+        1449,
+        650
+      ],
+      "mask_path": "sam2-masks/0001-02.png",
+      "mask_area_pixels": 7940,
+      "seed_sighting_id": "ecotype:mbari-bs-001:2"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-061",
+      "sighting_id": "sam2:mbari-bs-061:3",
+      "track_id": "sam2-T0003",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        905,
+        498,
+        1020,
+        590
+      ],
+      "mask_path": "sam2-masks/0001-03.png",
+      "mask_area_pixels": 8113,
+      "seed_sighting_id": "ecotype:mbari-bs-001:3"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-121",
+      "sighting_id": "sam2:mbari-bs-121:1",
+      "track_id": "sam2-T0001",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        984,
+        86,
+        1072,
+        165
+      ],
+      "mask_path": "sam2-masks/0002-01.png",
+      "mask_area_pixels": 5363,
+      "seed_sighting_id": "ecotype:mbari-bs-001:1"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-121",
+      "sighting_id": "sam2:mbari-bs-121:2",
+      "track_id": "sam2-T0002",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1255,
+        586,
+        1364,
+        686
+      ],
+      "mask_path": "sam2-masks/0002-02.png",
+      "mask_area_pixels": 8066,
+      "seed_sighting_id": "ecotype:mbari-bs-001:2"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-121",
+      "sighting_id": "sam2:mbari-bs-121:3",
+      "track_id": "sam2-T0003",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        820,
+        537,
+        933,
+        630
+      ],
+      "mask_path": "sam2-masks/0002-03.png",
+      "mask_area_pixels": 8180,
+      "seed_sighting_id": "ecotype:mbari-bs-001:3"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-181",
+      "sighting_id": "sam2:mbari-bs-181:1",
+      "track_id": "sam2-T0001",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1118,
+        127,
+        1209,
+        205
+      ],
+      "mask_path": "sam2-masks/0003-01.png",
+      "mask_area_pixels": 5409,
+      "seed_sighting_id": "ecotype:mbari-bs-001:1"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-181",
+      "sighting_id": "sam2:mbari-bs-181:2",
+      "track_id": "sam2-T0002",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1395,
+        628,
+        1509,
+        728
+      ],
+      "mask_path": "sam2-masks/0003-02.png",
+      "mask_area_pixels": 8429,
+      "seed_sighting_id": "ecotype:mbari-bs-001:2"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-181",
+      "sighting_id": "sam2:mbari-bs-181:3",
+      "track_id": "sam2-T0003",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        957,
+        582,
+        1074,
+        674
+      ],
+      "mask_path": "sam2-masks/0003-03.png",
+      "mask_area_pixels": 8086,
+      "seed_sighting_id": "ecotype:mbari-bs-001:3"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-241",
+      "sighting_id": "sam2:mbari-bs-241:1",
+      "track_id": "sam2-T0001",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1215,
+        140,
+        1307,
+        224
+      ],
+      "mask_path": "sam2-masks/0004-01.png",
+      "mask_area_pixels": 5824,
+      "seed_sighting_id": "ecotype:mbari-bs-001:1"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-241",
+      "sighting_id": "sam2:mbari-bs-241:2",
+      "track_id": "sam2-T0002",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1490,
+        655,
+        1605,
+        754
+      ],
+      "mask_path": "sam2-masks/0004-02.png",
+      "mask_area_pixels": 8370,
+      "seed_sighting_id": "ecotype:mbari-bs-001:2"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-241",
+      "sighting_id": "sam2:mbari-bs-241:3",
+      "track_id": "sam2-T0003",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1049,
+        601,
+        1164,
+        697
+      ],
+      "mask_path": "sam2-masks/0004-03.png",
+      "mask_area_pixels": 8493,
+      "seed_sighting_id": "ecotype:mbari-bs-001:3"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-301",
+      "sighting_id": "sam2:mbari-bs-301:1",
+      "track_id": "sam2-T0001",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1294,
+        168,
+        1384,
+        252
+      ],
+      "mask_path": "sam2-masks/0005-01.png",
+      "mask_area_pixels": 5798,
+      "seed_sighting_id": "ecotype:mbari-bs-001:1"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-301",
+      "sighting_id": "sam2:mbari-bs-301:2",
+      "track_id": "sam2-T0002",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1562,
+        688,
+        1676,
+        789
+      ],
+      "mask_path": "sam2-masks/0005-02.png",
+      "mask_area_pixels": 8328,
+      "seed_sighting_id": "ecotype:mbari-bs-001:2"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-301",
+      "sighting_id": "sam2:mbari-bs-301:3",
+      "track_id": "sam2-T0003",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1123,
+        633,
+        1235,
+        728
+      ],
+      "mask_path": "sam2-masks/0005-03.png",
+      "mask_area_pixels": 8370,
+      "seed_sighting_id": "ecotype:mbari-bs-001:3"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-361",
+      "sighting_id": "sam2:mbari-bs-361:1",
+      "track_id": "sam2-T0001",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1375,
+        203,
+        1466,
+        282
+      ],
+      "mask_path": "sam2-masks/0006-01.png",
+      "mask_area_pixels": 5315,
+      "seed_sighting_id": "ecotype:mbari-bs-001:1"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-361",
+      "sighting_id": "sam2:mbari-bs-361:2",
+      "track_id": "sam2-T0002",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1642,
+        723,
+        1758,
+        825
+      ],
+      "mask_path": "sam2-masks/0006-02.png",
+      "mask_area_pixels": 8749,
+      "seed_sighting_id": "ecotype:mbari-bs-001:2"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-361",
+      "sighting_id": "sam2:mbari-bs-361:3",
+      "track_id": "sam2-T0003",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1196,
+        668,
+        1316,
+        765
+      ],
+      "mask_path": "sam2-masks/0006-03.png",
+      "mask_area_pixels": 8605,
+      "seed_sighting_id": "ecotype:mbari-bs-001:3"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-421",
+      "sighting_id": "sam2:mbari-bs-421:1",
+      "track_id": "sam2-T0001",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1393,
+        225,
+        1475,
+        306
+      ],
+      "mask_path": "sam2-masks/0007-01.png",
+      "mask_area_pixels": 5209,
+      "seed_sighting_id": "ecotype:mbari-bs-001:1"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-421",
+      "sighting_id": "sam2:mbari-bs-421:2",
+      "track_id": "sam2-T0002",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1657,
+        751,
+        1775,
+        856
+      ],
+      "mask_path": "sam2-masks/0007-02.png",
+      "mask_area_pixels": 9110,
+      "seed_sighting_id": "ecotype:mbari-bs-001:2"
+    },
+    {
+      "method": "sam2",
+      "frame_id": "mbari-bs-421",
+      "sighting_id": "sam2:mbari-bs-421:3",
+      "track_id": "sam2-T0003",
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1210,
+        695,
+        1327,
+        793
+      ],
+      "mask_path": "sam2-masks/0007-03.png",
+      "mask_area_pixels": 8756,
+      "seed_sighting_id": "ecotype:mbari-bs-001:3"
+    }
+  ]
+}

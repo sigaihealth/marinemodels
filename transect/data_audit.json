@@ -1,0 +1,93 @@
+{
+  "ooi-ecotype": {
+    "frame_to_source_video_correlation": [
+      [
+        "ooi-00000",
+        0.99993
+      ],
+      [
+        "ooi-00032",
+        0.99994
+      ],
+      [
+        "ooi-00064",
+        0.99993
+      ],
+      [
+        "ooi-00096",
+        0.99993
+      ],
+      [
+        "ooi-00128",
+        0.99993
+      ],
+      [
+        "ooi-00160",
+        0.99993
+      ],
+      [
+        "ooi-00192",
+        0.99993
+      ],
+      [
+        "ooi-00224",
+        0.99994
+      ]
+    ]
+  },
+  "mbari-bs": {
+    "frame_to_source_video_correlation": [
+      [
+        "mbari-bs-001",
+        0.99562
+      ],
+      [
+        "mbari-bs-061",
+        0.99527
+      ],
+      [
+        "mbari-bs-121",
+        0.98856
+      ],
+      [
+        "mbari-bs-181",
+        0.98872
+      ],
+      [
+        "mbari-bs-241",
+        0.99007
+      ],
+      [
+        "mbari-bs-301",
+        0.99035
+      ],
+      [
+        "mbari-bs-361",
+        0.98964
+      ],
+      [
+        "mbari-bs-421",
+        0.99055
+      ]
+    ]
+  },
+  "same_jpeg": {
+    "ecotype_source_jpegs": 1776,
+    "mbari_holdout_jpegs": 8,
+    "overlap": 0
+  },
+  "original_trial_input_zip_sha256": "5f468a4b8bee9b78bb903e93a51536bf3707294d646f6d3871ee4d1661431c26",
+  "source_sha256": {
+    "ecotype.zip": "1fd16c542e17d3e1ad399b163bccd077f63029f3f2437e4c6973f06f9e682758",
+    "transect_compressed.mp4": "653f79e0c70a949fb16c1186b0715d4d367a83f9f020c56246e5f5d39f434ee0",
+    "BS.mov": "2e617edd1ef432dd78a080df8b8aefd95aa5c5e5cd89c00f9c3c6e3b229785c3",
+    "reference/BS_001.xml": "cab1d43c31e1ca5e2b82ed2ddc89406c9c0f108cb88c1923bb4b4f6fd651b390",
+    "reference/BS_061.xml": "ae3adb8682dc9018e63ce08c03fe151ca299a94b57a0ca5b1098f86411c90dfa",
+    "reference/BS_121.xml": "8dc41dd04ef8cc40af17d238ffeb675647dbcfeb1eb28ab26da3937ff2a0e194",
+    "reference/BS_181.xml": "119d35a31bc1815e2cd53fb1d0bef9b4235e59d9c42d3db42b9d3486a7a12ac2",
+    "reference/BS_241.xml": "1f1a517ca8ccde3658ca11ae6737ac72d5365ea977dfba8062b8028289787104",
+    "reference/BS_301.xml": "611ba660b102c092c5bb9f1e64ac46e70c7698e707b154631c2a43a7123ddbff",
+    "reference/BS_361.xml": "c9edee03de121b42b5a374ce5328797941bc1c717a4992c9055dce14ca4b64be",
+    "reference/BS_421.xml": "46db1a41d1545e4616dd122672884ec589358f95c410510a411c43904ecb7fec"
+  }
+}

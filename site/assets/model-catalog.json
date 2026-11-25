@@ -49,6 +49,8 @@
     {
       "id": 6,
       "slug": "underwater-imagery",
+      "action": "Review the ROV transect trial",
+      "actionUrl": "visual-transect.html",
       "name": "Underwater imagery",
       "workflow": "Accept camera frames from dives or fixed stations for detection and segmentation. Pass cropped organisms to identification models. Above-water catch photographs form a separate test domain.",
       "protocol": "Hold out dives, sites and camera systems. Score boxes with average precision, masks with intersection over union and crop classification with macro recall. Match annotation classes and background policy before scoring two detectors.",

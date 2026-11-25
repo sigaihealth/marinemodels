@@ -1,0 +1,30 @@
+{
+  "sequence_reviews": {
+    "ooi-ecotype": [
+      {
+        "text": "The pink foreground feature leaves the field of view around the fifth sample. Qwen places its disappearance by that sample but also says it is visible “throughout.” Compare the fourth and fifth samples before using this account to describe persistence.",
+        "evidence": [
+          {"frame_id": "ooi-00096", "label": "Fourth sample"},
+          {"frame_id": "ooi-00128", "label": "Fifth sample"}
+        ]
+      }
+    ],
+    "mbari-bs": [
+      {
+        "text": "MBARI’s annotations identify the central octopus as Enteroctopus dofleini, reference track 1, in all eight samples. Its apparent position relative to the moving camera does not establish that it stayed stationary on the seafloor.",
+        "evidence": [
+          {"frame_id": "mbari-bs-001", "track_id": "1", "label": "Octopus in first sample"},
+          {"frame_id": "mbari-bs-421", "track_id": "1", "label": "Octopus in last sample"}
+        ]
+      },
+      {
+        "text": "Qwen suggests the neighboring pale cluster might include sea anemones. Three round animals selected by the detector match MBARI’s sea urchin records, Strongylocentrotus fragilis, tracks 4, 5 and 6. The identities of these three do not establish what every pale shape in the cluster is.",
+        "evidence": [
+          {"frame_id": "mbari-bs-001", "track_id": "4", "label": "Urchin track 4"},
+          {"frame_id": "mbari-bs-001", "track_id": "5", "label": "Urchin track 5"},
+          {"frame_id": "mbari-bs-001", "track_id": "6", "label": "Urchin track 6"}
+        ]
+      }
+    ]
+  }
+}

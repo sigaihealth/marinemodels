@@ -1,0 +1,130 @@
+{
+  "model": "Qwen3-VL-8B-Instruct",
+  "revision": "f982a07559d4a2f6c8744d840bf6fccab30eea96",
+  "method": "qwen-ordered-sequence-review",
+  "prompt": "These are sequential ROV video frames from one short interval. Discuss only visible evidence. Describe the habitat and visibly changing scene, any recurring animal candidate and why it may be the same animal, and uncertainty from visibility, occlusion or camera movement. If the images cannot resolve movement or identity, say so. Do not infer absolute location, depth, dive identity, species identity or population abundance from appearance. For each observation give one or more of the exact displayed frame IDs. Do not introduce IDs not supplied. Return a JSON object {\"observations\":[{\"claim\":\"...\",\"frame_ids\":[\"...\"]}],\"uncertainty\":\"...\",\"suggested_review\":\"...\"}. Provide at most four observations.",
+  "input_long_edge": 640,
+  "status": "unreviewed visual hypotheses",
+  "sequences": [
+    {
+      "dive_id": null,
+      "sequence_id": "ooi-ecotype",
+      "frame_ids": [
+        "ooi-00000",
+        "ooi-00032",
+        "ooi-00064",
+        "ooi-00096",
+        "ooi-00128",
+        "ooi-00160",
+        "ooi-00192",
+        "ooi-00224"
+      ],
+      "inference_ok": true,
+      "observations": [
+        {
+          "claim": "A pink, dome-shaped object remains visible in the foreground throughout the sequence, starting at F1 and disappearing by F5.",
+          "frame_ids": [
+            "ooi-00000",
+            "ooi-00032",
+            "ooi-00064",
+            "ooi-00096"
+          ]
+        },
+        {
+          "claim": "A dark, elongated object is visible in the mid-ground, appearing in F1 and remaining visible through F8.",
+          "frame_ids": [
+            "ooi-00000",
+            "ooi-00032",
+            "ooi-00064",
+            "ooi-00096",
+            "ooi-00128",
+            "ooi-00160",
+            "ooi-00192",
+            "ooi-00224"
+          ]
+        },
+        {
+          "claim": "The ROV's camera appears to be moving forward, as indicated by the gradual disappearance of the pink object from the frame and the shifting perspective of the seabed.",
+          "frame_ids": [
+            "ooi-00000",
+            "ooi-00032",
+            "ooi-00064",
+            "ooi-00096",
+            "ooi-00128",
+            "ooi-00160",
+            "ooi-00192",
+            "ooi-00224"
+          ]
+        }
+      ],
+      "uncertainty": "The pink object's identity is unknown due to lack of resolution. The dark elongated object's nature is ambiguous; it could be a rock, a piece of debris, or an animal. Camera movement is inferred from the changing perspective, but not explicitly confirmed by visible motion cues.",
+      "suggested_review": "Review for potential movement of the dark elongated object and to confirm if the pink object is a biological or artificial feature."
+    },
+    {
+      "dive_id": null,
+      "sequence_id": "mbari-bs",
+      "frame_ids": [
+        "mbari-bs-001",
+        "mbari-bs-061",
+        "mbari-bs-121",
+        "mbari-bs-181",
+        "mbari-bs-241",
+        "mbari-bs-301",
+        "mbari-bs-361",
+        "mbari-bs-421"
+      ],
+      "inference_ok": true,
+      "observations": [
+        {
+          "claim": "A large, brownish, multi-armed animal, consistent with an octopus, remains stationary on the seafloor throughout the sequence.",
+          "frame_ids": [
+            "mbari-bs-001",
+            "mbari-bs-061",
+            "mbari-bs-121",
+            "mbari-bs-181",
+            "mbari-bs-241",
+            "mbari-bs-301",
+            "mbari-bs-361",
+            "mbari-bs-421"
+          ]
+        },
+        {
+          "claim": "A cluster of white, fluffy-looking organisms, likely sea anemones or similar sessile invertebrates, is visible to the right of the central animal and remains in place.",
+          "frame_ids": [
+            "mbari-bs-001",
+            "mbari-bs-061",
+            "mbari-bs-121",
+            "mbari-bs-181",
+            "mbari-bs-241",
+            "mbari-bs-301",
+            "mbari-bs-361",
+            "mbari-bs-421"
+          ]
+        },
+        {
+          "claim": "A small, elongated, pinkish organism, possibly a fish or invertebrate, moves horizontally across the frame from right to left between F4 and F8.",
+          "frame_ids": [
+            "mbari-bs-181",
+            "mbari-bs-241",
+            "mbari-bs-301",
+            "mbari-bs-361",
+            "mbari-bs-421"
+          ]
+        },
+        {
+          "claim": "A small, dark, elongated organism is visible on the left side of the frame, near the bottom, from F3 to F8.",
+          "frame_ids": [
+            "mbari-bs-121",
+            "mbari-bs-181",
+            "mbari-bs-241",
+            "mbari-bs-301",
+            "mbari-bs-361",
+            "mbari-bs-421"
+          ]
+        }
+      ],
+      "uncertainty": "The central animal's identity is not confirmed due to low resolution and lack of clear morphological details. The movement of the small pinkish organism is inferred from its position changes across frames, but its exact nature is uncertain. The dark elongated organism on the left is too indistinct to identify with certainty.",
+      "suggested_review": "Review for higher-resolution imagery to confirm species identity of the central animal and to better resolve the nature of the small moving organisms."
+    }
+  ]
+}

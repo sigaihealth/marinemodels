@@ -1,0 +1,378 @@
+{
+  "method": "qwen",
+  "frames": [
+    {
+      "frame_id": "ooi-00000",
+      "dive_id": null,
+      "sequence_id": "ooi-ecotype",
+      "timestamp_s": 0.0,
+      "path": "images/ooi-00000.jpg",
+      "width": 1024,
+      "height": 576,
+      "image_sha256": "dc39abc666168ea6c08520602c5d3d9a6538e15c106d147e934b524c992f13ec",
+      "inference_ok": true,
+      "window_frames": 2
+    },
+    {
+      "frame_id": "ooi-00032",
+      "dive_id": null,
+      "sequence_id": "ooi-ecotype",
+      "timestamp_s": 1.103448,
+      "path": "images/ooi-00032.jpg",
+      "width": 1024,
+      "height": 576,
+      "image_sha256": "3a5b4cd35dd7718febdb8754c5cff95ccaa43cb57f5e60642c5302de76db5210",
+      "inference_ok": true,
+      "window_frames": 2
+    },
+    {
+      "frame_id": "ooi-00064",
+      "dive_id": null,
+      "sequence_id": "ooi-ecotype",
+      "timestamp_s": 2.206897,
+      "path": "images/ooi-00064.jpg",
+      "width": 1024,
+      "height": 576,
+      "image_sha256": "fb8e962d191cbdb826bf432a023c5e546661c604833068ddb8f68b96dd1f8b2f",
+      "inference_ok": true,
+      "window_frames": 2
+    },
+    {
+      "frame_id": "ooi-00096",
+      "dive_id": null,
+      "sequence_id": "ooi-ecotype",
+      "timestamp_s": 3.310345,
+      "path": "images/ooi-00096.jpg",
+      "width": 1024,
+      "height": 576,
+      "image_sha256": "61af269001443def30e52f4c62e329b723e0bfd007ab9d4a03d17fbd371da36a",
+      "inference_ok": true,
+      "window_frames": 2
+    },
+    {
+      "frame_id": "ooi-00128",
+      "dive_id": null,
+      "sequence_id": "ooi-ecotype",
+      "timestamp_s": 4.413793,
+      "path": "images/ooi-00128.jpg",
+      "width": 1024,
+      "height": 576,
+      "image_sha256": "84862e760751eff68be511fbe5bee4b2c4b771b39d0b1058dbeaa62e14d8af30",
+      "inference_ok": true,
+      "window_frames": 2
+    },
+    {
+      "frame_id": "ooi-00160",
+      "dive_id": null,
+      "sequence_id": "ooi-ecotype",
+      "timestamp_s": 5.517241,
+      "path": "images/ooi-00160.jpg",
+      "width": 1024,
+      "height": 576,
+      "image_sha256": "2fd716d5e9cabb3972277d4f7cb310a23b81434e49a6d5595cb243c94113a562",
+      "inference_ok": true,
+      "window_frames": 2
+    },
+    {
+      "frame_id": "ooi-00192",
+      "dive_id": null,
+      "sequence_id": "ooi-ecotype",
+      "timestamp_s": 6.62069,
+      "path": "images/ooi-00192.jpg",
+      "width": 1024,
+      "height": 576,
+      "image_sha256": "c980d4ecfb08739d174181ac50c4cc39a3ef647633e8d53b67f091b1eac719fe",
+      "inference_ok": true,
+      "window_frames": 2
+    },
+    {
+      "frame_id": "ooi-00224",
+      "dive_id": null,
+      "sequence_id": "ooi-ecotype",
+      "timestamp_s": 7.724138,
+      "path": "images/ooi-00224.jpg",
+      "width": 1024,
+      "height": 576,
+      "image_sha256": "b122cf4e0d6802b21d516fe965d83c387d71ab3fc425e3ca52d8176357d9465e",
+      "inference_ok": true,
+      "window_frames": 2
+    },
+    {
+      "frame_id": "mbari-bs-001",
+      "dive_id": null,
+      "sequence_id": "mbari-bs",
+      "timestamp_s": 0.0,
+      "path": "images/mbari-bs-001.jpg",
+      "width": 1920,
+      "height": 1080,
+      "image_sha256": "79b39bf12ff0257c9fcb718745fa17daa53328a13415640e5ec6b68836b460b7",
+      "inference_ok": true,
+      "window_frames": 2
+    },
+    {
+      "frame_id": "mbari-bs-061",
+      "dive_id": null,
+      "sequence_id": "mbari-bs",
+      "timestamp_s": 1.001,
+      "path": "images/mbari-bs-061.jpg",
+      "width": 1920,
+      "height": 1080,
+      "image_sha256": "2fe4998f713c1f6bdb0b3d8d4ba4b214fd4b242b2d6e150d4bc84a0d19eb248f",
+      "inference_ok": true,
+      "window_frames": 2
+    },
+    {
+      "frame_id": "mbari-bs-121",
+      "dive_id": null,
+      "sequence_id": "mbari-bs",
+      "timestamp_s": 2.002,
+      "path": "images/mbari-bs-121.jpg",
+      "width": 1920,
+      "height": 1080,
+      "image_sha256": "ed8b201ab879d0ad52a1d8686d34b7cba715bbaacd691e0ef704b2aa0ceda69f",
+      "inference_ok": true,
+      "window_frames": 2
+    },
+    {
+      "frame_id": "mbari-bs-181",
+      "dive_id": null,
+      "sequence_id": "mbari-bs",
+      "timestamp_s": 3.003,
+      "path": "images/mbari-bs-181.jpg",
+      "width": 1920,
+      "height": 1080,
+      "image_sha256": "57db82b6b6bd42609af7e2bdaa32b0c060f76d091d76cec039de92e3e3478335",
+      "inference_ok": true,
+      "window_frames": 2
+    },
+    {
+      "frame_id": "mbari-bs-241",
+      "dive_id": null,
+      "sequence_id": "mbari-bs",
+      "timestamp_s": 4.004,
+      "path": "images/mbari-bs-241.jpg",
+      "width": 1920,
+      "height": 1080,
+      "image_sha256": "55ad9290616d1db962d37836d2b685a203fd1534d77d50af6a4085a2ec5d4de2",
+      "inference_ok": true,
+      "window_frames": 2
+    },
+    {
+      "frame_id": "mbari-bs-301",
+      "dive_id": null,
+      "sequence_id": "mbari-bs",
+      "timestamp_s": 5.005,
+      "path": "images/mbari-bs-301.jpg",
+      "width": 1920,
+      "height": 1080,
+      "image_sha256": "f36a1ea67d9d437acb73c8bf1b49f945d1cc12658994ecb1258f9e7da5008a1f",
+      "inference_ok": true,
+      "window_frames": 2
+    },
+    {
+      "frame_id": "mbari-bs-361",
+      "dive_id": null,
+      "sequence_id": "mbari-bs",
+      "timestamp_s": 6.006,
+      "path": "images/mbari-bs-361.jpg",
+      "width": 1920,
+      "height": 1080,
+      "image_sha256": "ea9a8c72c49c4814f95c68b0fe47f29d64b812a5d5edcdd95afeebb734ec2f2d",
+      "inference_ok": true,
+      "window_frames": 2
+    },
+    {
+      "frame_id": "mbari-bs-421",
+      "dive_id": null,
+      "sequence_id": "mbari-bs",
+      "timestamp_s": 7.007,
+      "path": "images/mbari-bs-421.jpg",
+      "width": 1920,
+      "height": 1080,
+      "image_sha256": "089b9471cf8921c6a842f2cb670056713856fb91c4e6bccfbef8ec185116dd8f",
+      "inference_ok": true,
+      "window_frames": 2
+    }
+  ],
+  "sightings": [
+    {
+      "frame_id": "mbari-bs-001",
+      "method": "qwen",
+      "label": "Demersal",
+      "bbox_xyxy": [
+        743.04,
+        294.84,
+        1061.76,
+        687.96
+      ],
+      "sighting_id": "qwen:mbari-bs-001:1",
+      "track_id": "qwen-T0001"
+    },
+    {
+      "frame_id": "mbari-bs-061",
+      "method": "qwen",
+      "label": "Demersal",
+      "bbox_xyxy": [
+        743.04,
+        294.84,
+        1061.76,
+        687.96
+      ],
+      "sighting_id": "qwen:mbari-bs-061:1",
+      "track_id": "qwen-T0001"
+    },
+    {
+      "frame_id": "mbari-bs-121",
+      "method": "qwen",
+      "label": "Demersal",
+      "bbox_xyxy": [
+        560.64,
+        263.52,
+        887.04,
+        635.04
+      ],
+      "sighting_id": "qwen:mbari-bs-121:1",
+      "track_id": "qwen-T0002"
+    },
+    {
+      "frame_id": "mbari-bs-181",
+      "method": "qwen",
+      "label": "Demersal",
+      "bbox_xyxy": [
+        560.64,
+        263.52,
+        887.04,
+        635.04
+      ],
+      "sighting_id": "qwen:mbari-bs-181:1",
+      "track_id": "qwen-T0002"
+    },
+    {
+      "frame_id": "mbari-bs-241",
+      "method": "qwen",
+      "label": "Demersal",
+      "bbox_xyxy": [
+        756.48,
+        291.6,
+        1105.92,
+        669.6
+      ],
+      "sighting_id": "qwen:mbari-bs-241:1",
+      "track_id": "qwen-T0003"
+    },
+    {
+      "frame_id": "mbari-bs-301",
+      "method": "qwen",
+      "label": "Demersal",
+      "bbox_xyxy": [
+        756.48,
+        291.6,
+        1105.92,
+        669.6
+      ],
+      "sighting_id": "qwen:mbari-bs-301:1",
+      "track_id": "qwen-T0003"
+    },
+    {
+      "frame_id": "mbari-bs-361",
+      "method": "qwen",
+      "label": "Demersal",
+      "bbox_xyxy": [
+        887.04,
+        330.48,
+        1223.04,
+        720.36
+      ],
+      "sighting_id": "qwen:mbari-bs-361:1",
+      "track_id": "qwen-T0003"
+    },
+    {
+      "frame_id": "mbari-bs-421",
+      "method": "qwen",
+      "label": "Demersal",
+      "bbox_xyxy": [
+        887.04,
+        330.48,
+        1223.04,
+        720.36
+      ],
+      "sighting_id": "qwen:mbari-bs-421:1",
+      "track_id": "qwen-T0003"
+    }
+  ],
+  "metadata": {
+    "model": "Qwen3-VL-8B-Instruct",
+    "gguf_revision": "f982a07559d4a2f6c8744d840bf6fccab30eea96",
+    "quantization": "Q4_K_M",
+    "projector": "F16",
+    "image_long_edge": 1280,
+    "prompt": "Inspect the underwater research images in order. For each clearly visible individual animal, place a tight bounding box around the animal. Look for small animals. Omit geological features, equipment and vegetation. Omit invisible or fully occluded individuals. Each box represents one individual. Use Demersal for bottom-associated fish and other swimmers, Motile Epifauna for animals moving on the seafloor, Planktonic for drifting animals in the water column, Sessile Epifauna for attached animals, and Unresolved for a visible animal with an uncertain group. Report [left,top,right,bottom] relative to its own image on a 0 to 1000 grid. The response has a named slot per input image. Use [] for an image without visible animals.",
+    "manifest_sha256": "aedcd56a9936736dc770de452b66333b82e774b9ee6698f22c7b637be1ee516c",
+    "temperature": 0,
+    "seed": 7,
+    "format": "schema-constrained technical retry; keyed positional slots; independent of ground truth",
+    "tracking": "Adjacent-frame same-label one-to-one IoU >= 0.30 where sample interval is at most 5 seconds",
+    "box_space": "source image pixels [left,top,right,bottom]",
+    "initial_object_cap": 48,
+    "single_retry_object_cap": 72,
+    "token_cap": 3400
+  },
+  "attempts": [
+    {
+      "frame_ids": [
+        "ooi-00000",
+        "ooi-00032"
+      ],
+      "ok": true
+    },
+    {
+      "frame_ids": [
+        "ooi-00064",
+        "ooi-00096"
+      ],
+      "ok": true
+    },
+    {
+      "frame_ids": [
+        "ooi-00128",
+        "ooi-00160"
+      ],
+      "ok": true
+    },
+    {
+      "frame_ids": [
+        "ooi-00192",
+        "ooi-00224"
+      ],
+      "ok": true
+    },
+    {
+      "frame_ids": [
+        "mbari-bs-001",
+        "mbari-bs-061"
+      ],
+      "ok": true
+    },
+    {
+      "frame_ids": [
+        "mbari-bs-121",
+        "mbari-bs-181"
+      ],
+      "ok": true
+    },
+    {
+      "frame_ids": [
+        "mbari-bs-241",
+        "mbari-bs-301"
+      ],
+      "ok": true
+    },
+    {
+      "frame_ids": [
+        "mbari-bs-361",
+        "mbari-bs-421"
+      ],
+      "ok": true
+    }
+  ]
+}

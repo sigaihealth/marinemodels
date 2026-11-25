@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{{REPORT_TITLE}}</title>
+<style>
+:root{color-scheme:light;--ink:#152d36;--deep:#083646;--accent:#145c66;--muted:#52686f;--line:#b8c8c9;--bg:#f1f5f3;--expert:#ffe082;--ecotype:#62ebf1;--qwen:#ff8ec4;--sam2:#b795ff}
+[hidden]{display:none!important}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Inter","Arial",sans-serif}h1,h2,h3,p,figure{margin:0}h1{font:500 clamp(1.8rem,4vw,3rem)/1.12 Georgia,serif}h2{font:500 1.62rem/1.15 Georgia,serif}h3{font-size:1.08rem}p{margin:.45rem 0 .8rem}a{color:#075b75}button,input,select{font:inherit}button,select,input[type=text]{border:1px solid #789398;border-radius:.35rem;background:white;color:var(--ink);padding:.44rem .64rem}button{cursor:pointer}button:hover{background:#e5f0ed}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #d18b1b;outline-offset:2px}button:disabled{color:#687b7e;opacity:.55;cursor:default}header{background:var(--deep);color:white;padding:1.4rem max(1.2rem,calc((100vw - 1350px)/2));border-bottom:4px solid #80b7ac}header small{display:block;font-weight:650;letter-spacing:.03em;color:#c9dbd7;margin:0 0 .4rem}.wrap{max-width:1390px;margin:auto;padding:1.2rem clamp(1rem,2vw,1.75rem) 3rem}.muted,.caption{color:var(--muted);font-size:.91rem}.controls,.legend,.buttons,.top,.series{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}.controls label,.details label{font-size:.85rem;font-weight:650}.series{margin:.3rem 0 .95rem}.series select{max-width:min(65vw,460px)}.series .caption{margin-left:auto}.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(245px,32%);gap:1.1rem}.panel{background:white;border:1px solid var(--line);border-radius:.65rem;overflow:hidden}.imagePanel{padding:.8rem}.viewport{width:100%;display:flex;align-items:center;justify-content:center;background:#13242d;border-radius:.3rem;overflow:hidden}.imagebox{position:relative;display:block;width:100%;line-height:0}.imagebox img{display:block;width:100%;height:auto}.imagebox img.mask{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.box{position:absolute;min-width:0;min-height:0;background:transparent;border:2px solid var(--color);border-radius:0;padding:0;cursor:pointer;touch-action:manipulation}.box:hover{background:color-mix(in srgb,var(--color) 18%,transparent)}.box.selected{outline:2px dashed white;outline-offset:2px;z-index:2}.box span{position:absolute;left:-2px;bottom:100%;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#101b21;background:var(--color);font:600 11px/1.15 Arial,sans-serif;padding:2px 3px}.box:not(.selected):not(:hover) span{display:none}.legend{margin-top:.6rem;gap:.55rem .9rem}.legend label{display:flex;align-items:center;gap:.25rem;font-size:.87rem;cursor:pointer}.legend i,.badge{display:inline-block;flex:none;width:.7rem;height:.7rem;border-radius:50%;border:1px solid #34545d;background:var(--color)}.legend input{accent-color:var(--deep)}.controls{margin:.8rem 0 .3rem}.controls input[type=range]{min-width:80px;flex:1;accent-color:var(--deep)}.caption a{margin-left:.55rem}.right{padding:1rem;display:flex;flex-direction:column;gap:.5rem}.oblist{border-block:1px solid #dae3e1;max-height:20rem;overflow-y:auto;padding:.2rem 0}.ob{display:flex;width:100%;border:0;align-items:center;gap:.45rem;padding:.45rem .25rem;border-radius:0;text-align:left;line-height:1.25;background:transparent}.ob[aria-pressed=true]{background:#e8f1ed}.ob .kind{font-size:.76rem;color:var(--muted);margin-left:auto}.details{border-top:1px solid var(--line);margin-top:.25rem;padding-top:.65rem}.details p{font-size:.89rem}.details input,.details select{width:100%;margin:.15rem 0 .42rem}.details .buttons button,.exports .buttons button{font-size:.88rem}.reviewgrid{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}.small{font-size:.86rem}.chip{font-size:.8rem;color:var(--muted)}.exports,.report,.sources{margin-top:1.15rem;padding:1rem 1.1rem}.top{justify-content:space-between;align-items:center}.exports .caption{margin-top:.4rem}.scroll{overflow:auto;margin:.6rem 0}.metric{width:100%;border-collapse:collapse;line-height:1.4;font-size:.89rem}.metric th,.metric td{border-bottom:1px solid #d9e1df;padding:.45rem .55rem;text-align:left;vertical-align:top}.metric thead{background:#eaf1ef}.nowrap{white-space:nowrap}details summary{cursor:pointer;font-weight:650}.sources pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.84rem;color:#34505a}.sources li{margin:.25rem 0}.unavailable{color:#87491c}#statusLine{min-height:1rem}.primary{background:var(--deep);color:white}.primary:hover{background:#0d5160}.plain{color:var(--muted);font-size:.83rem}button#prev,button#next{min-width:2.4rem}.quickjump{margin:.45rem 0 .1rem}.quickjump button{padding:.18rem .48rem;font-size:.83rem}.details[hidden]{display:none}@media(max-width:800px){.workspace{grid-template-columns:1fr}.series .caption{margin-left:0}.right{max-height:none}.oblist{max-height:11rem}header{padding:.95rem 1rem}.wrap{padding:.75rem}.metric{font-size:.82rem}.sources,.report,.exports{padding:.8rem}}
+</style></head>
+<body><header><small>SIG.AI Ocean</small><h1>{{REPORT_TITLE}}</h1></header><main class="wrap">
+<p id="intro"></p>
+<div class="series"><label for="sequence"><strong>Sequence</strong></label><select id="sequence"></select><span id="split" class="caption"></span></div>
+<div class="workspace">
+<section class="panel imagePanel" aria-label="Frame explorer">
+<figure><div class="viewport"><div class="imagebox" id="imagebox"><img id="frame" alt=""></div></div><div class="legend" id="layers" aria-label="Visible overlays"></div>
+<div class="controls"><button id="prev" aria-label="Previous frame">←</button><label for="timeline">Frame</label><input id="timeline" type="range" min="0" value="0" step="1"><button id="next" aria-label="Next frame">→</button></div>
+<figcaption class="caption" id="frameCaption"></figcaption></figure><div id="frameInfo" class="small"></div><details id="clipPane" style="margin-top:.65rem"><summary>Watch the source clip</summary><video id="clip" controls playsinline preload="none" style="width:100%;max-height:430px;background:#13242d"></video><div class="buttons"><button id="seekClip">Play from this sampled frame</button></div></details></section>
+<section class="panel right"><div class="top"><h2>Sightings</h2><span class="chip" id="objectCount"></span></div>
+<label class="plain" for="filter">Show sightings</label><select id="filter"><option value="all">All visible sightings</option><option value="missed">Missed reference objects</option><option value="unmatched">Unmatched model sightings</option></select>
+<div id="objects" class="oblist" aria-label="Sightings in this frame"></div><p class="caption" id="frameStatus"></p>
+<div class="details" id="details" hidden><h3 id="selectedLabel"></h3><p id="match"></p><div id="peerActions" class="buttons quickjump"></div><p id="track"></p><div id="trackActions" class="buttons quickjump"></div>
+<label for="decision">Review decision</label><select id="decision"><option value="">Unreviewed</option><option value="confirmed">Confirm sighting</option><option value="corrected">Correct identification or track</option><option value="rejected">Reject sighting</option><option value="uncertain">Uncertain</option></select>
+<div class="reviewgrid"><div><label for="corrected">Reviewed label</label><input type="text" id="corrected"></div><div><label for="trackEdit">Reviewed track ID</label><input type="text" id="trackEdit"></div></div>
+<label for="note">Reviewer note</label><input type="text" id="note"><div class="buttons"><button id="save" class="primary">Save review</button></div></div>
+</section></div>
+<section class="panel report"><h2>Comparison with reference annotations</h2><p id="protocol" class="small"></p><div id="metrics"></div></section>
+<section id="trackStudy" class="panel report" hidden><h2>Following the same animals</h2><div id="identityReport"></div></section>
+<section id="visionReview" class="panel report" hidden><h2>Qwen visual account</h2><p class="caption">These hypotheses use the ordered sampled frames. Jump to the cited frames to check the visual evidence.</p><div id="account"></div></section>
+<section class="panel exports"><div class="top"><h2>Reviewer decisions</h2><div class="buttons"><button id="export">Export reviews</button><button id="exportData">Export sightings</button></div></div><div class="caption" id="reviewSummary"></div><div class="caption" id="statusLine" aria-live="polite"></div></section>
+<details class="panel sources"><summary>Data sources, model runs and evaluation notes</summary><div id="sourceInfo"></div></details>
+</main><script id="payload" type="application/json">{{DATA}}</script>
+<script>
+"use strict";
+const data=JSON.parse(document.getElementById("payload").textContent);
+const $=id=>document.getElementById(id);
+const text=(id,value)=>{$(id).textContent=value;};
+const make=(tag,value,cls)=>{const n=document.createElement(tag);if(value!==undefined)n.textContent=String(value);if(cls)n.className=cls;return n;};
+const action=(label,fn)=>{const b=make("button",label);b.type="button";b.addEventListener("click",fn);return b;};
+const safeUrl=value=>{try{const u=new URL(value);return ["https:","http:"].includes(u.protocol)?u.href:null;}catch{return null;}};
+function addLink(container,label,url){if(!safeUrl(url))return;const a=make("a",label);a.href=safeUrl(url);a.target="_blank";a.rel="noopener noreferrer";container.append(a);}
+const sourceById=Object.fromEntries(data.sources.filter(s=>s&&s.id).map(s=>[s.id,s]));
+const series=[...new Set(data.frames.map(f=>f.sequence))];const layers=new Set(Object.keys(data.methods).filter(x=>x!=="sam2"));
+let seq=series[0],index=0,selected=null,edits={};let persistent=true;
+const key="sigai-transect-review-"+data.run_id;
+try{edits=JSON.parse(localStorage.getItem(key)||"{}");if(!edits||typeof edits!=="object")edits={};}catch{edits={};persistent=false;}
+const seqFrames=()=>data.frames.filter(f=>f.sequence===seq);
+const current=()=>seqFrames()[index];
+const chosen=()=>current().observations.find(o=>o.id===selected);
+const color=m=>"var(--"+m+")";
+function timeLabel(f){const items=[];if(f.utc)items.push(String(f.utc));if(f.time_s!==null&&f.time_s!==undefined&&Number.isFinite(Number(f.time_s)))items.push(Number(f.time_s).toFixed(2)+" s");if(f.frame_index!==null&&f.frame_index!==undefined)items.push("source frame "+f.frame_index);return items.join(" · ")||f.id;}
+function choose(id){selected=id;render();}
+function navigate(i){index=Math.max(0,Math.min(seqFrames().length-1,Number(i)));selected=null;render();}
+function status(msg){text("statusLine",msg);}
+function frameColour(node,m){node.style.setProperty("--color",color(m));}
+function summary(){const n=Object.keys(edits).length;text("reviewSummary",n+" saved decision"+(n===1?"":"s")+" for this run. "+(persistent?"Saved in this browser. Export to share with a collaborator.":"Browser storage is unavailable. Export to keep your decisions."));}
+function render(){
+ const frames=seqFrames(), f=current(), picks=f.observations.filter(o=>layers.has(o.method)).filter(o=>{const mode=$("filter").value,cs=Object.values(o.comparisons);return mode==="all"||(mode==="missed"&&cs.some(c=>c.result==="Missed reference"))||(mode==="unmatched"&&cs.some(c=>["Unmatched prediction","Unverified prediction"].includes(c.result)));});if(selected&&!picks.some(o=>o.id===selected))selected=null;
+ $("sequence").value=seq;$("timeline").max=frames.length-1;$("timeline").value=index;$("timeline").setAttribute("aria-valuetext",timeLabel(f));$("prev").disabled=index===0;$("next").disabled=index===frames.length-1;
+ text("split",[f.dive==="Dive unspecified"?"Original dive ID unavailable":f.dive,f.split==="held-out"?"Held-out sequence":f.split==="development"?"Development sequence":f.split].filter(x=>x&&x!==seq).join(" · "));
+ const photo=$("frame");photo.src=f.src;photo.alt=f.dive+" · "+timeLabel(f);const canvas=$("imagebox");canvas.querySelectorAll("button.box, img.mask").forEach(n=>n.remove());
+ const list=$("objects");list.replaceChildren();
+ if($("layer-sam2"))$("layer-sam2").parentElement.hidden=!(data.tracking_metadata?.sequence_id===seq);
+ for(const o of picks){if(o.mask){const m=make("img");m.className="mask";m.alt="";m.src=o.mask;canvas.append(m);}}
+
+ for(const o of picks){
+  const name=data.methods[o.method]+" · "+o.label+(o.track!==null?" · track "+o.track:"");
+  if(o.box){const [x1,y1,x2,y2]=o.box;const b=action("",()=>choose(o.id));b.className="box"+(o.id===selected?" selected":"");b.style.left=100*x1/f.width+"%";b.style.top=100*y1/f.height+"%";b.style.width=100*(x2-x1)/f.width+"%";b.style.height=100*(y2-y1)/f.height+"%";b.setAttribute("aria-label",name);b.title=name;frameColour(b,o.method);b.append(make("span",o.label));canvas.append(b);}
+  const b=action("",()=>choose(o.id));b.className="ob";b.setAttribute("aria-pressed",String(o.id===selected));frameColour(b,o.method);b.append(make("i",undefined,"badge"),make("span",o.label+(edits[o.id]?" ✓":"")),make("span",data.methods[o.method],"kind"));list.append(b);
+ }
+ if(!picks.length)list.append(make("p","No sightings in the visible layers for this frame.","caption"));
+ text("objectCount",picks.length+" visible");const cap=$("frameCaption");cap.textContent=(index+1)+" / "+frames.length+" · "+timeLabel(f);if(typeof f.source==="string")addLink(cap,"Open source",f.source);else if(f.source?.url)addLink(cap,f.source.title||"Open source",f.source.url);
+ if(f.reference_source)addLink(cap,"Annotation record",f.reference_source);
+ text("frameInfo",f.notes?String(f.notes):"");
+ const video=$("clip"),uri=data.clips[seq];$("clipPane").hidden=!uri;
+ if(uri&&video.dataset.sequence!==seq){video.pause();video.src=uri;video.dataset.sequence=seq;$("clipPane").open=false;}
+ $("seekClip").disabled=f.time_s==null;
+ const failures=Object.entries(f.status).filter(([_,r])=>!r.ok).map(([m])=>data.methods[m]+" unavailable");text("frameStatus",[f.scope==="complete"?"Published reference coverage for reviewed target classes.":f.scope==="partial"?"Partial reference annotations. Unmatched suggestions require review.":f.scope==="none"?"No reference annotations.":"Annotation completeness unspecified.",...failures].join(" "));
+ const o=chosen();$("details").hidden=!o;if(o){text("selectedLabel",o.label);const cmp=Object.entries(o.comparisons);const descr=[data.methods[o.method]];if(o.method==="sam2")descr.push("Label inherited from the original Ecotype box");if(o.score!==null&&o.score!==undefined)descr.push("score "+Number(o.score).toFixed(3));for(const [m,c] of cmp){descr.push(data.methods[m]+": "+c.result+(c.iou!==undefined?" (IoU "+c.iou.toFixed(2)+")":""));}if(!cmp.length)descr.push(o.method==="sam2"?"Evaluated for track identity below":"Outside the scored comparison");text("match",descr.join(" · "));$("peerActions").replaceChildren();
+ for(const [m,c] of cmp){if(!c.peer)continue;const peer=f.observations.find(z=>z.id===c.peer);if(!peer)continue;$("peerActions").append(action("Inspect "+data.methods[peer.method]+" match",()=>{layers.add(peer.method);$("layer-"+peer.method).checked=true;choose(peer.id);}));}
+ for(const [m,loc] of Object.entries(o.localizations||{})){if(o.comparisons[m]?.peer===loc.peer)continue;const peer=f.observations.find(z=>z.id===loc.peer);if(!peer)continue;$("peerActions").append(action("Location-only match · "+data.methods[peer.method]+" · IoU "+loc.iou.toFixed(2),()=>{layers.add(peer.method);$("layer-"+peer.method).checked=true;$("filter").value="all";choose(peer.id);}));}
+ let hits=[];if(o.track!==null){frames.forEach((frm,i)=>{for(const other of frm.observations)if(other.method===o.method&&other.track===o.track)hits.push({i,id:other.id});});}
+ text("track",o.track===null?"No source or model track ID.":(o.method==="expert"?"Reference":"Proposed")+" track "+o.track+" · "+new Set(hits.map(h=>h.i)).size+" sampled frame(s)");
+ const ta=$("trackActions");ta.replaceChildren();if(hits.length>1){for(const [label,hit] of [["Earlier in track",hits.filter(h=>h.i<index).pop()],["Later in track",hits.find(h=>h.i>index)]]){const b=action(label,()=>{index=hit.i;choose(hit.id);});b.disabled=!hit;ta.append(b);}}
+ const e=edits[o.id]||{};$("decision").value=e.decision||"";$("corrected").value=e.label||"";$("trackEdit").value=e.track||"";$("note").value=e.note||"";
+ }
+ metrics();account();identityReport();summary();
+}
+function ratio(n,d){return d?(100*n/d).toFixed(0)+"% ("+n+"/"+d+")":"—";}
+function metrics(){
+ const rows=data.summaries.filter(s=>s.sequence===seq),box=$("metrics");box.replaceChildren();if(!rows.length){box.append(make("p","No completed model comparisons are available.","caption"));return;}
+ const wrap=make("div",undefined,"scroll"),t=make("table",undefined,"metric");wrap.append(t);box.append(wrap);
+ const th=make("thead"),hr=make("tr");for(const label of ["Method","Frames scored","Location + class recovery","Location only","Precision","Unmatched predictions"])hr.append(make("th",label));th.append(hr);t.append(th);const tb=make("tbody");t.append(tb);
+ for(const s of rows){const tr=make("tr");const suffix=rows.filter(x=>x.method===s.method).length>1?" · "+s.scope:"";const vals=[data.methods[s.method]+suffix,s.scored_frames+" / "+s.total_frames,s.scored_frames?ratio(s.matched,s.reference):"—",s.scored_frames?ratio(s.localized,s.reference):"—",s.scope==="complete"&&s.scored_frames?ratio(s.matched,s.matched+s.unmatched):"—",s.scored_frames?s.unmatched+(s.scope==="partial"?" awaiting verification":""):"—"];for(const v of vals)tr.append(make("td",v));tb.append(tr);}
+ const gs=[...new Set(rows.flatMap(r=>r.groups))];if(gs.length)box.append(make("p","Comparable groups: "+gs.join(", ")+".","caption"));
+ if(gs.length){const dis=make("details"),sum=make("summary","Recovery by comparison group");dis.append(sum);const tbl=make("table",undefined,"metric");const tr=make("tr");for(const l of ["Method","Group","Reference objects recovered"])tr.append(make("th",l));tbl.append(tr);for(const line of rows){for(const [group,v] of Object.entries(line.by_group)){const rr=make("tr");[data.methods[line.method],group,ratio(v.matched,v.reference)].forEach(n=>rr.append(make("td",n)));tbl.append(rr);}}dis.append(tbl);box.append(dis);}
+ const unscored=rows.filter(r=>r.unscored);if(unscored.length)box.append(make("p","Predictions outside the scored comparison: "+unscored.map(r=>data.methods[r.method]+" "+r.unscored).join(", ")+".","caption"));
+ for(const s of rows)if(s.track_audit){const a=s.track_audit;box.append(make("p",data.methods[s.method]+" spatially matched "+a.matched_reference_tracks+" of "+s.reference_track_count+" published reference individuals at least once. "+a.split_reference_tracks+" of "+a.reference_tracks_matched_multiple_frames+" reference tracks matched across multiple frames were split across model IDs. "+a.merged_estimated_tracks+" of "+a.matched_estimated_tracks+" matched model tracks linked to multiple reference IDs. These rates cover matched sightings only.","caption"));}
+ for(const s of rows){if(s.reference_track_count||s.predicted_track_count)box.append(make("p",data.methods[s.method]+": "+s.reference_track_count+" distinct published track IDs and "+s.predicted_track_count+" proposed track IDs among eligible observations. Different detection coverage affects these totals.","caption"));}
+ if(rows.every(s=>!s.track_audit))box.append(make("p","Estimating duplicate counts requires matched reference identities across frames. Use the track controls to inspect proposed associations.","caption"));
+}
+function inspectEvidence(link){
+ const i=seqFrames().findIndex(f=>f.id===link.frame_id);
+ if(i<0)return;
+ index=i;selected=null;
+ if(link.track_id!=null){
+  layers.add("expert");$("layer-expert").checked=true;$("filter").value="all";
+  selected=current().observations.find(o=>o.method==="expert"&&o.track===String(link.track_id))?.id||null;
+ }
+ render();$("imagebox").scrollIntoView({block:"start"});
+}
+function account(){
+ const wrap=$("visionReview"), div=$("account");div.replaceChildren();
+ const item=(data.sequences?.sequences||[]).find(s=>s.sequence_id===seq);wrap.hidden=!item;if(!item)return;
+ if(!item.inference_ok){div.append(make("p","The sequence description was unavailable."));return;}
+ for(const observation of item.observations||[]){const row=make("p",observation.claim,"small");const actions=make("span",undefined,"quickjump buttons");for(const fid of observation.frame_ids||[]){const i=seqFrames().findIndex(f=>f.id===fid);if(i>=0)actions.append(action(timeLabel(seqFrames()[i]),()=>inspectEvidence({frame_id:fid})));}row.append(actions);div.append(row);}
+ if(item.uncertainty)div.append(make("p","Uncertainty: "+item.uncertainty,"small"));if(item.suggested_review)div.append(make("p","Suggested review: "+item.suggested_review,"small"));
+ const reviews=data.extra?.sequence_reviews?.[seq]||[];
+ if(reviews.length)div.append(make("h3","Review against the frames and annotations"));
+ for(const review of reviews){
+  const p=make("p",review.text,"small"),buttons=make("span",undefined,"buttons quickjump");
+  for(const link of review.evidence||[]){
+   if(seqFrames().some(f=>f.id===link.frame_id))buttons.append(action(link.label||link.frame_id,()=>inspectEvidence(link)));
+  }
+  p.append(buttons);div.append(p);
+ }
+}
+function identityReport(){
+ const dataset=data.track_score,wrap=$("trackStudy"),content=$("identityReport");
+ wrap.hidden=!dataset||dataset.sequence_id!==seq;content.replaceChildren();if(wrap.hidden)return;
+ const seeds=dataset.seeds||[], retained=dataset.n_expert_matched_seeds;
+ content.append(make("p","SAM 2.1 propagates "+dataset.n_seeds+" first-frame Ecotype boxes through the sampled frames. "+retained+" seeds overlap a published organism. The group labels come from Ecotype. Tracking is scored only while the seeded reference object is visible.","small"));
+ const scroll=make("div",undefined,"scroll"),tbl=make("table",undefined,"metric"),head=make("tr");for(const label of ["Method","Seed ID retained","Located with any track ID","Distinct predicted IDs including seeds"])head.append(make("th",label));tbl.append(head);
+ for(const [m,v] of Object.entries(dataset.summary)){const rr=make("tr");for(const label of [data.methods[m],ratio(v.retained_seed_id,v.later_reference_frames),ratio(v.localized_any_track,v.later_reference_frames),v.distinct_predicted_ids_including_seed])rr.append(make("td",label));tbl.append(rr);}scroll.append(tbl);content.append(scroll);
+ content.append(make("p","Each denominator counts later frame appearances of the matched seed objects. Objects outside the seed set are excluded. IoU threshold: "+dataset.iou_threshold+".","caption"));
+ const buttons=make("div",undefined,"buttons");for(const seed of seeds){const btn=action("Inspect reference #"+seed.expert_track_id,()=>{index=0;$("filter").value="all";layers.add("expert");$("layer-expert").checked=true;layers.add("sam2");$("layer-sam2").checked=true;const r=current().observations.find(o=>o.method==="expert"&&o.track===String(seed.expert_track_id));choose(r?.id||null);$("imagebox").scrollIntoView({block:"start",behavior:"smooth"});});buttons.append(btn);}content.append(buttons);
+}
+function persist(){try{localStorage.setItem(key,JSON.stringify(edits));}catch{persistent=false;}}
+$("save").onclick=()=>{const o=chosen();if(!o)return;const decision=$("decision").value,label=$("corrected").value.trim(),track=$("trackEdit").value.trim(),note=$("note").value.trim();if(!decision){status("Choose a review decision before saving.");return;}edits[o.id]={frame_id:current().id,source_sighting_id:o.source_id,method:o.method,original_label:o.label,original_track:o.track,decision,label,track,note,reviewed_at:new Date().toISOString()};persist();render();status("Review saved for "+o.label+".");};
+function download(name,data){const file=new Blob([JSON.stringify(data,null,2)],{type:"application/json"}),url=URL.createObjectURL(file),a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+$("export").onclick=()=>download("transect-reviews-"+data.run_id+".json",{run_id:data.run_id,exported_at:new Date().toISOString(),reviews:edits});
+$("exportData").onclick=()=>download("transect-sightings-"+data.run_id+".json",{...data,clips:undefined,frames:data.frames.map(({src,...f})=>({...f,observations:f.observations.map(({mask,...o})=>o)}))});
+$("filter").onchange=()=>{selected=null;render();};
+$("seekClip").onclick=()=>{const video=$("clip");if(current().time_s==null)return;const play=()=>{video.currentTime=Number(current().time_s);video.play().catch(()=>status("Use the video controls to play the clip."));};if(video.readyState>=1)play();else{video.addEventListener("loadedmetadata",play,{once:true});video.load();}};
+$("prev").onclick=()=>navigate(index-1);$("next").onclick=()=>navigate(index+1);$("timeline").oninput=e=>navigate(e.target.value);
+$("sequence").onchange=e=>{seq=e.target.value;navigate(0);};
+for(const s of series){const op=make("option",sourceById[s]?.title||s);op.value=s;$("sequence").append(op);}
+for(const [tag,name] of Object.entries(data.methods)){const l=make("label"),input=make("input");input.type="checkbox";input.checked=layers.has(tag);input.id="layer-"+tag;input.onchange=()=>{if(input.checked)layers.add(tag);else layers.delete(tag);render();};frameColour(l,tag);l.append(input,make("i"),make("span",name));$("layers").append(l);}
+text("intro",data.description);
+text("protocol","Each method sees the same sampled frames. We pair boxes one-to-one within the declared comparable classes at intersection over union (IoU) ≥ "+data.threshold.toFixed(2)+". The location-only check ignores predicted class on the same reference objects. Recovery uses labeled object appearances in eligible frames. Precision is available only where the declared target groups have complete annotations.");
+const sourceInfo=$("sourceInfo");for(const item of Array.isArray(data.sources)?data.sources:[]){const row=make("p",undefined,"small");if(typeof item==="string"){if(safeUrl(item))addLink(row,item,item);else row.textContent=item;}else{const title=item.title||item.name||item.id||"Source";if(item.url||item.source)addLink(row,title,item.url||item.source);if(!row.textContent)row.textContent=title;const notes=[item.attribution,item.license,item.sampling,item.notes].filter(Boolean);if(notes.length)row.append(document.createTextNode(" · "+notes.join(" · ")));
+ if(item.license==="CC BY-SA 4.0"){
+  row.append(document.createTextNode(" The extracted frames and silent, resized clip in this review are also available under "));
+  addLink(row,"CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0/");row.append(document.createTextNode("."));
+ }}sourceInfo.append(row);}
+for(const [name,value] of [["Dataset notes",data.notes],["Model provenance",data.runs],["SAM tracking model",data.tracking_metadata],["Additional evaluation",Object.fromEntries(Object.entries(data.extra||{}).filter(([k])=>k!=="sequence_reviews"))]]){if(value&&Object.keys(value).length){sourceInfo.append(make("h3",name),make("pre",typeof value==="string"?value:JSON.stringify(value,null,2)));}}
+sourceInfo.append(make("p","The displayed frames are resized JPEG reproductions. The embedded eight-second excerpts use original source imagery, re-encoded for browser review. MBARI-derived media are shared under CC BY-SA 4.0. Source annotations and algorithm outputs are attributed separately.","caption"));
+addLink(sourceInfo,"Creative Commons Attribution-ShareAlike 4.0","https://creativecommons.org/licenses/by-sa/4.0/");
+sourceInfo.append(make("p","Run "+data.run_id,"caption"));render();
+</script></body></html>

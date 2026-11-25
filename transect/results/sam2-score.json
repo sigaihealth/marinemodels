@@ -1,0 +1,414 @@
+{
+  "sequence_id": "mbari-bs",
+  "n_seeds": 3,
+  "n_expert_matched_seeds": 3,
+  "iou_threshold": 0.5,
+  "scope": "First-frame detector seeds only. Subsequent matches are class-agnostic and one-to-one. Counts are pooled track-frame observations.",
+  "summary": {
+    "ecotype": {
+      "later_reference_frames": 21,
+      "localized_any_track": 21,
+      "retained_seed_id": 0,
+      "distinct_predicted_ids_including_seed": 21,
+      "id_changes_between_successive_matches_including_seed": 18,
+      "wrong_identity_frames": 0
+    },
+    "sam2": {
+      "later_reference_frames": 21,
+      "localized_any_track": 21,
+      "retained_seed_id": 21,
+      "distinct_predicted_ids_including_seed": 3,
+      "id_changes_between_successive_matches_including_seed": 0,
+      "wrong_identity_frames": 0
+    }
+  },
+  "seeds": [
+    {
+      "seed_sighting_id": "ecotype:mbari-bs-001:1",
+      "expert_track_id": 6,
+      "expert_label": "Strongylocentrotus fragilis",
+      "seed_label": "Sessile Epifauna",
+      "seed_iou": 0.9396,
+      "methods": {
+        "ecotype": {
+          "later_reference_frames": 7,
+          "localized_any_track": 7,
+          "retained_seed_id": 0,
+          "distinct_predicted_ids_including_seed": 7,
+          "id_changes_between_successive_matches_including_seed": 6,
+          "seed_match_runs_on_later_observations": 0,
+          "wrong_identity_frames": 0,
+          "frames": [
+            {
+              "frame_id": "mbari-bs-061",
+              "reference_present": true,
+              "matched_track": "ecotype-T0011",
+              "iou": 0.9051,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-121",
+              "reference_present": true,
+              "matched_track": "ecotype-T0016",
+              "iou": 0.9398,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-181",
+              "reference_present": true,
+              "matched_track": "ecotype-T0021",
+              "iou": 0.9316,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-241",
+              "reference_present": true,
+              "matched_track": "ecotype-T0024",
+              "iou": 0.9022,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-301",
+              "reference_present": true,
+              "matched_track": "ecotype-T0029",
+              "iou": 0.9354,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-361",
+              "reference_present": true,
+              "matched_track": "ecotype-T0034",
+              "iou": 0.8581,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-421",
+              "reference_present": true,
+              "matched_track": "ecotype-T0034",
+              "iou": 0.9382,
+              "seed_matched_different_id": []
+            }
+          ]
+        },
+        "sam2": {
+          "later_reference_frames": 7,
+          "localized_any_track": 7,
+          "retained_seed_id": 7,
+          "distinct_predicted_ids_including_seed": 1,
+          "id_changes_between_successive_matches_including_seed": 0,
+          "seed_match_runs_on_later_observations": 1,
+          "wrong_identity_frames": 0,
+          "frames": [
+            {
+              "frame_id": "mbari-bs-061",
+              "reference_present": true,
+              "matched_track": "sam2-T0001",
+              "iou": 0.7266,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-121",
+              "reference_present": true,
+              "matched_track": "sam2-T0001",
+              "iou": 0.6843,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-181",
+              "reference_present": true,
+              "matched_track": "sam2-T0001",
+              "iou": 0.7115,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-241",
+              "reference_present": true,
+              "matched_track": "sam2-T0001",
+              "iou": 0.761,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-301",
+              "reference_present": true,
+              "matched_track": "sam2-T0001",
+              "iou": 0.7541,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-361",
+              "reference_present": true,
+              "matched_track": "sam2-T0001",
+              "iou": 0.7486,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-421",
+              "reference_present": true,
+              "matched_track": "sam2-T0001",
+              "iou": 0.6251,
+              "seed_matched_different_id": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seed_sighting_id": "ecotype:mbari-bs-001:3",
+      "expert_track_id": 5,
+      "expert_label": "Strongylocentrotus fragilis",
+      "seed_label": "Sessile Epifauna",
+      "seed_iou": 0.8874,
+      "methods": {
+        "ecotype": {
+          "later_reference_frames": 7,
+          "localized_any_track": 7,
+          "retained_seed_id": 0,
+          "distinct_predicted_ids_including_seed": 7,
+          "id_changes_between_successive_matches_including_seed": 6,
+          "seed_match_runs_on_later_observations": 0,
+          "wrong_identity_frames": 0,
+          "frames": [
+            {
+              "frame_id": "mbari-bs-061",
+              "reference_present": true,
+              "matched_track": "ecotype-T0012",
+              "iou": 0.8728,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-121",
+              "reference_present": true,
+              "matched_track": "ecotype-T0015",
+              "iou": 0.8498,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-181",
+              "reference_present": true,
+              "matched_track": "ecotype-T0020",
+              "iou": 0.8338,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-241",
+              "reference_present": true,
+              "matched_track": "ecotype-T0025",
+              "iou": 0.9013,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-301",
+              "reference_present": true,
+              "matched_track": "ecotype-T0031",
+              "iou": 0.8792,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-361",
+              "reference_present": true,
+              "matched_track": "ecotype-T0033",
+              "iou": 0.8596,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-421",
+              "reference_present": true,
+              "matched_track": "ecotype-T0033",
+              "iou": 0.865,
+              "seed_matched_different_id": []
+            }
+          ]
+        },
+        "sam2": {
+          "later_reference_frames": 7,
+          "localized_any_track": 7,
+          "retained_seed_id": 7,
+          "distinct_predicted_ids_including_seed": 1,
+          "id_changes_between_successive_matches_including_seed": 0,
+          "seed_match_runs_on_later_observations": 1,
+          "wrong_identity_frames": 0,
+          "frames": [
+            {
+              "frame_id": "mbari-bs-061",
+              "reference_present": true,
+              "matched_track": "sam2-T0003",
+              "iou": 0.8628,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-121",
+              "reference_present": true,
+              "matched_track": "sam2-T0003",
+              "iou": 0.8458,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-181",
+              "reference_present": true,
+              "matched_track": "sam2-T0003",
+              "iou": 0.8309,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-241",
+              "reference_present": true,
+              "matched_track": "sam2-T0003",
+              "iou": 0.8421,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-301",
+              "reference_present": true,
+              "matched_track": "sam2-T0003",
+              "iou": 0.8254,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-361",
+              "reference_present": true,
+              "matched_track": "sam2-T0003",
+              "iou": 0.8474,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-421",
+              "reference_present": true,
+              "matched_track": "sam2-T0003",
+              "iou": 0.8437,
+              "seed_matched_different_id": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seed_sighting_id": "ecotype:mbari-bs-001:2",
+      "expert_track_id": 4,
+      "expert_label": "Strongylocentrotus fragilis",
+      "seed_label": "Sessile Epifauna",
+      "seed_iou": 0.7603,
+      "methods": {
+        "ecotype": {
+          "later_reference_frames": 7,
+          "localized_any_track": 7,
+          "retained_seed_id": 0,
+          "distinct_predicted_ids_including_seed": 7,
+          "id_changes_between_successive_matches_including_seed": 6,
+          "seed_match_runs_on_later_observations": 0,
+          "wrong_identity_frames": 0,
+          "frames": [
+            {
+              "frame_id": "mbari-bs-061",
+              "reference_present": true,
+              "matched_track": "ecotype-T0014",
+              "iou": 0.7667,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-121",
+              "reference_present": true,
+              "matched_track": "ecotype-T0017",
+              "iou": 0.7705,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-181",
+              "reference_present": true,
+              "matched_track": "ecotype-T0019",
+              "iou": 0.8481,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-241",
+              "reference_present": true,
+              "matched_track": "ecotype-T0026",
+              "iou": 0.7964,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-301",
+              "reference_present": true,
+              "matched_track": "ecotype-T0030",
+              "iou": 0.8335,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-361",
+              "reference_present": true,
+              "matched_track": "ecotype-T0035",
+              "iou": 0.8406,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-421",
+              "reference_present": true,
+              "matched_track": "ecotype-T0035",
+              "iou": 0.8468,
+              "seed_matched_different_id": []
+            }
+          ]
+        },
+        "sam2": {
+          "later_reference_frames": 7,
+          "localized_any_track": 7,
+          "retained_seed_id": 7,
+          "distinct_predicted_ids_including_seed": 1,
+          "id_changes_between_successive_matches_including_seed": 0,
+          "seed_match_runs_on_later_observations": 1,
+          "wrong_identity_frames": 0,
+          "frames": [
+            {
+              "frame_id": "mbari-bs-061",
+              "reference_present": true,
+              "matched_track": "sam2-T0002",
+              "iou": 0.9086,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-121",
+              "reference_present": true,
+              "matched_track": "sam2-T0002",
+              "iou": 0.9452,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-181",
+              "reference_present": true,
+              "matched_track": "sam2-T0002",
+              "iou": 0.8852,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-241",
+              "reference_present": true,
+              "matched_track": "sam2-T0002",
+              "iou": 0.8995,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-301",
+              "reference_present": true,
+              "matched_track": "sam2-T0002",
+              "iou": 0.8951,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-361",
+              "reference_present": true,
+              "matched_track": "sam2-T0002",
+              "iou": 0.8923,
+              "seed_matched_different_id": []
+            },
+            {
+              "frame_id": "mbari-bs-421",
+              "reference_present": true,
+              "matched_track": "sam2-T0002",
+              "iou": 0.9201,
+              "seed_matched_different_id": []
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

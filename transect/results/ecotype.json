@@ -1,0 +1,927 @@
+{
+  "method": "ecotype",
+  "frames": [
+    {
+      "frame_id": "ooi-00000",
+      "path": "images/ooi-00000.jpg",
+      "dive_id": null,
+      "timestamp_s": 0.0,
+      "sequence_id": "ooi-ecotype",
+      "width": 1024,
+      "height": 576,
+      "inference_ok": true,
+      "image_sha256": "dc39abc666168ea6c08520602c5d3d9a6538e15c106d147e934b524c992f13ec",
+      "window_frames": 1
+    },
+    {
+      "frame_id": "ooi-00032",
+      "path": "images/ooi-00032.jpg",
+      "dive_id": null,
+      "timestamp_s": 1.103448,
+      "sequence_id": "ooi-ecotype",
+      "width": 1024,
+      "height": 576,
+      "inference_ok": true,
+      "image_sha256": "3a5b4cd35dd7718febdb8754c5cff95ccaa43cb57f5e60642c5302de76db5210",
+      "window_frames": 1
+    },
+    {
+      "frame_id": "ooi-00064",
+      "path": "images/ooi-00064.jpg",
+      "dive_id": null,
+      "timestamp_s": 2.206897,
+      "sequence_id": "ooi-ecotype",
+      "width": 1024,
+      "height": 576,
+      "inference_ok": true,
+      "image_sha256": "fb8e962d191cbdb826bf432a023c5e546661c604833068ddb8f68b96dd1f8b2f",
+      "window_frames": 1
+    },
+    {
+      "frame_id": "ooi-00096",
+      "path": "images/ooi-00096.jpg",
+      "dive_id": null,
+      "timestamp_s": 3.310345,
+      "sequence_id": "ooi-ecotype",
+      "width": 1024,
+      "height": 576,
+      "inference_ok": true,
+      "image_sha256": "61af269001443def30e52f4c62e329b723e0bfd007ab9d4a03d17fbd371da36a",
+      "window_frames": 1
+    },
+    {
+      "frame_id": "ooi-00128",
+      "path": "images/ooi-00128.jpg",
+      "dive_id": null,
+      "timestamp_s": 4.413793,
+      "sequence_id": "ooi-ecotype",
+      "width": 1024,
+      "height": 576,
+      "inference_ok": true,
+      "image_sha256": "84862e760751eff68be511fbe5bee4b2c4b771b39d0b1058dbeaa62e14d8af30",
+      "window_frames": 1
+    },
+    {
+      "frame_id": "ooi-00160",
+      "path": "images/ooi-00160.jpg",
+      "dive_id": null,
+      "timestamp_s": 5.517241,
+      "sequence_id": "ooi-ecotype",
+      "width": 1024,
+      "height": 576,
+      "inference_ok": true,
+      "image_sha256": "2fd716d5e9cabb3972277d4f7cb310a23b81434e49a6d5595cb243c94113a562",
+      "window_frames": 1
+    },
+    {
+      "frame_id": "ooi-00192",
+      "path": "images/ooi-00192.jpg",
+      "dive_id": null,
+      "timestamp_s": 6.62069,
+      "sequence_id": "ooi-ecotype",
+      "width": 1024,
+      "height": 576,
+      "inference_ok": true,
+      "image_sha256": "c980d4ecfb08739d174181ac50c4cc39a3ef647633e8d53b67f091b1eac719fe",
+      "window_frames": 1
+    },
+    {
+      "frame_id": "ooi-00224",
+      "path": "images/ooi-00224.jpg",
+      "dive_id": null,
+      "timestamp_s": 7.724138,
+      "sequence_id": "ooi-ecotype",
+      "width": 1024,
+      "height": 576,
+      "inference_ok": true,
+      "image_sha256": "b122cf4e0d6802b21d516fe965d83c387d71ab3fc425e3ca52d8176357d9465e",
+      "window_frames": 1
+    },
+    {
+      "frame_id": "mbari-bs-001",
+      "path": "images/mbari-bs-001.jpg",
+      "dive_id": null,
+      "timestamp_s": 0.0,
+      "sequence_id": "mbari-bs",
+      "width": 1920,
+      "height": 1080,
+      "inference_ok": true,
+      "image_sha256": "79b39bf12ff0257c9fcb718745fa17daa53328a13415640e5ec6b68836b460b7",
+      "window_frames": 1
+    },
+    {
+      "frame_id": "mbari-bs-061",
+      "path": "images/mbari-bs-061.jpg",
+      "dive_id": null,
+      "timestamp_s": 1.001,
+      "sequence_id": "mbari-bs",
+      "width": 1920,
+      "height": 1080,
+      "inference_ok": true,
+      "image_sha256": "2fe4998f713c1f6bdb0b3d8d4ba4b214fd4b242b2d6e150d4bc84a0d19eb248f",
+      "window_frames": 1
+    },
+    {
+      "frame_id": "mbari-bs-121",
+      "path": "images/mbari-bs-121.jpg",
+      "dive_id": null,
+      "timestamp_s": 2.002,
+      "sequence_id": "mbari-bs",
+      "width": 1920,
+      "height": 1080,
+      "inference_ok": true,
+      "image_sha256": "ed8b201ab879d0ad52a1d8686d34b7cba715bbaacd691e0ef704b2aa0ceda69f",
+      "window_frames": 1
+    },
+    {
+      "frame_id": "mbari-bs-181",
+      "path": "images/mbari-bs-181.jpg",
+      "dive_id": null,
+      "timestamp_s": 3.003,
+      "sequence_id": "mbari-bs",
+      "width": 1920,
+      "height": 1080,
+      "inference_ok": true,
+      "image_sha256": "57db82b6b6bd42609af7e2bdaa32b0c060f76d091d76cec039de92e3e3478335",
+      "window_frames": 1
+    },
+    {
+      "frame_id": "mbari-bs-241",
+      "path": "images/mbari-bs-241.jpg",
+      "dive_id": null,
+      "timestamp_s": 4.004,
+      "sequence_id": "mbari-bs",
+      "width": 1920,
+      "height": 1080,
+      "inference_ok": true,
+      "image_sha256": "55ad9290616d1db962d37836d2b685a203fd1534d77d50af6a4085a2ec5d4de2",
+      "window_frames": 1
+    },
+    {
+      "frame_id": "mbari-bs-301",
+      "path": "images/mbari-bs-301.jpg",
+      "dive_id": null,
+      "timestamp_s": 5.005,
+      "sequence_id": "mbari-bs",
+      "width": 1920,
+      "height": 1080,
+      "inference_ok": true,
+      "image_sha256": "f36a1ea67d9d437acb73c8bf1b49f945d1cc12658994ecb1258f9e7da5008a1f",
+      "window_frames": 1
+    },
+    {
+      "frame_id": "mbari-bs-361",
+      "path": "images/mbari-bs-361.jpg",
+      "dive_id": null,
+      "timestamp_s": 6.006,
+      "sequence_id": "mbari-bs",
+      "width": 1920,
+      "height": 1080,
+      "inference_ok": true,
+      "image_sha256": "ea9a8c72c49c4814f95c68b0fe47f29d64b812a5d5edcdd95afeebb734ec2f2d",
+      "window_frames": 1
+    },
+    {
+      "frame_id": "mbari-bs-421",
+      "path": "images/mbari-bs-421.jpg",
+      "dive_id": null,
+      "timestamp_s": 7.007,
+      "sequence_id": "mbari-bs",
+      "width": 1920,
+      "height": 1080,
+      "inference_ok": true,
+      "image_sha256": "089b9471cf8921c6a842f2cb670056713856fb91c4e6bccfbef8ec185116dd8f",
+      "window_frames": 1
+    }
+  ],
+  "sightings": [
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        500.74,
+        510.77,
+        572.42,
+        563.7
+      ],
+      "score": 0.938196,
+      "method": "ecotype",
+      "frame_id": "ooi-00000",
+      "sighting_id": "ecotype:ooi-00000:1",
+      "track_id": "ecotype-T0001"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        612.04,
+        238.92,
+        639.33,
+        256.38
+      ],
+      "score": 0.912533,
+      "method": "ecotype",
+      "frame_id": "ooi-00000",
+      "sighting_id": "ecotype:ooi-00000:2",
+      "track_id": "ecotype-T0002"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        88.33,
+        294.16,
+        116.54,
+        311.08
+      ],
+      "score": 0.911891,
+      "method": "ecotype",
+      "frame_id": "ooi-00000",
+      "sighting_id": "ecotype:ooi-00000:3",
+      "track_id": "ecotype-T0003"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        498.75,
+        525.94,
+        572.06,
+        576.0
+      ],
+      "score": 0.930795,
+      "method": "ecotype",
+      "frame_id": "ooi-00032",
+      "sighting_id": "ecotype:ooi-00032:1",
+      "track_id": "ecotype-T0001"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        79.64,
+        295.78,
+        110.79,
+        313.67
+      ],
+      "score": 0.898673,
+      "method": "ecotype",
+      "frame_id": "ooi-00032",
+      "sighting_id": "ecotype:ooi-00032:2",
+      "track_id": "ecotype-T0003"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        611.76,
+        241.82,
+        639.48,
+        259.04
+      ],
+      "score": 0.864645,
+      "method": "ecotype",
+      "frame_id": "ooi-00032",
+      "sighting_id": "ecotype:ooi-00032:3",
+      "track_id": "ecotype-T0002"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        1004.82,
+        548.36,
+        1024.0,
+        576.0
+      ],
+      "score": 0.279379,
+      "method": "ecotype",
+      "frame_id": "ooi-00032",
+      "sighting_id": "ecotype:ooi-00032:4",
+      "track_id": "ecotype-T0004"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        72.0,
+        300.57,
+        102.71,
+        318.57
+      ],
+      "score": 0.912869,
+      "method": "ecotype",
+      "frame_id": "ooi-00064",
+      "sighting_id": "ecotype:ooi-00064:1",
+      "track_id": "ecotype-T0003"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        498.79,
+        543.36,
+        567.52,
+        576.0
+      ],
+      "score": 0.911349,
+      "method": "ecotype",
+      "frame_id": "ooi-00064",
+      "sighting_id": "ecotype:ooi-00064:2",
+      "track_id": "ecotype-T0001"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        65.41,
+        305.07,
+        96.09,
+        323.5
+      ],
+      "score": 0.90349,
+      "method": "ecotype",
+      "frame_id": "ooi-00096",
+      "sighting_id": "ecotype:ooi-00096:1",
+      "track_id": "ecotype-T0003"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        506.19,
+        564.39,
+        559.7,
+        576.0
+      ],
+      "score": 0.701463,
+      "method": "ecotype",
+      "frame_id": "ooi-00096",
+      "sighting_id": "ecotype:ooi-00096:2",
+      "track_id": "ecotype-T0005"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        58.02,
+        310.2,
+        88.65,
+        328.85
+      ],
+      "score": 0.912094,
+      "method": "ecotype",
+      "frame_id": "ooi-00128",
+      "sighting_id": "ecotype:ooi-00128:1",
+      "track_id": "ecotype-T0003"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        47.74,
+        312.79,
+        79.27,
+        332.8
+      ],
+      "score": 0.896994,
+      "method": "ecotype",
+      "frame_id": "ooi-00160",
+      "sighting_id": "ecotype:ooi-00160:1",
+      "track_id": "ecotype-T0003"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        38.79,
+        316.75,
+        68.23,
+        334.56
+      ],
+      "score": 0.922264,
+      "method": "ecotype",
+      "frame_id": "ooi-00192",
+      "sighting_id": "ecotype:ooi-00192:1",
+      "track_id": "ecotype-T0003"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        368.78,
+        469.6,
+        399.69,
+        487.92
+      ],
+      "score": 0.896501,
+      "method": "ecotype",
+      "frame_id": "ooi-00192",
+      "sighting_id": "ecotype:ooi-00192:2",
+      "track_id": "ecotype-T0006"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        613.55,
+        254.45,
+        644.07,
+        273.49
+      ],
+      "score": 0.883905,
+      "method": "ecotype",
+      "frame_id": "ooi-00192",
+      "sighting_id": "ecotype:ooi-00192:3",
+      "track_id": "ecotype-T0007"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        29.13,
+        318.19,
+        59.84,
+        337.41
+      ],
+      "score": 0.918341,
+      "method": "ecotype",
+      "frame_id": "ooi-00224",
+      "sighting_id": "ecotype:ooi-00224:1",
+      "track_id": "ecotype-T0003"
+    },
+    {
+      "label": "Motile Epifauna",
+      "bbox_xyxy": [
+        614.51,
+        254.38,
+        649.86,
+        274.2
+      ],
+      "score": 0.910047,
+      "method": "ecotype",
+      "frame_id": "ooi-00224",
+      "sighting_id": "ecotype:ooi-00224:2",
+      "track_id": "ecotype-T0007"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1155.23,
+        59.52,
+        1257.12,
+        155.34
+      ],
+      "score": 0.913399,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-001",
+      "sighting_id": "ecotype:mbari-bs-001:1",
+      "track_id": "ecotype-T0008"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1416.96,
+        559.17,
+        1547.21,
+        682.85
+      ],
+      "score": 0.874654,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-001",
+      "sighting_id": "ecotype:mbari-bs-001:2",
+      "track_id": "ecotype-T0009"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        988.43,
+        502.98,
+        1108.93,
+        620.15
+      ],
+      "score": 0.842751,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-001",
+      "sighting_id": "ecotype:mbari-bs-001:3",
+      "track_id": "ecotype-T0010"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1071.59,
+        39.46,
+        1171.88,
+        136.57
+      ],
+      "score": 0.881515,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-061",
+      "sighting_id": "ecotype:mbari-bs-061:1",
+      "track_id": "ecotype-T0011"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        901.34,
+        485.71,
+        1025.08,
+        595.46
+      ],
+      "score": 0.838436,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-061",
+      "sighting_id": "ecotype:mbari-bs-061:2",
+      "track_id": "ecotype-T0012"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1288.27,
+        469.03,
+        1425.43,
+        588.82
+      ],
+      "score": 0.442695,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-061",
+      "sighting_id": "ecotype:mbari-bs-061:3",
+      "track_id": "ecotype-T0013"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1336.35,
+        546.59,
+        1463.58,
+        657.16
+      ],
+      "score": 0.367146,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-061",
+      "sighting_id": "ecotype:mbari-bs-061:4",
+      "track_id": "ecotype-T0014"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        813.21,
+        522.0,
+        937.45,
+        639.65
+      ],
+      "score": 0.913787,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-121",
+      "sighting_id": "ecotype:mbari-bs-121:1",
+      "track_id": "ecotype-T0015"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        980.47,
+        73.06,
+        1081.26,
+        171.15
+      ],
+      "score": 0.912211,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-121",
+      "sighting_id": "ecotype:mbari-bs-121:2",
+      "track_id": "ecotype-T0016"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1247.57,
+        578.06,
+        1374.98,
+        694.21
+      ],
+      "score": 0.758549,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-121",
+      "sighting_id": "ecotype:mbari-bs-121:3",
+      "track_id": "ecotype-T0017"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1075.78,
+        718.37,
+        1225.96,
+        828.19
+      ],
+      "score": 0.461565,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-121",
+      "sighting_id": "ecotype:mbari-bs-121:4",
+      "track_id": "ecotype-T0018"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1392.04,
+        624.66,
+        1515.06,
+        736.64
+      ],
+      "score": 0.89397,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-181",
+      "sighting_id": "ecotype:mbari-bs-181:1",
+      "track_id": "ecotype-T0019"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        953.69,
+        564.88,
+        1074.0,
+        682.27
+      ],
+      "score": 0.888375,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-181",
+      "sighting_id": "ecotype:mbari-bs-181:2",
+      "track_id": "ecotype-T0020"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1115.85,
+        112.65,
+        1214.31,
+        209.49
+      ],
+      "score": 0.88137,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-181",
+      "sighting_id": "ecotype:mbari-bs-181:3",
+      "track_id": "ecotype-T0021"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1214.96,
+        761.56,
+        1370.95,
+        877.81
+      ],
+      "score": 0.713461,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-181",
+      "sighting_id": "ecotype:mbari-bs-181:4",
+      "track_id": "ecotype-T0022"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1229.2,
+        668.83,
+        1373.53,
+        872.72
+      ],
+      "score": 0.350694,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-181",
+      "sighting_id": "ecotype:mbari-bs-181:5",
+      "track_id": "ecotype-T0023"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1215.23,
+        128.36,
+        1313.79,
+        229.61
+      ],
+      "score": 0.906775,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-241",
+      "sighting_id": "ecotype:mbari-bs-241:1",
+      "track_id": "ecotype-T0024"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1049.34,
+        586.98,
+        1168.56,
+        705.91
+      ],
+      "score": 0.860137,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-241",
+      "sighting_id": "ecotype:mbari-bs-241:2",
+      "track_id": "ecotype-T0025"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1483.55,
+        646.32,
+        1611.85,
+        763.64
+      ],
+      "score": 0.835511,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-241",
+      "sighting_id": "ecotype:mbari-bs-241:3",
+      "track_id": "ecotype-T0026"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1311.98,
+        790.67,
+        1462.94,
+        905.36
+      ],
+      "score": 0.515023,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-241",
+      "sighting_id": "ecotype:mbari-bs-241:4",
+      "track_id": "ecotype-T0027"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        746.28,
+        359.79,
+        828.04,
+        491.85
+      ],
+      "score": 0.47823,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-241",
+      "sighting_id": "ecotype:mbari-bs-241:5",
+      "track_id": "ecotype-T0028"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1290.12,
+        156.8,
+        1391.01,
+        256.2
+      ],
+      "score": 0.90138,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-301",
+      "sighting_id": "ecotype:mbari-bs-301:1",
+      "track_id": "ecotype-T0029"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1555.63,
+        683.85,
+        1685.8,
+        797.53
+      ],
+      "score": 0.878233,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-301",
+      "sighting_id": "ecotype:mbari-bs-301:2",
+      "track_id": "ecotype-T0030"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1119.98,
+        614.72,
+        1240.96,
+        736.16
+      ],
+      "score": 0.870945,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-301",
+      "sighting_id": "ecotype:mbari-bs-301:3",
+      "track_id": "ecotype-T0031"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1381.23,
+        819.08,
+        1536.02,
+        940.05
+      ],
+      "score": 0.720293,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-301",
+      "sighting_id": "ecotype:mbari-bs-301:4",
+      "track_id": "ecotype-T0032"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1371.87,
+        186.4,
+        1471.53,
+        288.99
+      ],
+      "score": 0.890567,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-361",
+      "sighting_id": "ecotype:mbari-bs-361:1",
+      "track_id": "ecotype-T0033"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1191.43,
+        653.02,
+        1318.35,
+        772.84
+      ],
+      "score": 0.889642,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-361",
+      "sighting_id": "ecotype:mbari-bs-361:2",
+      "track_id": "ecotype-T0034"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1633.8,
+        716.84,
+        1764.5,
+        832.09
+      ],
+      "score": 0.888098,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-361",
+      "sighting_id": "ecotype:mbari-bs-361:3",
+      "track_id": "ecotype-T0035"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1460.22,
+        853.33,
+        1617.07,
+        972.92
+      ],
+      "score": 0.635827,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-361",
+      "sighting_id": "ecotype:mbari-bs-361:4",
+      "track_id": "ecotype-T0036"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1205.84,
+        675.49,
+        1331.26,
+        800.64
+      ],
+      "score": 0.906388,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-421",
+      "sighting_id": "ecotype:mbari-bs-421:1",
+      "track_id": "ecotype-T0034"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1382.73,
+        211.59,
+        1487.09,
+        313.46
+      ],
+      "score": 0.892956,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-421",
+      "sighting_id": "ecotype:mbari-bs-421:2",
+      "track_id": "ecotype-T0033"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        1652.54,
+        745.42,
+        1780.46,
+        865.3
+      ],
+      "score": 0.877124,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-421",
+      "sighting_id": "ecotype:mbari-bs-421:3",
+      "track_id": "ecotype-T0035"
+    },
+    {
+      "label": "Sessile Epifauna",
+      "bbox_xyxy": [
+        414.03,
+        10.33,
+        637.97,
+        171.0
+      ],
+      "score": 0.297687,
+      "method": "ecotype",
+      "frame_id": "mbari-bs-421",
+      "sighting_id": "ecotype:mbari-bs-421:4",
+      "track_id": "ecotype-T0037"
+    }
+  ],
+  "metadata": {
+    "model": "OceanCV/OOI_Ecotype",
+    "revision": "94e22c9ad7da1f504004276cfc8461e21a73b644",
+    "weight_sha256": "7c521bf59be99c1098b2bbc136011e59bc3fed08af69b99063a4264ca72fc427",
+    "ultralytics_version": "8.4.218",
+    "imgsz": 1024,
+    "confidence_threshold": 0.25,
+    "nms_iou": 0.7,
+    "device": "0",
+    "tracking": "Greedy one-to-one class-consistent neighboring-frame IoU >= 0.30; heuristic, unaudited.",
+    "max_tracking_gap_seconds": 5.0,
+    "manifest_sha256": "aedcd56a9936736dc770de452b66333b82e774b9ee6698f22c7b637be1ee516c",
+    "box_space": "source image pixels; [left,top,right,bottom]"
+  }
+}

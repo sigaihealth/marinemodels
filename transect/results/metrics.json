@@ -1,0 +1,193 @@
+{
+  "output": "site/visual-transect.html",
+  "frames": 16,
+  "run_id": "08089f21beb7b74975bd",
+  "summaries": [
+    {
+      "sequence": "ooi-ecotype",
+      "dive": "Dive unspecified",
+      "split": "development",
+      "method": "ecotype",
+      "scope": "partial",
+      "total_frames": 8,
+      "scored_frames": 8,
+      "inference_frames": 8,
+      "reference": 15,
+      "matched": 15,
+      "unmatched": 3,
+      "unscored": 0,
+      "unlocated_reference": 0,
+      "localized": 15,
+      "groups": [
+        "Demersal",
+        "Motile Epifauna",
+        "Planktonic",
+        "Sessile Epifauna"
+      ],
+      "by_group": {
+        "Demersal": {
+          "reference": 0,
+          "matched": 0,
+          "unmatched": 0
+        },
+        "Motile Epifauna": {
+          "reference": 15,
+          "matched": 15,
+          "unmatched": 3
+        },
+        "Planktonic": {
+          "reference": 0,
+          "matched": 0,
+          "unmatched": 0
+        },
+        "Sessile Epifauna": {
+          "reference": 0,
+          "matched": 0,
+          "unmatched": 0
+        }
+      },
+      "reference_track_count": 0,
+      "predicted_track_count": 7
+    },
+    {
+      "sequence": "ooi-ecotype",
+      "dive": "Dive unspecified",
+      "split": "development",
+      "method": "qwen",
+      "scope": "partial",
+      "total_frames": 8,
+      "scored_frames": 8,
+      "inference_frames": 8,
+      "reference": 15,
+      "matched": 0,
+      "unmatched": 0,
+      "unscored": 0,
+      "unlocated_reference": 0,
+      "localized": 0,
+      "groups": [
+        "Demersal",
+        "Motile Epifauna",
+        "Planktonic",
+        "Sessile Epifauna"
+      ],
+      "by_group": {
+        "Demersal": {
+          "reference": 0,
+          "matched": 0,
+          "unmatched": 0
+        },
+        "Motile Epifauna": {
+          "reference": 15,
+          "matched": 0,
+          "unmatched": 0
+        },
+        "Planktonic": {
+          "reference": 0,
+          "matched": 0,
+          "unmatched": 0
+        },
+        "Sessile Epifauna": {
+          "reference": 0,
+          "matched": 0,
+          "unmatched": 0
+        }
+      },
+      "reference_track_count": 0,
+      "predicted_track_count": 0
+    },
+    {
+      "sequence": "mbari-bs",
+      "dive": "Ventana V4289",
+      "split": "held-out",
+      "method": "ecotype",
+      "scope": "partial",
+      "total_frames": 8,
+      "scored_frames": 8,
+      "inference_frames": 8,
+      "reference": 166,
+      "matched": 0,
+      "unmatched": 33,
+      "unscored": 0,
+      "unlocated_reference": 0,
+      "localized": 30,
+      "groups": [
+        "Demersal",
+        "Motile Epifauna",
+        "Sessile Epifauna"
+      ],
+      "by_group": {
+        "Demersal": {
+          "reference": 8,
+          "matched": 0,
+          "unmatched": 0
+        },
+        "Motile Epifauna": {
+          "reference": 104,
+          "matched": 0,
+          "unmatched": 0
+        },
+        "Sessile Epifauna": {
+          "reference": 54,
+          "matched": 0,
+          "unmatched": 33
+        }
+      },
+      "reference_track_count": 24,
+      "predicted_track_count": 30,
+      "track_audit": {
+        "matched_reference_tracks": 5,
+        "matched_estimated_tracks": 27,
+        "reference_tracks_matched_multiple_frames": 4,
+        "split_reference_tracks": 4,
+        "merged_estimated_tracks": 0
+      }
+    },
+    {
+      "sequence": "mbari-bs",
+      "dive": "Ventana V4289",
+      "split": "held-out",
+      "method": "qwen",
+      "scope": "partial",
+      "total_frames": 8,
+      "scored_frames": 8,
+      "inference_frames": 8,
+      "reference": 166,
+      "matched": 0,
+      "unmatched": 8,
+      "unscored": 0,
+      "unlocated_reference": 0,
+      "localized": 7,
+      "groups": [
+        "Demersal",
+        "Motile Epifauna",
+        "Sessile Epifauna"
+      ],
+      "by_group": {
+        "Demersal": {
+          "reference": 8,
+          "matched": 0,
+          "unmatched": 8
+        },
+        "Motile Epifauna": {
+          "reference": 104,
+          "matched": 0,
+          "unmatched": 0
+        },
+        "Sessile Epifauna": {
+          "reference": 54,
+          "matched": 0,
+          "unmatched": 0
+        }
+      },
+      "reference_track_count": 24,
+      "predicted_track_count": 3,
+      "track_audit": {
+        "matched_reference_tracks": 1,
+        "matched_estimated_tracks": 3,
+        "reference_tracks_matched_multiple_frames": 1,
+        "split_reference_tracks": 1,
+        "merged_estimated_tracks": 0
+      }
+    }
+  ]
+}
