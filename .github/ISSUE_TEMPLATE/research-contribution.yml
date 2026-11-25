@@ -1,0 +1,65 @@
+name: Ocean research contribution
+description: Share a public source, reproducible finding, or review request with the SIG.AI Ocean community.
+title: "[Research] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This submission becomes a public GitHub issue. Share links to an existing public record or access-request page. Keep private or embargoed data, restricted model weights, access tokens, personal contact information, and precise sensitive habitat or species coordinates out of the issue and its attachments.
+  - type: dropdown
+    id: contribution-kind
+    attributes:
+      label: Contribution type
+      options:
+        - Dataset or observations
+        - Model or model card
+        - Reproducible run or scientific finding
+        - Independent review or correction
+        - Request for data, a replication, or collaborators
+    validations:
+      required: true
+  - type: input
+    id: primary-source
+    attributes:
+      label: Public source or related work
+      description: A DOI, model card, versioned repository, public access-request page, or related issue. For a new request, link the closest existing work.
+      placeholder: https://doi.org/...
+    validations:
+      required: true
+  - type: textarea
+    id: research-question
+    attributes:
+      label: Scientific question and contribution
+      description: Describe what this contributes, what is uncertain, and the specific follow-up you would welcome.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and reproducibility
+      description: For data, give version, dates, broad region, instrument, and QC. For models or runs, give checkpoint, inputs, split, metric and command or notebook link. For a review or request, state the check someone could perform.
+    validations:
+      required: true
+  - type: input
+    id: attribution
+    attributes:
+      label: Original creators and preferred citation
+      description: Cite the source creators. Include your public display name or ORCID only if you want it shown as contributor credit.
+      placeholder: Dataset authors or team, year, title, version, DOI
+    validations:
+      required: true
+  - type: textarea
+    id: access-and-reuse
+    attributes:
+      label: Access and reuse terms
+      description: Give the source license or link to the owner's access process. Distinguish data, weights and code where applicable. Say “unknown” if no terms are stated.
+    validations:
+      required: true
+  - type: checkboxes
+    id: opt-ins
+    attributes:
+      label: Optional visibility and collaboration preferences
+      description: Leave unchecked to keep the submission as an issue only. The original licenses remain in effect.
+      options:
+        - label: I invite SIG.AI Ocean to consider this summary and its public links for a credited community listing.
+        - label: I welcome independent replication, corrections, or review replies in this issue.

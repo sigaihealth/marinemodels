@@ -2,7 +2,18 @@
 
 Marine Models explores how open ocean observations can support local models and digital twins. The first pilot replays Winter Storm Gianna at OOI's Pioneer Mid-Atlantic Bight Central Surface Mooring (`CP10CNSM`) off North Carolina. The [research brief](docs/ocean_digital_twin_research.md) covers five model ideas, complementary datasets, and the validation questions each project would need to answer.
 
-Explore the [public SIG.AI Ocean project](https://ocean.sig.ai/) and the [plankton classification and forecasting roadmap](docs/pioneer_roadmap.md). The public site is served from the static files in `site/`. To preview a checkout locally, run `python3 -m http.server 8000 --directory site` and open `http://localhost:8000`.
+The [SIG.AI Ocean platform](https://ocean.sig.ai/) offers scientific task workspaces, model trials and research contributions. The [Pioneer storm study](https://ocean.sig.ai/pioneer-storm.html) is the first use case. See the [Pioneer evaluation plan](docs/pioneer_roadmap.md) and the [collaboration and compute design](docs/research_collaboration.md).
+
+| Workspace | What runs or opens |
+| --- | --- |
+| [Plankton recognition](https://ocean.sig.ai/try-plankton.html) | Runs the pinned WHOI model on sample or user-selected PNG crops in the browser. Exports scored suggestions as JSON or CSV. |
+| [PlankScope integration](https://ocean.sig.ai/plankscope.html) | Pairs a local PlankScope prediction export with WHOI's public pilot or a local WHOI file by image checksum. |
+| [Satellite ocean color](https://ocean.sig.ai/try-ocean-color.html) | Runs NASA's published MODIS OC3M band-ratio calculation with editable reflectance inputs. |
+| [Ocean physics](https://ocean.sig.ai/try-forecast.html) | Explores two archived GLONET forecast runs with matched GLO12 persistence at three sites and three depths. |
+| [Model workspace](https://ocean.sig.ai/model-catalog.html) | Nine task lanes with model and benchmark records, scoped licenses, compute evidence, evaluation protocols and a sortable workbook. |
+| [Research contributions](https://ocean.sig.ai/collaborate.html) | Public, opt-in research links, replication requests and corrections via a structured GitHub issue. |
+
+The public site is served from `site/`. Run `python3 -m http.server 8000 --directory site` and open `http://localhost:8000` to preview it. Task definitions and model records live in `site/assets/model-catalog.json`. The plankton trial fetches pinned weights from their publisher. Uploaded images and prediction files stay in the user's browser. OOI GPU batch execution is a proposed backend for authorized research jobs.
 
 ## Run the Pioneer event replay
 

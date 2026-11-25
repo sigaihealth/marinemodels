@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#092e34">
+  <meta name="description" content="Run the NASA MODIS OC3M band-ratio model in your browser to estimate near-surface chlorophyll-a from three reflectance measurements.">
+  <title>Try ocean color · SIG.AI Ocean</title>
+  <link rel="stylesheet" href="assets/ocean.css">
+  <link rel="stylesheet" href="assets/try-ocean-color.css">
+  <script defer src="assets/try-ocean-color.js"></script>
+</head>
+<body class="oc-page">
+<a class="skip" href="#main">Skip to main content</a>
+<div class="masthead">
+  <header class="topbar wrap">
+    <a class="wordmark" href="index.html" aria-label="SIG.AI Ocean home"><strong>SIG.AI</strong><span>Ocean</span></a>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a><a href="model-catalog.html">Model workspace</a><a href="collaborate.html">Contribute</a></nav>
+  </header>
+  <div class="wrap oc-intro">
+    <a href="model-catalog.html#satellite">Satellite ocean color and radar</a>
+    <h1>Estimate chlorophyll from ocean color</h1>
+    <p>Run NASA’s MODIS OC3M band-ratio model on one ocean pixel. Changing how strongly the water reflects blue and green light changes the estimated near-surface chlorophyll-a.</p>
+  </div>
+</div>
+<main id="main" class="wrap oc-main">
+  <noscript><p>Enable JavaScript to calculate and export an estimate. The model equation and sources appear below.</p></noscript>
+  <div class="oc-calculator">
+    <section aria-labelledby="inputs-title" class="oc-inputs">
+      <h2 id="inputs-title">Water reflectance</h2>
+      <p>Use atmosphere-corrected remote-sensing reflectance (Rrs) in sr⁻¹ from the same MODIS pixel. Keep the source quality flags when working with observations.</p>
+      <div class="oc-input-row">
+        <label for="rrs443"><span class="oc-band band443"></span>443 nm <small>Blue</small></label>
+        <input id="rrs443" type="number" step="any" value="0.006" required>
+      </div>
+      <div class="oc-input-row">
+        <label for="rrs488"><span class="oc-band band488"></span>488 nm <small>Blue-green</small></label>
+        <input id="rrs488" type="number" step="any" value="0.0045" required>
+      </div>
+      <div class="oc-input-row">
+        <label for="rrs547"><span class="oc-band band547"></span>547 nm <small>Green</small></label>
+        <input id="rrs547" type="number" step="any" value="0.003" required>
+      </div>
+      <p id="input-origin" class="oc-origin">Illustrative inputs (no station or observation date).</p>
+      <button id="reset-inputs" type="button" class="oc-reset">Restore illustrative inputs</button>
+    </section>
+    <section class="oc-result" aria-labelledby="result-title" aria-live="polite" aria-atomic="true">
+      <h2 id="result-title">Chlorophyll-a estimate</h2>
+      <p class="oc-value"><output id="estimate">—</output> <span>mg/m³</span></p>
+      <p id="result-status">Waiting for the calculation.</p>
+      <dl>
+        <div><dt>Selected numerator</dt><dd id="numerator">—</dd></div>
+        <div><dt>Blue-to-green ratio</dt><dd id="ratio">—</dd></div>
+        <div><dt>Log₁₀ of ratio</dt><dd id="log-ratio">—</dd></div>
+      </dl>
+      <button id="export-result" type="button" class="primary" disabled>Download result (JSON)</button>
+    </section>
+  </div>
+  <section class="oc-method" aria-labelledby="method-title">
+    <h2 id="method-title">How OC3M works</h2>
+    <div>
+      <p>The model divides the larger blue-band reflectance by green reflectance, takes the base-10 logarithm, and applies the polynomial fitted for MODIS. These are the R2022 coefficients published in NASA’s November 2023 algorithm document.</p>
+      <p class="oc-formula"><var>x</var> = log₁₀(max(Rrs₄₄₃, Rrs₄₈₈) / Rrs₅₄₇)<br>
+        log₁₀(Chl) = 0.26294 − 2.64669<var>x</var> + 1.28364<var>x</var>² + 1.08209<var>x</var>³ − 1.76828<var>x</var>⁴</p>
+      <p>The OC3 routine accepts a blue-to-green ratio strictly between 0.21 and 30. The 488 nm and 547 nm values must be positive, and the 443 nm value must exceed −0.001 sr⁻¹. The routine bounds its output to 0.001–1,000 mg/m³. These numerical checks cannot detect cloud contamination or correct a coastal scene affected by sediment or dissolved organic matter.</p>
+      <p>NASA’s operational R2022 <code>chlor_a</code> product also uses a color-index estimate, blending it with OC3M between 0.25 and 0.35 mg/m³ of color-index chlorophyll. This calculator runs the OC3M component alone. Compare it to field chlorophyll matched by time and location when evaluating a retrieval.</p>
+      <div class="sources"><a id="atbd" href="https://oceandata.sci.gsfc.nasa.gov/files/atbd/atbd-obdaac-chlorophyll-a.pdf">NASA formula and Table 1</a><a id="implementation" href="https://oceandata.sci.gsfc.nasa.gov/manifest/tags/T2024.26/ocssw_src/src/l2gen/get_chl.c">OCSSW implementation</a><a id="limits" href="https://oceandata.sci.gsfc.nasa.gov/manifest/tags/initial/ocssw_src/src/l2gen/chl.h">OCSSW numerical limits</a><a href="https://seabass.gsfc.nasa.gov/wiki/validation_description">SeaBASS matchup methods</a></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footer-head"><a href="index.html" class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></a><div class="links"><a href="model-catalog.html#satellite">Satellite models</a><a href="collaborate.html">Contribute</a></div></div></footer>
+</body>
+</html>

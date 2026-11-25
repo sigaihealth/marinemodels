@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#092e34">
+  <meta name="description" content="Browse ocean models by scientific task, inputs, weights, licenses and evaluation protocol.">
+  <title>Model workspace · SIG.AI Ocean</title>
+  <link rel="stylesheet" href="assets/ocean.css">
+  <link rel="stylesheet" href="assets/model-catalog.css">
+  <script defer src="assets/model-catalog.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="masthead">
+  <header class="topbar wrap">
+    <a class="wordmark" href="index.html" aria-label="SIG.AI Ocean home"><strong>SIG.AI</strong><span>Ocean</span></a>
+    <nav aria-label="Main navigation"><a href="pioneer-storm.html">Pioneer storm replay</a><a href="model-catalog.html" aria-current="page">Model workspace</a><a href="collaborate.html">Contribute</a></nav>
+  </header>
+  <div class="catalog-intro wrap">
+    <div><h1>Model workspace</h1><p>Choose a task to try an available model, inspect a forecast or find a release to evaluate. Each record lists the inputs and tests it supports.</p></div>
+    <a class="primary" href="assets/ocean-model-catalog.xlsx" download>Download sortable workbook</a>
+  </div>
+</div>
+<main id="main" class="wrap catalog-main">
+  <aside aria-label="Task selection">
+    <label class="eyebrow" for="lane-select">Task lanes</label>
+    <select id="lane-select" class="lane-select" aria-label="Choose a task lane"></select>
+    <nav id="lanes" aria-label="Task lanes"></nav>
+  </aside>
+  <section id="lane-content" aria-labelledby="lane-title" aria-live="polite">
+    <h2 id="lane-title">Task catalog</h2>
+    <p id="loading">Loading model records…</p>
+    <noscript><p>Download the workbook above to browse all nine task lanes.</p></noscript>
+  </section>
+</main>
+<footer><div class="wrap footer-head"><span class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></span><div class="links"><a href="pioneer-storm.html">Pioneer research</a><a href="https://github.com/sigaihealth/marinemodels">Code and data</a></div></div></footer>
+</body>
+</html>

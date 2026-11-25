@@ -1,0 +1,27 @@
+.hub-hero,.hub-split{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:clamp(2rem,5vw,5rem)}
+.hub-hero{padding-block:clamp(3rem,6vw,6.3rem)}
+.hub-hero h1{font-size:clamp(4.5rem,7.7vw,7.65rem);line-height:.93}
+.hub-actions{display:flex;align-items:center;flex-wrap:wrap;gap:1rem 1.55rem;margin-top:1.65rem}
+.hub-actions .primary{margin:0}.hub-actions .text-link{color:#e3f1e8}
+.instrument-plate{background:#143b3d;border:1px solid #54746e;padding:1.15rem}
+.plate-images{display:grid;grid-template-columns:1.3fr 1fr;align-items:stretch;gap:.7rem;margin:.9rem 0}
+.plate-images img{width:100%;height:clamp(8.5rem,12vw,13rem);object-fit:contain;background:#b9bcb8}
+.instrument-plate figcaption{font-size:.92rem;color:#c8d9d0}
+.hub-section{padding-block:clamp(2.9rem,5vw,5.1rem)}
+.hub-section h2,.hub-split h2{font-size:clamp(3.2rem,4.7vw,5rem)}
+.hub-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:2.2rem;margin:1.85rem 0}
+.hub-tools article{border-top:2px solid #8eac9f;padding-top:.8rem}
+.hub-tools h3{font-size:2.15rem;margin:.4rem 0 .6rem}.hub-tools h3 a{text-decoration-thickness:1px;text-decoration-color:#8aa89c}
+.tool-kind{color:#44665e;font-weight:650;font-size:.9rem}
+.hub-split .eyebrow{margin-bottom:.6rem}.hub-split .text-link{display:inline-block;margin-top:1.05rem}
+.tool-page{padding-block:clamp(2rem,4vw,4rem);max-width:65rem}
+.tool-page h1{font-size:clamp(3.5rem,6vw,6rem)}.tool-lead{font-size:1.18rem;max-width:67ch;margin-top:.85rem}
+.input-panel{display:grid;gap:1rem;padding:1.4rem;background:#e3eee7;border:1px solid var(--rule);margin:1.5rem 0}
+.input-panel label{font-weight:650;display:grid;gap:.25rem}
+.input-panel input{max-width:100%;font:inherit}
+.input-panel p,.tool-note p{color:var(--muted);max-width:76ch}
+.action{justify-self:start;cursor:pointer;border:0;background:#11524b;color:#fff;padding:.65rem 1.25rem;font:650 1rem var(--sans);border-radius:3px}
+.tool-note{margin:2.7rem 0}.tool-note h2{font-size:clamp(2.55rem,4vw,3.6rem)}.tool-note p,.tool-note details,.tool-note .links{margin-top:.85rem}
+.tool-note details>summary{font-weight:650;cursor:pointer}.result-table{overflow:auto;max-height:24rem;margin:.8rem 0}
+.result-table table{border-collapse:collapse;width:100%;text-align:left;font-size:.96rem}.result-table th,.result-table td{padding:.4rem .7rem;border-bottom:1px solid var(--rule)}.result-table th{background:#e3eee7}
+@media(max-width:760px){.hub-hero,.hub-split,.hub-tools{grid-template-columns:1fr;gap:1.7rem}.hub-tools{margin-top:1.4rem}.hub-split br{display:none}.hub-split br::after{content:" "}.hub-hero h1{font-size:clamp(4.15rem,14vw,5.55rem)}.hub-actions{align-items:flex-start}.instrument-plate{padding:.8rem}}

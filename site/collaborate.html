@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#092e34">
+  <meta name="description" content="Share an ocean dataset, model, observation, or reproducible result with the SIG.AI Ocean research community.">
+  <title>Research contributions · SIG.AI Ocean</title>
+  <link rel="preload" href="assets/fonts/instrumentserif.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/ocean.css">
+  <link rel="stylesheet" href="assets/collaborate.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="masthead"><header class="topbar wrap">
+  <a class="wordmark" href="index.html" aria-label="SIG.AI Ocean home"><strong>SIG.AI</strong><span>Ocean</span></a>
+  <nav aria-label="Main navigation"><a href="pioneer-storm.html">Storm replay</a><a href="model-catalog.html">Model workspace</a><a href="collaborate.html" aria-current="page">Contribute</a></nav>
+</header></div>
+<main id="main">
+  <div class="cover">
+    <section class="wrap contribution-hero" aria-labelledby="title">
+      <div>
+        <p class="eyebrow station">Research contributions</p>
+        <h1 id="title">Share your <br>ocean research.</h1>
+        <p class="standfirst">Give another researcher a dataset to explore, a model to test, or a finding to challenge. Keep the source in its home archive and the discussion in a public, linkable record.</p>
+        <a class="primary" href="https://github.com/sigaihealth/marinemodels/issues/new?template=research-contribution.yml">Open the contribution form</a>
+        <p class="form-note">The form opens on GitHub. Sign in to post.</p>
+      </div>
+      <aside class="example" aria-labelledby="case-title">
+        <p class="eyebrow">Pioneer case study</p>
+        <h2 id="case-title">Can you identify <br>these particles?</h2>
+        <img src="assets/D20260201T002546_IFCB200_00139.png" width="288" height="138" alt="OOI microscope image of a dark cluster and small fragments">
+        <p class="image-source">OOI Pioneer sample, February 1, 2026. Image region 139.</p>
+        <p>Two classifiers returned suggestions for the same 24 microscope crops. A specialist can challenge a label, explain ambiguity, or propose a blind review.</p>
+        <a href="try-plankton.html">Try the plankton classifier</a>
+      </aside>
+    </section>
+  </div>
+  <section class="wrap contribute-body" aria-labelledby="what-title">
+    <div class="contribute-heading"><p class="eyebrow">Ways to contribute</p><h2 id="what-title">Bring a source <br>or a question.</h2></div>
+    <dl class="contribution-types">
+      <div><dt>Datasets</dt><dd>Link a DOI or access page. Describe the instrument, dates, broad region, units, and quality flags so someone can find comparable observations.</dd></div>
+      <div><dt>Models</dt><dd>Link a versioned model card with input and output examples, known limits, and the terms for using the checkpoint.</dd></div>
+      <div><dt>Runs and findings</dt><dd>Share a notebook or commit, the data version, and the result you want someone to reproduce. An unsuccessful replication can be as useful as a positive result.</dd></div>
+      <div><dt>Reviews and requests</dt><dd>Point to the specific claim, source, or image. Describe a check, a correction, or the expertise you need. Reviewers can link back to their independent work.</dd></div>
+    </dl>
+  </section>
+  <section class="model-band">
+    <div class="wrap contribute-body process" aria-labelledby="workflow-title">
+      <div class="contribute-heading"><p class="eyebrow">How it works</p><h2 id="workflow-title">From record <br>to review</h2></div>
+      <div>
+        <ol class="workflow">
+          <li><strong>Link the work.</strong> Submit its public landing page with the scientific question, version, access terms, and preferred citation. For restricted material, share a public access-request page. Keep private files, restricted weights, and precise sensitive locations out of public issues.</li>
+          <li><strong>Choose your visibility.</strong> The issue is public immediately. You can also invite a credited listing or independent replication. These choices leave the source license in force.</li>
+          <li><strong>Discuss the evidence.</strong> Researchers can reply with a correction, reproduction attempt, or related observation. For example, a reviewer can <a href="pioneer_playback.html">inspect the Pioneer samples</a> and share which images would benefit from a second opinion.</li>
+        </ol>
+        <a class="text-link" href="https://github.com/sigaihealth/marinemodels/issues?q=is%3Aissue%20%22%5BResearch%5D%22%20in%3Atitle">Browse public contributions</a>
+      </div>
+    </div>
+  </section>
+  <section class="wrap contribute-future" aria-labelledby="next-title">
+    <h2 id="next-title">What comes next?</h2>
+    <p>Today the exchange runs through public GitHub issues and links to researchers’ own repositories. We plan to add a searchable index of opted-in records, with connections between original datasets, model runs, and independent reviews.</p>
+  </section>
+</main>
+<footer><div class="wrap">
+  <div class="footer-head"><div class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></div><div class="links"><a href="https://sig.ai">SIG.AI</a><a href="https://github.com/sigaihealth/marinemodels">Project on GitHub</a></div></div>
+  <p>The example uses imagery from the NSF Ocean Observatories Initiative’s Pioneer Mid-Atlantic Bight Central Surface Mooring. <a href="https://doi.org/10.58046/OOI-CP10CNSM">Platform DOI</a></p>
+  <p><a href="https://github.com/sigaihealth/marinemodels/blob/main/docs/research_collaboration.md">Read the research collaboration guide</a></p>
+</div></footer>
+</body>
+</html>

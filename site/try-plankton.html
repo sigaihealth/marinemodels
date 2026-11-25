@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#092e34">
+  <meta name="description" content="Run WHOI’s Northeast U.S. Shelf IFCB classifier on an ocean observatory sample or your own microscope crop. Inference runs on your device.">
+  <title>Try the plankton classifier · SIG.AI Ocean</title>
+  <link rel="stylesheet" href="assets/ocean.css">
+  <link rel="stylesheet" href="assets/try-plankton.css">
+  <script src="assets/try-plankton.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="masthead"><header class="topbar wrap">
+  <a class="wordmark" href="index.html" aria-label="SIG.AI Ocean home"><strong>SIG.AI</strong><span>Ocean</span></a>
+  <nav aria-label="Main navigation"><a href="pioneer-storm.html">Storm replay</a><a href="model-catalog.html">Model workspace</a><a href="collaborate.html">Contribute</a></nav>
+</header></div>
+<main id="main">
+  <section class="cover"><div class="wrap trial-intro">
+    <p class="eyebrow station">Imaging FlowCytobot · WHOI v2.4</p>
+    <h1>Try the plankton classifier.</h1>
+    <p class="standfirst">Choose a single microscope crop and see which of 155 categories the Sosik Lab model favors. Your browser runs the model on your device.</p>
+  </div></section>
+  <section class="wrap trial" aria-label="Run an image through the classifier">
+    <div class="inputs">
+      <fieldset id="inputs">
+        <legend>Choose an image</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="source" value="early" checked><img src="assets/D20260201T002546_IFCB200_00139.png" alt="Cluster of particles in the early sample"><span>00:25 UTC<small>Region 139</small></span></label>
+          <label class="choice"><input type="radio" name="source" value="late"><img src="assets/D20260201T152545_IFCB200_04627.png" alt="Small dark particles in the afternoon sample"><span>15:25 UTC<small>Region 4627</small></span></label>
+        </div>
+        <p class="caption">NSF OOI Pioneer Mid-Atlantic Bight, February 1, 2026. Images are displayed at different scales.</p>
+        <label class="file-label" for="image-file">Or choose your own microscope crop</label>
+        <input type="file" id="image-file" accept=".png,image/png" aria-describedby="file-help">
+        <p id="file-help" class="caption">Use an opaque 8-bit PNG up to 4 megapixels and 16 MiB. Your image stays in this tab.</p>
+      </fieldset>
+      <button id="run" class="primary" type="button">Run classifier</button>
+      <button id="cancel" type="button" hidden>Cancel run</button>
+      <p class="caption">The first run downloads 84 MiB of model weights from Hugging Face and about 11 MiB of runtime files.</p>
+      <noscript><p>Enable JavaScript to run the classifier in this browser.</p></noscript>
+    </div>
+    <div class="result-panel">
+      <h2>Model suggestions</h2>
+      <p id="selected" class="selected">Selected image · OOI region 139</p>
+      <p id="status" role="status" aria-live="polite">Ready to run.</p>
+      <progress id="progress" hidden aria-label="Model download progress"></progress>
+      <div id="results" hidden>
+        <div class="result-labels"><span>Model category</span><span>Softmax score</span></div>
+        <ol id="scores"></ol>
+        <p class="score-note">Scores express relative preference among the model’s categories. Pioneer identification accuracy and score calibration still require expert review.</p>
+        <div class="export-links"><a id="download" class="text-link" download="ifcb-prediction.json">Download result as JSON</a><a id="csv-download" class="text-link" download="ifcb-prediction.csv">Download comparison CSV</a></div>
+      </div>
+    </div>
+  </section>
+  <section class="model-band"><div class="wrap trial-method">
+    <h2>Reading a result</h2>
+    <div><p>The Woods Hole Oceanographic Institution Sosik Lab trained this model on Northeast U.S. Shelf IFCB imagery. Its vocabulary includes organisms, mixed groups, debris, and imaging artifacts. The model assigns a score to every category even when an image contains an unfamiliar particle.</p>
+      <p>This implementation converts the crop to grayscale, resizes it to 299 × 299 pixels with bicubic interpolation, and runs the frozen ONNX model. The JSON records the image fingerprint, model revision, and the three leading suggestions. For original observatory images, it also links the public source.</p>
+      <p>Have a PlankScope prediction for this crop? Save the comparison CSV and <a href="plankscope.html">compare your PlankScope run with WHOI</a> using a matching single-image export.</p>
+      <p><a href="pioneer_playback.html">Explore the Pioneer storm replay</a> · <a href="collaborate.html">Share a review</a></p>
+    </div>
+  </div></section>
+</main>
+<footer><div class="wrap">
+  <div class="footer-head"><div class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></div><div class="links"><a href="https://sig.ai">SIG.AI</a><a href="https://github.com/sigaihealth/marinemodels">Project on GitHub</a></div></div>
+  <p>Sources and credits · <a href="https://huggingface.co/sosiklab/NES-plankton-IFCB-classifier-2022/tree/71bc362e8c75014c27692a8f10637d36f411962e">WHOI model and labels</a> (<a href="assets/ifcb-runtime/whoi-license.txt">MIT</a>) · <a href="https://github.com/WHOIGit/ifcb-inference/blob/v0.4.0/src/ifcb_infer/datasets.py">WHOI preprocessing</a> · <a href="https://doi.org/10.58046/OOI-CP10CNSM">NSF OOI imagery and platform DOI</a></p>
+  <p>Runtime · <a href="https://onnxruntime.ai/docs/tutorials/web/">ONNX Runtime Web</a> (<a href="assets/ifcb-runtime/ort-license.txt">MIT</a>, <a href="assets/ifcb-runtime/ort-third-party.txt">third-party notices</a>) · <a href="assets/ifcb-runtime/pillow-license.txt">Pillow resampling license</a></p>
+</div></footer>
+</body>
+</html>
