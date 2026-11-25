@@ -37,6 +37,26 @@ The higher count coincided with fresher water at the mooring. ROI counts include
 
 ## Research directions
 
+### Classify the recovered gallery
+
+The pilot uses the frozen WHOI Northeast Shelf IFCB classifier on CPU. Its suggestions require a local expert audit before they can support estimates of plankton composition. Run from the repository directory with NumPy, Pillow 9.1 or newer, and ONNX Runtime installed. The script verifies the model, labels, and gallery image checksums.
+
+```sh
+weights="$HOME/data/models/whoi-nes-v2.4"
+run_dir="$HOME/data/pioneer-gianna"
+base="https://huggingface.co/sosiklab/NES-plankton-IFCB-classifier-2022/resolve/71bc362e8c75014c27692a8f10637d36f411962e"
+mkdir -p "$weights"
+curl -fL "$base/20220209_Jan2022_NES_2.4.onnx" -o "$weights/20220209_Jan2022_NES_2.4.onnx"
+curl -fL "$base/labels.json" -o "$weights/labels.json"
+python3 pioneer_classify_gallery.py --ifcb-dir "$run_dir/ifcb" --weights-dir "$weights" \
+  --output "$run_dir/pioneer_whoi_predictions_rerun.csv"
+```
+
+Each row gives the three highest-scoring labels for one original image. The output path must be new. [WHOI model card](https://huggingface.co/sosiklab/NES-plankton-IFCB-classifier-2022)
+
+### Model ideas
+
+- [Pioneer plankton recognition and scientific interpretation](docs/pioneer_plankton_models.md) outlines a local image-label audit, volume-normalized community estimates, cited event reports, and three follow-on experiments.
 - Compare persistence against sensor-only predictions and then test whether earlier image features improve accuracy on held-out deployments. Use data availability timestamps before evaluating a live forecast.
 - Use the Oregon or Washington shelf for a separate near-bottom oxygen forecast. Validate against OOI measurements and compare with regional forecasts and gliders where time and depth overlap.
 - Use CoastWatch, NASA PACE, NDBC, IOOS, and regional model products for spatial and weather context. The research brief links the source datasets and explains where their footprints and time coverage differ.
