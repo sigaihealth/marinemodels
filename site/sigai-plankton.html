@@ -21,7 +21,7 @@
   <div class="cover"><div class="wrap trial-intro">
     <p class="eyebrow station">Microscope imagery · 101 categories</p>
     <h1>SIG.AI Plankton Classifier</h1>
-    <p class="standfirst">Start with a Pioneer water sample or choose a crop from your microscope. See the three categories the classifier ranks highest for that image.</p>
+    <p class="standfirst">Try a Pioneer water sample, a labeled WHOI reference crop, or an image from your microscope. See the three categories the classifier ranks highest for that image.</p>
   </div></div>
   <section class="wrap trial" aria-label="Classify a microscope image">
     <form id="classify" class="inputs">
@@ -38,11 +38,24 @@
             <img src="assets/D20260201T152545_IFCB200_04627.png" width="120" height="74" alt="Rounded particles in a crop from the afternoon sample">
             <span>15:25 UTC<small>Region 4627</small></span>
           </label>
+          <label class="choice reference-sample">
+            <input type="radio" name="sample" value="whoi">
+            <img src="assets/whoi-coscinodiscus-reference.png" alt="Microscope crop of a specimen labeled Coscinodiscus by WHOI experts">
+            <span>WHOI reference<small><i>Coscinodiscus</i></small></span>
+          </label>
         </div>
-        <p class="caption">OOI Pioneer Mid-Atlantic Bight, February 1, 2026. Each image is shown at its own scale.</p>
+        <p class="caption">The two Pioneer images were collected February 1, 2026. The WHOI example has the expert label <i>Coscinodiscus</i>. Images are shown at different scales.</p>
         <label class="file-label" for="crop">Or choose your own microscope crop</label>
         <input id="crop" type="file" accept="image/png,.png" aria-describedby="crop-help">
         <p class="caption" id="crop-help">Use one opaque 8-bit grayscale or RGB PNG, up to 2 MiB and 4 megapixels.</p>
+        <div class="context-choice">
+          <label><input type="checkbox" id="ifcb-context"> Add Northeast Shelf IFCB reference comparison</label>
+          <p class="caption">Select this for an Imaging FlowCytobot crop from comparable Northeast U.S. Shelf sampling. The reference groups are copepod nauplii, <i>Coscinodiscus</i>, <i>Leptocylindrus</i> and <i>Phaeocystis</i>. The panel can recommend expert review.</p>
+          <details class="context-evidence"><summary>How well did the reference comparison work?</summary>
+            <p>On 148 held-out WHOI crops, the panel suggested a group for 82 and matched the expert label on 77. It recommended review for 66. Four of the 60 crops outside its four groups received a suggestion. These results describe the optional reference comparison.</p>
+            <a href="https://github.com/sigaihealth/marinemodels/blob/main/docs/hosted_plankton_classifier.md">Evaluation and scope</a>
+          </details>
+        </div>
       </fieldset>
       <p class="send-note">Selecting <strong>Classify crop</strong> sends the image to SIG.AI for processing.</p>
       <button class="primary" type="submit" id="run" disabled>Classify crop</button>
@@ -57,6 +70,11 @@
         <div class="result-labels"><span>Suggested category</span><span>Model score</span></div>
         <ol id="scores"></ol>
         <p class="score-note">Scores express the model’s relative preference among its 101 categories. An unfamiliar organism can still receive a high score.</p>
+        <section id="reference" hidden aria-labelledby="reference-title">
+          <h3 id="reference-title">Northeast Shelf IFCB reference</h3>
+          <p id="reference-choice"></p><p id="reference-explanation" class="score-note"></p>
+          <p id="reference-score" class="caption"></p>
+        </section>
         <p id="version" class="caption"></p>
         <a id="download" class="text-link" download="sigai-plankton-prediction.json">Download result as JSON</a>
       </div>
@@ -65,7 +83,8 @@
 </main>
 <footer><div class="wrap">
   <div class="footer-head"><a href="index.html" class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></a><div class="links"><a href="plankton-lab.html">Compare plankton models</a><a href="plankscope.html">PlankScope instrument</a></div></div>
-  <p>Example imagery from the NSF Ocean Observatories Initiative. <a href="https://doi.org/10.58046/OOI-CP10CNSM">Pioneer mooring and citation</a></p>
+  <p>WHOI reference image by Heidi M. Sosik, Emily E. Peacock, Sidney Batchelder and Joe Futrelle. <a href="https://doi.org/10.57967/hf/10839">WHOI dataset</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · <a href="assets/whoi-coscinodiscus-reference.json">Image provenance</a></p>
+  <p>Pioneer imagery from the NSF Ocean Observatories Initiative. <a href="https://doi.org/10.58046/OOI-CP10CNSM">Pioneer mooring and citation</a></p>
 </div></footer>
 </body>
 </html>

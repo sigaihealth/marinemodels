@@ -1,0 +1,14 @@
+{
+  "dataset": "WHOI Northeast U.S. Shelf IFCB classifier 2022 dataset",
+  "doi": "https://doi.org/10.57967/hf/10839",
+  "authors": "Heidi M. Sosik, Emily E. Peacock, Sidney Batchelder and Joe Futrelle, Woods Hole Oceanographic Institution",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "revision": "89b22c10739e8ef91bde18e7d5a81c21edddba9b",
+  "changes": "Original image bytes, renamed for the trial",
+  "source_label": "Coscinodiscus",
+  "roi_id": "IFCB5_2017_103_164054_01283",
+  "source_shard": "validation-00000.parquet",
+  "source_row": "3775",
+  "sha256": "ee17e94ed8473fb1debf7273340974bd70fc5efb86d9866484a79628cdb12ad7"
+}

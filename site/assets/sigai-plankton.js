@@ -1,6 +1,7 @@
 const samples = {
   early: {id: "D20260201T002546_IFCB200_00139", title: "Pioneer region 139"},
-  late: {id: "D20260201T152545_IFCB200_04627", title: "Pioneer region 4627"}
+  late: {id: "D20260201T152545_IFCB200_04627", title: "Pioneer region 4627"},
+  whoi: {id: "whoi-coscinodiscus-reference", title: "WHOI reference · Coscinodiscus"}
 };
 const maxBytes = 2 * 1024 * 1024;
 const get = id => document.getElementById(id);
@@ -83,7 +84,17 @@ function responseError(statusCode) {
   return "The classification service is unavailable. Please try again later.";
 }
 
-function publicResult(data, image, sha, size) {
+function referenceResult(data) {
+  if (!data || !["reference_suggestion", "expert_review"].includes(data.status) ||
+      typeof data.scope !== "string" || !data.scope || typeof data.reason !== "string" || !data.reason ||
+      !Number.isFinite(data.reference_score) || data.reference_score < 0 || data.reference_score > 1 ||
+      (data.status === "reference_suggestion" && (typeof data.suggestion !== "string" || !data.suggestion.trim())) ||
+      (data.status === "expert_review" && data.suggestion !== null)) return null;
+  return {scope: data.scope, status: data.status, suggestion: data.suggestion,
+          reference_score: data.reference_score, reason: data.reason};
+}
+
+function publicResult(data, image, sha, size, useReference) {
   const badResponse = "The service returned an incomplete prediction. Please try again.";
   if (data?.model !== "SIG.AI Plankton Classifier" ||
       typeof data.version !== "string" || !data.version.trim() ||
@@ -99,7 +110,7 @@ function publicResult(data, image, sha, size) {
   return {
     model: data.model, version: data.version, status: "provisional_model_suggestions",
     image: image.file ? image.title : image.id, input_sha256: sha, size_px: [size.width, size.height],
-    candidates
+    candidates, ...(useReference ? {reference: referenceResult(data.reference)} : {})
   };
 }
 
@@ -114,6 +125,16 @@ function show(result) {
     return row;
   });
   get("scores").replaceChildren(...nodes);
+  const includeReference = Object.hasOwn(result, "reference");
+  get("reference").hidden = !includeReference;
+  if (includeReference) {
+    const ref = result.reference;
+    get("reference-choice").textContent = !ref ? "Reference comparison unavailable for this run." :
+      ref.status === "reference_suggestion" ? "Reference suggestion · " + ref.suggestion : "Expert review recommended.";
+    get("reference-explanation").textContent = ref?.reason || "";
+    get("reference-score").textContent = ref ?
+      "Reference score · " + ref.reference_score.toFixed(4) + ". This score comes from a separate model." : "";
+  }
   get("version").textContent = "Model version · " + result.version;
   downloadUrl = URL.createObjectURL(new Blob([JSON.stringify(result, null, 2) + "\n"], {type: "application/json"}));
   get("download").href = downloadUrl;
@@ -131,6 +152,7 @@ upload.addEventListener("change", () => {
   }
   changed();
 });
+get("ifcb-context").addEventListener("change", changed);
 get("cancel").addEventListener("click", () => currentRequest?.abort());
 get("classify").addEventListener("submit", async event => {
   event.preventDefault();
@@ -147,14 +169,22 @@ get("classify").addEventListener("submit", async event => {
   try {
     const {buffer, size, sha} = await readImage(image, controller.signal);
     message("Waiting for the classifier…");
-    const response = await fetch("/api/plankton/predict", {
+    const useReference = get("ifcb-context").checked;
+    const url = "/api/plankton/predict" + (useReference ? "?context=ifcb" : "");
+    const response = await fetch(url, {
       method: "POST", headers: {"Content-Type": "image/png", "Accept": "application/json"},
       body: buffer, signal: controller.signal, cache: "no-store", credentials: "omit", redirect: "error"
     });
-    if (!response.ok) throw new Error(responseError(response.status));
+    if (!response.ok) {
+      if (response.status === 422 && response.headers.get("Content-Type")?.includes("application/json")) {
+        const detail = await response.json().catch(() => null);
+        if (detail?.error === "empty_crop") throw new Error("This crop contains a single color. Choose an image with visible specimen detail.");
+      }
+      throw new Error(responseError(response.status));
+    }
     if (!response.headers.get("Content-Type")?.includes("application/json")) throw new Error(responseError(503));
     const data = await response.json();
-    show(publicResult(data, image, sha, size));
+    show(publicResult(data, image, sha, size, useReference));
   } catch (error) {
     if (controller.signal.aborted) {
       message(timedOut ? "The classifier timed out. Please try again." : "Run canceled.", timedOut);

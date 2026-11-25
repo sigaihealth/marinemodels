@@ -2,3 +2,20 @@
 .inputs button.primary{margin-top:.8rem}
 #results .text-link{display:inline-block;margin-top:1rem}
 #version{font-variant-numeric:tabular-nums}
+
+.context-choice{margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--rule)}
+.context-choice label{display:flex;align-items:baseline;gap:.55rem;font-weight:650}
+.context-choice input{flex:none;accent-color:#226758}
+.context-choice .caption{margin-left:1.55rem}
+#reference{margin-top:1.4rem;padding:1rem;border-left:2px solid #558878;background:#f1f7ef}
+#reference h3{font-size:clamp(1.65rem,2.6vw,2.1rem)}
+#reference-choice{font-weight:650;margin:.65rem 0 .25rem}
+
+.context-evidence{margin:.6rem 0 0 1.55rem;font-size:.91rem;color:var(--muted)}
+.context-evidence summary{cursor:pointer;text-decoration:underline;text-underline-offset:.22em}
+.context-evidence p{margin:.55rem 0 .25rem}
+
+.reference-sample{grid-column:1/-1;grid-template-columns:auto minmax(4rem,.45fr) 1fr}
+.reference-sample input{grid-column:1;grid-row:1}
+.reference-sample img{grid-column:2;grid-row:1;height:4.25rem}
+.reference-sample span{grid-column:3;grid-row:1}
