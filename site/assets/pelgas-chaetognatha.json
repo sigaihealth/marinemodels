@@ -1,0 +1,35 @@
+{
+  "dataset": "PELGAS Bay of Biscay ZooScan zooplankton Dataset (2004-2016)",
+  "authors": [
+    "Grandrémy, Nina",
+    "Bourriau, Paul",
+    "Daché, Edwin",
+    "Danielou, Marie-Madeleine",
+    "Doray, Mathieu",
+    "Dupuy, Christine",
+    "Huret, Martin",
+    "Jalabert, Laetitia",
+    "Le Mestre, Sophie",
+    "Nowaczyk, Antoine",
+    "Petitgas, Pierre",
+    "Pineau, Philippe",
+    "Raphalen, Elio",
+    "Romagnan, Jean-Baptiste"
+  ],
+  "publication_year": 2023,
+  "doi": "https://doi.org/10.17882/94052",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "source_object_id": "334778952",
+  "source_label": "Chaetognatha",
+  "acquired": "2004-05-03",
+  "archive_member": "individual_images/Chaetognatha__11514/334778952.jpg",
+  "changes": "Original ZooScan JPEG decoded and saved as an RGB PNG at its original dimensions.",
+  "selection": "Expert-labeled held-out example selected to illustrate a changed source-specific ranking.",
+  "dimensions_px": [
+    782,
+    924
+  ],
+  "original_jpeg_sha256": "859357e00d00c0f0e7b46fb7992ab88eed51d78560fe7be008a6b76206839ab8",
+  "sha256": "3ad9642580b569d9ea2298468e60021d57804b31acfad232fcdba352d7983623"
+}

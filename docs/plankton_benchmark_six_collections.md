@@ -1,6 +1,6 @@
 # Testing SIG.AI's plankton classifier across six collections
 
-The SIG.AI classifier ranks 101 categories for a microscope crop. Researchers assembled 13,930 distinct expert-annotated images from six collections to see where its first choice agrees with a human label, and whether training on its errors improves that choice. The held-out images represent 28 categories. The other 73 still need suitable reference images. [Try the public classifier](https://ocean.sig.ai/sigai-plankton.html)
+The SIG.AI classifier ranks 101 categories for a microscope crop. Researchers assembled 13,930 distinct expert-annotated images from six collections to see where its first choice agrees with a human label, and whether training on its errors improves that choice. The held-out images represent 28 categories. A separate Tara Pacific challenge subsequently added evidence for four more categories, including one historical category. Across both evaluations, 69 still need suitable reference images. [Try the public classifier](https://ocean.sig.ai/sigai-plankton.html)
 
 ## Held-out results
 
@@ -38,6 +38,8 @@ The source-specific comparison improved recall for 23 of the 25 categories repre
 
 The previous four-group Northeast Shelf reference panel answers a different question and can refer an image to expert review. On the 954 new WHOI crops it offered 390 suggestions, of which 331 matched a source annotation. It referred 564 crops for review. It issued a four-group suggestion on 56 of the 489 crops known to fall outside the panel.
 
+The public trial includes a Bay of Biscay arrow worm selected to illustrate a changed ranking. Choose **Bay of Biscay ZooScan** and select **Compare a source-specific ranking** to see both identifications. [Try the example](https://ocean.sig.ai/sigai-plankton.html)
+
 ## Sampling and evaluation
 
 | Instrument and collection | Fit | Development | Test |
@@ -57,6 +59,16 @@ Among the 3,254 mapped test cases, 1,835 have direct matches, 1,032 have finer l
 Entire acquisition groups stayed together, and the test excludes all 1,642 acquisition bins from two earlier project experiments. SHA-256 checks excluded repeated images and repeated decoded pixels across splits. The original model's historical training inventory is unavailable, so overlap with that earlier training remains unknown. All sampled Baltic and Belgian images were reserved for the independent transfer test. Each contributes one independent domain to the transfer analysis.
 
 The OOI NVIDIA L40S was used to learn a correction to the rankings from frozen image features. The fitting set determined the weak classes. The development set determined when the correction could change an identification. One option requires the original model's top choice to be among the fitted categories. A second option requires a known acquisition source. The latter keeps the original order on sources outside the four used in fitting. Each comparison uses the same held-out images, with classes equally weighted in macro-F1. Unmapped controls are reported separately.
+
+## The most common failure
+
+The original model labeled 2,589 of the 3,254 expert-mapped test organisms as bubble/wave. This included 1,301 of 1,346 Bay of Biscay samples and 412 of 419 Baltic samples. The optional source-specific comparison reduced the overall number to 2,267. Paired examples of actual bubbles and organisms from the PlankScope instrument would help determine whether image background, magnification or the original annotation criteria explain this pattern.
+
+## An independent test in the Pacific
+
+After the six-collection study was frozen, we tested 95 expert-validated Tara Pacific ZooScan specimens from 65 stations. None matched an image or acquisition identifier used in the six-collection study. The exact taxonomic challenge contained 68 hyperiid amphipods, 15 caprellid amphipods and two siphonophores. On all 85, the original model missed the annotation even in its top three. It assigned the bubble/wave category to 82 as its first choice. The private experimental gate gave the same results. The collection-specific comparison was inactive because Tara Pacific was outside its fitting sources.
+
+A separate set of ten specimens carried the historical Gammaridea annotation. The original model also missed all ten. Two siphonophores are enough to document these failures, but too few to estimate accuracy for the group. The amphipod results identify concrete priorities for acquiring training images with paired PlankScope and ZooScan expert review. [Tara Pacific ZooScan HSN collection and attribution](https://doi.org/10.17882/102336)
 
 ## Image sources
 

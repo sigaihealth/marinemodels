@@ -21,7 +21,7 @@
   <div class="cover"><div class="wrap trial-intro">
     <p class="eyebrow station">Microscope imagery · 101 categories</p>
     <h1>SIG.AI Plankton Classifier</h1>
-    <p class="standfirst">Try a Pioneer water sample, a labeled WHOI reference crop, or an image from your microscope. See the three categories the classifier ranks highest for that image.</p>
+    <p class="standfirst">Explore plankton from the Pioneer Array, the Northeast U.S. Shelf and the Bay of Biscay, or try an image from your microscope. See which three categories the classifier ranks highest.</p>
   </div></div>
   <section class="wrap trial" aria-label="Classify a microscope image">
     <form id="classify" class="inputs">
@@ -43,8 +43,14 @@
             <img src="assets/whoi-coscinodiscus-reference.png" alt="Microscope crop of a specimen labeled Coscinodiscus by WHOI experts">
             <span>WHOI reference<small><i>Coscinodiscus</i></small></span>
           </label>
+          <label class="choice reference-sample">
+            <input type="radio" name="sample" value="pelgas">
+            <img src="assets/pelgas-chaetognatha.png" width="782" height="924" alt="ZooScan image of a specimen labeled Chaetognatha by the PELGAS team">
+            <span>Bay of Biscay ZooScan<small>Arrow worm · Chaetognatha</small></span>
+          </label>
         </div>
-        <p class="caption">The two Pioneer images were collected February 1, 2026. The WHOI example has the expert label <i>Coscinodiscus</i>. Images are shown at different scales.</p>
+        <p class="caption">The two Pioneer images were collected February 1, 2026. The WHOI and Bay of Biscay examples have expert labels. Images are shown at different scales.</p>
+        <p class="caption">The Bay of Biscay example was selected to illustrate a changed ranking. Image by Grandrémy et al. <a href="https://doi.org/10.17882/94052">PELGAS dataset</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · <a href="assets/pelgas-chaetognatha.json">Image provenance</a></p>
         <label class="file-label" for="crop">Or choose your own microscope crop</label>
         <input id="crop" type="file" accept="image/png,.png" aria-describedby="crop-help">
         <p class="caption" id="crop-help">Use one opaque 8-bit grayscale or RGB PNG, up to 2 MiB and 4 megapixels.</p>
@@ -104,7 +110,7 @@
   </section>
   <section id="expanded-evidence" class="wrap trial-method" aria-labelledby="expanded-title">
     <h2 id="expanded-title">How well does the classifier transfer?</h2>
-    <p>Six research collections provided expert annotations for 28 of the classifier’s 101 categories. Across new acquisitions from four collections used in training, the original first choice matched the reference label on 0.3% of crops. The source-specific comparison matched it on 25.1%. The study also tested two entirely held-out collections.</p>
+    <p>Six research collections provided expert annotations for 28 of the classifier’s 101 categories. Across new acquisitions from four collections used in training, the original first choice matched the reference label on 0.3% of crops. The source-specific comparison matched it on 25.1%. Two entire collections were reserved for transfer testing. A separate Tara Pacific test provided evidence for three additional taxonomic categories and one historical label.</p>
     <p><a class="text-link" href="https://github.com/sigaihealth/marinemodels/blob/main/docs/plankton_benchmark_six_collections.md">Results by collection, data sources and limitations</a></p>
   </section>
 </main>

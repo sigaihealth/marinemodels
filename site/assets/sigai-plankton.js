@@ -2,12 +2,17 @@ const samples = {
   early: {id: "D20260201T002546_IFCB200_00139", title: "Pioneer region 139"},
   late: {id: "D20260201T152545_IFCB200_04627", title: "Pioneer region 4627"},
   whoi: {id: "whoi-coscinodiscus-reference", title: "WHOI reference · Coscinodiscus",
-         roi: "IFCB5_2017_103_164054_01283", source: "https://doi.org/10.57967/hf/10839"}
+         roi: "IFCB5_2017_103_164054_01283", source: "https://doi.org/10.57967/hf/10839",
+         collection: "whoi_nes"},
+  pelgas: {id: "pelgas-chaetognatha", title: "Bay of Biscay ZooScan · Chaetognatha",
+           roi: "334778952", source: "https://doi.org/10.17882/94052", collection: "pelgas-biscay-zooscan",
+           annotation: "Chaetognatha", provenance: "assets/pelgas-chaetognatha.json"}
 };
 const sampleHashes = {
   early: "7dd6c14fba2e62c3eaeafb0863ca52c385937aff45dc3dc31ada87508f13872b",
   late: "891ed7ceb9b97620367225ff9bd1cb8622b7c78a09d802cb26b0a2bf0c5afe55",
-  whoi: "ee17e94ed8473fb1debf7273340974bd70fc5efb86d9866484a79628cdb12ad7"
+  whoi: "ee17e94ed8473fb1debf7273340974bd70fc5efb86d9866484a79628cdb12ad7",
+  pelgas: "3ad9642580b569d9ea2298468e60021d57804b31acfad232fcdba352d7983623"
 };
 const maxBytes = 2 * 1024 * 1024;
 const get = id => document.getElementById(id);
@@ -41,7 +46,7 @@ function clearResult() {
 
 function selectedSource(image) {
   if (!sourceOptIn.checked || sourceOptIn.disabled) return null;
-  if (image === samples.whoi) return "whoi_nes";
+  if (image?.collection) return image.collection;
   if (image?.file && sourceNames.has(sourcePicker.value)) return sourcePicker.value;
   return null;
 }
@@ -55,16 +60,19 @@ function changed() {
   const image = selection();
   clearResult();
   get("selected").textContent = image ? "Selected image · " + image.title : "Choose an image.";
-  message(image ? "Ready to classify." : "Select a Pioneer sample or a PNG.");
-  const eligible = Boolean(image?.file || image === samples.whoi);
+  message(image ? "Ready to classify." : "Select an example or choose a PNG.");
+  const eligible = Boolean(image?.file || image?.collection);
   if (!eligible) resetSource();
   sourceOptIn.disabled = !eligible;
-  get("source-help").textContent = image === samples.whoi
-    ? "This image is from the WHOI Northeast U.S. Shelf IFCB collection. Select the comparison to see how a model fitted to that source ranks it."
+  get("source-help").textContent = image?.collection
+    ? "Recorded collection · " + sourceNames.get(image.collection) + ". Select the comparison to see the ranking for this collection."
     : image?.file
       ? "Select this if the image came from a fitted collection and you know which one."
       : "The Pioneer samples have no fitted source-specific ranking.";
   get("source-picker").hidden = !(image?.file && sourceOptIn.checked);
+  const reference = get("ifcb-context");
+  reference.disabled = image === samples.pelgas;
+  if (reference.disabled) reference.checked = false;
   const needsSource = sourceOptIn.checked && !selectedSource(image);
   submit.disabled = !image || needsSource;
   if (needsSource) message("Choose the recorded source collection, or clear the source comparison.");
@@ -158,6 +166,7 @@ function publicResult(data, image, sha, size, useReference, source) {
     image: image.file ? image.title : image.id, input_sha256: sha, size_px: [size.width, size.height],
     ...(image.file ? {} : {roi_id: image.roi || image.id,
                            source: image.source || "https://ifcb-data.oceanobservatories.org/data/" + image.id + ".png"}),
+    ...(image.annotation ? {expert_annotation: image.annotation, image_provenance: new URL(image.provenance, document.baseURI).href} : {}),
     candidates, ...(useReference ? {reference: referenceResult(data.reference)} : {}),
     ...(source ? {
       source_candidate_request: {source, source_basis: image.file ? "user_selected_collection" : "verified_example_collection"},
@@ -252,11 +261,15 @@ get("classify").addEventListener("submit", async event => {
     const {buffer, size, sha} = await readImage(image, controller.signal);
     message("Waiting for the classifier…");
     const useReference = get("ifcb-context").checked;
-    if (source && [sampleHashes.early, sampleHashes.late].includes(sha)) {
-      throw new Error("This image matches a Pioneer sample. Clear the source comparison to classify it.");
+    const selectedKey = Object.keys(samples).find(key => samples[key] === image);
+    if (selectedKey && sha !== sampleHashes[selectedKey]) {
+      throw new Error("The example image differs from its recorded checksum. Reload the page and try again.");
     }
-    if (source && sha === sampleHashes.whoi && source !== "whoi_nes") {
-      throw new Error("This image matches the WHOI reference crop. Choose the WHOI collection or clear the comparison.");
+    const knownKey = Object.keys(sampleHashes).find(key => sampleHashes[key] === sha);
+    if (source && knownKey && samples[knownKey].collection !== source) {
+      const collection = samples[knownKey].collection;
+      throw new Error(collection ? "This image belongs to " + sourceNames.get(collection) + ". Choose that collection or clear the comparison."
+        : "This image matches a Pioneer sample. Clear the source comparison to classify it.");
     }
     const params = new URLSearchParams();
     if (useReference) params.set("context", "ifcb");
