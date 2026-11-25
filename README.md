@@ -56,6 +56,19 @@ python3 pioneer_classify_gallery.py --ifcb-dir "$run_dir/ifcb" --weights-dir "$w
 
 Each row gives the three highest-scoring labels for one original image. The output path must be new. [WHOI model card](https://huggingface.co/sosiklab/NES-plankton-IFCB-classifier-2022)
 
+### Compare WHOI and PlankScope predictions
+
+With access to the PlankScope classifier, run its standalone crop classifier on the same original images. Pair the two prediction files by SHA-256 using Python's standard library. Choose a new, private output path.
+
+```sh
+python3 pioneer_compare_classifiers.py \
+  --whoi "$run_dir/pioneer_whoi_predictions_rerun.csv" \
+  --plankscope "$run_dir/plankscope_predictions.csv" \
+  --output "$run_dir/pioneer_classifier_comparison.csv"
+```
+
+Each output row preserves both models’ first choices and raw scores. To compare broad groups, pass `--crosswalk` with an expert-reviewed CSV containing `source,label,group` (`source` is `whoi` or `plankscope`). Without a crosswalk, group comparisons stay pending. A label missing from a supplied crosswalk stays unmapped. Accuracy requires independent human labels, and scores require calibration before comparing confidence across models. See the [evaluation plan](docs/pioneer_roadmap.md).
+
 ### Model ideas
 
 - [Pioneer plankton recognition and scientific interpretation](docs/pioneer_plankton_models.md) outlines a local image-label audit, volume-normalized community estimates, cited event reports, and three follow-on experiments.
