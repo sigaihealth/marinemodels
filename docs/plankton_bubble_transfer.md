@@ -1,6 +1,6 @@
-# When does an imaging instrument mistake plankton for bubbles?
+# When does the plankton classifier mistake organisms for bubbles?
 
-On 243 Baltic ZooScan images, an adjustment for imaging instrument reduced the number of organisms called bubbles from 180 of 180 to 20 of 180. It also missed four of 63 genuine bubbles. The improvement did not carry over to the Belgian North Sea Video Plankton Recorder (VPR). There the adjusted comparison called 176 of 180 organisms bubbles, including all 68 amphipods.
+On 243 Baltic ZooScan images, pooled retraining reduced false bubble calls from 180 of 180 organisms to 19 of 180. The retrained classifier still recognized 58 of 63 genuine bubbles. Adjusting for the instrument recovered one more genuine bubble (59 of 63) and mislabeled one more organism (20 of 180). On the Belgian North Sea Video Plankton Recorder (VPR), false bubble calls rose from 172 of 180 organisms to 176 of 180 after retraining, including all 68 amphipods.
 
 ## Held-out results
 
