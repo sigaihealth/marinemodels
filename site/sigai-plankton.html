@@ -113,6 +113,11 @@
     <p>Six research collections provided expert annotations for 28 of the classifier’s 101 categories. Across new acquisitions from four collections used in training, the original first choice matched the reference label on 0.3% of crops. The source-specific comparison matched it on 25.1%. Two entire collections were reserved for transfer testing. A separate Tara Pacific test provided evidence for three additional taxonomic categories and one historical label.</p>
     <p><a class="text-link" href="https://github.com/sigaihealth/marinemodels/blob/main/docs/plankton_benchmark_six_collections.md">Results by collection, data sources and limitations</a></p>
   </section>
+  <section id="vpr-research" class="wrap trial-method" aria-labelledby="vpr-title">
+    <h2 id="vpr-title">Can the classifier distinguish bubbles from larvae in VPR images?</h2>
+    <p>We tested a separate research classifier on Video Plankton Recorder images from two cruises held out from training. Arctic bubble detections rose from 130 to 146 of 220, with gains varying by acquisition. On a Canadian cruise, the model kept 241 of 250 larvae out of the bubble category, up from 64. It kept all 14 Arctic amphipods but labeled each as “other organism.”</p>
+    <p><a class="text-link" href="https://github.com/sigaihealth/marinemodels/blob/main/docs/vpr_bubble_recovery.md">Read the VPR results by cruise, including the Hamburg amphipod test</a></p>
+  </section>
 </main>
 <footer><div class="wrap">
   <div class="footer-head"><a href="index.html" class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></a><div class="links"><a href="plankton-lab.html">Compare plankton models</a><a href="plankscope.html">PlankScope instrument</a></div></div>
