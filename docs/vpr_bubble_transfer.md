@@ -35,4 +35,6 @@ The external panel contained 1,566 expert-annotated images. Both classifiers sco
 
 ## What to test next
 
+A follow-up study added Japanese and Canadian training data, set aside a subset of the Hamburg reference amphipods, and tested the retrained classifier on two untouched Arctic and Canadian cruises. [Bubble recovery and larval retention on untouched cruises](vpr_bubble_recovery.md)
+
 A useful next evaluation would reserve a new cruise with expert-labeled bubbles, amphipods and larvae from several separate tows. More bubble appearances and difficult amphipods from other cruises could be added to training, while the reserved cruise would measure whether this recovers bubble recall and preserves the gains on larvae. The optical-bubble label in these collections cannot establish performance on surface waves or on native PlankScope imagery.
