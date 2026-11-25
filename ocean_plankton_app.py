@@ -56,6 +56,11 @@ def runner(family, root):
             return dict(record, model=MODELS["mobilenet"], score_type="softmax", candidate_count=10,
                         checkpoint_sha256=digest, device=device)
         return mobilenet
+    if family == "plankscope":
+        from private_plankscope_runtime import load_classifier
+
+        predict = load_classifier(models / "private-plankscope-v1", device="auto")
+        return lambda path, mode: predict(path)
     if family == "pml":
         from pioneer_ifcb_prototypes import load_classifier
 
@@ -87,8 +92,17 @@ def runner(family, root):
     return whoi
 
 
+def installed_models(root):
+    from private_plankscope_runtime import available
+
+    choices = dict(MODELS)
+    if available(root / "models/private-plankscope-v1"):
+        choices["plankscope"] = "PlankScope · 101 categories (private)"
+    return choices
+
+
 def run_crop(method, path, *, source, root=ROOT, persist=True):
-    if method not in MODELS:
+    if method not in installed_models(root):
         raise ValueError("Select an available model.")
     path = Path(path)
     if path.stat().st_size > MAX_BYTES:
@@ -129,7 +143,7 @@ def show_workspace(root=ROOT):
                                        (dataset / row["path"], f"WHOI NES 2022 · {row['roi_id']}"))
     style = {"description_width": "60px"}
     layout = widgets.Layout(width="auto")
-    model = widgets.Dropdown(description="Model", options=[(v, k) for k, v in MODELS.items()],
+    model = widgets.Dropdown(description="Model", options=[(v, k) for k, v in installed_models(root).items()],
                              style=style, layout=layout)
     source = widgets.Dropdown(description="Image", options=[*sources, "My uploaded PNG"], style=style, layout=layout)
     upload = widgets.FileUpload(accept=".png,image/png", multiple=False, description="Choose PNG")
