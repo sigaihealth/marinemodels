@@ -1,0 +1,16 @@
+{
+  "numpy": "2.5.4",
+  "python": "3.13.16",
+  "platform": "Linux",
+  "inputs": {
+    "archive_windows.csv": "4266c952f6e2c30a3eb08d179ace7c505ffb332e7256a8156349e43dc112f028",
+    "cdip_native.csv.gz": "ecaaf76f63e1f376095a0e4d09a58d6d753e34b4aa25381158c98e9c8b709d0d",
+    "ctd_hourly.csv.gz": "4c1e0f5ed5f1c44a72cf6267e1d5dd17362765d96f3d3fe80a756a4626ded19c",
+    "currents.csv.gz": "ccd568fb6ddf28a34a2cb5e590f14001b635e03105475c32dddd29b53e299a8b",
+    "fresh_storms.csv": "ec69574b1512dbe7685305f137ee12bf11d8210609cedf8a43585614aa77606e",
+    "fresh_wave_hourly.csv.gz": "4a5495b0049050412cf08df2fb2a7d431a6e2da780605b47ab4c9b70e85a1efe",
+    "tides.csv.gz": "d8bbc3b38ecbb98f0997cf7ebd9115c62f5483a34fb65fa0993604874cf194be"
+  },
+  "scored_hours": 95,
+  "scored_events": 3
+}

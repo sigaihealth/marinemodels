@@ -1,0 +1,5 @@
+storm_id,cohort,start,end,peak_wave_m,origins,missing_ctd,missing_tide,missing_currents,paired,train_hours,train_last_target,score_status
+ORE-20240412T01Z,archive_complete,2024-04-11T12:00:00Z,2024-04-13T14:00:00Z,4.15,51,0,0,0,51,109,2024-04-08T11:00:00Z,scored
+ORE-20240903T18Z,archive_complete,2024-09-03T05:00:00Z,2024-09-05T02:00:00Z,3.08,46,22,0,0,24,2691,2024-08-31T01:00:00Z,scored
+ORE-20260124T12Z,archive_complete,2026-01-23T22:00:00Z,2026-01-26T17:00:00Z,4.21,68,68,0,0,0,9376,2026-01-17T09:00:00Z,no paired targets
+ORE-20261126T02Z,later_provisional,2026-11-24T03:00:00Z,2026-11-26T02:00:00Z,5.45,48,28,0,0,20,14820,2026-10-28T23:00:00Z,scored

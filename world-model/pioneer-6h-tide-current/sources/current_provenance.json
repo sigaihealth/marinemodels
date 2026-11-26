@@ -1,0 +1,220 @@
+{
+  "station": "CP10CNSM-RID26-04-VELPTA000",
+  "dataset": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.html",
+  "asset_url": "https://raw.githubusercontent.com/oceanobservatories/asset-management/4466ceaa325eb23e125eff7c9850dd000fc79aef/deployment/CP10CNSM_Deploy.csv",
+  "asset_sha256": "a42a47384a257407ae4d63177b2140164223b97824878359535b5780cd43d132",
+  "deployments": [
+    {
+      "number": 1,
+      "start": "2024-04-03T13:57:00",
+      "stop": "2025-04-05T11:52:00",
+      "sensor": "CGINS-VELPTA-12747",
+      "lat": 35.94988,
+      "lon": -75.11943,
+      "nominal_depth_m": 7.0
+    },
+    {
+      "number": 2,
+      "start": "2025-04-02T14:01:00",
+      "stop": "2025-11-01T16:06:00",
+      "sensor": "CGINS-VELPTA-11386",
+      "lat": 35.95097,
+      "lon": -75.13082,
+      "nominal_depth_m": 7.0
+    },
+    {
+      "number": 3,
+      "start": "2025-11-02T14:28:00",
+      "stop": "2026-05-01T12:11:00",
+      "sensor": "CGINS-VELPTA-11417",
+      "lat": 35.950317,
+      "lon": -75.11953,
+      "nominal_depth_m": 7.0
+    },
+    {
+      "number": 4,
+      "start": "2026-04-28T13:43:00",
+      "stop": null,
+      "sensor": "CGINS-VELPTA-12234",
+      "lat": 35.950617,
+      "lon": -75.13145,
+      "nominal_depth_m": 7.0
+    }
+  ],
+  "native_first": "2024-04-03T14:00:00Z",
+  "native_last": "2026-11-25T04:00:00Z",
+  "most_common_native_intervals_s": [
+    [
+      900,
+      74480
+    ],
+    [
+      780,
+      34
+    ],
+    [
+      1800,
+      22
+    ],
+    [
+      2700,
+      5
+    ],
+    [
+      840,
+      3
+    ],
+    [
+      3600,
+      3
+    ]
+  ],
+  "counts": {
+    "native_rows": 74564,
+    "excluded_measured_depth": 1,
+    "excluded_deployment_boundary": 553,
+    "accepted_with_nominal_depth_only": 37460
+  },
+  "requested_start": "2024-04-01T00:00:00Z",
+  "requested_last_issue": "2026-11-26T02:00:00Z",
+  "issue_count": 18502,
+  "first_issue": "2024-04-03T15:00:00Z",
+  "last_issue": "2026-11-25T04:00:00Z",
+  "units": "m/s, eastward and northward",
+  "rule": "Paired finite east and north QARTOD aggregate 1. Unique deployment; measured depth 3\u201312 m if available; otherwise nominal 7 m. Mean of at least two distinct vectors in (t\u221275 min,t\u221215 min]; latest source age <=30 min. No interpolation. Historical source receipt time is unknown.",
+  "sha256": "d5f3cf9f1257a924c67eef0dc2664d5e6d71b8cd0272e34eab08df08d8a1131c",
+  "sources": [
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2024-03-31T22:45:00Z&time%3C2024-04-01T00:00:00Z",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2024-04-01T00:00:00Z&time%3C2024-05-01T00:00:00Z",
+      "raw_sha256": "349631b97820b822816af97fa6ff6a725f17959315637ae6e4e6beaeee2958ea"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2024-05-01T00:00:00Z&time%3C2024-06-01T00:00:00Z",
+      "raw_sha256": "93ba0a7bd57539a875b15e6dfb3de4409a3906ef5c943b3de02f2a8f0f3894aa"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2024-06-01T00:00:00Z&time%3C2024-07-01T00:00:00Z",
+      "raw_sha256": "201e19f91d65e7e2fb4168a3377aebd797ed7594589dee8f4f7cfbf471f8d8d6"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2024-07-01T00:00:00Z&time%3C2024-08-01T00:00:00Z",
+      "raw_sha256": "994349c2b680b8be76632e01b814b4ce1fa28f02da6c1bd91069dda249b40c05"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2024-08-01T00:00:00Z&time%3C2024-09-01T00:00:00Z",
+      "raw_sha256": "27b51079794ec4c584c7af21a3d55cd1593e9b663b84551b5c17168cd1386a0e"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2024-09-01T00:00:00Z&time%3C2024-10-01T00:00:00Z",
+      "raw_sha256": "41809d0e530e9846fcc1a34b77415fc7560ccc776007e4888eedc994737d106e"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2024-10-01T00:00:00Z&time%3C2024-11-01T00:00:00Z",
+      "raw_sha256": "c2724c47392191dc063481d06426197dec56a29521517ab46fe82818e42c7baf"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2024-11-01T00:00:00Z&time%3C2024-12-01T00:00:00Z",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2024-12-01T00:00:00Z&time%3C2025-01-01T00:00:00Z",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2025-01-01T00:00:00Z&time%3C2025-02-01T00:00:00Z",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2025-02-01T00:00:00Z&time%3C2025-03-01T00:00:00Z",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2025-03-01T00:00:00Z&time%3C2025-04-01T00:00:00Z",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2025-04-01T00:00:00Z&time%3C2025-05-01T00:00:00Z",
+      "raw_sha256": "78f12ce70351725d4c3ce32557de76e440e1fd4c05891dcbe94990921cdce720"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2025-05-01T00:00:00Z&time%3C2025-06-01T00:00:00Z",
+      "raw_sha256": "8e8c60db69f02d4c07d545ec9c2fbbd141ab57d5779f21e5b525f949cf66a377"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2025-06-01T00:00:00Z&time%3C2025-07-01T00:00:00Z",
+      "raw_sha256": "24751746ad0e9ab95551d9e279367e948a7a23b8e14c2ab090989c85403ca494"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2025-07-01T00:00:00Z&time%3C2025-08-01T00:00:00Z",
+      "raw_sha256": "291c5bcc79a75a98d5c90c73fdb528bde6ec07219669e776fa68b13d69837646"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2025-08-01T00:00:00Z&time%3C2025-09-01T00:00:00Z",
+      "raw_sha256": "ed3ed8f656bfcc02432b55639ecda56c46736c4892899f3730840afe994d7550"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2025-09-01T00:00:00Z&time%3C2025-10-01T00:00:00Z",
+      "raw_sha256": "3238bb4dbab31803051dae36e787e42e6f23295e3ddbaaac396d5095d1f5e587"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2025-10-01T00:00:00Z&time%3C2025-11-01T00:00:00Z",
+      "raw_sha256": "5f97e0fafbb534a76e5c37980b0022ff44a06de3a3bd992ac64f89b95b7a3022"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2025-11-01T00:00:00Z&time%3C2025-12-01T00:00:00Z",
+      "raw_sha256": "e6975291fc866f549fa7a70cdb065691439673791f4e1c9a5176c3b091a5a0fb"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2025-12-01T00:00:00Z&time%3C2026-01-01T00:00:00Z",
+      "raw_sha256": "586a3cff6ba139f8808595f8c30e7309296d8a3bc44c93d9b1ff5e12a02c294a"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-01-01T00:00:00Z&time%3C2026-02-01T00:00:00Z",
+      "raw_sha256": "33da4a727ce13c1980fff053b82265fcd2b9568ca04a6cbf9399cfb27e8fe569"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-02-01T00:00:00Z&time%3C2026-03-01T00:00:00Z",
+      "raw_sha256": "e937db5104f88734da6c62632054778b20ed904c174159ee52235701747d8fd6"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-03-01T00:00:00Z&time%3C2026-04-01T00:00:00Z",
+      "raw_sha256": "adfc20864fe29c8de09ca30c95d8949c1e53b0a42adfb8e925895c79b80dcb7e"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-04-01T00:00:00Z&time%3C2026-05-01T00:00:00Z",
+      "raw_sha256": "8bdee27390b920ea181af2b75563df3ab88baa09c0d7fe89c4c044a568a3f075"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-05-01T00:00:00Z&time%3C2026-06-01T00:00:00Z",
+      "raw_sha256": "e1ff9c3e1fe55ac7e200829a8638ee46af61cc863530640b72de0638bcc2b14f"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-06-01T00:00:00Z&time%3C2026-07-01T00:00:00Z",
+      "raw_sha256": "8eeeead1b922b352e16b1ed6f943a066c56802e403bed5b1b6c57eddced8fd38"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-07-01T00:00:00Z&time%3C2026-08-01T00:00:00Z",
+      "raw_sha256": "2da4a3eed7db4900f8df7497751b9d33a67630e2d78278145d1aad72d58333b8"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-08-01T00:00:00Z&time%3C2026-09-01T00:00:00Z",
+      "raw_sha256": "1adc16124fbedd3d7dacf8992169606f8f31f6bf22b56d6b6a73a15019564f65"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-09-01T00:00:00Z&time%3C2026-10-01T00:00:00Z",
+      "raw_sha256": "44b66129a8b048338ef7bb345c53b4dc72ef189e8650f8c50145f07e971de40d"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-10-01T00:00:00Z&time%3C2026-11-01T00:00:00Z",
+      "raw_sha256": "8ba826f9db105e5a6bf80013084b2b98c22e582244200ab2183f59f1fbfb12b1"
+    },
+    {
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-11-01T00:00:00Z&time%3C2026-11-26T02:00:01Z",
+      "raw_sha256": "c0cafccb90c3ead8bc3bba4ee900cc37ff7580c20524b08745a1aa1f909bf6a3"
+    }
+  ]
+}

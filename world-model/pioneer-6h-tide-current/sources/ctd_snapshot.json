@@ -1,0 +1,8 @@
+{
+  "historical_source": "previous study data/ctd_hourly.csv.gz",
+  "historical_sha256": "aaa308701a788bd03cbff97e2e5c338c453a954da6833e2b1d7a882513e835b8",
+  "new_source_sha256": "bde16560e28dbf9478f078e7f2a5e32730996b52a3cd6d526ec125c991d77fe9",
+  "cutover": "2026-11-01T00:00:00Z",
+  "rows": 19816,
+  "sha256": "4c1e0f5ed5f1c44a72cf6267e1d5dd17362765d96f3d3fe80a756a4626ded19c"
+}

@@ -1,0 +1,17 @@
+cohort,target,model,events,hours,storm_mae,gain_vs_persistence,events_better
+archive_complete,temperature_c,persistence,2,75,0.3167293542805147,0.0,0
+archive_complete,temperature_c,tide,2,75,0.33861269351941015,-0.02188333923889546,0
+archive_complete,temperature_c,current,2,75,0.2960651495148619,0.020664204765652783,1
+archive_complete,temperature_c,tide_current,2,75,0.32721154547288434,-0.01048219119236965,1
+archive_complete,salinity,persistence,2,75,0.24514898023063686,0.0,0
+archive_complete,salinity,tide,2,75,0.26754959442520526,-0.022400614194568402,1
+archive_complete,salinity,current,2,75,0.22246019579893472,0.022688784431702136,2
+archive_complete,salinity,tide_current,2,75,0.21610377732474473,0.02904520290589213,2
+later_provisional,temperature_c,persistence,1,20,0.9461945533752442,0.0,0
+later_provisional,temperature_c,tide,1,20,0.883474710554704,0.06271984282054022,1
+later_provisional,temperature_c,current,1,20,0.8742620291847892,0.07193252419045493,1
+later_provisional,temperature_c,tide_current,1,20,0.7960652148548538,0.15012933852039034,1
+later_provisional,salinity,persistence,1,20,0.45099488723129433,0.0,0
+later_provisional,salinity,tide,1,20,0.42555223489500305,0.025442652336291283,1
+later_provisional,salinity,current,1,20,0.43727110553730564,0.01372378169398869,1
+later_provisional,salinity,tide_current,1,20,0.43059858294151104,0.020396304289783285,1

@@ -1,0 +1,43 @@
+{
+  "station": {
+    "id": "8651370",
+    "name": "Duck",
+    "state": "NC",
+    "latitude": 36.1833,
+    "longitude": -75.7467
+  },
+  "datum": "Mean Lower Low Water (MLLW)",
+  "datum_epoch": "1983-2001",
+  "datum_acceptance": "Sep 26 2011",
+  "n_published_constituents": 37,
+  "product": "hourly astronomical tide predictions (metres, UTC)",
+  "validation": "Exactly one finite model prediction per hour; no gaps or observation fills.",
+  "first": "2024-03-31T00:00:00Z",
+  "last": "2026-11-26T23:00:00Z",
+  "n_hours": 23304,
+  "minimum_m": -0.227,
+  "maximum_m": 1.494,
+  "sources": [
+    {
+      "url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=sigai_pioneer_research&begin_date=20240331&end_date=20241231&datum=MLLW&station=8651370&time_zone=gmt&units=metric&interval=h&format=json",
+      "raw_sha256": "f1d719eb3362a8a49ea05bbc62b5b4e5d8d0ac1b77a71254c483ea48d15773e5",
+      "n_hours": 6624
+    },
+    {
+      "url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=sigai_pioneer_research&begin_date=20250101&end_date=20251231&datum=MLLW&station=8651370&time_zone=gmt&units=metric&interval=h&format=json",
+      "raw_sha256": "975214027a26e490c1b73524b2914436e9b55fbba82364365e707045027fd61d",
+      "n_hours": 8760
+    },
+    {
+      "url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=sigai_pioneer_research&begin_date=20260101&end_date=20261126&datum=MLLW&station=8651370&time_zone=gmt&units=metric&interval=h&format=json",
+      "raw_sha256": "f7336e62cf0b1d3c1d50aec88e491fc05333bbc6420db0857c431f2c7060fdbc",
+      "n_hours": 7920
+    }
+  ],
+  "metadata_sha256_by_url": {
+    "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8651370.json?units=metric": "bd409548c7d9ccffef82ab9d5aea39f153030ef35fe1a4c30e091cf96887b914",
+    "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8651370/datums.json?units=metric": "af38527964ad9849f31161e9e6b09999d4ded82c29a38a3d5ac647c69f8eb76f",
+    "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8651370/harcon.json?units=metric": "ace14d046df852ff001cb12e2059ba8ce8fddde380570e984aa488e69583e2eb"
+  },
+  "tides_csv_sha256": "0dc3cfc3c40b794b3813182e460d3d2a11404197b4318413883caafe431b5b9e"
+}

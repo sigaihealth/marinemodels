@@ -155,6 +155,13 @@
     <p>Winds and waves helped the history model forecast temperature on 11 of 14 storms. Adding the archived satellite sea-surface temperature maps increased average error for both targets. The median map was 9.5 days old at issue time.</p>
     <p class="pioneer-result-links"><a href="https://ocean.sig.ai/assets/pioneer-6h-storm-scores.png">See the errors by storm</a><a href="https://github.com/sigaihealth/marinemodels/tree/main/world-model/pioneer-6h">Data, predictions and methods</a></p>
    </article>
+   <article id="pioneer-tide-current" class="pioneer-scores">
+    <h3>Tide and currents at six hours</h3>
+    <p>Two completed storms had usable mooring observations that the earlier benchmark had never used in training or scoring. Adding tide and currents reduced salinity error in both storms. Currents helped temperature in September and increased its error in April.</p>
+    <table><caption>Mean absolute error · two completed storms weighted equally · 75 forecasts</caption><thead><tr><th scope="col">Forecast</th><th scope="col">Temperature (°C)</th><th scope="col">Practical salinity</th></tr></thead><tbody><tr><th scope="row">Persistence</th><td>0.317</td><td>0.245</td></tr><tr><th scope="row">Tide</th><td>0.339</td><td>0.268</td></tr><tr><th scope="row">Currents</th><td>0.296</td><td>0.222</td></tr><tr><th scope="row">Tide + currents</th><td>0.327</td><td>0.216</td></tr></tbody></table>
+    <p><strong>November follow-up.</strong> At the November 26, 02:00 UTC wave cutoff, the only storm after October was still open. Across its first 20 verifiable forecasts, tide plus currents gave the lowest temperature error (0.796 °C versus 0.946 °C for persistence). Tide alone gave the lowest salinity error (0.426 versus 0.451).</p>
+    <p class="pioneer-result-links"><a href="https://ocean.sig.ai/assets/pioneer-tide-current.png">Compare all three events</a><a href="https://github.com/sigaihealth/marinemodels/tree/main/world-model/pioneer-6h-tide-current">Tide and current study data and methods</a></p>
+   </article>
    <ol class="forecast-flow">
     <li><h3>Estimate the present</h3><p>Align temperature, salinity and wind records by location, depth, timestamp and quality flag. Keep a record of what was available when the forecast was issued.</p></li>
     <li><h3>Advance the state</h3><p>Build on the six-hour test by evaluating 24- and 72-hour predictions on new storms, with uncertainty intervals at each lead.</p></li>

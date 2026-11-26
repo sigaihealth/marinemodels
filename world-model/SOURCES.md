@@ -2,6 +2,8 @@
 
 ## Pioneer event replay
 
+The [tide and current follow-up](pioneer-6h-tide-current/README.md) tests two previously unused historical storm windows and the verified hours of a later, ongoing storm.
+
 The [six-hour Pioneer forecast results](pioneer-6h/README.md) compare persistence, winds and waves, and archived satellite temperature maps on 14 held-out storms.
 
 The [weather and satellite guide](pioneer-weather-satellite.md) documents winds, waves, currents, tides, sea-surface temperature and ocean color available for the six-day replay.

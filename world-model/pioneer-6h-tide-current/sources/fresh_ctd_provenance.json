@@ -1,0 +1,76 @@
+{
+  "asset_csv_sha256": "a42a47384a257407ae4d63177b2140164223b97824878359535b5780cd43d132",
+  "asset_url": "https://raw.githubusercontent.com/oceanobservatories/asset-management/4466ceaa325eb23e125eff7c9850dd000fc79aef/deployment/CP10CNSM_Deploy.csv",
+  "chunks": [
+    {
+      "file": "ctd-2026-10-31--2026-11-01.csv.gz",
+      "sha256_csv": "ee80c1a79422ac06b35397581094d71b37fdaae62248bff7a099db2aaa929d03",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-10-31T00:00:00Z&time%3C2026-11-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2026-11-01--2026-11-26.csv.gz",
+      "sha256_csv": "d67d5111c5aaae9d34507c218067da1e0eee56b5e8711099b52d49a1e1ecd4e2",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-11-01T00:00:00Z&time%3C2026-11-26T03:00:00Z"
+    }
+  ],
+  "counts": {
+    "pass_pair_rows": 9668,
+    "raw_rows": 9668
+  },
+  "deployments": [
+    {
+      "depth_m": 7.0,
+      "lat": 35.94988,
+      "lon": -75.11943,
+      "number": 1,
+      "sensor_uid": "CGINS-CTDBPC-50004",
+      "start": "2024-04-03T13:57:00",
+      "stop": "2025-04-05T11:52:00"
+    },
+    {
+      "depth_m": 7.0,
+      "lat": 35.95097,
+      "lon": -75.13082,
+      "number": 2,
+      "sensor_uid": "CGINS-CTDBPC-50108",
+      "start": "2025-04-02T14:01:00",
+      "stop": "2025-11-01T16:06:00"
+    },
+    {
+      "depth_m": 7.0,
+      "lat": 35.950317,
+      "lon": -75.11953,
+      "number": 3,
+      "sensor_uid": "CGINS-CTDBPC-07208",
+      "start": "2025-11-02T14:28:00",
+      "stop": "2026-05-01T12:11:00"
+    },
+    {
+      "depth_m": 7.0,
+      "lat": 35.950617,
+      "lon": -75.13145,
+      "number": 4,
+      "sensor_uid": "CGINS-CTDBPC-50004",
+      "start": "2026-04-28T13:43:00",
+      "stop": null
+    }
+  ],
+  "exactly_on_the_hour": 605,
+  "exclusive_end_utc": "2026-11-26T03:00:00Z",
+  "first_hour": "2026-10-31T00:00:00Z",
+  "hourly_csv_sha256": "bde16560e28dbf9478f078e7f2a5e32730996b52a3cd6d526ec125c991d77fe9",
+  "hours": 605,
+  "hours_per_deployment": {
+    "4": 605
+  },
+  "hours_with_conflicting_best_rows_excluded": 0,
+  "instrument_page": "https://oceanobservatories.org/site/cp10cnsm/",
+  "last_hour": "2026-11-25T04:00:00Z",
+  "pair_qc_frequencies_temp_salinity": {
+    "1,1": 9668
+  },
+  "reference_designator": "CP10CNSM-RID27-03-CTDBPC000",
+  "rule": "Latest paired finite temperature and practical salinity at or before each whole UTC hour, both aggregate QC=1 (PASS), maximum age 15 minutes. Both record and hour belong to exactly one identical asset deployment; ambiguous overlaps excluded. Reported timestamps are used; original data receipt times are unavailable. No interpolation. Do not cross deployment boundaries in forecast pairs.",
+  "source_metadata": "https://erddap.dataexplorer.oceanobservatories.org/erddap/info/ooi-cp10cnsm-rid27-03-ctdbpc000/index.html",
+  "start_utc": "2026-10-31T00:00:00Z"
+}
