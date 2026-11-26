@@ -1,0 +1,115 @@
+{
+  "frames": 600,
+  "iou_threshold": 0.5,
+  "reference_appearances": 28708,
+  "reference_tracks": 94,
+  "appearances_by_agreement": {
+    "neither": 9779,
+    "ecotype_only": 3,
+    "megalodon_only": 15457,
+    "both": 3469
+  },
+  "tracks_by_ever_reached": {
+    "neither": 3,
+    "ecotype_only": 0,
+    "megalodon_only": 40,
+    "both": 51
+  },
+  "published_labels": {
+    "Funiculina_Balticina complex": 25499,
+    "Sebastolobus": 1097,
+    "Strongylocentrotus fragilis": 1416,
+    "Umbellula": 696
+  },
+  "methods": {
+    "ecotype": {
+      "predictions": 4423,
+      "matches": 3472,
+      "missed_appearances": 25236,
+      "unmatched_predictions": 951,
+      "appearance_recall": 0.12094189772885607,
+      "prediction_match_rate": 0.7849875650011304,
+      "tracks_reached": 51,
+      "median_fraction_of_track_appearances_matched": 0.003581046422159528
+    },
+    "megalodon": {
+      "predictions": 19528,
+      "matches": 18926,
+      "missed_appearances": 9782,
+      "unmatched_predictions": 602,
+      "appearance_recall": 0.6592587432074684,
+      "prediction_match_rate": 0.9691724702990577,
+      "tracks_reached": 91,
+      "median_fraction_of_track_appearances_matched": 0.6740170380078636
+    }
+  },
+  "by_published_taxon": {
+    "Funiculina_Balticina complex": {
+      "reference_appearances": 25499,
+      "reference_tracks": 81,
+      "appearances_missed_by_both": 8001,
+      "tracks_never_reached": 2,
+      "ecotype": {
+        "matches": 3460,
+        "tracks_reached": 47
+      },
+      "megalodon": {
+        "matches": 17495,
+        "tracks_reached": 79
+      }
+    },
+    "Sebastolobus": {
+      "reference_appearances": 1097,
+      "reference_tracks": 4,
+      "appearances_missed_by_both": 504,
+      "tracks_never_reached": 0,
+      "ecotype": {
+        "matches": 7,
+        "tracks_reached": 1
+      },
+      "megalodon": {
+        "matches": 593,
+        "tracks_reached": 4
+      }
+    },
+    "Strongylocentrotus fragilis": {
+      "reference_appearances": 1416,
+      "reference_tracks": 5,
+      "appearances_missed_by_both": 1041,
+      "tracks_never_reached": 1,
+      "ecotype": {
+        "matches": 1,
+        "tracks_reached": 1
+      },
+      "megalodon": {
+        "matches": 375,
+        "tracks_reached": 4
+      }
+    },
+    "Umbellula": {
+      "reference_appearances": 696,
+      "reference_tracks": 4,
+      "appearances_missed_by_both": 233,
+      "tracks_never_reached": 0,
+      "ecotype": {
+        "matches": 4,
+        "tracks_reached": 2
+      },
+      "megalodon": {
+        "matches": 463,
+        "tracks_reached": 4
+      }
+    }
+  },
+  "input_sha256": {
+    "reference": "f082b4796edab46f9c226fd07344b59af4d3fb460e3bfc6a0dab5d4e47fd0210",
+    "manifest": "731bbe743609100fccc4ba1aa2bb9a3542f234651a4e48a88ff756430d57439a",
+    "ecotype": "f21055fdf474447dd45621ac160442987d9548ea9ccaad2672c0a07b28429f59",
+    "megalodon": "c37507f9157330ac168b08de708a3161cae12f3b702ee6c483aabeff76014c9e"
+  },
+  "software": {
+    "scipy": "1.18.1",
+    "numpy": "2.5.5"
+  },
+  "review_id": "26ddbe4a32a3700d4aa0"
+}

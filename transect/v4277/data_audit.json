@@ -1,0 +1,34 @@
+{
+  "sequence": "MBARI DeepSea MOT BD",
+  "dive": "V4277",
+  "published_revision": "61ecbda8acb2749f3771d7192c51341267da2f37",
+  "original_xml_revision": "2163f4bdd04143222f1eebfe618904f765f6c934",
+  "reference_appearances": 28708,
+  "distinct_tracks": 94,
+  "jpeg_count": 600,
+  "jpeg_total_bytes": 195033608,
+  "size": [
+    1920,
+    1080
+  ],
+  "presentation_time_base": "1/30000 s",
+  "first_pts": 0,
+  "second_pts": 874,
+  "last_pts": 599472,
+  "rate_nominal": "30000/1001",
+  "duration_s": 20.015767,
+  "video_frame_correlations": {
+    "1": 0.99921,
+    "201": 0.99767,
+    "400": 0.99763,
+    "600": 0.99772
+  },
+  "sha256": {
+    "blind/manifest.json": "731bbe743609100fccc4ba1aa2bb9a3542f234651a4e48a88ff756430d57439a",
+    "reference.json": "f082b4796edab46f9c226fd07344b59af4d3fb460e3bfc6a0dab5d4e47fd0210",
+    "sources/BD.mov": "f3ff1f4590777dc775cede0e757ce9c1decbd8fff3fef81e1b12c0131663b7ac",
+    "sources/gt.txt": "781f5ba506048ea4aac362efe76e542a402b85bcf553cbd0103086bad743d845",
+    "sources/BD_001-provenance.xml": "c4a1d5b5f92e7b96c5f936950d6e3634e03dc08f48474d86da04a885676d906f",
+    "sources/seqinfo.ini": "f2ec50a311f2670b5573ee1216265a79ab28124d0974feef96cf63bb303926da"
+  }
+}

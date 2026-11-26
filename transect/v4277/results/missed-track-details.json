@@ -1,0 +1,53 @@
+[
+  {
+    "track": 13,
+    "appearances": 400,
+    "first_s": 0.0,
+    "last_s": 13.309066667,
+    "median_box_width_px": 45.6,
+    "median_box_height_px": 49.92,
+    "box_within_2px_of_image_edge": 8,
+    "frames_with_any_box_at_iou_050": {
+      "ecotype": 0,
+      "megalodon": 35
+    },
+    "max_raw_iou": {
+      "ecotype": 0.4751,
+      "megalodon": 0.5702
+    }
+  },
+  {
+    "track": 502,
+    "appearances": 279,
+    "first_s": 10.706466667,
+    "last_s": 19.9824,
+    "median_box_width_px": 17.99,
+    "median_box_height_px": 17.98,
+    "box_within_2px_of_image_edge": 0,
+    "frames_with_any_box_at_iou_050": {
+      "ecotype": 0,
+      "megalodon": 0
+    },
+    "max_raw_iou": {
+      "ecotype": 0.0373,
+      "megalodon": 0.0483
+    }
+  },
+  {
+    "track": 511,
+    "appearances": 280,
+    "first_s": 10.6731,
+    "last_s": 19.9824,
+    "median_box_width_px": 12.99,
+    "median_box_height_px": 10.99,
+    "box_within_2px_of_image_edge": 0,
+    "frames_with_any_box_at_iou_050": {
+      "ecotype": 0,
+      "megalodon": 0
+    },
+    "max_raw_iou": {
+      "ecotype": 0.0122,
+      "megalodon": 0.0191
+    }
+  }
+]

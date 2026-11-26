@@ -1,5 +1,7 @@
 # Visual transect trial
 
+[Explore the full V4277 detector comparison and expert review queue](v4277/README.md).
+
 [Open the frame and track reviewer](https://ocean.sig.ai/visual-transect.html). Pick a clip, click an observation and follow its timestamp or track. Toggle model and reference boxes, inspect the Qwen scene notes, or export a review as JSON. The page contains the recorded outputs and both video excerpts. On OOI, `vision_playground.ipynb` accepts new questions and images against the private GPU service.
 
 ## Findings

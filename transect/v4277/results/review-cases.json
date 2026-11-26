@@ -1,0 +1,368 @@
+{
+  "neither": [
+    {
+      "frame_id": "v4277-0200",
+      "frame_index": 200,
+      "track": 13,
+      "label": "Funiculina_Balticina complex",
+      "bbox": [
+        1024.466675,
+        487.549072,
+        1068.443726,
+        537.502747
+      ],
+      "ecotype": null,
+      "ecotype_iou": null,
+      "megalodon": null,
+      "megalodon_iou": null,
+      "group": "neither",
+      "group_frames": 400,
+      "track_frames": 400,
+      "track_group": "neither",
+      "timestamp": 6.635733333
+    },
+    {
+      "frame_id": "v4277-0460",
+      "frame_index": 460,
+      "track": 511,
+      "label": "Funiculina_Balticina complex",
+      "bbox": [
+        432.774994,
+        461.573151,
+        445.768219,
+        472.562958
+      ],
+      "ecotype": null,
+      "ecotype_iou": null,
+      "megalodon": null,
+      "megalodon_iou": null,
+      "group": "neither",
+      "group_frames": 280,
+      "track_frames": 280,
+      "track_group": "neither",
+      "timestamp": 15.311066667
+    },
+    {
+      "frame_id": "v4277-0461",
+      "frame_index": 461,
+      "track": 502,
+      "label": "Strongylocentrotus fragilis",
+      "bbox": [
+        411.78595,
+        460.574066,
+        429.776581,
+        478.557404
+      ],
+      "ecotype": null,
+      "ecotype_iou": null,
+      "megalodon": null,
+      "megalodon_iou": null,
+      "group": "neither",
+      "group_frames": 279,
+      "track_frames": 279,
+      "track_group": "neither",
+      "timestamp": 15.344433333
+    }
+  ],
+  "ecotype_only": [
+    {
+      "frame_id": "v4277-0388",
+      "frame_index": 388,
+      "track": 12,
+      "label": "Funiculina_Balticina complex",
+      "bbox": [
+        74.961456,
+        1059.019409,
+        157.918213,
+        1080
+      ],
+      "ecotype": "ecotype:v4277-0388:8",
+      "ecotype_iou": 0.5621765141553717,
+      "megalodon": null,
+      "megalodon_iou": null,
+      "group": "ecotype_only",
+      "group_frames": 1,
+      "track_frames": 390,
+      "track_group": "both",
+      "timestamp": 12.908666667
+    },
+    {
+      "frame_id": "v4277-0190",
+      "frame_index": 190,
+      "track": 22,
+      "label": "Funiculina_Balticina complex",
+      "bbox": [
+        1024.466675,
+        281.739807,
+        1126.048584,
+        368.133911
+      ],
+      "ecotype": "ecotype:v4277-0190:3",
+      "ecotype_iou": 0.7387778952436044,
+      "megalodon": null,
+      "megalodon_iou": null,
+      "group": "ecotype_only",
+      "group_frames": 1,
+      "track_frames": 532,
+      "track_group": "both",
+      "timestamp": 6.302066667
+    },
+    {
+      "frame_id": "v4277-0386",
+      "frame_index": 386,
+      "track": 184,
+      "label": "Funiculina_Balticina complex",
+      "bbox": [
+        1.0,
+        510.527771,
+        67.965103,
+        557.484253
+      ],
+      "ecotype": "ecotype:v4277-0386:4",
+      "ecotype_iou": 0.6671400776651762,
+      "megalodon": null,
+      "megalodon_iou": null,
+      "group": "ecotype_only",
+      "group_frames": 1,
+      "track_frames": 359,
+      "track_group": "both",
+      "timestamp": 12.841933333
+    }
+  ],
+  "megalodon_only": [
+    {
+      "frame_id": "v4277-0307",
+      "frame_index": 307,
+      "track": 48,
+      "label": "Funiculina_Balticina complex",
+      "bbox": [
+        1202.641357,
+        348.791107,
+        1267.541992,
+        412.345825
+      ],
+      "ecotype": null,
+      "ecotype_iou": null,
+      "megalodon": "megalodon:v4277-0307:12",
+      "megalodon_iou": 0.9306192654156555,
+      "group": "megalodon_only",
+      "group_frames": 485,
+      "track_frames": 600,
+      "track_group": "both",
+      "timestamp": 10.205966667
+    },
+    {
+      "frame_id": "v4277-0264",
+      "frame_index": 264,
+      "track": 37,
+      "label": "Funiculina_Balticina complex",
+      "bbox": [
+        852.284058,
+        392.027985,
+        917.011353,
+        452.068939
+      ],
+      "ecotype": null,
+      "ecotype_iou": null,
+      "megalodon": "megalodon:v4277-0264:9",
+      "megalodon_iou": 0.9272252151901513,
+      "group": "megalodon_only",
+      "group_frames": 473,
+      "track_frames": 557,
+      "track_group": "both",
+      "timestamp": 8.7712
+    },
+    {
+      "frame_id": "v4277-0294",
+      "frame_index": 294,
+      "track": 25,
+      "label": "Funiculina_Balticina complex",
+      "bbox": [
+        971.468384,
+        422.266113,
+        1033.952393,
+        517.095642
+      ],
+      "ecotype": null,
+      "ecotype_iou": null,
+      "megalodon": "megalodon:v4277-0294:5",
+      "megalodon_iou": 0.9686161414652453,
+      "group": "megalodon_only",
+      "group_frames": 469,
+      "track_frames": 546,
+      "track_group": "both",
+      "timestamp": 9.7722
+    }
+  ],
+  "both": [
+    {
+      "frame_id": "v4277-0229",
+      "frame_index": 229,
+      "track": 12,
+      "label": "Funiculina_Balticina complex",
+      "bbox": [
+        271.530609,
+        592.390198,
+        399.904785,
+        675.883301
+      ],
+      "ecotype": "ecotype:v4277-0229:2",
+      "ecotype_iou": 0.8984267009728607,
+      "megalodon": "megalodon:v4277-0229:5",
+      "megalodon_iou": 0.9404228629021808,
+      "group": "both",
+      "group_frames": 308,
+      "track_frames": 390,
+      "track_group": "both",
+      "timestamp": 7.603366667
+    },
+    {
+      "frame_id": "v4277-0441",
+      "frame_index": 441,
+      "track": 60,
+      "label": "Funiculina_Balticina complex",
+      "bbox": [
+        221.646042,
+        551.088867,
+        352.219788,
+        648.663574
+      ],
+      "ecotype": "ecotype:v4277-0441:6",
+      "ecotype_iou": 0.92577970196852,
+      "megalodon": "megalodon:v4277-0441:9",
+      "megalodon_iou": 0.9624107948991066,
+      "group": "both",
+      "group_frames": 305,
+      "track_frames": 600,
+      "track_group": "both",
+      "timestamp": 14.6771
+    },
+    {
+      "frame_id": "v4277-0291",
+      "frame_index": 291,
+      "track": 22,
+      "label": "Funiculina_Balticina complex",
+      "bbox": [
+        1097.428589,
+        445.587952,
+        1216.39502,
+        538.164062
+      ],
+      "ecotype": "ecotype:v4277-0291:3",
+      "ecotype_iou": 0.6713904973493937,
+      "megalodon": "megalodon:v4277-0291:9",
+      "megalodon_iou": 0.9504859781869879,
+      "group": "both",
+      "group_frames": 299,
+      "track_frames": 532,
+      "track_group": "both",
+      "timestamp": 9.6721
+    }
+  ],
+  "ecotype_unmatched": [
+    {
+      "frame_id": "v4277-0058",
+      "frame_index": 58,
+      "method": "ecotype",
+      "sighting_id": "ecotype:v4277-0058:1",
+      "label": "Demersal",
+      "score": 0.9170889258384705,
+      "reference_track": null,
+      "iou": null,
+      "bbox": [
+        115.90900421142578,
+        655.3026733398438,
+        226.7061767578125,
+        723.07666015625
+      ],
+      "timestamp": 1.897666667
+    },
+    {
+      "frame_id": "v4277-0246",
+      "frame_index": 246,
+      "method": "ecotype",
+      "sighting_id": "ecotype:v4277-0246:1",
+      "label": "Sessile Epifauna",
+      "score": 0.899166464805603,
+      "reference_track": null,
+      "iou": null,
+      "bbox": [
+        46.65412521362305,
+        748.260498046875,
+        162.49717712402344,
+        825.319091796875
+      ],
+      "timestamp": 8.1706
+    },
+    {
+      "frame_id": "v4277-0241",
+      "frame_index": 241,
+      "method": "ecotype",
+      "sighting_id": "ecotype:v4277-0241:1",
+      "label": "Sessile Epifauna",
+      "score": 0.8936602473258972,
+      "reference_track": null,
+      "iou": null,
+      "bbox": [
+        729.338623046875,
+        570.1597900390625,
+        833.4521484375,
+        672.14013671875
+      ],
+      "timestamp": 8.003766667
+    }
+  ],
+  "megalodon_unmatched": [
+    {
+      "frame_id": "v4277-0232",
+      "frame_index": 232,
+      "method": "megalodon",
+      "sighting_id": "megalodon:v4277-0232:13",
+      "label": "item",
+      "score": 0.761233389377594,
+      "reference_track": null,
+      "iou": null,
+      "bbox": [
+        66.4844970703125,
+        715.255859375,
+        173.7110595703125,
+        784.7816772460938
+      ],
+      "timestamp": 7.703466667
+    },
+    {
+      "frame_id": "v4277-0016",
+      "frame_index": 16,
+      "method": "megalodon",
+      "sighting_id": "megalodon:v4277-0016:8",
+      "label": "item",
+      "score": 0.7599614262580872,
+      "reference_track": null,
+      "iou": null,
+      "bbox": [
+        651.5091552734375,
+        337.225341796875,
+        736.8652954101562,
+        410.8981628417969
+      ],
+      "timestamp": 0.496266667
+    },
+    {
+      "frame_id": "v4277-0252",
+      "frame_index": 252,
+      "method": "megalodon",
+      "sighting_id": "megalodon:v4277-0252:14",
+      "label": "item",
+      "score": 0.7529396414756775,
+      "reference_track": null,
+      "iou": null,
+      "bbox": [
+        42.421600341796875,
+        770.8439331054688,
+        158.81350708007812,
+        840.9105224609375
+      ],
+      "timestamp": 8.3708
+    }
+  ]
+}
