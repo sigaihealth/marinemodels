@@ -1,6 +1,24 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PlankScope · SIG.AI Ocean</title><link rel="stylesheet" href="assets/ocean.css"><link rel="stylesheet" href="assets/workspace.css"><script defer src="assets/vendor/papaparse-5.5.3.min.js"></script><script defer src="assets/plankscope.js"></script><link rel="stylesheet" href="assets/navigation.css">
+<meta name="description" content="Compare PlankScope and WHOI plankton predictions for the same microscope images using their image checksums and your CSV export."><title>PlankScope · SIG.AI Ocean</title><link rel="stylesheet" href="assets/ocean.css"><link rel="stylesheet" href="assets/workspace.css"><script defer src="assets/vendor/papaparse-5.5.3.min.js"></script><script defer src="assets/plankscope.js"></script><link rel="stylesheet" href="assets/navigation.css">
+<!-- ocean-sharing:start -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="canonical" href="https://ocean.sig.ai/plankscope.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SIG.AI Ocean">
+<meta property="og:title" content="PlankScope · SIG.AI Ocean">
+<meta property="og:description" content="Compare PlankScope and WHOI plankton predictions for the same microscope images using their image checksums and your CSV export.">
+<meta property="og:url" content="https://ocean.sig.ai/plankscope.html">
+<meta property="og:image" content="https://ocean.sig.ai/assets/ocean-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SIG.AI Ocean research workspaces with an illustrated ocean cross-section.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PlankScope · SIG.AI Ocean">
+<meta name="twitter:description" content="Compare PlankScope and WHOI plankton predictions for the same microscope images using their image checksums and your CSV export.">
+<meta name="twitter:image" content="https://ocean.sig.ai/assets/ocean-share.jpg">
+<meta name="twitter:image:alt" content="SIG.AI Ocean research workspaces with an illustrated ocean cross-section.">
+<!-- ocean-sharing:end -->
 </head>
 <body><a class="skip" href="#main">Skip to main content</a>
 <div class="masthead"><!-- ocean-nav:start -->
@@ -31,4 +49,4 @@
 <p>Authorized instrument workspaces can also run a paired comparison in Jupyter. In the <a href="plankton-lab.html#notebooks">identification notebook</a>, choose the paired WHOI and PlankScope comparison to run both on one image. This page also compares existing CSV exports on your device.</p>
 <details><summary>Required CSV fields</summary><p>PlankScope needs <code>image_sha256</code>, <code>label</code> and <code>confidence</code>. WHOI needs <code>roi_sha256</code>, <code>roi_id</code>, <code>label_1</code> and <code>softmax_1</code>. Each image must occur once per file with a score between 0 and 1. Use the offline comparison tool for large batches or a reviewed class mapping.</p></details>
 <div class="links"><a href="try-plankton.html">Run WHOI on an image</a><a href="pioneer-storm.html">Pioneer case study</a><a href="https://github.com/sigaihealth/marinemodels#compare-whoi-and-plankscope-predictions">Offline comparison tool</a></div></section>
-</main></body></html>
+</main><footer><div class="wrap footer-head"><span class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></span><div class="links"><a href="collaborate.html">Share a dataset, model or finding</a><a href="https://github.com/sigaihealth/marinemodels">GitHub</a></div></div></footer></body></html>

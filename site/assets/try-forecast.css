@@ -11,6 +11,7 @@
 .settings select{display:block;width:100%;min-height:2.65rem;margin-top:.32rem;padding:.45rem .4rem;background:#fbfdf7;border:1px solid #9daea4;border-radius:2px;color:var(--ink);font:inherit}
 .settings select:focus-visible,summary:focus-visible{outline:3px solid #a66716;outline-offset:3px}
 .settings p,.forecast-chart figcaption,.daily caption{font-size:.9rem;color:var(--muted);margin-top:1rem}
+#lead-pattern:not([hidden]){display:block;margin-top:.55rem;padding-left:.7rem;border-left:3px solid #45786f;color:var(--ink)}
 .forecast-chart h2{font-size:clamp(2.8rem,4.2vw,3.8rem);margin:.45rem 0}
 #context{color:var(--muted)}
 .plot-key{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;margin:1.05rem 0 .25rem;font-size:.9rem}

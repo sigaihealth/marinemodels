@@ -10,6 +10,24 @@
   <link rel="stylesheet" href="assets/model-catalog.css">
   <script defer src="assets/model-catalog.js"></script>
 <link rel="stylesheet" href="assets/navigation.css">
+<!-- ocean-sharing:start -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="canonical" href="https://ocean.sig.ai/model-catalog.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SIG.AI Ocean">
+<meta property="og:title" content="Model workspace · SIG.AI Ocean">
+<meta property="og:description" content="Browse ocean models by scientific task, inputs, weights, licenses and evaluation protocol.">
+<meta property="og:url" content="https://ocean.sig.ai/model-catalog.html">
+<meta property="og:image" content="https://ocean.sig.ai/assets/ocean-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SIG.AI Ocean research workspaces with an illustrated ocean cross-section.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Model workspace · SIG.AI Ocean">
+<meta name="twitter:description" content="Browse ocean models by scientific task, inputs, weights, licenses and evaluation protocol.">
+<meta name="twitter:image" content="https://ocean.sig.ai/assets/ocean-share.jpg">
+<meta name="twitter:image:alt" content="SIG.AI Ocean research workspaces with an illustrated ocean cross-section.">
+<!-- ocean-sharing:end -->
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -32,16 +50,691 @@
   </div>
 </div>
 <main id="main" class="wrap catalog-main">
-  <aside aria-label="Task selection">
-    <label class="eyebrow" for="lane-select">Task lanes</label>
-    <select id="lane-select" class="lane-select" aria-label="Choose a task lane"></select>
-    <nav id="lanes" aria-label="Task lanes"></nav>
-  </aside>
-  <section id="lane-content" aria-labelledby="lane-title" aria-live="polite">
-    <h2 id="lane-title">Task catalog</h2>
-    <p id="loading">Loading model records…</p>
-    <noscript><p>Download the workbook above to browse all nine task lanes.</p></noscript>
-  </section>
+<!-- model-catalog:start -->
+<aside aria-label="Task selection">
+  <p class="eyebrow" id="task-label">Task lanes</p>
+  <select id="lane-select" class="lane-select" aria-labelledby="task-label" hidden></select>
+  <nav id="lanes" aria-labelledby="task-label">
+    <a href="#ocean-physics">Ocean physics forecasting</a>
+    <a href="#waves">Waves</a>
+    <a href="#biogeochemistry">Biogeochemistry</a>
+    <a href="#satellite">Satellite ocean color and radar</a>
+    <a href="#plankton">Plankton imaging</a>
+    <a href="#underwater-imagery">Underwater imagery</a>
+    <a href="#coral-reefs">Coral reefs</a>
+    <a href="#bioacoustics">Bioacoustics</a>
+    <a href="#language">Language and scientific Q&amp;A</a>
+  </nav>
+</aside>
+<div id="lane-content">
+<section class="catalog-lane" id="ocean-physics" aria-labelledby="ocean-physics-title">
+  <h2 id="ocean-physics-title">Ocean physics forecasting</h2>
+  <p class="lane-description">Ingest dated ocean analyses and model-specific atmospheric forcing. Use GLONET as the default baseline for global forecasts and retain persistence as a low-cost reference.</p>
+  <div class="lane-actions"><a href="try-forecast.html" class="primary">Explore an archived forecast</a></div>
+  <div class="comparison">
+    <h3>How to compare</h3>
+    <p>Match initialization times, lead, variable, depth and wet-cell mask. Use OceanBench for the common global track. Score a separate native-resolution, sub-daily track for eddies and currents where observations resolve them.</p>
+    <a href="https://github.com/mercator-ocean/oceanbench">OceanBench protocols and code</a>
+  </div>
+  <div class="list-tools"><span>5 records</span></div>
+  <div class="model-list">
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>GLONET</strong><small>Generate short-range global ocean physics forecasts.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Two days of initial physical ocean fields. The released workflow retrieves Copernicus Marine initialization and regrids it. The paper trained on GLORYS12.</dd>
+        <dt>Output</dt><dd>Ten daily global maps of sea surface height and temperature, salinity and horizontal currents on a 1/4° output grid with 21 depth levels.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Mercator publishes three depth-specific TorchScript weight files, normalization statistics and inference code. Copernicus Marine credentials are required by its data-fetching workflow.</dd>
+        <dt>License scope</dt><dd>EUPL-1.2 for code. CC BY 4.0 for weights and associated statistics.</dd>
+        <dt>Compute</dt><dd>The official inference card requires an NVIDIA GPU and reports a ten-day forecast in seconds. Training used multi-GPU pipeline parallelism. Download, regridding and output I/O add elapsed time. L40S performance has not been measured here.</dd>
+        <dt>Evaluation</dt><dd>Use its OceanBench GLO12-initialized 2024 challenger scores against GLO12 and persistence on the same track and grid. Extract wet grid cells around Pioneer and compare against matched station temperature, salinity and currents.</dd>
+        <dt>Notes</dt><dd>The card distinguishes its 1/4° output grid from an author-described 1/12° effective resolution. Use the actual output grid for coastal collocation.</dd>
+      </dl>
+      <p class="catalog-links"><a href="try-forecast.html">Explore an archived forecast</a> <a href="https://doi.org/10.1029/2025JH000686">Primary source</a> <a href="https://huggingface.co/mercator-ocean/GLONET">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Weights unverified">
+      <summary><span><strong>FuXi-Ocean</strong><small>Forecast sub-daily global ocean physics and storm responses.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Four historical six-hour states with HYCOM ocean fields and five near-surface atmospheric variables. ERA5 supplied atmospheric training inputs. The rollout needs no future atmospheric forecast.</dd>
+        <dt>Output</dt><dd>Six-hourly 1/12° temperature, salinity and horizontal currents on 26 levels to 1,500 m, plus sea surface height, through ten days.</dd>
+        <dt>Access type</dt><dd>Weights unverified</dd>
+        <dt>Availability</dt><dd>The authors’ DOI archive contains a README, requirements and two inference scripts. The inference script expects an external ONNX file. The author GitHub tree also provides scripts. A publicly downloadable author-trained checkpoint was not verified.</dd>
+        <dt>License scope</dt><dd>CC BY 4.0 on the cited Zenodo deposit. A license for the missing trained weights is unverified.</dd>
+        <dt>Compute</dt><dd>Authors report 72 seconds for a ten-day global forecast on one H100. This is inference. Local peak memory and L40S runtime are unverified.</dd>
+        <dt>Evaluation</dt><dd>The paper tested 2022 forecasts against HYCOM, OceanMAPS, FOAM and WenHai with satellite and in-situ reference data, including profiles and currents. The paper averaged FuXi-Ocean output to daily means for daily comparisons. These are separate from Mercator’s 2024 OceanBench scores.</dd>
+        <dt>Notes</dt><dd>Author code: https://github.com/huangqiusheng/FuXi-Ocean. The OneScience-Group engineering reproduction describes synthetic training tiles and disclaims original weights (https://huggingface.co/OneScience-Group/FuXi-Ocean).</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://www.nature.com/articles/s41612-026-01444-2">Primary source</a> <a href="https://doi.org/10.5281/zenodo.17412508">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>WenHai</strong><small>Forecast the eddying upper ocean with physically calculated air–sea fluxes and a Swin Transformer.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Five initial ocean variables, plus eight surface atmospheric variables to calculate fluxes. Training used GLORYS and ERA5. The operational-style comparison used GLO12 initialization and IFS atmospheric forecasts.</dd>
+        <dt>Output</dt><dd>Daily 1/12° sea surface height and temperature, salinity and horizontal currents on 23 vertical levels down to about 644 m.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>The author repository links the WenHai.onnx weights, example inputs, masks and normalization arrays in Google Drive. The public folder lists the weight file.</dd>
+        <dt>License scope</dt><dd>The v1.0 archived GitHub source release is marked CC BY 4.0 (https://doi.org/10.5281/zenodo.14881628). The ONNX file is delivered separately. Its license was not verified.</dd>
+        <dt>Compute</dt><dd>The paper describes a high-resolution training stage exceeding 80 GB of GPU memory before distributing layers across devices. The author supplies ONNX inference code. Peak inference memory and L40S latency are unverified.</dd>
+        <dt>Evaluation</dt><dd>The authors compared with GLO12v4 under matched initialization and forcing in April–November 2024. OceanBench hosts a common 2024 comparison with XiHe, GLONET and persistence. Score station errors by depth and forecast lead.</dd>
+        <dt>Notes</dt><dd>The released GLORYS mask differs from the GLO12 mask. Check grid and wet-cell consistency before matching Pioneer observations.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://www.nature.com/articles/s41467-025-57389-2">Primary source</a> <a href="https://github.com/Cuiyingzhe/WenHai">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>XiHe</strong><small>Predict global eddy-resolving ocean physics at fixed leads.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Initial ocean state and 10 m zonal/meridional wind. The original work trained on GLORYS12 and ERA5. The OceanBench challenger used GLO12/IFS.</dd>
+        <dt>Output</dt><dd>Global 1/12° temperature, salinity and horizontal currents on 23 levels down to about 644 m, with sea surface height and surface temperature. The released ONNX collection covers lead days one to ten.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>The author repository links pretrained upper/deeper ONNX files for each forecast lead via Google Drive and Baidu mirrors.</dd>
+        <dt>License scope</dt><dd>No explicit repository or model-weight reuse license was verified. The arXiv paper’s distribution terms apply to the manuscript.</dd>
+        <dt>Compute</dt><dd>The revised paper reports 0.35 s on one GPU for a day-ten prediction. The release supplies lead-specific models. This timing does not establish end-to-end latency for all ten leads, input preparation or local deployment.</dd>
+        <dt>Evaluation</dt><dd>The paper uses 2019–2020 satellite/in-situ verification and the IV-TT Class 4 framework. Use the separate OceanBench 2024 run for a like-for-like comparison with GLONET and WenHai.</dd>
+        <dt>Notes</dt><dd>Archive the chosen lead, depth partition and exact checkpoint before attributing a forecast to XiHe.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://arxiv.org/abs/2402.02995">Primary source</a> <a href="https://github.com/Ocean-Intelligent-Forecasting/XiHe-GlobalOceanForecasting">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Benchmark">
+      <summary><span><strong>OceanBench (Mercator Ocean International)</strong><small>Evaluate global ocean physics forecasts using a common verification protocol.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Ten-day forecasts initialized on all 52 Wednesdays of 2024. The framework accepts 1/12°, 1/4° and 1° grids and documents the variable, depth and coordinate conventions.</dd>
+        <dt>Output</dt><dd>Scores by lead, variable and depth, matched-observation counts, gridded scores and physical diagnostics.</dd>
+        <dt>Access type</dt><dd>Benchmark</dd>
+        <dt>Availability</dt><dd>Public evaluation code, methods and scores. OceanBench provides no prediction weights of its own.</dd>
+        <dt>License scope</dt><dd>EUPL-1.2 for the evaluation project. Reference and challenger datasets carry their providers’ terms.</dd>
+        <dt>Compute</dt><dd>Scores can be read from the hosted leaderboard. Re-scoring uses the Python package and reference data. Copernicus Marine sign-in is required for 1/12° evaluations. A forecast-model GPU training budget does not apply.</dd>
+        <dt>Evaluation</dt><dd>Compare challengers against GLORYS reanalysis, GLO12 analysis and matched Argo profiles, surface drifters and along-track altimetry. Keep the reference, mask, track, version and grid fixed. Class IV coastal masking excludes some nearshore observations.</dd>
+        <dt>Notes</dt><dd>NeurIPS 2025 Datasets and Benchmarks. The live roster includes GLONET, WenHai and XiHe. FuXi-Ocean does not appear on this roster. Check the roster (https://oceanbench.edito.eu/challengers/) and verification definitions (https://oceanbench.edito.eu/evaluation-methods/) for each comparison. Perform separate station-scale validation at Pioneer.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/0d1635dfa43efe7477f9b6dab3168fd8-Abstract-Datasets_and_Benchmarks_Track.html">Primary source</a> <a href="https://github.com/mercator-ocean/oceanbench">Repository or release</a></p>
+    </details>
+  </div>
+</section>
+<section class="catalog-lane" id="waves" aria-labelledby="waves-title">
+  <h2 id="waves-title">Waves</h2>
+  <p class="lane-description">Combine gridded wave state and weather forcing to forecast sea state. Match a station’s exposure and the model’s offshore grid before using a buoy for validation.</p>
+  <div class="comparison">
+    <h3>How to compare</h3>
+    <p>Hold out whole storms and stations. Score significant wave height in meters, period in seconds and direction using circular error. Match mean, peak and swell definitions before comparing.</p>
+    <a href="https://www.ndbc.noaa.gov/obsdes.shtml">NOAA buoy measurement definitions</a>
+  </div>
+  <div class="list-tools"><span>1 record</span></div>
+  <div class="model-list">
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>Aurora 0.25° Wave</strong><small>Forecast global ocean surface waves and atmospheric conditions.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Two six-hourly global states of HRES T0 weather and HRES-WAM wave analysis, 13 atmospheric pressure levels and static fields including the wave mask. Required channels and initialization are specified by Microsoft.</dd>
+        <dt>Output</dt><dd>Six-hourly wave fields on a 1/4° grid, including significant wave height, mean direction, periods, wind waves and swell partitions. The paper evaluated horizons to ten days.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Microsoft publishes aurora-0.25-wave.ckpt and wave static data. Its documentation includes an inference example. Historical HRES T0 and HRES-WAM archive access must be checked separately.</dd>
+        <dt>License scope</dt><dd>MIT for the published model repository and Microsoft’s Aurora implementation. ECMWF input datasets are governed by separate terms.</dd>
+        <dt>Compute</dt><dd>The published wave checkpoint is 5.04 GB on disk. The paper reports 32 A100s for foundation-model pretraining. Weight size is only one component of inference memory. Wave inference on this L40S has not been timed.</dd>
+        <dt>Evaluation</dt><dd>The Nature study compares against ECMWF HRES-WAM. For Pioneer, collocate significant wave height in metres with quality-controlled OOI or NDBC buoy observations and compare errors to persistence or archived wave guidance at identical valid times. Evaluate directions using circular error.</dd>
+        <dt>Notes</dt><dd>This is the wave-specific checkpoint, distinct from the atmospheric Aurora checkpoints. Input contract: https://microsoft.github.io/aurora/models.html. Example: https://microsoft.github.io/aurora/example_wave.html.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://www.nature.com/articles/s41586-025-09005-y">Primary source</a> <a href="https://huggingface.co/microsoft/aurora/blob/main/aurora-0.25-wave.ckpt">Repository or release</a></p>
+    </details>
+  </div>
+</section>
+<section class="catalog-lane" id="biogeochemistry" aria-labelledby="biogeochemistry-title">
+  <h2 id="biogeochemistry-title">Biogeochemistry</h2>
+  <p class="lane-description">Forecast chemical or biological concentrations from gridded history and environmental drivers. Surface chlorophyll, dissolved oxygen, nutrients and carbon each need their own observations and units.</p>
+  <div class="comparison">
+    <h3>How to compare</h3>
+    <p>Match analyte, depth, basin, sampling interval and forecast lead. Compare against seasonal climatology and persistence on years excluded from fitting. Report errors by season and sampling coverage.</p>
+  </div>
+  <div class="list-tools"><span>2 records</span></div>
+  <div class="model-list">
+    <details class="model-card" data-access="Weights unverified">
+      <summary><span><strong>Mercator seasonal surface chlorophyll-a U-Net (Martinez Balbontin et al.)</strong><small>Estimate near-global surface chlorophyll-a from physical drivers and produce seasonal forecasts.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Mixed-layer depth, sea surface height, sea surface salinity and temperature. Training paired GLORYS12 with GlobColour observations. Seasonal forecasts use bias-adjusted ECMWF SEAS5 predictors.</dd>
+        <dt>Output</dt><dd>Surface chlorophyll-a on a 1/4° near-global grid. The seasonal experiment produces monthly forecasts to six months. A separate reconstruction experiment uses five-day averages.</dd>
+        <dt>Access type</dt><dd>Weights unverified</dd>
+        <dt>Availability</dt><dd>The paper offers software by request from the corresponding author. A public pretrained checkpoint or release was not verified.</dd>
+        <dt>License scope</dt><dd>The article is CC BY 4.0. Code/weights redistribution terms were not verified. The paper identifies the licenses/providers for source data separately.</dd>
+        <dt>Compute</dt><dd>Authors trained on one 40 GB A100 and report training in hours and six months of forecast maps in minutes on a single GPU, conditional on having the physical forecasts. This has not been replicated on the L40S.</dd>
+        <dt>Evaluation</dt><dd>Validate against GlobColour. The paper evaluated five-day reconstructions over 2018–2023 and monthly seasonal forecasts over 2020–2023, with BIO4 as a contextual comparison. For Pioneer, score surface chlorophyll against seasonal climatology; measure taxon concentrations separately using IFCB.</dd>
+        <dt>Notes</dt><dd>The authors used higher-resolution SEAS5 supplied by ECMWF. Public monthly SEAS5 inputs are 1° and require interpolation for the 1/4° workflow. Surface chlorophyll alone cannot identify plankton or recover a subsurface chlorophyll maximum.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://bg.copernicus.org/articles/23/2601/2026/">Primary source</a></p>
+    </details>
+    <details class="model-card" data-access="Weights unverified">
+      <summary><span><strong>BG4Sea</strong><small>Emulate and forecast seasonal three-dimensional marine biogeochemistry.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Monthly BIORYS4 NEMO/PISCES biogeochemical columns and GLORYS12 physical fields. The authors compare column-only, surface-conditioned and spatially coupled configurations.</dd>
+        <dt>Output</dt><dd>Monthly 1/4° forecasts to six months. The full state comprises 29 biogeochemical variables plus temperature and salinity at 24 depths, including nutrients, oxygen, carbon pools and plankton variables.</dd>
+        <dt>Access type</dt><dd>Weights unverified</dd>
+        <dt>Availability</dt><dd>Author preprint, Mercator project summary and EGU 2026 abstract are public. A public code or pretrained-weight release was not verified.</dd>
+        <dt>License scope</dt><dd>The preprint and EGU presentation document scientific work. Model code/weights reuse terms were not verified.</dd>
+        <dt>Compute</dt><dd>The authors describe a compressed, progressively coupled architecture. A comparable GPU runtime, peak memory or L40S benchmark was not verified. The earlier chlorophyll U-Net timing is a different experiment.</dd>
+        <dt>Evaluation</dt><dd>Tested against BIORYS4 for 2020–2022, with persistence and climatology baselines. Seasonal skill against a numerical analysis needs a separate test against measured nutrients, oxygen or chlorophyll at Pioneer, grouped by lead and depth.</dd>
+        <dt>Notes</dt><dd>Mercator reported a NeurIPS@Cam community poster award in December 2025 (https://www.mercator-ocean.eu/news-en/bg4sea-ai-forecasting/). There is an EGU 2026 contribution (https://meetingorganizer.copernicus.org/EGU26/EGU26-13007.html) and a July 2026 author preprint. A NeurIPS 2026 main-conference listing was not verified in the program (https://neurips.cc/Downloads/2026).</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://arxiv.org/abs/2607.16731">Primary source</a></p>
+    </details>
+  </div>
+</section>
+<section class="catalog-lane" id="satellite" aria-labelledby="satellite-title">
+  <h2 id="satellite-title">Satellite ocean color and radar</h2>
+  <p class="lane-description">Prepare georeferenced satellite tiles. Optical ocean color uses spectral reflectance. Sentinel-1 radar measures backscatter and needs a separate preprocessing and evaluation workflow.</p>
+  <div class="lane-actions"><a href="try-ocean-color.html" class="primary">Run from reflectance values</a></div>
+  <div class="comparison">
+    <h3>How to compare</h3>
+    <p>For optical chlorophyll retrieval, score field matchups by scene and region held out of training. Score bloom masks against annotated scenes. Evaluate radar embeddings only on a named radar task with matching labels.</p>
+    <a href="https://seabass.gsfc.nasa.gov/validation/">NASA SeaBASS validation matchups</a>
+  </div>
+  <div class="list-tools"><span>6 records</span></div>
+  <div class="model-list">
+    <details class="model-card" data-access="Published coefficients">
+      <summary><span><strong>NASA MODIS OC3M (R2022 band-ratio component)</strong><small>Estimate near-surface chlorophyll-a from a single MODIS ocean-color pixel.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Atmosphere-corrected remote-sensing reflectance (sr⁻¹) at 443, 488 and 547 nm from the same water pixel.</dd>
+        <dt>Output</dt><dd>Estimated chlorophyll-a (mg/m³), selected blue band and blue-to-green ratio.</dd>
+        <dt>Access type</dt><dd>Published coefficients</dd>
+        <dt>Availability</dt><dd>Runnable browser model with published coefficients. No learned weight download or account is required.</dd>
+        <dt>License scope</dt><dd>NASA publishes the coefficients and describes unrestricted chlor_a product usage. Cite the ATBD and sensor collection for observed reflectances.</dd>
+        <dt>Compute</dt><dd>Deterministic polynomial evaluated on the browser CPU; no GPU or network service required.</dd>
+        <dt>Evaluation</dt><dd>Use SeaBASS pigment matchups with pixel flags and explicit space/time windows, report log error, bias and retained observations on held-out scenes. The operational color-index blend is a separate comparator.</dd>
+        <dt>Notes</dt><dd>R2022 coefficients documented 6 November 2023, Table 1. The demonstration starts with illustrative reflectances. NASA’s blended chlor_a product also uses a color-index retrieval.</dd>
+      </dl>
+      <p class="catalog-links"><a href="try-ocean-color.html">Run from reflectance values</a> <a href="https://oceandata.sci.gsfc.nasa.gov/files/atbd/atbd-obdaac-chlorophyll-a.pdf">Primary source</a> <a href="https://oceandata.sci.gsfc.nasa.gov/manifest/tags/T2024.26/ocssw_src/src/l2gen/get_chl.c">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Data product">
+      <summary><span><strong>NASA Ocean Color chlor_a (OCI/OCx blend)</strong><small>Retrieve near-surface chlorophyll-a as an optical baseline.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Quality-screened water-leaving remote-sensing reflectance in sensor-specific blue, green and red bands.</dd>
+        <dt>Output</dt><dd>Chlorophyll-a in mg/m³ per valid pixel.</dd>
+        <dt>Access type</dt><dd>Data product</dd>
+        <dt>Availability</dt><dd>Public standard product and algorithm description; no network weights.</dd>
+        <dt>License scope</dt><dd>NASA Earth science data policy applies to the mission product; cite collection and reprocessing version.</dd>
+        <dt>Compute</dt><dd>Published per-pixel algebraic retrieval. Proposed CPU processing of local granules; local time unmeasured.</dd>
+        <dt>Evaluation</dt><dd>Compare against colocated extracted chlorophyll in SeaBASS; report log error, bias and retained matchup count, including cloud gaps.</dd>
+        <dt>Notes</dt><dd>NASA’s November 2023 ATBD documents reprocessing R2022. In situ fluorometry requires its own calibration. Species composition is outside this product&#x27;s scope.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://oceandata.sci.gsfc.nasa.gov/files/atbd/atbd-obdaac-chlorophyll-a.pdf">Primary source</a> <a href="https://modis.gsfc.nasa.gov/data/dataprod/chlor_a.php">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Data product">
+      <summary><span><strong>NASA PACE OCI MOANA</strong><small>Estimate three picophytoplankton groups at the Atlantic surface.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Hyperspectral ocean-color reflectance and sea-surface temperature; the NASA tutorial uses 4 km gridded outputs.</dd>
+        <dt>Output</dt><dd>Abundance in cells/mL for Prochlorococcus, Synechococcus and autotrophic picoeukaryotes.</dd>
+        <dt>Access type</dt><dd>Data product</dd>
+        <dt>Availability</dt><dd>Public NASA Level-4 MOANA data product. NASA Earthdata Login supports download; no checkpoint needed.</dd>
+        <dt>License scope</dt><dd>NASA Earth science data policy covers the distributed product; cite its versioned DOI.</dd>
+        <dt>Compute</dt><dd>Published gridded retrieval; proposed CPU subsetting of daily fields. Local compute unmeasured.</dd>
+        <dt>Evaluation</dt><dd>Validate against simultaneous near-surface flow-cytometry measurements of the same groups, with withheld cruises; record coverage, bias and error for each.</dd>
+        <dt>Notes</dt><dd>2020 algorithm; NASA documents product v3.2. Its target organisms are &lt;2 µm. Pioneer IFCB ROI counts at 7 m cannot directly validate these three cell concentrations.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://nasa.github.io/oceandata-notebooks/notebooks/oci/oci_moana.html">Primary source</a> <a href="https://doi.org/10.5067/PACE/OCI/L4M/MOANA/3.2">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>IBM Granite Geospatial Ocean</strong><small>Encode optical ocean patches and fit a task head for chlorophyll-a or primary production.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>42×42 patches with 16 Sentinel-3 OLCI Level-2 bands; pretraining also used collocated SLSTR sea-surface temperature.</dd>
+        <dt>Output</dt><dd>Patch representations; a separately fitted regression head estimates the target field.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Public TerraTorch backbone checkpoint; tutorial includes a primary-production fine-tuning example.</dd>
+        <dt>License scope</dt><dd>Apache-2.0 model repository; Sentinel inputs and field reference data carry their own terms.</dd>
+        <dt>Compute</dt><dd>Published checkpoint 166 MB; IBM&#x27;s fine-tuning tutorial recommends a T4. Proposed L40S patch inference; local memory/time unmeasured.</dd>
+        <dt>Evaluation</dt><dd>Paper used five random folds on 188 chlorophyll and 103 production observations. Repeat with held-out cruises and compare to Level-2 retrieval, ExtraTrees and a randomly initialized model.</dd>
+        <dt>Notes</dt><dd>September 2025 preprint. Five-fold chlorophyll RMSE was similar across the learned baselines. A matching sensor stack and independent local labels are needed for a Pioneer test.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://arxiv.org/abs/2509.21273">Primary source</a> <a href="https://huggingface.co/ibm-granite/granite-geospatial-ocean">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Weights unverified">
+      <summary><span><strong>OceanSAR-2</strong><small>Extract ocean-surface radar features for wind, wave height and geophysical pattern probes.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Radiometrically calibrated Sentinel-1 Wave Mode SAR backscatter (σ⁰).</dd>
+        <dt>Output</dt><dd>Image/patch embeddings; a separate probe or head produces a geophysical prediction.</dd>
+        <dt>Access type</dt><dd>Weights unverified</dd>
+        <dt>Availability</dt><dd>Paper and benchmark definitions public. No v2 checkpoint verified in the authors&#x27; public Hugging Face model list.</dd>
+        <dt>License scope</dt><dd>V2 weight license unverified; the paper license and OceanSAR-1 terms do not establish v2 weight rights.</dd>
+        <dt>Compute</dt><dd>Paper reports 21M parameters. L40S time/memory unmeasured; local inference depends on weights.</dd>
+        <dt>Evaluation</dt><dd>Paper k-nearest-neighbors benchmark: TenGeoP accuracy 94.0%, significant wave height RMSE 0.52 m, wind-speed RMSE 1.32 m/s. Use matched buoy observations for a local test.</dd>
+        <dt>Notes</dt><dd>January 2026. Sentinel-1 radar measures surface texture. Where appropriate wave-mode scenes overlap the event, it can add storm context to a replay.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://arxiv.org/html/2601.07392v1">Primary source</a></p>
+    </details>
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>OceanSAR-1-wave (ResNet-50)</strong><small>Estimate significant wave height from radar as a runnable storm comparator.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Sentinel-1 Wave Mode radar tiles using the v1 processor and normalization.</dd>
+        <dt>Output</dt><dd>Significant wave height in meters.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Public checkpoint and image processor on the authors’ Hugging Face repository; load via the documented Transformers interface.</dd>
+        <dt>License scope</dt><dd>Apache-2.0 for this released model; source radar and ground observations have separate terms.</dd>
+        <dt>Compute</dt><dd>Public ResNet-50 model and linear head, ~23.6M parameters. Proposed single-GPU tile run; no local timings.</dd>
+        <dt>Evaluation</dt><dd>Model card reports 0.63 m wave-height RMSE for this specific backbone. Measure RMSE and bias against time/space-matched buoy SWH, stratified by sea state.</dd>
+        <dt>Notes</dt><dd>April 2025. Keep the v1 preprocessing and v1 benchmark with this release; several ViT results in the card refer to other backbones.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://huggingface.co/galeio-research/OceanSAR-1-wave">Primary source</a> <a href="https://huggingface.co/galeio-research/OceanSAR-1-wave/tree/main">Repository or release</a></p>
+    </details>
+  </div>
+</section>
+<section class="catalog-lane" id="plankton" aria-labelledby="plankton-title">
+  <h2 id="plankton-title">Plankton imaging</h2>
+  <p class="lane-description">Classify microscope crops and preserve instrument, sample time, crop identifier and sampled volume. In the Pioneer pilot, WHOI and PlankScope each produced a prediction for the same 24 images.</p>
+  <div class="lane-actions"><a href="try-plankton.html" class="primary">Run on a microscope image</a> <a href="sigai-plankton.html" class="primary">Try the SIG.AI classifier</a> <a href="try-trained-plankton.html" class="primary">Try the morphology baseline</a> <a href="try-mobilenet.html" class="primary">Run a personal MobileNet export</a> <a href="plankton-lab.html#notebooks" class="primary">Compare the PML prototype modes</a></div>
+  <div class="comparison">
+    <h3>How to compare</h3>
+    <p>Use identical crops, an expert-reviewed label mapping and blind reference labels. Hold out water samples or deployments. Report group precision, recall, abstention and volume-normalized error with uncertainty.</p>
+    <a href="https://github.com/sigaihealth/marinemodels/blob/main/docs/pioneer_roadmap.md">Pioneer experiment and audit design</a>
+  </div>
+  <div class="list-tools"><span>11 records</span></div>
+  <div class="model-list">
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>WHOI Northeast Shelf IFCB v2.4</strong><small>Classify microscope crops of plankton, nonliving particles and imaging artifacts.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Individual grayscale IFCB ROI, resized to 299×299, repeated into three channels, scaled to [0,1].</dd>
+        <dt>Output</dt><dd>Logits for 155 categories; downstream softmax and top-three suggestions.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Public frozen Inception V3 ONNX model, label list and preprocessing.</dd>
+        <dt>License scope</dt><dd>MIT model weights; the separate WHOI 97,026-image reference dataset is CC BY 4.0.</dd>
+        <dt>Compute</dt><dd>Public ONNX ~85 MB. A local CPU processed 24 Pioneer originals; GPU speed and full-event throughput unmeasured.</dd>
+        <dt>Evaluation</dt><dd>WHOI reports macro-F1 0.9191 on its validation split. Our 24 crops test compatibility. Compare to the blind, date-held-out Pioneer broad-group audit.</dd>
+        <dt>Notes</dt><dd>2022 classifier, Inception V3. A softmax score needs local calibration. Multiple organisms or a chain can share one crop.</dd>
+      </dl>
+      <p class="catalog-links"><a href="try-plankton.html">Run on a microscope image</a> <a href="https://huggingface.co/sosiklab/NES-plankton-IFCB-classifier-2022">Primary source</a> <a href="https://huggingface.co/sosiklab/NES-plankton-IFCB-classifier-2022/tree/71bc362e8c75014c27692a8f10637d36f411962e">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Browser trial">
+      <summary><span><strong>SIG.AI Plankton Classifier</strong><small>Suggest categories for individual plankton microscope crops.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>One opaque 8-bit grayscale or RGB microscope crop in PNG format, under the displayed size and pixel limits.</dd>
+        <dt>Output</dt><dd>The three highest-ranked labels and their model scores from a 101-category classifier.</dd>
+        <dt>Access type</dt><dd>Browser trial</dd>
+        <dt>Availability</dt><dd>Anyone can try a sample or submit one crop through the browser. Authorized OOI users can also run a local installation.</dd>
+        <dt>License scope</dt><dd>Hosted inference access. SIG.AI manages the private model and serving software.</dd>
+        <dt>Compute</dt><dd>The public trial uses SIG.AI server-side inference. The authorized OOI installation also runs on an NVIDIA L40S.</dd>
+        <dt>Evaluation</dt><dd>Compare the same SHA-256-matched crops by expert-mapped ecological group; measure coverage, precision and recall against withheld human labels. Report model agreement separately.</dd>
+        <dt>Notes</dt><dd>The 24-image Pioneer check tested reproducibility. Independent labels are needed to measure biological identification accuracy at that site.</dd>
+      </dl>
+      <p class="catalog-links"><a href="sigai-plankton.html">Try the SIG.AI classifier</a> <a href="https://ocean.sig.ai/sigai-plankton.html">Primary source</a></p>
+    </details>
+    <details class="model-card" data-access="Weights unverified">
+      <summary><span><strong>MobileNetV2 + MLP₆₀₀ (plankton benchmark)</strong><small>Train a lightweight plankton image classifier per instrument.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Single grayscale ROI with aspect-preserving resize, border-median padding to 224×224 and three identical channels.</dd>
+        <dt>Output</dt><dd>Per-instrument class scores after training a 600-unit hidden layer and classification head.</dd>
+        <dt>Access type</dt><dd>Weights unverified</dd>
+        <dt>Availability</dt><dd>Public training and evaluation code, original test metrics and dataset links. Trained plankton checkpoints were not present in the v1.0.2 archive.</dd>
+        <dt>License scope</dt><dd>Zenodo software snapshot specifies CC BY 4.0. Each source dataset has its own license.</dd>
+        <dt>Compute</dt><dd>Published: ten epochs took 15 h for IFCB and 5 h for ISIIS on a Quadro RTX 8000. Proposed L40S pilot; benchmark time is hardware- and dataset-specific.</dd>
+        <dt>Evaluation</dt><dd>Authors report balanced accuracy of 79–90% across six imaging datasets. Compare a newly trained IFCB model to WHOI on the same independently adjudicated Pioneer sample.</dd>
+        <dt>Notes</dt><dd>2026 paper, December 2025 code archive. Published source-specific classifiers used ImageNet initialization and per-class weighting. Generic ImageNet weights alone do not classify plankton taxa.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://essd.copernicus.org/articles/18/945/2026/">Primary source</a> <a href="https://zenodo.org/records/17937437">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Gated weights">
+      <summary><span><strong>Planktonzilla EVA02-Large (supervised)</strong><small>Assign a fixed taxon lineage to a microscope or plankton-imager crop.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>3×448×448 image using the card&#x27;s bicubic squash and normalization.</dd>
+        <dt>Output</dt><dd>Single-label scores over 385 taxonomic lineages.</dd>
+        <dt>Access type</dt><dd>Gated weights</dd>
+        <dt>Availability</dt><dd>Model card public; actual safetensors download requires approved Hugging Face access.</dd>
+        <dt>License scope</dt><dd>MIT tag on this checkpoint. The separate Planktonzilla-17M image collection aggregates multiple licenses.</dd>
+        <dt>Compute</dt><dd>Published checkpoint ~1.22 GB, ~0.3B parameters. Proposed batch-one L40S inference; local usage unmeasured.</dd>
+        <dt>Evaluation</dt><dd>Model card validation top-1 0.9499 and macro-F1 0.8861. Blind-test IFCB with lineage-to-group mapping and report coverage, especially debris.</dd>
+        <dt>Notes</dt><dd>May 2026 paper. The checkpoint was trained on the plankton subset. Its 385 labels differ from the larger dataset inventory.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://huggingface.co/project-oceania/timm-eva02-large-m38m-ft-planktonzilla">Primary source</a> <a href="https://huggingface.co/project-oceania/timm-eva02-large-m38m-ft-planktonzilla/tree/main">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Gated weights">
+      <summary><span><strong>Planktonzilla CLIP ViT-B/16 (OpenAI)</strong><small>Rank candidate taxonomic lineages and retrieve similar images.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>224×224 plankton image and text describing candidate taxonomic lineages.</dd>
+        <dt>Output</dt><dd>Image/text embeddings (512 dimensions) and relative image–text similarity scores.</dd>
+        <dt>Access type</dt><dd>Gated weights</dd>
+        <dt>Availability</dt><dd>Public model card. The packaged OpenCLIP safetensors require approved Hugging Face access.</dd>
+        <dt>License scope</dt><dd>MIT tag on this model card. Source images in Planktonzilla-17M retain their individual licenses.</dd>
+        <dt>Compute</dt><dd>Checkpoint ~0.60 GB. Published CLIP training used 64 H100s over 100 epochs. Proposed frozen L40S inference; local throughput unmeasured.</dd>
+        <dt>Evaluation</dt><dd>Published in-domain macro-F1: genus 0.797, species 0.786. Evaluate held-out imagers or dates with fixed candidate prompts; report coverage at each rank.</dd>
+        <dt>Notes</dt><dd>May 2026 paper. Initialization: OpenAI. Explicitly test non-plankton and unfamiliar taxa; a similarity ranking cannot certify species identity.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://huggingface.co/project-oceania/CLIP-ViT-B-16.openai-pt.planktonzilla-pt">Primary source</a> <a href="https://huggingface.co/project-oceania/CLIP-ViT-B-16.openai-pt.planktonzilla-pt/tree/main">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Gated weights">
+      <summary><span><strong>Planktonzilla CLIP ViT-B/16 (BioCLIP)</strong><small>Rank candidate taxonomic lineages and retrieve similar images.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>224×224 plankton image and text describing candidate taxonomic lineages.</dd>
+        <dt>Output</dt><dd>Image/text embeddings (512 dimensions) and relative image–text similarity scores.</dd>
+        <dt>Access type</dt><dd>Gated weights</dd>
+        <dt>Availability</dt><dd>Public model card. The packaged OpenCLIP safetensors require approved Hugging Face access.</dd>
+        <dt>License scope</dt><dd>MIT tag on this model card. Source images in Planktonzilla-17M retain their individual licenses.</dd>
+        <dt>Compute</dt><dd>Checkpoint ~0.60 GB. Published CLIP training used 64 H100s over 100 epochs. Proposed frozen L40S inference; local throughput unmeasured.</dd>
+        <dt>Evaluation</dt><dd>Published in-domain macro-F1: genus 0.752, species 0.734. Evaluate held-out imagers or dates with fixed candidate prompts; report coverage at each rank.</dd>
+        <dt>Notes</dt><dd>May 2026 paper. Initialization: BioCLIP. Explicitly test non-plankton and unfamiliar taxa; a similarity ranking cannot certify species identity.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://huggingface.co/project-oceania/CLIP-ViT-B-16.bioclip-pt.planktonzilla-pt">Primary source</a> <a href="https://huggingface.co/project-oceania/CLIP-ViT-B-16.bioclip-pt.planktonzilla-pt/tree/main">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Gated weights">
+      <summary><span><strong>Planktonzilla CLIP ViT-L/14 (LAION-2B)</strong><small>Rank candidate taxonomic lineages and retrieve similar images.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>224×224 plankton image and text describing candidate taxonomic lineages.</dd>
+        <dt>Output</dt><dd>Image/text embeddings (768 dimensions) and relative image–text similarity scores.</dd>
+        <dt>Access type</dt><dd>Gated weights</dd>
+        <dt>Availability</dt><dd>Public model card. The packaged OpenCLIP safetensors require approved Hugging Face access.</dd>
+        <dt>License scope</dt><dd>MIT tag on this model card. Source images in Planktonzilla-17M retain their individual licenses.</dd>
+        <dt>Compute</dt><dd>Checkpoint ~1.71 GB. Published CLIP training used 64 H100s over 100 epochs. Proposed frozen L40S inference; local throughput unmeasured.</dd>
+        <dt>Evaluation</dt><dd>Published in-domain macro-F1: genus 0.839, species 0.825. Evaluate held-out imagers or dates with fixed candidate prompts; report coverage at each rank.</dd>
+        <dt>Notes</dt><dd>May 2026 paper. Initialization: LAION-2B. Explicitly test non-plankton and unfamiliar taxa; a similarity ranking cannot certify species identity.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://huggingface.co/project-oceania/CLIP-ViT-L-14.laion2b-pt.planktonzilla-pt">Primary source</a> <a href="https://huggingface.co/project-oceania/CLIP-ViT-L-14.laion2b-pt.planktonzilla-pt/tree/main">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Gated weights">
+      <summary><span><strong>Planktonzilla CLIP ViT-L/14 (BioCLIP 2)</strong><small>Rank candidate taxonomic lineages and retrieve similar images.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>224×224 plankton image and text describing candidate taxonomic lineages.</dd>
+        <dt>Output</dt><dd>Image/text embeddings (768 dimensions) and relative image–text similarity scores.</dd>
+        <dt>Access type</dt><dd>Gated weights</dd>
+        <dt>Availability</dt><dd>Public model card. The packaged OpenCLIP safetensors require approved Hugging Face access.</dd>
+        <dt>License scope</dt><dd>MIT tag on this model card. Source images in Planktonzilla-17M retain their individual licenses.</dd>
+        <dt>Compute</dt><dd>Checkpoint ~1.71 GB. Published CLIP training used 64 H100s over 100 epochs. Proposed frozen L40S inference; local throughput unmeasured.</dd>
+        <dt>Evaluation</dt><dd>Published in-domain macro-F1: genus 0.823, species 0.816. Evaluate held-out imagers or dates with fixed candidate prompts; report coverage at each rank.</dd>
+        <dt>Notes</dt><dd>May 2026 paper. Initialization: BioCLIP 2. Explicitly test non-plankton and unfamiliar taxa; a similarity ranking cannot certify species identity.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://huggingface.co/project-oceania/CLIP-ViT-L-14.bioclip2-pt.planktonzilla-pt">Primary source</a> <a href="https://huggingface.co/project-oceania/CLIP-ViT-L-14.bioclip2-pt.planktonzilla-pt/tree/main">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Published parameters">
+      <summary><span><strong>SIG.AI ten-class IFCB morphology baseline</strong><small>Classify a single microscope crop using native particle size, shape and grayscale statistics.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>One original grayscale IFCB crop at its native resolution. The estimator uses 20 features of dimensions, intensity and silhouette.</dd>
+        <dt>Output</dt><dd>Ten class distances and the nearest class centroid. A smaller standardized distance indicates a closer match.</dd>
+        <dt>Access type</dt><dd>Published parameters</dd>
+        <dt>Availability</dt><dd>Public fitted centroids, feature scales and browser inference. The repository includes a reproducible training script.</dd>
+        <dt>License scope</dt><dd>WHOI training images are CC BY 4.0. The project has not specified a separate license for the fitted baseline parameters.</dd>
+        <dt>Compute</dt><dd>The fitted JSON parameter file is about 9.4 kB. The browser computes the features and centroid distances on its CPU.</dd>
+        <dt>Evaluation</dt><dd>On the ten-label WHOI pilot, 131/250 correct (52.4%), macro-F1 0.5068. Compare with MobileNetV3 on these same 250 crops from 211 held-out bins.</dd>
+        <dt>Notes</dt><dd>Fit on 1,280 expert-labeled WHOI images. Native pixel dimensions are features, so rescaling inputs can change predictions. Independent Pioneer accuracy remains unmeasured.</dd>
+      </dl>
+      <p class="catalog-links"><a href="try-trained-plankton.html">Try the morphology baseline</a> <a href="https://github.com/sigaihealth/marinemodels/blob/main/train_morphology_baseline.py">Primary source</a> <a href="https://ocean.sig.ai/assets/ifcb-morphology.json">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Personal export / notebook">
+      <summary><span><strong>SIG.AI ten-class IFCB MobileNetV3-Small</strong><small>Fit a supervised ten-class head on frozen image features and classify an individual IFCB crop.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>One grayscale WHOI or IFCB image, aspect-preserving resize with padding to 224×224, replicated RGB, ImageNet normalization.</dd>
+        <dt>Output</dt><dd>Ten class scores and ranked candidates. The training notebook exports the fitted model, validation predictions and a personal ONNX file.</dd>
+        <dt>Access type</dt><dd>Personal export / notebook</dd>
+        <dt>Availability</dt><dd>The signed-in notebook runs the fitted model and exports a personal ONNX file. The public browser trial accepts the file and its SHA-256 and checks the hash before inference.</dd>
+        <dt>License scope</dt><dd>WHOI training images are CC BY 4.0. TorchVision&#x27;s code uses BSD-3-Clause; upstream ImageNet weights and the locally fitted head have separate scope. No separate redistribution license was identified for the fitted head.</dd>
+        <dt>Compute</dt><dd>Training and inference ran on the OOI NVIDIA L40S. An independent CPU fit reproduced its held-out accuracy and macro-F1. The personal ONNX export runs on the user’s device.</dd>
+        <dt>Evaluation</dt><dd>OOI L40S: 221/250 correct (88.4%), macro-F1 0.88446 across 211 held-out bins. The exported ONNX model reproduced the PyTorch top label on all 250 crops. On this split, the majority-class baseline achieved 10% accuracy.</dd>
+        <dt>Notes</dt><dd>1,280 training crops from 989 bins. Ten labels have equal representation in this pilot. Natural abundance and performance on independent Pioneer events require separate evaluation.</dd>
+      </dl>
+      <p class="catalog-links"><a href="try-mobilenet.html">Run a personal MobileNet export</a> <a href="https://github.com/sigaihealth/marinemodels/blob/main/plankton_workspace.py">Primary source</a> <a href="https://github.com/sigaihealth/marinemodels/blob/main/plankton_workspace.ipynb">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>PML IFCB CLIP-LoRA (145 classes)</strong><small>Rank microscope crops against visual or textual references with a single adapted image encoder.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>One IFCB specimen crop. The CLIP transform resizes and center-crops to 224×224 RGB. Choose image class means or taxonomic lineage text prototypes.</dd>
+        <dt>Output</dt><dd>Ranked matches among the same 145 PML reference classes, with cosine similarity scores.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Public adapter, label map and both prototype banks. The pinned base checkpoint is downloaded separately. A workspace notebook runs the two modes.</dd>
+        <dt>License scope</dt><dd>Author model card specifies MIT for the adapter package. The pinned timm base checkpoint card specifies Apache-2.0. Training image collections have separate terms.</dd>
+        <dt>Compute</dt><dd>Pinned downloads include a 598.5 MB ViT-B/16 base and a 16.4 MB adapter and prototype bundle. The identification notebook ran this model on the OOI NVIDIA L40S.</dd>
+        <dt>Evaluation</dt><dd>Author’s 14,837-image PML IFCB test: image prototypes reached 0.773 accuracy and 0.636 macro-F1; text prototypes reached 0.282 and 0.145. Score modes on identical crops and aligned labels.</dd>
+        <dt>Notes</dt><dd>One CLIP-LoRA encoder powers both ranking modes. The DINOv3 classifier described on the same model card is a separate checkpoint. The quoted scores apply to PML.</dd>
+      </dl>
+      <p class="catalog-links"><a href="plankton-lab.html#notebooks">Compare the PML prototype modes</a> <a href="https://huggingface.co/danielaivanova/dino_plankton_classifier/blob/2963115132bf29fef94ef9b3eea8d010884b4741/README.md">Primary source</a> <a href="https://huggingface.co/danielaivanova/dino_plankton_classifier/tree/2963115132bf29fef94ef9b3eea8d010884b4741">Repository or release</a></p>
+    </details>
+  </div>
+</section>
+<section class="catalog-lane" id="underwater-imagery" aria-labelledby="underwater-imagery-title">
+  <h2 id="underwater-imagery-title">Underwater imagery</h2>
+  <p class="lane-description">Accept camera frames from dives or fixed stations for detection and segmentation. Pass cropped organisms to identification models. Above-water catch photographs form a separate test domain.</p>
+  <div class="lane-actions"><a href="visual-transect.html" class="primary">Review the ROV transect trial</a> <a href="https://huggingface.co/spaces/imageomics/bioclip-2-demo" class="primary">Open Imageomics’ hosted demo</a></div>
+  <div class="comparison">
+    <h3>How to compare</h3>
+    <p>Hold out dives, sites and camera systems. Score boxes with average precision, masks with intersection over union and crop classification with macro recall. Match annotation classes and background policy before scoring two detectors.</p>
+    <a href="https://github.com/fathomnet/fgvc-comp-2023">FathomNet out-of-sample challenge</a>
+  </div>
+  <div class="list-tools"><span>6 records</span></div>
+  <div class="model-list">
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>FathomNet Megalodon (2024 YOLO11x)</strong><small>Localize salient underwater objects.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Underwater still images or individual video frames.</dd>
+        <dt>Output</dt><dd>Bounding boxes and detection scores for one generic object class.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Public PyTorch weights on the FathomNet model hub. Earlier YOLOv8x checkpoint also published.</dd>
+        <dt>License scope</dt><dd>Checkpoint labeled CC BY 4.0. Runtime and source imagery have separate terms.</dd>
+        <dt>Compute</dt><dd>Ultralytics YOLO11x; propose L40S batched inference and measure frames/s.</dd>
+        <dt>Evaluation</dt><dd>Score class-agnostic AP50:95 and recall on FathomNet/2024-megalodon-benchmark and on expert-boxed OOI frames from a held-out deployment.</dd>
+        <dt>Notes</dt><dd>Useful for generating crops. Species recognition requires a separate classifier. Official benchmark https://huggingface.co/datasets/FathomNet/2024-megalodon-benchmark</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://huggingface.co/FathomNet/megalodon-2024-yolov11">Primary source</a> <a href="https://huggingface.co/FathomNet/megalodon-2024-yolov11/tree/main">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>FathomNet vulnerable marine ecosystems detector</strong><small>Detect four broad groups in deep-sea benthic images.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Seafloor camera images or video frames.</dd>
+        <dt>Output</dt><dd>Boxes, scores and categories for coral, crinoid, sponge and fish.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Public best.pt checkpoint in FathomNet repository.</dd>
+        <dt>License scope</dt><dd>Model card labels checkpoint CC BY 4.0. Source imagery and runtime have separate terms.</dd>
+        <dt>Compute</dt><dd>Ultralytics YOLOv8x; propose single-GPU inference.</dd>
+        <dt>Evaluation</dt><dd>Compare per-group box AP and missed animals on FathomNet/2024-vme-benchmark and an independent OOI camera-day sample.</dd>
+        <dt>Notes</dt><dd>Thresholds and lighting can change precision substantially. The presence of one detected animal does not establish a legal VME designation. Benchmark https://huggingface.co/datasets/FathomNet/2024-vme-benchmark</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://huggingface.co/FathomNet/vulnerable-marine-ecosystems">Primary source</a> <a href="https://huggingface.co/FathomNet/vulnerable-marine-ecosystems/tree/main">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>Southern Hydrate Ridge digital still camera YOLO model</strong><small>OOI-specific baseline for visible seafloor fauna.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Frames from the OOI Southern Hydrate Ridge still camera.</dd>
+        <dt>Output</dt><dd>Bounding boxes and scores in 12 categories, including sablefish, sea stars, sea anemones, and clams.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Creator publishes downloadable best.pt weights, about 137 MB.</dd>
+        <dt>License scope</dt><dd>MIT on the model card. Check underlying imagery and runtime terms separately.</dd>
+        <dt>Compute</dt><dd>Public YOLO model; propose single L40S inference, benchmark memory and frames/s.</dd>
+        <dt>Evaluation</dt><dd>Hold out later deployments or camera days, check training overlap, and measure per-category box AP and false positives on empty images.</dd>
+        <dt>Notes</dt><dd>The author reports rockfish and vesicomyid clams were overrepresented. Camera owner https://interactiveoceans.washington.edu/research-sites/southern-hydrate-ridge/</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://huggingface.co/atticus-carter/SHR_DSCAM">Primary source</a> <a href="https://huggingface.co/atticus-carter/SHR_DSCAM/tree/main">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>BioCLIP 2 (ViT-L/14)</strong><small>Classify or retrieve organism crops by taxonomic text or labeled examples.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Organism image and candidate taxonomic descriptions, or a labeled reference gallery.</dd>
+        <dt>Output</dt><dd>Image and text embeddings, similarity ranks, or downstream classification scores.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Public OpenCLIP weights in Safetensors and PyTorch formats.</dd>
+        <dt>License scope</dt><dd>Checkpoint card declares MIT. Images in TreeOfLife-200M retain source-specific terms.</dd>
+        <dt>Compute</dt><dd>Authors list 428M parameters and about 1.7 GB FP32 weights. Profile complete L40S runtime independently.</dd>
+        <dt>Evaluation</dt><dd>Compare zero-shot or fixed-budget linear probes with BioCLIP 2.5 on identical fish crops, vocabulary and dive-level splits. Report top-k, macro-F1 and unknown rejection.</dd>
+        <dt>Notes</dt><dd>FishNet in the authors&#x27; evaluation tests ecological traits/habitat. A separate site-labeled test is needed for underwater species identification.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://huggingface.co/spaces/imageomics/bioclip-2-demo">Open Imageomics’ hosted demo</a> <a href="https://imageomics.github.io/bioclip-ecosystem/pages/models.html">Primary source</a> <a href="https://huggingface.co/imageomics/bioclip-2">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>BioCLIP 2.5 Huge (ViT-H/14)</strong><small>Compare a larger biological image encoder for identification and ecological traits.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Organism crop and taxonomic labels/prompts, or expert-labeled training examples.</dd>
+        <dt>Output</dt><dd>Embedding similarities, taxon ranks, or supervised probe predictions.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Public OpenCLIP weights in Safetensors and PyTorch formats.</dd>
+        <dt>License scope</dt><dd>MIT on the checkpoint card. Training-image rights vary by source.</dd>
+        <dt>Compute</dt><dd>Authors list 986M parameters and about 3.9 GB FP32 weights. Batch sizing and latency on the L40S are proposed tests.</dd>
+        <dt>Evaluation</dt><dd>Authors include FishNet habitat/trait evaluation. Compare against BioCLIP 2 on equal expert-labeled crops; assess abstention, latency and held-out camera performance.</dd>
+        <dt>Notes</dt><dd>Works on crops and candidate names; pair with Megalodon or reviewed boxes for whole-frame detection.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://imageomics.github.io/bioclip-ecosystem/pages/models.html">Primary source</a> <a href="https://huggingface.co/imageomics/bioclip-2.5-vith14">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>Fishial.ai fish identification (v0.10.2)</strong><small>Recognize fish in photographs; project also distributes fish detection and segmentation models.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Fish crop for the classifier; upstream detector/segmenter accepts a full photograph.</dd>
+        <dt>Output</dt><dd>768-dimensional DINOv2-derived embedding with class-reference matches across 866 classes for this checkpoint.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Official repo links downloadable TorchScript classifier v0.10.2 and separate detector and segmentation packs; hosted API is an alternative.</dd>
+        <dt>License scope</dt><dd>Repository declares MIT for the project. Confirm separate model-archive and original-photo terms for redistribution.</dd>
+        <dt>Compute</dt><dd>Official project supplies TorchScript and Colab. Propose CPU smoke test and L40S crop batches.</dd>
+        <dt>Evaluation</dt><dd>Run Fishial and BioCLIP on the same reviewed fish crops with common covered taxa. Measure top-k accuracy, macro-recall, unsupported taxa and camera-domain shift. Evaluate detector misses separately.</dd>
+        <dt>Notes</dt><dd>Version the checkpoint label file. The hosted Fishial API and other public releases have different species counts.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://github.com/Wye-Foundation/Fishial-Fish-Identification">Primary source</a> <a href="https://storage.googleapis.com/fishial-ml-resources/classification_model_v0.10.2.zip">Repository or release</a></p>
+    </details>
+  </div>
+</section>
+<section class="catalog-lane" id="coral-reefs" aria-labelledby="coral-reefs-title">
+  <h2 id="coral-reefs-title">Coral reefs</h2>
+  <p class="lane-description">Segment coral in underwater photographs or transect frames. Keep masks, expert-assigned groups and the area denominator together when estimating cover.</p>
+  <div class="comparison">
+    <h3>How to compare</h3>
+    <p>Hold out reefs or transects. Compare binary masks on the same valid pixels, then report error in coral cover as percentage points. Species-level tests require separate reference labels.</p>
+    <a href="https://josauder.github.io/coralscapes/">Coralscapes benchmark dataset</a>
+  </div>
+  <div class="list-tools"><span>1 record</span></div>
+  <div class="model-list">
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>CoralSCOP ViT-B</strong><small>Segment individual coral in underwater reef survey photographs.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Underwater RGB reef photograph; optional point or box prompts under the evaluated settings.</dd>
+        <dt>Output</dt><dd>Instance masks; mask area can estimate image-plane coral cover after validation.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Authors released ViT-B weights via the official repository&#x27;s download link and published inference code.</dd>
+        <dt>License scope</dt><dd>Author repository LICENSE.txt is CC BY-NC-SA 4.0. No separate broader weight rights verified. Survey images need their own terms.</dd>
+        <dt>Compute</dt><dd>Paper pretraining used six A100 GPUs for five epochs. Author demo supports one GPU. Proposed L40S image-at-a-time inference, unmeasured.</dd>
+        <dt>Evaluation</dt><dd>Paper Table 1 mask IoU: 59.02% automatic, 62.90% with one point, 74.00% with point and box. Compare with SAM and independently drawn masks on held-out reefs.</dd>
+        <dt>Notes</dt><dd>CVPR 2024, author weights announced 28 September 2024. Use benthic survey photos for this lane. Required image geometry and outputs differ from IFCB crops.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Zheng_CoralSCOP_Segment_any_COral_Image_on_this_Planet_CVPR_2024_paper.html">Primary source</a> <a href="https://github.com/zhengziqiang/CoralSCOP">Repository or release</a></p>
+    </details>
+  </div>
+</section>
+<section class="catalog-lane" id="bioacoustics" aria-labelledby="bioacoustics-title">
+  <h2 id="bioacoustics-title">Bioacoustics</h2>
+  <p class="lane-description">Process hydrophone recordings with their sample rate, station, time and duty cycle. Train a small supervised classifier on embeddings when a target sound has no released detector.</p>
+  <div class="comparison">
+    <h3>How to compare</h3>
+    <p>Compare models on the same species, call type, frequency band and time window. Hold out recorder-days or sites. Report event recall at a fixed false-alarm rate per recording hour and separate clip-level scores.</p>
+    <a href="https://github.com/birdnet-team/probeBench">Public marine audio evaluation tasks</a>
+  </div>
+  <div class="list-tools"><span>3 records</span></div>
+  <div class="model-list">
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>Perch 2.0</strong><small>Transfer a general bioacoustic encoder to passive marine recordings.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Five-second mono waveforms at 32 kHz.</dd>
+        <dt>Output</dt><dd>1,536-dimensional embeddings and pretrained logits. Fit a local probe for underwater event labels.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Public Google TensorFlow SavedModel on Kaggle, with GPU and CPU variants.</dd>
+        <dt>License scope</dt><dd>Apache 2.0 on Google’s Kaggle model variants. Source audio has separate terms.</dd>
+        <dt>Compute</dt><dd>Google&#x27;s standard TF2 variant requires TensorFlow ≥2.20 and a GPU. A separate CPU checkpoint exists. Profile L40S compatibility.</dd>
+        <dt>Evaluation</dt><dd>Compare equal-budget frozen-embedding probes against SurfPerch and the whale model on shared labels. Split by site, recorder and date. Use PR-AUC and false alarms/hour; account for pretraining overlap.</dd>
+        <dt>Notes</dt><dd>The source study tests underwater transfer. General-purpose BEANS includes marine mammals https://github.com/earthspecies/beans</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://arxiv.org/abs/2512.03219">Primary source</a> <a href="https://www.kaggle.com/models/google/bird-vocalization-classifier/TensorFlow2/perch_v2">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>SurfPerch</strong><small>Reef soundscape embedding model for few-shot acoustic event classification.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Five-second mono reef audio sampled at 32 kHz.</dd>
+        <dt>Output</dt><dd>Embeddings and model logits; train a local head for fish, boats, or other target sounds.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Google SurfPerch v1 is downloadable on Kaggle.</dd>
+        <dt>License scope</dt><dd>Apache 2.0 on the Kaggle model variant. Reef audio has source-specific licenses.</dd>
+        <dt>Compute</dt><dd>Public TensorFlow 2 SavedModel about 101 MB unpacked per Kaggle. Profile local batch inference.</dd>
+        <dt>Evaluation</dt><dd>Compare with Perch 2.0 embeddings using the same samples and label budget. Hold out complete sites and recording days; report macro average precision and event-level false alarms.</dd>
+        <dt>Notes</dt><dd>Account for reef training overlap. Transfer to an OOI deep-ocean soundscape requires independent annotation.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://arxiv.org/abs/2404.16436">Primary source</a> <a href="https://www.kaggle.com/models/google/surfperch/TensorFlow2/1">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>Google multispecies whale acoustic model</strong><small>Score supported whale vocalizations in passive acoustic recordings.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Five-second sliding windows of 24 kHz mono PCM and a chosen hop.</dd>
+        <dt>Output</dt><dd>12 scores covering seven species-level classes and five call-type classes.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Downloadable Google model on Kaggle, TensorFlow2/default v2.</dd>
+        <dt>License scope</dt><dd>Apache 2.0 on the Kaggle model variant. Recording licenses vary.</dd>
+        <dt>Compute</dt><dd>TF2 EfficientNet-B0 SavedModel, about 28 MB unpacked per Kaggle. Propose CPU baseline and GPU throughput comparison.</dd>
+        <dt>Evaluation</dt><dd>Where the label set overlaps, compare its native scores to Perch/SurfPerch probes on independent deployments. Evaluate event precision/recall and false alarms/hour. BioDCASE 2026 Task 2 has annotated Antarctic whale call timing.</dd>
+        <dt>Notes</dt><dd>Keep the native classifier and a fitted embedding probe as distinct experiments. Some NOAA data were used in development. BioDCASE task rules and domain https://biodcase.github.io/challenge2026/task2</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://www.kaggle.com/models/google/multispecies-whale">Primary source</a> <a href="https://www.kaggle.com/models/google/multispecies-whale/TensorFlow2/default">Repository or release</a></p>
+    </details>
+  </div>
+</section>
+<section class="catalog-lane" id="language" aria-labelledby="language-title">
+  <h2 id="language-title">Language and scientific Q&amp;A</h2>
+  <p class="lane-description">Give each language model the same approved measurements, data-quality flags and retrieved sources. Evaluate text questions separately from interpretation of sonar or microscope imagery.</p>
+  <div class="comparison">
+    <h3>How to compare</h3>
+    <p>Pin the model version and evidence packet. Grade numerical accuracy, citation support and abstention on missing evidence. Blind reviewers to model identity and record latency, GPU memory or API cost.</p>
+    <a href="https://github.com/sigaihealth/marinemodels/blob/main/docs/pioneer_roadmap.md">Pioneer reporting-model protocol</a>
+  </div>
+  <div class="list-tools"><span>4 records</span></div>
+  <div class="model-list">
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>OceanGPT-basic-4B-Instruct</strong><small>Domain-specific language baseline for ocean science questions and event summaries.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Text questions and optional supplied or retrieved evidence passages.</dd>
+        <dt>Output</dt><dd>Natural-language answers for expert scoring.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Public two-shard Safetensors release, plus larger 30B-A3B alternatives published by ZJUNLP.</dd>
+        <dt>License scope</dt><dd>MIT on the selected checkpoint card. Supplied documents retain their own rights.</dd>
+        <dt>Compute</dt><dd>Qwen-based 4B checkpoint. Propose single L40S inference with fixed context and measured memory and latency.</dd>
+        <dt>Evaluation</dt><dd>Use the authors’ OceanBench for background QA, then identical held-out OOI evidence packets for domain and frontier models. Score units, numerics, citation support, and justified abstentions.</dd>
+        <dt>Notes</dt><dd>The public demonstration may use additional knowledge augmentation. Basic is a text model; image interpretation belongs to the separate OceanGPT-o release.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://github.com/OceanGPT/OceanGPT">Primary source</a> <a href="https://huggingface.co/zjunlp/OceanGPT-basic-4B-Instruct">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>OceanGPT-o-7B</strong><small>Describe selected sonar or ocean-science images in natural language.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>A rendered image and a question, with the checkpoint’s multimodal processor.</dd>
+        <dt>Output</dt><dd>Natural-language interpretation of image features.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Public Qwen-based multimodal release with four Safetensors weight shards.</dd>
+        <dt>License scope</dt><dd>MIT on the checkpoint card. Check original sonar and scientific image rights separately.</dd>
+        <dt>Compute</dt><dd>Authors recommend a GPU with at least 24 GB VRAM; propose a single-image L40S run before batching.</dd>
+        <dt>Evaluation</dt><dd>Separate image QA track. Use withheld expert-annotated imagery and matched evidence for a vision-capable comparator. Score observable facts, invented features, and abstention on unfamiliar images.</dd>
+        <dt>Notes</dt><dd>The authors explicitly limit sonar support to certain image types. This is text interpretation of images; raw acoustic time-series decoding, quantitative bathymetry and general sonar detection are unvalidated.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://oceangpt.blue/report/">Primary source</a> <a href="https://huggingface.co/zjunlp/OceanGPT-o-7B">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Hosted API">
+      <summary><span><strong>General frontier model with retrieval (OpenAI Responses API)</strong><small>Reference system for source-grounded marine QA and automated event reports.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Question, frozen evidence passages and code-computed measurements. For a distinct image experiment supply the same images to a vision-capable version.</dd>
+        <dt>Output</dt><dd>Generated answer, claim/source references and optionally schema-constrained fields.</dd>
+        <dt>Access type</dt><dd>Hosted API</dd>
+        <dt>Availability</dt><dd>Hosted service; authenticated API access, proprietary weights.</dd>
+        <dt>License scope</dt><dd>OpenAI API service terms apply. Retrieval corpus and supplied imagery keep their original licenses.</dd>
+        <dt>Compute</dt><dd>Hosted API; no local inference GPU required. Pin the available model snapshot, record token usage, cost and latency.</dd>
+        <dt>Evaluation</dt><dd>Run a fixed-context generation test against OceanGPT and Qwen using identical evidence. Evaluate retrieval separately with annotated relevant passages, and blind expert graders to model identity.</dd>
+        <dt>Notes</dt><dd>Include missing-evidence prompts. File search provides keyword and semantic retrieval. A citation is evidence only when it actually supports the individual claim.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://developers.openai.com/api/docs/guides/tools-file-search">Primary source</a> <a href="https://developers.openai.com/api/docs/models">Repository or release</a></p>
+    </details>
+    <details class="model-card" data-access="Public weights">
+      <summary><span><strong>Qwen3.5-35B-A3B-GPTQ-Int4</strong><small>Generate evidence-grounded reports from text or images.</small></span></summary>
+      <dl>
+        <dt>Input</dt><dd>Study question, frozen measurements, retrieved source passages and optionally image crops.</dd>
+        <dt>Output</dt><dd>Text response to grade for numerical accuracy, citation support and justified abstention.</dd>
+        <dt>Access type</dt><dd>Public weights</dd>
+        <dt>Availability</dt><dd>Official quantized checkpoint from Qwen.</dd>
+        <dt>License scope</dt><dd>Apache-2.0 checkpoint. Source material in the evidence packet has its own terms.</dd>
+        <dt>Compute</dt><dd>22.74 GiB of published weights. Proposed L40S trial at batch one and a 4,096-token cap. Peak VRAM, including cache and workspace, remains unmeasured in this project.</dd>
+        <dt>Evaluation</dt><dd>Give the same evidence and questions to OceanGPT and a hosted model. Blind reviewers to model identity. Assess multimodal questions separately.</dd>
+        <dt>Notes</dt><dd>Planned Pioneer reporting trial. Model weights count 35B total parameters, with roughly 3B active per token.</dd>
+      </dl>
+      <p class="catalog-links"><a href="https://huggingface.co/Qwen/Qwen3.5-35B-A3B-GPTQ-Int4">Primary source</a> <a href="https://recipes.vllm.ai/Qwen/Qwen3.5-35B-A3B">Repository or release</a></p>
+    </details>
+  </div>
+</section>
+</div>
+<!-- model-catalog:end -->
+  <template id="sort-control">
+    <label>Sort by
+      <select>
+        <option value="default">Catalog order</option>
+        <option value="name">Model name</option>
+        <option value="accessGroup">Access type</option>
+      </select>
+    </label>
+  </template>
 </main>
 <footer><div class="wrap footer-head"><span class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></span><div class="links"><a href="pioneer-storm.html">Pioneer research</a><a href="https://github.com/sigaihealth/marinemodels">Code and data</a></div></div></footer>
 </body>

@@ -6,9 +6,9 @@
 <title>Pioneer plankton storm replay</title>
 <style>
 * { box-sizing: border-box }
-body { margin: 0; color: #18323a; background: #fafbf8; font: 16px/1.45 Inter, "Helvetica Neue", sans-serif }
+body { margin: 0; color: #18323a; background: #fafbf8; font: 16px/1.45 "DM Sans", Arial, sans-serif }
 main { margin: auto; max-width: 1000px; padding: 28px clamp(14px,4vw,40px) }
-h1 { font-family: "Source Serif 4", Georgia, serif; font-size: clamp(30px,5vw,44px); font-weight: 500; line-height: 1.08; margin: 0 0 7px }
+h1 { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(30px,5vw,44px); font-weight: 500; line-height: 1.08; margin: 0 0 7px }
 h2 { font-size: 1.2rem; margin-bottom: 3px }
 p { margin: 6px 0 14px }
 button { font: inherit; cursor: pointer; background: white; color: #18323a; border: 1px solid #91a4a5; padding: 6px 12px; border-radius: 5px }
@@ -21,11 +21,12 @@ output,.reading { font-variant-numeric: tabular-nums }
 .reading { font-weight: 500 }
 .panel { border-top: 1px solid #cfdbd6; padding: 8px 0 3px }
 canvas { display: block; width: 100%; height: 89px }
-.muted,footer { color: #496068; font-size: .9rem }
+.muted,.credits { color: #496068; font-size: .9rem }
 .gallery { display: grid; grid-template-columns: repeat(auto-fit,minmax(92px,1fr)); gap: 7px }
 figure { text-align: center; margin: 0; background: white; padding: 7px; border: 1px solid #d6dfdc }
 figure img { width: 100%; height: 84px; object-fit: contain } figcaption { font-size: 12px }
-a { color: #155c66 } footer { margin-top: 20px }
+a { color: #155c66 } .credits { margin-top: 20px }
+footer a{color:inherit}
 </style>
 <!-- ocean-nav-style:start -->
 <style>
@@ -70,7 +71,7 @@ a { color: #155c66 } footer { margin-top: 20px }
 .ocean-context nav { gap: .05rem .85rem; }
 .ocean-context nav, .ocean-context nav a { font-size: .9rem; }
 .ocean-context [aria-label="Breadcrumb"] a { text-decoration: underline; text-underline-offset: .18em; }
-.ocean-context .ocean-separator { color: #65847b; }
+.ocean-context .ocean-separator { color: #49665d; }
 .ocean-context .ocean-current, .ocean-context .ocean-local-label { font-weight: 650; }
 .ocean-skip { position: absolute; left: .5rem; top: -7rem; padding: .6rem 1rem; z-index: 10; background: white; color: #163c36; }
 .ocean-skip:focus { top: .5rem; }
@@ -108,8 +109,9 @@ a { color: #155c66 } footer { margin-top: 20px }
   <div id="panels"></div>
   <p class="muted">Hourly medians. Open circles mark hours containing QC flag 2 (not evaluated). Gaps have no eligible observations. Select an hour with the slider or arrow keys.</p>
   <section id="imagery" hidden><h2>Recovered IFCB images</h2><div id="samples"></div><p id="sample-info"></p><div class="gallery" id="gallery"></div></section>
-  <footer>Data from the NSF Ocean Observatories Initiative, CP10CNSM. ROIs are image regions that can include plankton, aggregates, and other particles. <a href="https://oceanobservatories.org/2026/09/ooi-plankton-imagery-and-co-located-environmental-data-now-ready-for-analysis/">OOI event and data sources</a></footer>
+  <p class="credits">Data from the NSF Ocean Observatories Initiative, CP10CNSM. ROIs are image regions that can include plankton, aggregates, and other particles. <a href="https://oceanobservatories.org/2026/09/ooi-plankton-imagery-and-co-located-environmental-data-now-ready-for-analysis/">OOI event and data sources</a></p>
 </main>
+<footer><div class="wrap footer-head"><span class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></span><div class="links"><a href="https://ocean.sig.ai/field-studies.html">Field studies</a><a href="https://github.com/sigaihealth/marinemodels">GitHub</a></div></div></footer>
 <script id="data" type="application/json">__REPLAY_JSON__</script>
 <script>
 "use strict";

@@ -37,6 +37,16 @@ function message(text, error = false) {
   status.classList.toggle("error", error);
 }
 
+function progress(text) {
+  status.textContent = "";
+  get("run-progress").textContent = text;
+}
+
+function reveal(element) {
+  element.focus({preventScroll: true});
+  element.scrollIntoView({block: "start", inline: "nearest"});
+}
+
 function clearResult() {
   get("results").hidden = true;
   if (downloadUrl) URL.revokeObjectURL(downloadUrl);
@@ -175,12 +185,37 @@ function publicResult(data, image, sha, size, useReference, source) {
   };
 }
 
+// Display names describe the image categories. Downloads keep the classifier's original labels.
+const displayNames = new Map(Object.entries({
+  OtherLikeFish: "Fish-like object",
+  OtherLikeFishEgg: "Fish egg lookalike",
+  OtherLikeLarvaFish: "Fish larva lookalike",
+  OtherUnclassified: "Unclassified object",
+  OtherThalZozooid: "Zooid (legacy category)",
+  OtherBubbleWave: "Bubble or wave",
+  OtherDummy: "Legacy category (dummy)",
+  OtherMarinesnow: "Marine snow",
+  OtherTennacles: "Tentacles",
+  OtherCoscinodiscus: "Coscinodiscus (diatom)",
+  TunicataThaliacea: "Thaliacean tunicate",
+  Chaetognatha: "Arrow worm (Chaetognatha)",
+  Copepoda: "Copepod",
+  NaupliusCopepoda: "Copepod nauplius",
+  NaupliusCirripedia: "Barnacle nauplius"
+}));
+
+function displayLabel(label) {
+  if (displayNames.has(label)) return displayNames.get(label);
+  const words = label.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/_/g, " ");
+  return words.startsWith("Other Like ") ? words.slice("Other Like ".length) + " lookalike" : words;
+}
+
 function show(result) {
   const nodes = result.candidates.map((item, i) => {
     const row = document.createElement("li");
     const label = document.createElement("span");
     const score = document.createElement("span");
-    label.textContent = (i + 1) + ". " + item.label;
+    label.textContent = (i + 1) + ". " + displayLabel(item.label);
     score.textContent = item.score.toFixed(4);
     row.append(label, score);
     return row;
@@ -191,7 +226,7 @@ function show(result) {
   if (includeReference) {
     const ref = result.reference;
     get("reference-choice").textContent = !ref ? "Reference comparison unavailable for this run." :
-      ref.status === "reference_suggestion" ? "Reference suggestion · " + ref.suggestion : "Expert review recommended.";
+      ref.status === "reference_suggestion" ? "Reference suggestion · " + displayLabel(ref.suggestion) : "Expert review recommended.";
     get("reference-explanation").textContent = ref?.reason || "";
     get("reference-score").textContent = ref ?
       "Reference score · " + ref.reference_score.toFixed(4) + ". This score comes from a separate model." : "";
@@ -207,7 +242,7 @@ function show(result) {
       : scope + (comparison.status === "reordered" ? " · The first suggestion changed." : " · The first suggestion stayed the same.");
     const entries = (comparison?.ranked_labels || []).map(label => {
       const li = document.createElement("li");
-      li.textContent = label;
+      li.textContent = displayLabel(label);
       return li;
     });
     get("source-ranks").replaceChildren(...entries);
@@ -219,6 +254,7 @@ function show(result) {
   get("download").href = downloadUrl;
   get("results").hidden = false;
   message("Three provisional suggestions.");
+  reveal(get("suggestions"));
 }
 
 document.querySelectorAll('input[name="sample"]').forEach(input => input.addEventListener("change", () => {
@@ -256,10 +292,11 @@ get("classify").addEventListener("submit", async event => {
   clearResult();
   get("inputs").disabled = submit.disabled = true;
   get("cancel").hidden = false;
-  message("Checking the selected image…");
+  submit.textContent = "Classifying…";
+  progress("Checking the selected image…");
   try {
     const {buffer, size, sha} = await readImage(image, controller.signal);
-    message("Waiting for the classifier…");
+    progress("Waiting for the classifier…");
     const useReference = get("ifcb-context").checked;
     const selectedKey = Object.keys(samples).find(key => samples[key] === image);
     if (selectedKey && sha !== sampleHashes[selectedKey]) {
@@ -295,12 +332,16 @@ get("classify").addEventListener("submit", async event => {
     } else {
       message(error instanceof TypeError || error instanceof SyntaxError ? responseError(503) : error.message, true);
     }
+    if (timedOut || !controller.signal.aborted) reveal(status);
   } finally {
     clearTimeout(timeout);
     currentRequest = undefined;
     get("inputs").disabled = false;
     submit.disabled = !selection() || (sourceOptIn.checked && !selectedSource(selection()));
     get("cancel").hidden = true;
+    submit.textContent = "Classify crop";
+    get("run-progress").textContent = "";
+    if (controller.signal.aborted && !timedOut) submit.focus();
   }
 });
 changed();

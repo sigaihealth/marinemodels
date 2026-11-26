@@ -57,7 +57,7 @@ def audit(root):
         raise ValueError(f"Missing {root / HOME}")
     catalog = json.loads((root / "assets/model-catalog.json").read_text(encoding="utf-8"))
     catalog_page = pages["model-catalog.html"]
-    catalog_page.anchors.update(lane["slug"] for lane in catalog["lanes"])
+    # Lane anchors must exist in the served HTML for links and no-script access.
     for entry in [*catalog["lanes"], *catalog["models"]]:
         for key in ("actionUrl", "reference", "source", "artifact"):
             if entry.get(key):
@@ -87,7 +87,7 @@ def audit(root):
                     inbound[name].add(source)
                 if url.fragment and unquote(url.fragment) not in pages[name].anchors:
                     errors.add(f"{source} -> {href}: unknown fragment")
-    for name in pages.keys() - reachable(graph):
+    for name in pages.keys() - reachable(graph) - {"404.html"}:
         errors.add(f"{name}: unreachable from {HOME}")
     for name in pages.keys() - reachable(inbound):
         errors.add(f"{name}: no route back to {HOME}")
@@ -103,7 +103,7 @@ def main():
         for error in sorted(errors):
             print(error)
         return 1
-    print(f"Checked {count} pages and {references} internal references. All pages connect to and from home.")
+    print(f"Checked {count} pages and {references} internal references. All content pages connect to and from home.")
     return 0
 
 

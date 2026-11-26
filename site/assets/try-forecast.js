@@ -17,6 +17,27 @@ function valueLabel(value, digits = 2) {
   return Number.isFinite(value) ? value.toFixed(digits) : "Unavailable";
 }
 
+function rangeLabel(values, suffix) {
+  const low = valueLabel(Math.min(...values));
+  const high = valueLabel(Math.max(...values));
+  return (low === high ? low : low + "–" + high) + suffix;
+}
+
+function alternatingLeadNote(values, suffix) {
+  if (values.length < 4 || !values.every(Number.isFinite)) return "";
+  let prior = Math.sign(values[1] - values[0]);
+  if (!prior) return "";
+  for (let i = 2; i < values.length; i++) {
+    const change = Math.sign(values[i] - values[i - 1]);
+    if (change !== -prior) return "";
+    prior = change;
+  }
+  const odd = values.filter((_, index) => index % 2 === 0);
+  const even = values.filter((_, index) => index % 2 === 1);
+  return "The archived GLONET values alternate up and down. Odd lead days give " +
+    rangeLabel(odd, suffix) + " and even lead days give " + rangeLabel(even, suffix) + ".";
+}
+
 function current() {
   const run = archive.forecasts[Number(menu.run.value)];
   const site = archive.sites.find(item => item.id === menu.site.value);
@@ -97,7 +118,18 @@ function render() {
   const depth = Number(menu.depth.value).toFixed(2);
   element("plot-heading").textContent = variable.name;
   element("context").textContent = "36.00°N, " + locationLabel(site) + " · " + depth + " m · Reference " + run.referenceDate + " UTC";
-  element("chart-caption").textContent = "Daily means from " + run.dates[0] + " to " + run.dates[9] + " UTC. GLONET changes from " + valueLabel(profile.forecast[0]) + " to " + valueLabel(profile.forecast[9]) + " " + unit + ".";
+  const suffix = variable.archiveUnits === "1e-3" ? " × " + unit : " " + unit;
+  const available = profile.forecast.filter(Number.isFinite);
+  const range = available.length ? "The GLONET range is " + rangeLabel(available, suffix) +
+    " across " + available.length + (available.length === 1 ? " daily mean." : " daily means.") :
+    "GLONET daily means are unavailable.";
+  const persistence = Number.isFinite(profile.persistence) ?
+    "GLO12 persistence stays at " + valueLabel(profile.persistence) + suffix + "." :
+    "GLO12 persistence is unavailable.";
+  element("forecast-range").textContent = run.dates[0] + " to " + run.dates[run.dates.length - 1] + " UTC. " + range + " " + persistence;
+  const note = alternatingLeadNote(profile.forecast, suffix);
+  element("lead-pattern").textContent = note;
+  element("lead-pattern").hidden = !note;
   canvas.setAttribute("aria-label", variable.name + " at " + depth + " m across ten lead days, compared with GLO12 persistence. Daily values follow the chart.");
   element("table-caption").textContent = variable.name + " (" + unit + "). Difference is GLONET minus persistence.";
   const rows = run.dates.map((day, i) => {
@@ -126,6 +158,7 @@ function render() {
 }
 
 async function start() {
+  element("load-status").hidden = false;
   try {
     const response = await fetch("assets/glonet-midatlantic-2024.json");
     if (!response.ok) throw new Error("Forecast values could not be downloaded.");

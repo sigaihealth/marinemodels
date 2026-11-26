@@ -10,6 +10,24 @@
   <link rel="stylesheet" href="assets/try-forecast.css">
   <script defer src="assets/try-forecast.js"></script>
 <link rel="stylesheet" href="assets/navigation.css">
+<!-- ocean-sharing:start -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="canonical" href="https://ocean.sig.ai/try-forecast.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SIG.AI Ocean">
+<meta property="og:title" content="GLONET forecast output explorer · SIG.AI Ocean">
+<meta property="og:description" content="Explore archived ten-day GLONET forecasts of Mid-Atlantic temperature and salinity with a GLO12 persistence baseline.">
+<meta property="og:url" content="https://ocean.sig.ai/try-forecast.html">
+<meta property="og:image" content="https://ocean.sig.ai/assets/ocean-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SIG.AI Ocean research workspaces with an illustrated ocean cross-section.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GLONET forecast output explorer · SIG.AI Ocean">
+<meta name="twitter:description" content="Explore archived ten-day GLONET forecasts of Mid-Atlantic temperature and salinity with a GLO12 persistence baseline.">
+<meta name="twitter:image" content="https://ocean.sig.ai/assets/ocean-share.jpg">
+<meta name="twitter:image:alt" content="SIG.AI Ocean research workspaces with an illustrated ocean cross-section.">
+<!-- ocean-sharing:end -->
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -32,7 +50,7 @@
   <div class="forecast-intro wrap"><p class="eyebrow">North Atlantic · Ocean physics</p><h1>GLONET forecast<br>output explorer</h1><p>Follow ten days of predicted ocean temperature or salinity along 36°N off the Outer Banks. Compare an archived GLONET run with the ocean state held fixed at initialization.</p></div>
 </div>
 <main class="wrap forecast-main" id="main">
-  <p id="load-status" role="status">Loading archived forecast values…</p>
+  <p id="load-status" role="status" hidden>Loading archived forecast values…</p>
   <noscript><p>Enable JavaScript for the chart, or <a href="assets/glonet-midatlantic-2024.json">download the data</a>.</p></noscript>
   <section id="workspace" class="forecast-layout" aria-label="Interactive forecast explorer" hidden>
     <aside class="settings" aria-label="Forecast selection">
@@ -49,7 +67,7 @@
         <h2 id="plot-heading"></h2><p id="context" aria-live="polite"></p>
         <div class="plot-key"><span><i class="model-mark"></i>GLONET</span><span><i class="base-mark"></i>GLO12 persistence</span></div>
         <canvas id="chart" role="img" aria-describedby="chart-caption"></canvas>
-        <figcaption id="chart-caption"></figcaption>
+        <figcaption id="chart-caption"><span id="forecast-range"></span><span id="lead-pattern" hidden></span></figcaption>
       </figure>
       <details class="daily"><summary>Daily values and valid dates</summary>
         <table><caption id="table-caption"></caption><thead><tr><th scope="col">Lead</th><th scope="col">Valid date (UTC)</th><th scope="col">GLONET</th><th scope="col">Persistence</th><th scope="col">Difference</th></tr></thead><tbody id="values"></tbody></table>

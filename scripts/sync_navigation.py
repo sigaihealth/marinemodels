@@ -12,6 +12,7 @@ PRIMARY = ("world-model", "model-catalog", "plankton-lab", "field-studies", "col
 # Titles and immediate parents define the places visitors can browse.
 PAGES = {
     "index": ("Home", None),
+    "404": ("Page not found", None),
     "world-model": ("World model", "index"),
     "model-catalog": ("Model workspace", "index"),
     "plankton-lab": ("Plankton lab", "index"),
@@ -53,8 +54,9 @@ def link(page, base, current=None, fragment=None):
     return f'<a href="{href}"{state}>{label}</a>'
 
 
-def navigation(page):
-    base = "https://ocean.sig.ai/" if page in STANDALONE else ""
+def navigation(page, standalone=False):
+    # An error page can render at a nested request path. Portable reports can open from disk.
+    base = "https://ocean.sig.ai/" if standalone else "/" if page == "404" else ""
     ancestors = []
     parent = PAGES[page][1]
     while parent and parent != "index":
@@ -107,9 +109,11 @@ def main():
     for slug, path in outputs:
         original = path.read_text()
         try:
-            updated = replace_section(original, "ocean-nav", navigation(slug))
+            updated = replace_section(original, "ocean-nav", navigation(slug, standalone=path.parent != SITE))
             if slug in STANDALONE:
-                updated = replace_section(updated, "ocean-nav-style", f"<style>\n{styles}\n</style>")
+                style = ('<link rel="stylesheet" href="assets/navigation.css">' if path.parent == SITE
+                         else f"<style>\n{styles}\n</style>")
+                updated = replace_section(updated, "ocean-nav-style", style)
         except ValueError as error:
             sys.exit(f"{path.relative_to(ROOT)}: {error}")
         if original != updated:

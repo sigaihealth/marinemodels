@@ -39,7 +39,7 @@
 .ocean-context nav { gap: .05rem .85rem; }
 .ocean-context nav, .ocean-context nav a { font-size: .9rem; }
 .ocean-context [aria-label="Breadcrumb"] a { text-decoration: underline; text-underline-offset: .18em; }
-.ocean-context .ocean-separator { color: #65847b; }
+.ocean-context .ocean-separator { color: #49665d; }
 .ocean-context .ocean-current, .ocean-context .ocean-local-label { font-weight: 650; }
 .ocean-skip { position: absolute; left: .5rem; top: -7rem; padding: .6rem 1rem; z-index: 10; background: white; color: #163c36; }
 .ocean-skip:focus { top: .5rem; }

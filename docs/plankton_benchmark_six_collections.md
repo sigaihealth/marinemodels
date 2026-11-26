@@ -8,7 +8,7 @@ The fitting data identified 23 categories for targeted improvement. Training ran
 
 | Test data | Mapped images | Original first choice correct | Correction gated by original category | Correction gated by acquisition source |
 | --- | ---: | ---: | ---: | ---: |
-| Held-out acquisitions from the four fitting collections | 2,060 | 0.3% | 6.7% | 25.1% |
+| Held-out acquisitions from the four fitting collections | 2,060 | 6 (0.3%) | 6.7% | 518 (25.1%) |
 | Baltic and North Sea collections reserved in full | 1,194 | 2.3% | 2.3% | 2.3% |
 | Northeast U.S. Shelf IFCB | 634 | 0.5% | 19.7% | 30.4% |
 | Naples IFCB | 44 | 2.3% | 18.2% | 29.5% |
@@ -16,6 +16,8 @@ The fitting data identified 23 categories for targeted improvement. Training ran
 | Bay of Biscay ZooScan | 1,346 | 0.1% | 0.4% | 22.1% |
 | Baltic ZooScan | 419 | 0.0% | 0.0% | 0.0% |
 | North Sea VPR | 775 | 3.6% | 3.6% | 3.6% |
+
+A row-by-row check matched all 3,631 held-out predictions to the same images and source annotations by image hash. The 101 category indices agreed with the original classifier’s label order. Of the 2,060 mapped test crops from the four fitting collections, the original model called 1,482 bubble/wave, including 1,301 of 1,346 Bay of Biscay ZooScan crops. Even among the 924 crops with a direct label mapping, first-choice agreement was 3 of 924 for the original ranking and 232 of 924 for the source-specific ranking. The other 1,136 used a broader category or a historical proxy. The original classifier’s training inventory is unavailable. Only the source-specific correction is known to have trained on these four collections.
 
 On the four represented collections, the source-specific correction increased macro-F1 from 0.007 to 0.390. It corrected 512 original first choices and displaced 0 correct first choices. Across the full test, it changed the original top label on 5 of 377 unmapped controls. Those controls have no assigned native truth for judging the replacement.
 
