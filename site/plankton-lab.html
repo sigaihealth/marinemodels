@@ -9,13 +9,22 @@
   <link rel="stylesheet" href="assets/ocean.css">
   <link rel="stylesheet" href="assets/workspace.css">
   <link rel="stylesheet" href="assets/plankton-lab.css">
+<link rel="stylesheet" href="assets/navigation.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
-<div class="masthead"><header class="topbar wrap">
-  <a class="wordmark" href="index.html" aria-label="SIG.AI Ocean home"><strong>SIG.AI</strong><span>Ocean</span></a>
-  <nav aria-label="Main navigation"><a href="model-catalog.html">Model workspace</a><a href="plankton-lab.html" aria-current="page">Plankton lab</a><a href="collaborate.html">Contribute</a></nav>
-</header></div>
+<div class="masthead"><!-- ocean-nav:start -->
+<div class="ocean-header"><div class="ocean-bar">
+  <a class="ocean-brand" href="./" aria-label="SIG.AI Ocean home">SIG.AI<span>Ocean</span></a>
+  <nav aria-label="Main navigation">
+    <a href="world-model.html">World model</a>
+    <a href="model-catalog.html">Model workspace</a>
+    <a href="plankton-lab.html" aria-current="page">Plankton lab</a>
+    <a href="field-studies.html">Field studies</a>
+    <a href="collaborate.html">Contribute</a>
+  </nav>
+</div></div>
+<!-- ocean-nav:end --></div>
 <main id="main">
   <div class="cover"><section class="hub-hero wrap">
     <div><p class="eyebrow station">Imaging FlowCytobot</p><h1>Plankton lab</h1>
@@ -51,7 +60,7 @@
     <dl class="lab-models">
       <div><dt>WHOI Northeast Shelf</dt><dd>Rank 155 labels with the model used in the public WHOI trial. Keep the same crop when you change models.</dd></div>
       <div><dt>MobileNetV3-Small</dt><dd>Use the supervised ten-class model fitted to specialist-labeled WHOI crops. The classification head was trained on the OOI server’s NVIDIA L40S using frozen ImageNet features. Download your personal ONNX export from the notebook to <a href="try-mobilenet.html">run MobileNet on your own device</a>.</dd></div>
-      <div><dt>SIG.AI Plankton Classifier</dt><dd>Authorized instrument workspaces can compare the SIG.AI and WHOI suggestions on the same pixels and save them together. <a href="plankscope.html">Compare exported predictions</a>.</dd></div>
+      <div><dt>SIG.AI Plankton Classifier</dt><dd>Authorized instrument workspaces can compare the SIG.AI and WHOI suggestions on the same pixels and save them together. <a href="plankscope.html">Compare PlankScope and WHOI exports</a>.</dd></div>
       <div><dt>PML IFCB CLIP-LoRA</dt><dd>Rank 145 categories by similarity to reference images or to their taxonomic descriptions. The two modes share an image encoder. Their cosine scores differ in meaning from classifier probabilities.</dd></div>
     </dl>
   </div></section>

@@ -9,14 +9,26 @@
   <link rel="stylesheet" href="assets/ocean.css">
   <link rel="stylesheet" href="assets/try-ocean-color.css">
   <script defer src="assets/try-ocean-color.js"></script>
+<link rel="stylesheet" href="assets/navigation.css">
 </head>
 <body class="oc-page">
 <a class="skip" href="#main">Skip to main content</a>
 <div class="masthead">
-  <header class="topbar wrap">
-    <a class="wordmark" href="index.html" aria-label="SIG.AI Ocean home"><strong>SIG.AI</strong><span>Ocean</span></a>
-    <nav aria-label="Main navigation"><a href="index.html">Home</a><a href="model-catalog.html">Model workspace</a><a href="collaborate.html">Contribute</a></nav>
-  </header>
+  <!-- ocean-nav:start -->
+<div class="ocean-header"><div class="ocean-bar">
+  <a class="ocean-brand" href="./" aria-label="SIG.AI Ocean home">SIG.AI<span>Ocean</span></a>
+  <nav aria-label="Main navigation">
+    <a href="world-model.html">World model</a>
+    <a href="model-catalog.html" aria-current="location">Model workspace</a>
+    <a href="plankton-lab.html">Plankton lab</a>
+    <a href="field-studies.html">Field studies</a>
+    <a href="collaborate.html">Contribute</a>
+  </nav>
+</div></div>
+<div class="ocean-context"><div class="ocean-bar">
+  <nav aria-label="Breadcrumb"><a href="model-catalog.html#satellite">Model workspace</a> <span class="ocean-separator" aria-hidden="true">/</span> <span class="ocean-current" aria-current="page">Ocean color</span></nav>
+</div></div>
+<!-- ocean-nav:end -->
   <div class="wrap oc-intro">
     <a href="model-catalog.html#satellite">Satellite ocean color and radar</a>
     <h1>Estimate chlorophyll from ocean color</h1>

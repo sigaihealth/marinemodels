@@ -2,9 +2,81 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#123f46"><title>Ventana V4277 · Detector comparison | SIG.AI Ocean</title>
 <style>
 :root{color-scheme:light;--ink:#163036;--tone:#4e666b;--rule:#bacac5;--page:#f4f5ee;--paper:#fffefa;--sea:#135961;--egg:#ffdf67;--eco:#30f0e0;--meg:#ff8ce9}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--page);font:16px/1.48 "Inter",Arial,sans-serif}header,main,footer{max-width:1150px;margin:auto;padding:0 clamp(16px,4vw,55px)}header{padding-top:28px;padding-bottom:20px;border-bottom:1px solid var(--rule)}h1,h2{font:normal clamp(34px,5vw,58px)/1.08 Georgia,serif;letter-spacing:-.025em;margin:10px 0}h2{font-size:clamp(26px,3vw,36px)}h3{margin:8px 0;font-size:18px}p{margin:6px 0 14px}a{color:var(--sea);text-underline-offset:2px}header a{font-weight:bold;text-decoration:none}header p{max-width:820px;margin-bottom:0}.block{margin:27px 0}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;text-align:left;font-variant-numeric:tabular-nums}th,td{padding:9px 12px;border-bottom:1px solid var(--rule)}th{font-size:14px}th[scope=row]{font-size:15px}td{white-space:nowrap}.metrics th{background:#e8efea}.small{font-size:14px;color:var(--tone)}.tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.tools select{max-width:100%}button,select,textarea{font:inherit;color:inherit;border:1px solid #879f9d;border-radius:5px;padding:7px 10px;background:var(--paper)}button{cursor:pointer}button[aria-pressed=true]{background:var(--sea);color:#fff}button:disabled{opacity:.5;cursor:default}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #1d788e;outline-offset:2px}#cases{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.canvas{position:relative;display:grid;place-items:center;background:#162c31;overflow:hidden;border-radius:6px}#viewbox{max-width:100%;position:relative}#photo{max-width:100%;max-height:62vh;width:auto;display:block}.canvas.zoom #photo{width:min(470px,90vw);height:auto;max-height:none}.canvas svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.layerbar{display:flex;gap:15px;align-items:center;flex-wrap:wrap;padding:12px 0}.layerbar label{font-size:14px}.sw{display:inline-block;width:.8em;height:.8em;border:1px solid #42545a;margin-right:5px}figure{margin:0}.casegrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(225px,.34fr);gap:20px;align-items:start}aside{background:var(--paper);border:1px solid var(--rule);border-radius:5px;padding:12px 16px}aside label{display:block;margin-top:7px}aside select,aside textarea{width:100%}aside textarea{min-height:68px}.actions{display:flex;gap:8px;flex-wrap:wrap;padding:9px 0}.scroll{max-height:410px;overflow:auto}.scroll thead{position:sticky;top:0;background:var(--page)}details{margin:20px 0}summary{cursor:pointer;font-weight:650}footer{font-size:14px;color:var(--tone);padding-top:16px;padding-bottom:35px;border-top:1px solid var(--rule)}.muted{color:var(--tone)}@media(max-width:740px){.casegrid{grid-template-columns:1fr}th,td{padding:6px}#photo{max-height:48vh}}
-</style></head>
-<body><header><a href="https://ocean.sig.ai/">SIG.AI Ocean</a><h1>Ventana V4277</h1><p>Compare Ecotype and Megalodon on the same 600 frames of MBARI’s Benthic Difficult transect. Follow a reference animal through the results and inspect where the detectors disagree.</p></header>
-<main><section class="block" aria-labelledby="scoreTitle"><h2 id="scoreTitle">Detector coverage</h2><p id="summary"></p><div class="tablewrap"><table class="metrics"><thead><tr><th scope="col">Detector</th><th scope="col">Appearances localized</th><th scope="col">Tracks reached at least once</th><th scope="col">Median track coverage</th><th scope="col">Predictions matched</th></tr></thead><tbody id="metrics"></tbody></table></div><p class="small">Each location requires a one-to-one box match at IoU ≥ 0.50. Group names do not affect matching. Median coverage gives each reference track equal weight. A reference animal can appear in many frames.</p></section>
+</style><!-- ocean-nav-style:start -->
+<style>
+.ocean-header, .ocean-context {
+  box-sizing: border-box;
+  font: 500 1rem/1.45 "DM Sans", Arial, sans-serif;
+  letter-spacing: normal;
+  text-align: left;
+}
+.ocean-header { color: #f5f8f2; background: #092e34; border-bottom: 1px solid #46615e; }
+.ocean-header .ocean-bar, .ocean-context .ocean-bar {
+  box-sizing: border-box;
+  width: min(78rem, calc(100% - clamp(2rem, 9vw, 9rem)));
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .25rem 1.35rem;
+}
+.ocean-header .ocean-bar { justify-content: space-between; padding-block: .9rem; }
+.ocean-header .ocean-brand {
+  display: inline-flex; align-items: center; gap: .6rem; color: inherit;
+  font: 700 1.38rem/1 "DM Sans", Arial, sans-serif; letter-spacing: -.065em;
+  text-decoration: none; white-space: nowrap; min-height: 2.5rem;
+}
+.ocean-brand span { border-left: 1px solid #86a7a1; padding-left: .6rem; font: 400 1.6rem/1 "Instrument Serif", Georgia, serif; letter-spacing: -.035em; }
+.ocean-header nav, .ocean-context nav {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: .05rem clamp(.9rem, 2.2vw, 1.8rem); margin: 0; padding: 0;
+}
+.ocean-header nav a, .ocean-context nav a {
+  display: inline-flex; align-items: center; min-height: 2.25rem; color: inherit;
+  font: inherit; font-size: .96rem; text-decoration: none; white-space: nowrap;
+}
+.ocean-header nav a[aria-current] { color: #bce7d6; font-weight: 700; }
+.ocean-header nav a[aria-current], .ocean-header nav a:hover, .ocean-context nav a:hover {
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .3em;
+}
+.ocean-header a:focus-visible, .ocean-context a:focus-visible { outline: 3px solid #e7ae57; outline-offset: 3px; }
+.ocean-context { background: #edf4ef; color: #294e48; border-bottom: 1px solid #c5d7cf; }
+.ocean-context .ocean-bar { justify-content: space-between; padding-block: .25rem; }
+.ocean-context nav { gap: .05rem .85rem; }
+.ocean-context nav, .ocean-context nav a { font-size: .9rem; }
+.ocean-context [aria-label="Breadcrumb"] a { text-decoration: underline; text-underline-offset: .18em; }
+.ocean-context .ocean-separator { color: #65847b; }
+.ocean-context .ocean-current, .ocean-context .ocean-local-label { font-weight: 650; }
+.ocean-skip { position: absolute; left: .5rem; top: -7rem; padding: .6rem 1rem; z-index: 10; background: white; color: #163c36; }
+.ocean-skip:focus { top: .5rem; }
+@media (max-width: 46rem) {
+  .ocean-header .ocean-bar { display: grid; gap: 0; padding-block: .45rem; }
+  .ocean-header nav { column-gap: 1.05rem; }
+  .ocean-header .ocean-brand { width: max-content; min-height: 2.125rem; }
+  .ocean-context .ocean-bar { gap: 0 1rem; }
+}
+@media print { .ocean-header, .ocean-context, .ocean-skip { display: none; } }
+</style>
+<!-- ocean-nav-style:end -->
+</head>
+<body><a class="ocean-skip" href="#main">Skip to main content</a>
+<!-- ocean-nav:start -->
+<div class="ocean-header"><div class="ocean-bar">
+  <a class="ocean-brand" href="https://ocean.sig.ai/" aria-label="SIG.AI Ocean home">SIG.AI<span>Ocean</span></a>
+  <nav aria-label="Main navigation">
+    <a href="https://ocean.sig.ai/world-model.html">World model</a>
+    <a href="https://ocean.sig.ai/model-catalog.html">Model workspace</a>
+    <a href="https://ocean.sig.ai/plankton-lab.html">Plankton lab</a>
+    <a href="https://ocean.sig.ai/field-studies.html" aria-current="location">Field studies</a>
+    <a href="https://ocean.sig.ai/collaborate.html">Contribute</a>
+  </nav>
+</div></div>
+<div class="ocean-context"><div class="ocean-bar">
+  <nav aria-label="Breadcrumb"><a href="https://ocean.sig.ai/field-studies.html">Field studies</a> <span class="ocean-separator" aria-hidden="true">/</span> <span class="ocean-current" aria-current="page">Ventana V4277</span></nav>
+</div></div>
+<!-- ocean-nav:end -->
+<header><h1>Ventana V4277</h1><p>Compare Ecotype and Megalodon on the same 600 frames of MBARI’s Benthic Difficult transect. Follow a reference animal through the results and inspect where the detectors disagree.</p></header>
+<main id="main"><section class="block" aria-labelledby="scoreTitle"><h2 id="scoreTitle">Detector coverage</h2><p id="summary"></p><div class="tablewrap"><table class="metrics"><thead><tr><th scope="col">Detector</th><th scope="col">Appearances localized</th><th scope="col">Tracks reached at least once</th><th scope="col">Median track coverage</th><th scope="col">Predictions matched</th></tr></thead><tbody id="metrics"></tbody></table></div><p class="small">Each location requires a one-to-one box match at IoU ≥ 0.50. Group names do not affect matching. Median coverage gives each reference track equal weight. A reference animal can appear in many frames.</p></section>
 <section class="block" aria-labelledby="reviewTitle"><h2 id="reviewTitle">Review examples</h2><div class="tools"><label for="filter">Show</label><select id="filter"></select></div><div id="cases"></div><p id="empty" hidden></p>
 <div id="casebody" class="casegrid"><figure><div class="canvas" id="canvas"><div id="viewbox"><img id="photo" alt=""><svg id="overlay" role="presentation"></svg></div></div>
 <div class="layerbar"><button id="zoom" type="button" aria-pressed="false">Enlarge target</button><label><input type="checkbox" id="expert" checked><span class="sw" style="background:var(--egg)"></span>Reference</label><label><input type="checkbox" id="ecotype" checked><span class="sw" style="background:var(--eco)"></span>Ecotype</label><label><input type="checkbox" id="megalodon" checked><span class="sw" style="background:var(--meg)"></span>Megalodon</label></div><figcaption id="caption" class="small"></figcaption></figure>

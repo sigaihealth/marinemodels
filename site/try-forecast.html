@@ -9,14 +9,26 @@
   <link rel="stylesheet" href="assets/ocean.css">
   <link rel="stylesheet" href="assets/try-forecast.css">
   <script defer src="assets/try-forecast.js"></script>
+<link rel="stylesheet" href="assets/navigation.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 <div class="masthead">
-  <header class="topbar wrap">
-    <a class="wordmark" href="index.html" aria-label="SIG.AI Ocean home"><strong>SIG.AI</strong><span>Ocean</span></a>
-    <nav aria-label="Main navigation"><a href="model-catalog.html">Model workspace</a><a href="collaborate.html">Contribute</a></nav>
-  </header>
+  <!-- ocean-nav:start -->
+<div class="ocean-header"><div class="ocean-bar">
+  <a class="ocean-brand" href="./" aria-label="SIG.AI Ocean home">SIG.AI<span>Ocean</span></a>
+  <nav aria-label="Main navigation">
+    <a href="world-model.html">World model</a>
+    <a href="model-catalog.html" aria-current="location">Model workspace</a>
+    <a href="plankton-lab.html">Plankton lab</a>
+    <a href="field-studies.html">Field studies</a>
+    <a href="collaborate.html">Contribute</a>
+  </nav>
+</div></div>
+<div class="ocean-context"><div class="ocean-bar">
+  <nav aria-label="Breadcrumb"><a href="model-catalog.html#ocean-physics">Model workspace</a> <span class="ocean-separator" aria-hidden="true">/</span> <span class="ocean-current" aria-current="page">GLONET forecast explorer</span></nav>
+</div></div>
+<!-- ocean-nav:end -->
   <div class="forecast-intro wrap"><p class="eyebrow">North Atlantic · Ocean physics</p><h1>GLONET forecast<br>output explorer</h1><p>Follow ten days of predicted ocean temperature or salinity along 36°N off the Outer Banks. Compare an archived GLONET run with the ocean state held fixed at initialization.</p></div>
 </div>
 <main class="wrap forecast-main" id="main">

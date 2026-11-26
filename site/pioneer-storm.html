@@ -8,14 +8,27 @@
   <title>SIG.AI Ocean · Pioneer storm replay</title>
   <link rel="preload" href="assets/fonts/instrumentserif.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/ocean.css">
+<link rel="stylesheet" href="assets/navigation.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 <div class="masthead">
-  <header class="topbar wrap">
-    <a class="wordmark" href="index.html" aria-label="SIG.AI Ocean home"><strong>SIG.AI</strong><span>Ocean</span></a>
-    <nav aria-label="Main navigation"><a href="#observations">Observations</a><a href="#models">Pioneer models</a><a href="model-catalog.html">Model workspace</a><a href="#roadmap">Roadmap</a></nav>
-  </header>
+  <!-- ocean-nav:start -->
+<div class="ocean-header"><div class="ocean-bar">
+  <a class="ocean-brand" href="./" aria-label="SIG.AI Ocean home">SIG.AI<span>Ocean</span></a>
+  <nav aria-label="Main navigation">
+    <a href="world-model.html">World model</a>
+    <a href="model-catalog.html">Model workspace</a>
+    <a href="plankton-lab.html">Plankton lab</a>
+    <a href="field-studies.html" aria-current="location">Field studies</a>
+    <a href="collaborate.html">Contribute</a>
+  </nav>
+</div></div>
+<div class="ocean-context"><div class="ocean-bar">
+  <nav aria-label="Breadcrumb"><a href="field-studies.html">Field studies</a> <span class="ocean-separator" aria-hidden="true">/</span> <span class="ocean-current" aria-current="page">Pioneer storm study</span></nav>
+  <nav aria-label="On this page"><span class="ocean-local-label">On this page</span> <a href="#observations">Observations</a> <a href="#models">Pioneer models</a> <a href="#roadmap">Roadmap</a></nav>
+</div></div>
+<!-- ocean-nav:end -->
 </div>
 <main id="main">
 <div class="cover">
@@ -88,7 +101,7 @@
     </section>
     <section class="roadmap wrap" id="roadmap" aria-labelledby="roadmap-title">
       <p class="eyebrow">Research roadmap</p>
-      <div class="roadmap-head"><h2 id="roadmap-title">Toward a coastal <br>digital twin</h2><p class="lede">SIG.AI Ocean is working toward an updateable model of this coastal site. The next experiments will test which observations can explain past changes and predict the next sample.</p></div>
+      <div class="roadmap-head"><h2 id="roadmap-title">Toward a coastal <br>digital twin</h2><p class="lede">SIG.AI Ocean is working toward an updateable model of this coastal site. The next experiments will test which observations can explain past changes and predict the next sample. Explore the <a href="world-model.html#forecast">forecast design in the ocean world model</a>.</p></div>
       <div class="experiments">
         <article><h3>Audit the images</h3><p>Draw 420 crops at random, ten from each sample. Expert reviewers will label them blind so we can estimate errors and report concentrations for groups they can distinguish.</p></article>
         <article><h3>Explain the evidence</h3><p>Benchmark a 35-billion-parameter open-weight model, Qwen3.5-35B-A3B, against an OpenAI model. Score reports on numbers, citations, and whether they acknowledge missing evidence.</p></article>

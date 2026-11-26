@@ -1,0 +1,52 @@
+.ocean-header, .ocean-context {
+  box-sizing: border-box;
+  font: 500 1rem/1.45 "DM Sans", Arial, sans-serif;
+  letter-spacing: normal;
+  text-align: left;
+}
+.ocean-header { color: #f5f8f2; background: #092e34; border-bottom: 1px solid #46615e; }
+.ocean-header .ocean-bar, .ocean-context .ocean-bar {
+  box-sizing: border-box;
+  width: min(78rem, calc(100% - clamp(2rem, 9vw, 9rem)));
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .25rem 1.35rem;
+}
+.ocean-header .ocean-bar { justify-content: space-between; padding-block: .9rem; }
+.ocean-header .ocean-brand {
+  display: inline-flex; align-items: center; gap: .6rem; color: inherit;
+  font: 700 1.38rem/1 "DM Sans", Arial, sans-serif; letter-spacing: -.065em;
+  text-decoration: none; white-space: nowrap; min-height: 2.5rem;
+}
+.ocean-brand span { border-left: 1px solid #86a7a1; padding-left: .6rem; font: 400 1.6rem/1 "Instrument Serif", Georgia, serif; letter-spacing: -.035em; }
+.ocean-header nav, .ocean-context nav {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: .05rem clamp(.9rem, 2.2vw, 1.8rem); margin: 0; padding: 0;
+}
+.ocean-header nav a, .ocean-context nav a {
+  display: inline-flex; align-items: center; min-height: 2.25rem; color: inherit;
+  font: inherit; font-size: .96rem; text-decoration: none; white-space: nowrap;
+}
+.ocean-header nav a[aria-current] { color: #bce7d6; font-weight: 700; }
+.ocean-header nav a[aria-current], .ocean-header nav a:hover, .ocean-context nav a:hover {
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .3em;
+}
+.ocean-header a:focus-visible, .ocean-context a:focus-visible { outline: 3px solid #e7ae57; outline-offset: 3px; }
+.ocean-context { background: #edf4ef; color: #294e48; border-bottom: 1px solid #c5d7cf; }
+.ocean-context .ocean-bar { justify-content: space-between; padding-block: .25rem; }
+.ocean-context nav { gap: .05rem .85rem; }
+.ocean-context nav, .ocean-context nav a { font-size: .9rem; }
+.ocean-context [aria-label="Breadcrumb"] a { text-decoration: underline; text-underline-offset: .18em; }
+.ocean-context .ocean-separator { color: #65847b; }
+.ocean-context .ocean-current, .ocean-context .ocean-local-label { font-weight: 650; }
+.ocean-skip { position: absolute; left: .5rem; top: -7rem; padding: .6rem 1rem; z-index: 10; background: white; color: #163c36; }
+.ocean-skip:focus { top: .5rem; }
+@media (max-width: 46rem) {
+  .ocean-header .ocean-bar { display: grid; gap: 0; padding-block: .45rem; }
+  .ocean-header nav { column-gap: 1.05rem; }
+  .ocean-header .ocean-brand { width: max-content; min-height: 2.125rem; }
+  .ocean-context .ocean-bar { gap: 0 1rem; }
+}
+@media print { .ocean-header, .ocean-context, .ocean-skip { display: none; } }

@@ -1,20 +1,31 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#092e34"><meta name="description" content="Run ocean models on samples, compare results within scientific tasks, and share evidence with other researchers."><title>SIG.AI Ocean · Research workspaces</title>
 <link rel="preload" href="assets/fonts/instrumentserif.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="assets/ocean.css"><link rel="stylesheet" href="assets/workspace.css">
-<script>if (["#observations","#models","#roadmap"].includes(location.hash)) location.replace("pioneer-storm.html"+location.hash);</script></head>
+<script>if (["#observations","#models","#roadmap"].includes(location.hash)) location.replace("pioneer-storm.html"+location.hash);</script><link rel="stylesheet" href="assets/navigation.css">
+</head>
 <body><a class="skip" href="#main">Skip to main content</a>
-<div class="masthead"><header class="topbar wrap"><a class="wordmark" href="./" aria-label="SIG.AI Ocean home"><strong>SIG.AI</strong><span>Ocean</span></a><nav aria-label="Main navigation"><a href="plankton-lab.html">Plankton lab</a><a href="model-catalog.html">Model workspace</a><a href="plankscope.html">PlankScope</a><a href="collaborate.html">Contribute</a></nav></header></div>
+<div class="masthead"><!-- ocean-nav:start -->
+<div class="ocean-header"><div class="ocean-bar">
+  <a class="ocean-brand" href="./" aria-label="SIG.AI Ocean home" aria-current="page">SIG.AI<span>Ocean</span></a>
+  <nav aria-label="Main navigation">
+    <a href="world-model.html">World model</a>
+    <a href="model-catalog.html">Model workspace</a>
+    <a href="plankton-lab.html">Plankton lab</a>
+    <a href="field-studies.html">Field studies</a>
+    <a href="collaborate.html">Contribute</a>
+  </nav>
+</div></div>
+<!-- ocean-nav:end --></div>
 <main id="main"><div class="cover"><section class="hub-hero wrap">
-<div><h1>Ocean models,<br>ready to try.</h1><p class="standfirst">Run a model on a sample, inspect its evidence, and bring another researcher into the experiment.</p><div class="hub-actions"><a class="primary" href="plankton-lab.html">Open the plankton lab</a><a class="text-link" href="model-catalog.html">Explore task workspaces</a></div></div>
+<div><h1>Ocean models,<br>ready to try.</h1><p class="standfirst">Run a model on a sample, inspect its evidence, and bring another researcher into the experiment.</p><div class="hub-actions"><a class="primary" href="plankton-lab.html">Open the plankton lab</a><a class="text-link" href="world-model.html">Explore the ocean world model</a></div></div>
 <figure class="instrument-plate"><div class="plate-header"><span>Pioneer microscope</span><span>7 m depth</span></div><a class="plate-images" href="plankton-lab.html" aria-label="Open the plankton lab for these microscope images"><img src="assets/D20260201T002546_IFCB200_00139.png" width="288" height="138" alt="Small dark particles in water sample 00139"><img src="assets/D20260201T152545_IFCB200_04627.png" width="120" height="74" alt="Cluster of rounded particles in image region 04627"></a><figcaption>Two original image regions from the OOI Pioneer mooring, February 1, 2026. Each view is independently scaled.</figcaption></figure>
 </section></div>
-<section class="wrap hub-section"><h2>Start an experiment</h2><div class="hub-tools">
-<article><span class="tool-kind">Ocean processes</span><h3><a href="world-model.html">Ocean world model</a></h3><p>Explore how currents, mixing and marine organisms interact. Inspect the observations behind the Pioneer storm and seafloor studies.</p></article>
+<section class="wrap hub-section"><h2>Start an experiment</h2><div class="hub-tools hub-trials">
 <article><span class="tool-kind">Microscope imagery</span><h3><a href="sigai-plankton.html">SIG.AI Plankton Classifier</a></h3><p>Choose a Pioneer sample or send your own microscope crop for three suggestions across 101 categories. Explore other methods in the <a href="plankton-lab.html">plankton lab</a>.</p></article>
 <article><span class="tool-kind">Browser calculation</span><h3><a href="try-ocean-color.html">Ocean color</a></h3><p>Change the satellite reflectance inputs and see how a published band-ratio model estimates chlorophyll.</p></article>
 <article><span class="tool-kind">ROV imagery</span><h3><a href="visual-transect.html">Visual transect review</a></h3><p>Follow animals through two seafloor clips. Compare model sightings with expert annotations and inspect where a track changes identity. <a href="v4277.html">Review detector misses on dive V4277</a>.</p></article>
 <article><span class="tool-kind">Forecast output</span><h3><a href="try-forecast.html">Ocean physics</a></h3><p>Explore an archived Mercator GLONET forecast. Read the predicted fields alongside their units, valid times and source.</p></article>
-</div><a class="text-link" href="model-catalog.html">Browse all nine scientific task lanes</a></section>
+</div><a class="text-link" href="model-catalog.html">Open the model workspace for all nine tasks</a></section>
 <section class="model-band"><div class="wrap hub-split"><div><p class="eyebrow">Instrument integration</p><h2>Bring PlankScope<br> into the study.</h2></div><div><p class="lede">Match your own PlankScope predictions to an independent classifier, image by image. The original crop checksum connects an instrument run to its evidence.</p><a class="text-link" href="plankscope.html">Open the PlankScope comparison tool</a></div></div></section>
-<section class="wrap hub-section hub-split"><div><p class="eyebrow">Case study</p><h2>A storm through<br> a microscope.</h2></div><div><p class="lede">Off North Carolina, a mooring recorded 123,609 image regions in 42 water samples as Winter Storm Gianna passed. Explore the change in particle concentration with salinity, fluorescence and pressure.</p><a class="text-link" href="pioneer-storm.html">Explore the Pioneer storm study</a></div></section>
+<section class="wrap hub-section hub-split"><div><p class="eyebrow">Field studies</p><h2>From the mooring<br> to the seafloor.</h2></div><div><p class="lede">Follow a storm through 42 water samples off North Carolina, or join a Pacific seafloor survey to see which animals two detectors missed.</p><a class="text-link" href="field-studies.html">Explore the field studies</a></div></section>
 </main><footer><div class="wrap footer-head"><span class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></span><div class="links"><a href="collaborate.html">Share a dataset, model or finding</a><a href="https://github.com/sigaihealth/marinemodels">GitHub</a></div></div></footer></body></html>

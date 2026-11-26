@@ -19,6 +19,8 @@ The [SIG.AI Ocean platform](https://ocean.sig.ai/) offers scientific task worksp
 
 The public site is served from `site/`. Run `python3 -m http.server 8000 --directory site` and open `http://localhost:8000` to preview it. Task definitions and model records live in `site/assets/model-catalog.json`. The plankton trial fetches pinned weights from their publisher. Uploaded images and prediction files stay in the user's browser. OOI GPU batch execution is a proposed backend for authorized research jobs.
 
+The site navigation groups the [world model](https://ocean.sig.ai/world-model.html), model workspace, plankton lab, [field studies](https://ocean.sig.ai/field-studies.html), and contributions. When adding a public page, register its title and parent in `scripts/sync_navigation.py`, copy the navigation markers and stylesheet link from a sibling page, and link it from its parent. Run `python3 scripts/sync_navigation.py` to update the site and standalone report templates. Run `python3 scripts/sync_navigation.py --check` and `python3 scripts/check_site_links.py` to check navigation, page reachability, and internal links.
+
 To reproduce the archived forecast used by the physics explorer, run `uv run extract_glonet_subset.py --output forecast.json --audit-manifest forecast-audit.json` from the repository root. The script retrieves the selected OceanBench chunks and records their URLs and checksums. Compare the result with `site/assets/glonet-midatlantic-2024.json`.
 
 ## Run the Pioneer event replay
