@@ -1,0 +1,102 @@
+{
+  "name": "pioneer-6h-tide-current-2026-11",
+  "source_commit": "5bda50c631d909c5bcc19a37b0473f83458bc8a1",
+  "study": "world-model/pioneer-6h-tide-current",
+  "model": "tide_current",
+  "lead_hours": 6,
+  "features": [
+    "tide_now_m",
+    "tide_now_minus_lag3_m",
+    "tide_lead3_minus_now_m",
+    "tide_lead6_minus_now_m",
+    "u_now_ms",
+    "v_now_ms",
+    "u_3h_mean_ms",
+    "v_3h_mean_ms"
+  ],
+  "targets": [
+    "temperature_c",
+    "salinity"
+  ],
+  "forecast": "issue-time target values plus standardized predictors times coefficients",
+  "means": [
+    0.553949865047236,
+    0.00016740890688258928,
+    -0.00026457489878542456,
+    -0.000640418353576248,
+    0.016462319915892767,
+    -0.06264739006544552,
+    0.0164535799057365,
+    -0.06274629899125277
+  ],
+  "scales": [
+    0.35871527525471086,
+    0.4739651356107601,
+    0.47394365569342917,
+    0.6910955232965086,
+    0.11647724837521589,
+    0.20722268159830556,
+    0.10989574144136578,
+    0.20420827325997246
+  ],
+  "coefficients": [
+    [
+      0.0008279563768683247,
+      -0.0032597150153454036
+    ],
+    [
+      0.05496769572627883,
+      0.030312146020460087
+    ],
+    [
+      -0.003533274224002201,
+      -0.05664670519351371
+    ],
+    [
+      0.13710766381201886,
+      0.06239441354976157
+    ],
+    [
+      -0.009979000200994854,
+      -0.14496524517697285
+    ],
+    [
+      0.12565661817584564,
+      0.012681604261886328
+    ],
+    [
+      0.038667432955445606,
+      0.11826106461611977
+    ],
+    [
+      -0.02573730585990764,
+      -0.008897605825601352
+    ]
+  ],
+  "intercept": [
+    0.0,
+    0.0
+  ],
+  "ridge_penalty_per_row": 0.01,
+  "train_rows": 14820,
+  "first_train_issue": "2024-04-03T17:00:00Z",
+  "last_train_issue": "2026-10-28T17:00:00Z",
+  "last_train_target": "2026-10-28T23:00:00Z",
+  "exclusive_train_target_cutoff": "2026-10-29T00:00:00Z",
+  "embargo_hours": 72,
+  "training_issues_sha256": "43b7b5a9d8f9a65a7418000cde330bb2b164462dc15f64f190b4f3c9230f7dd7",
+  "previous_study_input_sha256": {
+    "archive_windows.csv": "4266c952f6e2c30a3eb08d179ace7c505ffb332e7256a8156349e43dc112f028",
+    "cdip_native.csv.gz": "ecaaf76f63e1f376095a0e4d09a58d6d753e34b4aa25381158c98e9c8b709d0d",
+    "ctd_hourly.csv.gz": "4c1e0f5ed5f1c44a72cf6267e1d5dd17362765d96f3d3fe80a756a4626ded19c",
+    "currents.csv.gz": "ccd568fb6ddf28a34a2cb5e590f14001b635e03105475c32dddd29b53e299a8b",
+    "fresh_storms.csv": "ec69574b1512dbe7685305f137ee12bf11d8210609cedf8a43585614aa77606e",
+    "fresh_wave_hourly.csv.gz": "4a5495b0049050412cf08df2fb2a7d431a6e2da780605b47ab4c9b70e85a1efe",
+    "tides.csv.gz": "d8bbc3b38ecbb98f0997cf7ebd9115c62f5483a34fb65fa0993604874cf194be"
+  },
+  "source_and_output_sha256": {
+    "run_study.py": "87d2bbf4e1a40b9ebb9b5baede8cff277cc0527c50d837e128a71b6ea422a8cb",
+    "results/summary.json": "2df61bc0c24ec5916c117ccb510e0360c0f7dfb1390a3c1b07b3e6589d54311e",
+    "results/predictions.csv": "58d95d74103c5962f8a2a5fc213901802a2412c2db6230f3fcbc34dba0680aa6"
+  }
+}

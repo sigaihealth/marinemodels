@@ -2,6 +2,8 @@
 
 ## Pioneer event replay
 
+The November tide-and-current fit is frozen for a six-hour salinity comparison with persistence on the complete November event and the next three qualifying storms. [Confirmation protocol](pioneer-fixed-confirmation/README.md) · [Live scores](https://github.com/sigaihealth/marinemodels/blob/pioneer-storm-scores/REPORT.md)
+
 The [tide and current follow-up](pioneer-6h-tide-current/README.md) tests two previously unused historical storm windows and the verified hours of a later, ongoing storm.
 
 The [six-hour Pioneer forecast results](pioneer-6h/README.md) compare persistence, winds and waves, and archived satellite temperature maps on 14 held-out storms.
