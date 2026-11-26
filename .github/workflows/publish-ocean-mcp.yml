@@ -1,0 +1,44 @@
+name: Publish Ocean MCP
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  publish:
+    if: github.repository == 'sigaihealth/marinemodels' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      id-token: write
+    defaults:
+      run:
+        working-directory: mcp
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Check the live server version
+        run: |
+          endpoint=$(jq -er '.remotes[0].url' server.json)
+          expected_version=$(jq -er '.version' server.json)
+          curl --fail --silent --show-error --max-time 30 \
+            -H 'Content-Type: application/json' -H 'Accept: application/json, text/event-stream' \
+            --data '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{},"clientInfo":{"name":"ocean-publisher","version":"1"}}}' \
+            "$endpoint" | jq -e --arg expected "$expected_version" \
+              '.result.serverInfo | .name == "sigai-ocean" and .version == $expected'
+
+      - name: Publish the remote server listing
+        run: |
+          archive="$RUNNER_TEMP/mcp-publisher_linux_amd64.tar.gz"
+          curl --fail --silent --show-error --location --max-time 60 \
+            --output "$archive" 'https://github.com/modelcontextprotocol/registry/releases/download/v1.8.16/mcp-publisher_linux_amd64.tar.gz'
+          printf '%s  %s\n' '6e2f799550cf843c6fd3350498d56cc49be3dc0af1e6237eb0e6435c7a9d5c05' "$archive" | sha256sum --check
+          tar -xzf "$archive" -C "$RUNNER_TEMP" mcp-publisher
+          export XDG_CONFIG_HOME="$RUNNER_TEMP/mcp-publisher-config"
+          "$RUNNER_TEMP/mcp-publisher" validate server.json
+          "$RUNNER_TEMP/mcp-publisher" login github-oidc --registry=https://registry.modelcontextprotocol.io
+          "$RUNNER_TEMP/mcp-publisher" publish server.json

@@ -8,6 +8,8 @@ codex mcp add sigai-ocean --url https://ocean.sig.ai/api/mcp
 
 Other MCP clients can use the same URL in their remote-server configuration. Clients negotiate the protocol version during initialization. Native clients can connect directly. Requests made by browser scripts must originate from the Ocean site.
 
+The official MCP Registry lists the server as `io.github.sigaihealth/ocean`. [Registry listing](https://registry.modelcontextprotocol.io/?q=io.github.sigaihealth%2Focean)
+
 ## Research tools
 
 | Tool | Example arguments | What the agent receives |

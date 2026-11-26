@@ -1,0 +1,19 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.sigaihealth/ocean",
+  "title": "SIG.AI Ocean",
+  "description": "Explore ocean datasets and forecasts, estimate chlorophyll, and classify plankton images.",
+  "repository": {
+    "url": "https://github.com/sigaihealth/marinemodels",
+    "source": "github",
+    "subfolder": "mcp"
+  },
+  "version": "1.0.0",
+  "websiteUrl": "https://ocean.sig.ai/collaborate.html#agent-access",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://ocean.sig.ai/api/mcp"
+    }
+  ]
+}
