@@ -8,6 +8,7 @@ The [SIG.AI Ocean platform](https://ocean.sig.ai/) offers scientific task worksp
 
 | Workspace | What runs or opens |
 | --- | --- |
+| [Ocean world model](https://ocean.sig.ai/world-model.html) | Explore environmental conditions, marine life and the processes that link them, with observations from the Pioneer and MBARI studies. |
 | [Plankton lab](https://ocean.sig.ai/plankton-lab.html) | Try the WHOI or morphology model in your browser. Compare WHOI, MobileNetV3 and PML image/text rankings on OOI JupyterHub. [Methods, training and validation](docs/plankton_training_lab.md) |
 | [SIG.AI Plankton Classifier](https://ocean.sig.ai/sigai-plankton.html) | Send a single microscope crop for private server-side inference and inspect three suggestions across 101 categories. |
 | [PlankScope integration](https://ocean.sig.ai/plankscope.html) | Pairs a local PlankScope prediction export with WHOI's public pilot or a local WHOI file by image checksum. |

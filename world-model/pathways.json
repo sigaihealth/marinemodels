@@ -1,0 +1,146 @@
+[
+  {
+    "id": "overview",
+    "short": "Whole system",
+    "layer": "Coupled system",
+    "title": "A living ocean in motion",
+    "chain": [
+      "Atmosphere & ocean",
+      "Physical and biological change",
+      "Observations"
+    ],
+    "explain": "The model would track temperature, salinity, currents, nutrients and oxygen alongside plankton and benthic communities. Mixing, transport, growth and carbon cycling connect those states across depths and timescales.",
+    "test": "Anchor each measurement to a region, depth, time and instrument. Use observations withheld by event or dive to test what the model predicts.",
+    "source": "https://github.com/sigaihealth/marinemodels/tree/main/transect",
+    "credit": "SIG.AI field studies",
+    "trace": "",
+    "anchor": [
+      0,
+      0
+    ],
+    "end": [
+      0,
+      0
+    ]
+  },
+  {
+    "id": "mixing",
+    "short": "Storm mixing",
+    "layer": "Physical dynamics",
+    "title": "Wind stirs the surface layer",
+    "chain": [
+      "Wind stress",
+      "Turbulent mixing",
+      "Temperature & salinity"
+    ],
+    "explain": "Wind inputs energy at the surface. When turbulence overcomes stratification, water from different depths mixes and redistributes heat, salt and nutrients.",
+    "test": "Compare wind with temperature and salinity profiles through the storm. A single depth cannot establish how far mixing reached.",
+    "source": "https://www.gfdl.noaa.gov/research_highlight/reconciling-ocean-productivity-and-fisheries-yields/",
+    "credit": "NOAA GFDL",
+    "trace": "M 65,7 C 58,7 51,12 56,22 C 63,29 57,37 53,32 C 48,24 44,31 48,41",
+    "anchor": [
+      65,
+      7
+    ],
+    "end": [
+      48,
+      41
+    ]
+  },
+  {
+    "id": "transport",
+    "short": "Water transport",
+    "layer": "Physical dynamics",
+    "title": "Currents carry water and particles",
+    "chain": [
+      "Current velocity",
+      "Horizontal transport",
+      "Water-mass properties"
+    ],
+    "explain": "A current can carry fresher water and its particle community past a fixed mooring. A rise in particle counts can therefore occur even without local growth.",
+    "test": "Compare upstream salinity and particle records with current speed and direction. Look for a lag consistent with travel between stations.",
+    "source": "https://oceanservice.noaa.gov/facts/current.html",
+    "credit": "NOAA Ocean Service",
+    "trace": "M 27,51 C 40,44 46,51 54,51 S 67,48 78,43",
+    "anchor": [
+      27,
+      51
+    ],
+    "end": [
+      78,
+      43
+    ]
+  },
+  {
+    "id": "plankton",
+    "short": "Plankton food web",
+    "layer": "Biological dynamics",
+    "title": "Light and nutrients support a food web",
+    "chain": [
+      "Light & nutrients",
+      "Phytoplankton growth",
+      "Zooplankton grazing"
+    ],
+    "explain": "Phytoplankton use light and dissolved nutrients to grow. Grazers consume some of that production. Growth, grazing and transport can all change the particles in a water sample.",
+    "test": "Compare light and nutrient profiles with expert-reviewed plankton imagery. Fluorescence and total image-region counts alone cannot separate growth from grazing.",
+    "source": "https://www.gfdl.noaa.gov/research_highlight/reconciling-ocean-productivity-and-fisheries-yields/",
+    "credit": "NOAA GFDL",
+    "trace": "M 30,11 C 24,15 14,17 12,27 C 17,36 24,35 32,30",
+    "anchor": [
+      30,
+      11
+    ],
+    "end": [
+      32,
+      30
+    ]
+  },
+  {
+    "id": "export",
+    "short": "Carbon export",
+    "layer": "Biogeochemical dynamics",
+    "title": "Sinking particles carry carbon downward",
+    "chain": [
+      "Organic particles",
+      "Sinking & breakdown",
+      "Carbon delivery at depth"
+    ],
+    "explain": "Organic material can aggregate into marine snow. Some is consumed or decomposed as it sinks, and a fraction reaches the seafloor. The flux changes with depth.",
+    "test": "Pair particle imagery with depth-resolved sediment traps in the same region. Surface image counts alone cannot quantify sinking carbon flux.",
+    "source": "https://www.mbari.org/project/ecology-of-marine-snow/",
+    "credit": "MBARI",
+    "trace": "M 67,30 C 73,39 66,48 69,58 S 68,75 72,82",
+    "anchor": [
+      67,
+      30
+    ],
+    "end": [
+      72,
+      82
+    ]
+  },
+  {
+    "id": "benthos",
+    "short": "Seafloor habitat",
+    "layer": "Benthic ecology",
+    "title": "Food and oxygen shape benthic habitat",
+    "chain": [
+      "Food delivery & oxygen",
+      "Benthic organisms",
+      "Camera observations"
+    ],
+    "explain": "Sinking material can supply food to benthic animals. Near-bottom oxygen and substrate help determine which animals can live there. Cameras sample the visible community.",
+    "test": "Pair repeat transects with oxygen, substrate and surveyed area. The V4277 benchmark tells us how often detectors found annotated animals on one dive.",
+    "source": "https://www.mbari.org/project/ecology-of-marine-snow/",
+    "credit": "MBARI",
+    "trace": "M 75,58 C 77,72 78,79 82,81 S 88,81 92,79",
+    "anchor": [
+      75,
+      58
+    ],
+    "end": [
+      92,
+      79
+    ]
+  }
+]
