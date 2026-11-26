@@ -111,7 +111,7 @@ footer a{color:inherit}
   <section id="imagery" hidden><h2>Recovered IFCB images</h2><div id="samples"></div><p id="sample-info"></p><div class="gallery" id="gallery"></div></section>
   <p class="credits">Data from the NSF Ocean Observatories Initiative, CP10CNSM. ROIs are image regions that can include plankton, aggregates, and other particles. <a href="https://oceanobservatories.org/2026/09/ooi-plankton-imagery-and-co-located-environmental-data-now-ready-for-analysis/">OOI event and data sources</a></p>
 </main>
-<footer><div class="wrap footer-head"><span class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></span><div class="links"><a href="https://ocean.sig.ai/field-studies.html">Field studies</a><a href="https://github.com/sigaihealth/marinemodels">GitHub</a></div></div></footer>
+<footer><div class="wrap footer-head"><span class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></span><div class="links"><a href="https://ocean.sig.ai/field-studies.html">Field studies</a><a href="https://github.com/sigaihealth/marinemodels">GitHub</a><a href="https://ocean.sig.ai/data-and-privacy.html">Data and privacy</a><a href="mailto:ocean@sig.ai">ocean@sig.ai</a></div></div></footer>
 <script id="data" type="application/json">__REPLAY_JSON__</script>
 <script>
 "use strict";

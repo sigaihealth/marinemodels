@@ -1,3 +1,5 @@
+import {setEligibleContribution} from "./plankton-contribution.js";
+
 const samples = {
   early: {id: "D20260201T002546_IFCB200_00139", title: "Pioneer region 139"},
   late: {id: "D20260201T152545_IFCB200_04627", title: "Pioneer region 4627"},
@@ -48,6 +50,7 @@ function reveal(element) {
 }
 
 function clearResult() {
+  setEligibleContribution(null);
   get("results").hidden = true;
   if (downloadUrl) URL.revokeObjectURL(downloadUrl);
   downloadUrl = undefined;
@@ -326,6 +329,7 @@ get("classify").addEventListener("submit", async event => {
     if (!response.headers.get("Content-Type")?.includes("application/json")) throw new Error(responseError(503));
     const data = await response.json();
     show(publicResult(data, image, sha, size, useReference, source));
+    if (image.file && !knownKey) setEligibleContribution({buffer, sha});
   } catch (error) {
     if (controller.signal.aborted) {
       message(timedOut ? "The classifier timed out. Please try again." : "Run canceled.", timedOut);

@@ -38,7 +38,7 @@ These counts use held-out acquisitions from the four represented collections. Ea
 
 The source-specific comparison improved recall for 23 of the 25 categories represented in this part of the test. Two were tied. Accuracy remained low for barnacle nauplii and *Leptocylindrus* (17/196). On the Baltic held-out collection the baseline identified 0/419 mapped specimens. This is an important limitation for interpreting a prediction on an unfamiliar instrument.
 
-The previous four-group Northeast Shelf reference panel answers a different question and can refer an image to expert review. On the 954 new WHOI crops it offered 390 suggestions, of which 331 matched a source annotation. It referred 564 crops for review. It issued a four-group suggestion on 56 of the 489 crops known to fall outside the panel.
+The previous four-group Northeast Shelf reference panel answers a different question and can recommend expert review of an image. On the 954 new WHOI crops it offered 390 suggestions, of which 331 matched a source annotation. It flagged 564 crops for review. It issued a four-group suggestion on 56 of the 489 crops known to fall outside the panel.
 
 The public trial includes a Bay of Biscay arrow worm selected to illustrate a changed ranking. Choose **Bay of Biscay ZooScan** and select **Compare a source-specific ranking** to see both identifications. [Try the example](https://ocean.sig.ai/sigai-plankton.html)
 

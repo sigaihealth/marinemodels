@@ -100,7 +100,7 @@ footer a{color:inherit}
 <section class="panel exports"><div class="top"><h2>Reviewer decisions</h2><div class="buttons"><button id="export">Export reviews</button><button id="exportData">Export sightings</button></div></div><div class="caption" id="reviewSummary"></div><div class="caption" id="statusLine" aria-live="polite"></div></section>
 <details class="panel source-notes"><summary>Data sources, model runs and evaluation notes</summary><div id="sourceInfo"></div></details>
 </main>
-<footer><div class="wrap footer-head"><span class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></span><div class="links"><a href="https://ocean.sig.ai/field-studies.html">Field studies</a><a href="https://github.com/sigaihealth/marinemodels">GitHub</a></div></div></footer>
+<footer><div class="wrap footer-head"><span class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></span><div class="links"><a href="https://ocean.sig.ai/field-studies.html">Field studies</a><a href="https://github.com/sigaihealth/marinemodels">GitHub</a><a href="https://ocean.sig.ai/data-and-privacy.html">Data and privacy</a><a href="mailto:ocean@sig.ai">ocean@sig.ai</a></div></div></footer>
 <script id="payload" type="application/json">{{DATA}}</script>
 <script>
 "use strict";
