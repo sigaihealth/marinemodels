@@ -1,0 +1,24 @@
+{
+  "train_hours": 7556,
+  "train_first": "2024-08-03T04:00:00Z",
+  "train_last": "2025-10-28T17:00:00Z",
+  "test_hours": 926,
+  "test_first": "2025-11-03T03:00:00Z",
+  "test_last": "2026-10-25T03:00:00Z",
+  "held_events": 15,
+  "scored_events": 14,
+  "test_map_age_days_min_median_max": [
+    7.958333333333333,
+    9.458333333333334,
+    10.333333333333334
+  ],
+  "input_sha256": {
+    "ctd_hourly.csv": "d917bc74429f07593502155c42678fa27db99146de2e2a4da50e897f96f07b81",
+    "weather.csv": "062bbdb58e56bf872166c689aa1cee29033fd4e76db596d7689971b19fa97b23",
+    "sst_daily.csv": "cc80acb096b11c6b791a341134a81d9a07007b615cbd4023238c95b6c50fb3e2",
+    "storms.csv": "ed8bb837d12a56961361a5fdd6797b27d2fdc2dd50ea993c8be8be9b9fa7652c"
+  },
+  "numpy": "2.5.4",
+  "python": "3.13.16",
+  "platform": "Linux"
+}

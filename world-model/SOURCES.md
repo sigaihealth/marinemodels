@@ -2,6 +2,8 @@
 
 ## Pioneer event replay
 
+The [six-hour Pioneer forecast results](pioneer-6h/README.md) compare persistence, winds and waves, and archived satellite temperature maps on 14 held-out storms.
+
 The [weather and satellite guide](pioneer-weather-satellite.md) documents winds, waves, currents, tides, sea-surface temperature and ocean color available for the six-day replay.
 
 The NSF Ocean Observatories Initiative’s Pioneer Mid-Atlantic Bight Central Surface Mooring (CP10CNSM) is approximately 45 km east of Nags Head, North Carolina, on a shelf about 30 m deep. Its Imaging FlowCytobot intake is at 7 m. SIG.AI matched the 42 recovered microscope acquisitions spanning January 29 through February 3, 2026 with the co-located CTD, fluorometer and surface weather streams. The six-day interval contains 123,609 image regions. An image region can depict a cell, colony, chain, or debris. The plotted particle concentration uses the instrument’s count per analyzed milliliter. [OOI storm report](https://oceanobservatories.org/2026/09/ooi-plankton-imagery-and-co-located-environmental-data-now-ready-for-analysis/) · [Platform DOI](https://doi.org/10.58046/OOI-CP10CNSM) · [Recovered IFCB archive](https://ifcb-data.oceanobservatories.org/timeline?dataset=PioneerMABMoored)

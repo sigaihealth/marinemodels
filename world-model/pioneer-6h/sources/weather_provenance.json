@@ -1,0 +1,205 @@
+{
+  "start": "2024-04-01T00:00:00Z",
+  "stop_exclusive": "2026-11-01T00:00:00Z",
+  "hours": 22656,
+  "wind_station": "41083",
+  "wave_station": "44095",
+  "wind_hours": 20550,
+  "wave_hours": 22485,
+  "wind_and_wave_hours": 20394,
+  "storms": 34,
+  "source_records": [
+    {
+      "station": "41083",
+      "year": 2024,
+      "month": null,
+      "url": "https://www.ndbc.noaa.gov/data/historical/stdmet/41083h2024.txt.gz",
+      "sha256": "d95fcb684299f606c631f67a2cf5239ea78e944f9415d211a6d5a4c5564920e8",
+      "valid_native_records": 31340
+    },
+    {
+      "station": "41083",
+      "year": 2025,
+      "month": null,
+      "url": "https://www.ndbc.noaa.gov/data/historical/stdmet/41083h2025.txt.gz",
+      "sha256": "ca601ca148aa8fe29d98ff03ca620afce54144151deaa926b479f881eb9e6f74",
+      "valid_native_records": 48912
+    },
+    {
+      "station": "41083",
+      "year": 2026,
+      "month": 1,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Jan/4108312026.txt.gz",
+      "sha256": "8b3a65fe44116aa11f9244173a490a350980c5a77b7c9a0f72666bfeea1e4cea",
+      "valid_native_records": 3712
+    },
+    {
+      "station": "41083",
+      "year": 2026,
+      "month": 2,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Feb/4108322026.txt.gz",
+      "sha256": "4f554ab47ed423d0a0675cb9bed262f09df14470c81a7dc379a4a4aa91e2d963",
+      "valid_native_records": 4009
+    },
+    {
+      "station": "41083",
+      "year": 2026,
+      "month": 3,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Mar/4108332026.txt.gz",
+      "sha256": "46a139cf392990d2cd90f07128df9e87088174f7da19d6c26afd233f594beec1",
+      "valid_native_records": 4311
+    },
+    {
+      "station": "41083",
+      "year": 2026,
+      "month": 4,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Apr/4108342026.txt.gz",
+      "sha256": "df3bc49a81ede1fbe1f3e0e3a27bb5aafac5203ad63e856232318a17a8ff91a1",
+      "valid_native_records": 4299
+    },
+    {
+      "station": "41083",
+      "year": 2026,
+      "month": 5,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/May/4108352026.txt.gz",
+      "sha256": "a954d05627f32915882253b7761634dc78ed7f69c331ddb46f46cabdef501528",
+      "valid_native_records": 4165
+    },
+    {
+      "station": "41083",
+      "year": 2026,
+      "month": 6,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Jun/4108362026.txt.gz",
+      "sha256": "ea7d50e85e3b53ba8aa6d4262eaca830faffd018e3d66111a069240ce656ef8a",
+      "valid_native_records": 4244
+    },
+    {
+      "station": "41083",
+      "year": 2026,
+      "month": 7,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Jul/4108372026.txt.gz",
+      "sha256": "e5bf956041e8e076627fa5484fb2ac0def40778e728f1e7475bf73df722b3446",
+      "valid_native_records": 4355
+    },
+    {
+      "station": "41083",
+      "year": 2026,
+      "month": 8,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Aug/4108382026.txt.gz",
+      "sha256": "d94dc6dcd6f4ae56f5518bfaf4f32671d00b7fb6346b2741c83f8af6414a1ce4",
+      "valid_native_records": 4459
+    },
+    {
+      "station": "41083",
+      "year": 2026,
+      "month": 9,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Sep/4108392026.txt.gz",
+      "sha256": "d4c71b781cc975db5b66020a8b85e1084c0206b440d4b644ffee8c665fb1c1c8",
+      "valid_native_records": 4161
+    },
+    {
+      "station": "41083",
+      "year": 2026,
+      "month": 10,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Oct/41083.txt",
+      "sha256": "286fa4008525e564939f37bb3a9fbb3e603b928f2d442f1f72eb5930acaf00c2",
+      "valid_native_records": 4447
+    },
+    {
+      "station": "44095",
+      "year": 2024,
+      "month": null,
+      "url": "https://www.ndbc.noaa.gov/data/historical/stdmet/44095h2024.txt.gz",
+      "sha256": "bf75982299e87775cef0f80d7726ccfd17b7737d7c5cebd551d8a12758f97409",
+      "valid_native_records": 12826
+    },
+    {
+      "station": "44095",
+      "year": 2025,
+      "month": null,
+      "url": "https://www.ndbc.noaa.gov/data/historical/stdmet/44095h2025.txt.gz",
+      "sha256": "41dd1d973bd8efe069824ce7186ccac0b3f481f9d855327592dae86cb5265eae",
+      "valid_native_records": 17505
+    },
+    {
+      "station": "44095",
+      "year": 2026,
+      "month": 1,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Jan/4409512026.txt.gz",
+      "sha256": "344f2d881dba23966b239918f1c0b41958e58dadcb3102f75b666e6700224e43",
+      "valid_native_records": 1488
+    },
+    {
+      "station": "44095",
+      "year": 2026,
+      "month": 2,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Feb/4409522026.txt.gz",
+      "sha256": "20f61bb209057a9153f84d6dc039d538aa27621f82423311b529f93bec809628",
+      "valid_native_records": 1344
+    },
+    {
+      "station": "44095",
+      "year": 2026,
+      "month": 3,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Mar/4409532026.txt.gz",
+      "sha256": "20c571375c9f1c50895df5d96ce337461670a8ecbc143b47c272286587cb8b5d",
+      "valid_native_records": 1488
+    },
+    {
+      "station": "44095",
+      "year": 2026,
+      "month": 4,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Apr/4409542026.txt.gz",
+      "sha256": "b955b525b6a6174db9b12375237d6a3a071199583cc1f3b5d8138c4de4f6c626",
+      "valid_native_records": 1363
+    },
+    {
+      "station": "44095",
+      "year": 2026,
+      "month": 5,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/May/4409552026.txt.gz",
+      "sha256": "a8b41ec046dc4847b170b8653eb0d59edf019243cbe1f7ad671ccdf4df5d197c",
+      "valid_native_records": 1350
+    },
+    {
+      "station": "44095",
+      "year": 2026,
+      "month": 6,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Jun/4409562026.txt.gz",
+      "sha256": "c332fe7226e1dede0d20c77fdc1b00d582991c169a0b4e2fd290ea7102548d79",
+      "valid_native_records": 1440
+    },
+    {
+      "station": "44095",
+      "year": 2026,
+      "month": 7,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Jul/4409572026.txt.gz",
+      "sha256": "edcee8bfd00305ae3b7ddefc378a278b1e777f58923c1260e07bb922a1afee39",
+      "valid_native_records": 1488
+    },
+    {
+      "station": "44095",
+      "year": 2026,
+      "month": 8,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Aug/4409582026.txt.gz",
+      "sha256": "ee2da4957efd64dfeecff93d9a4c47068541bd990d511d3a418924c14608e212",
+      "valid_native_records": 1484
+    },
+    {
+      "station": "44095",
+      "year": 2026,
+      "month": 9,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Sep/4409592026.txt.gz",
+      "sha256": "281f9f99eb5fa6322a923a5f8a31a983b8cbc11a20f5e90a766890f76b91f816",
+      "valid_native_records": 1440
+    },
+    {
+      "station": "44095",
+      "year": 2026,
+      "month": 10,
+      "url": "https://www.ndbc.noaa.gov/data/stdmet/Oct/44095.txt",
+      "sha256": "25eb06d1577fc945355a4e03c0dc5badbb351f1a86a6d70531941da41c5c242e",
+      "valid_native_records": 1485
+    }
+  ]
+}

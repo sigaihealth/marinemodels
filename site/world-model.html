@@ -70,7 +70,17 @@
 @media print { .ocean-header, .ocean-context, .ocean-skip { display: none; } }
 </style>
 <!-- ocean-nav-style:end -->
-</head>
+<style>
+.pioneer-scores{margin:1.5rem 0 2rem;padding:clamp(1rem,3vw,2rem);background:#f4f8f2;color:#163a39;border:1px solid #8daaa0}
+.pioneer-scores h3{font-size:clamp(1.85rem,3vw,2.55rem);margin:.1rem 0 .75rem}
+.pioneer-scores p{max-width:74ch;margin:.7rem 0;line-height:1.55;color:#294c46}
+.pioneer-scores table{width:100%;max-width:50rem;border-collapse:collapse;margin:1.2rem 0;font-size:1rem;font-variant-numeric:tabular-nums}
+.pioneer-scores caption{text-align:left;color:#42605a;font-size:.94rem;margin:0 0 .55rem}
+.pioneer-scores th,.pioneer-scores td{text-align:right;border-bottom:1px solid #bccdc4;padding:.45rem .4rem;vertical-align:top}
+.pioneer-scores tr>*:first-child{text-align:left}.pioneer-scores tbody th{font-weight:500}
+.pioneer-result-links{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem}
+@media(max-width:450px){.pioneer-scores table{font-size:.88rem}.pioneer-scores th,.pioneer-scores td{padding:.35rem .2rem}}
+</style></head>
 <body><a class="skip" href="#main">Skip to the ocean model</a>
 <!-- ocean-nav:start -->
 <div class="ocean-header"><div class="ocean-bar">
@@ -137,10 +147,17 @@
 </section>
  </div>
  <section id="forecast" class="forecast"><div class="wrap">
-   <div class="forecast-head"><div><p class="kicker">Proposed regional model</p><h2>From observations to a forecast</h2></div><p>Start with one testable question. Can we predict storm-driven changes in temperature and salinity at Pioneer?</p></div>
+   <div class="forecast-head"><div><p class="kicker">Regional forecasting</p><h2>From observations to a forecast</h2></div><p>How accurately can the latest mooring, buoy and satellite observations forecast a change at Pioneer?</p></div>
+   <article id="pioneer-forecast-results" class="pioneer-scores">
+    <h3>Six-hour Pioneer storm forecast</h3>
+    <p>Carrying the last mooring reading forward gave the lowest average error for both targets. We tested 926 hourly forecasts across 14 later storms and weighted each storm equally.</p>
+    <table><caption>Mean absolute error at six hours · lower is better</caption><thead><tr><th scope="col">Forecast</th><th scope="col">Temperature (°C)</th><th scope="col">Practical salinity</th></tr></thead><tbody><tr><th scope="row">Persistence</th><td>0.408</td><td>0.146</td></tr><tr><th scope="row">Mooring history</th><td>0.560</td><td>0.158</td></tr><tr><th scope="row">History + winds and waves</th><td>0.465</td><td>0.167</td></tr><tr><th scope="row">History + winds, waves and satellite SST</th><td>0.491</td><td>0.173</td></tr></tbody></table>
+    <p>Winds and waves helped the history model forecast temperature on 11 of 14 storms. Adding the archived satellite sea-surface temperature maps increased average error for both targets. The median map was 9.5 days old at issue time.</p>
+    <p class="pioneer-result-links"><a href="https://ocean.sig.ai/assets/pioneer-6h-storm-scores.png">See the errors by storm</a><a href="https://github.com/sigaihealth/marinemodels/tree/main/world-model/pioneer-6h">Data, predictions and methods</a></p>
+   </article>
    <ol class="forecast-flow">
     <li><h3>Estimate the present</h3><p>Align temperature, salinity and wind records by location, depth, timestamp and quality flag. Keep a record of what was available when the forecast was issued.</p></li>
-    <li><h3>Advance the state</h3><p>Use recent ocean conditions and wind forecasts to predict station temperature and salinity 6, 24 and 72 hours ahead, with an uncertainty interval at each lead.</p></li>
+    <li><h3>Advance the state</h3><p>Build on the six-hour test by evaluating 24- and 72-hour predictions on new storms, with uncertainty intervals at each lead.</p></li>
     <li><h3>Test against the ocean</h3><p>Withhold whole storms. Compare errors against carrying the last observation forward and check how often observations fall inside each prediction interval.</p></li>
    </ol>
    <p class="forecast-note">Biological extension · Test whether adding earlier plankton imagery improves forecasts. The agent can retrieve supporting frames, measurements and model outputs for review.</p>

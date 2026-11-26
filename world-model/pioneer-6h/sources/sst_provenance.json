@@ -1,0 +1,417 @@
+{
+  "product": "NASA JPL MUR v4.1 daily foundation SST, satellite and in-situ blended analysis",
+  "sampled_lats": [
+    35.65,
+    35.8,
+    35.95,
+    36.1,
+    36.25
+  ],
+  "sampled_lons": [
+    -75.42,
+    -75.27,
+    -75.12,
+    -74.97,
+    -74.82
+  ],
+  "unit": "degC",
+  "series": 975,
+  "cell_count_distribution": {
+    "25": 975
+  },
+  "available_lag_days_min_median_max": [
+    6.961794641203704,
+    8.95372818287037,
+    521.3072103935185
+  ],
+  "available_rule": "maximum of source time coverage end, NASA production, provider insert/update, and recorded CMR revision timestamps",
+  "historical_subset_version": "contiguous current NOAA ERDDAP subset, paired by product and nominal day with current NASA CMR records",
+  "sst_daily_sha256": "cc80acb096b11c6b791a341134a81d9a07007b615cbd4023238c95b6c50fb3e2",
+  "sst_map_cells_gz_sha256": "7646cb649957f919200af92fb2f89a804772c53746487b8059ccd440c314f551",
+  "sources": [
+    {
+      "start": "2024-03-01",
+      "end": "2024-03-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282024-03-01T09%3A00%3A00Z%29%3A1%3A%282024-03-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "db80097a9090b3cdc1062d21484c111611afcc57edb4358d63d25a224b5c243a"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2024-03-01T09%3A00%3A00Z%2C2024-03-31T09%3A00%3A01Z",
+        "sha256": "fc7ee9bc71f84b8a37b4605f96acb0513907048af1c32a16715377d3c4ae4e21"
+      }
+    },
+    {
+      "start": "2024-04-01",
+      "end": "2024-04-30",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282024-04-01T09%3A00%3A00Z%29%3A1%3A%282024-04-30T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "71c4358028bcf232db04b93773fdc94dc6039e7a57f8f6befd4231df323e3141"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2024-04-01T09%3A00%3A00Z%2C2024-04-30T09%3A00%3A01Z",
+        "sha256": "b5e481a098645c5e2ef37c715b6db3b3033199573e0d33fccf3c29f118f1b1ea"
+      }
+    },
+    {
+      "start": "2024-05-01",
+      "end": "2024-05-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282024-05-01T09%3A00%3A00Z%29%3A1%3A%282024-05-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "0c17a24047eb8ee068025b4841f1fd36d25d01a5133cf8dfbac9a3f7143bbff1"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2024-05-01T09%3A00%3A00Z%2C2024-05-31T09%3A00%3A01Z",
+        "sha256": "a995fd195d7c09891cf939078bcef9f43c931285f042979ee7520a9d6bad9817"
+      }
+    },
+    {
+      "start": "2024-06-01",
+      "end": "2024-06-30",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282024-06-01T09%3A00%3A00Z%29%3A1%3A%282024-06-30T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "d80fb844aa37a6a0d52a96386e539650d4cbd521c08eb8f64b09afa9391a147e"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2024-06-01T09%3A00%3A00Z%2C2024-06-30T09%3A00%3A01Z",
+        "sha256": "f5a0e07f01cf53392963fe1d097bdc4c91d69ae5365a8f9a6d7a906247012d24"
+      }
+    },
+    {
+      "start": "2024-07-01",
+      "end": "2024-07-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282024-07-01T09%3A00%3A00Z%29%3A1%3A%282024-07-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "b4f67e8c47f6945700c5e6112033a3c57f9be29895c1b15631ddb95b12f2c927"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2024-07-01T09%3A00%3A00Z%2C2024-07-31T09%3A00%3A01Z",
+        "sha256": "012d934c889fe1c4200f47e4bdee941e908e85b2df174234837aa93661aa17e0"
+      }
+    },
+    {
+      "start": "2024-08-01",
+      "end": "2024-08-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282024-08-01T09%3A00%3A00Z%29%3A1%3A%282024-08-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "6e99a46a5e163c5e02e6347ef5cd153f8c982e55274a27d09c877ddb499769e8"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2024-08-01T09%3A00%3A00Z%2C2024-08-31T09%3A00%3A01Z",
+        "sha256": "d72fb3e8de88733dcae95556f7653126e045185529427eb6d93db4e2d1154bb7"
+      }
+    },
+    {
+      "start": "2024-09-01",
+      "end": "2024-09-30",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282024-09-01T09%3A00%3A00Z%29%3A1%3A%282024-09-30T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "79ab20f0c0136d71470f042d00fdb8a7311fef9fe6d5aab38adb185e809a2aeb"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2024-09-01T09%3A00%3A00Z%2C2024-09-30T09%3A00%3A01Z",
+        "sha256": "6a944223f3125ca459727559afafe487266481cc33ce80b1f3613160c596e6bf"
+      }
+    },
+    {
+      "start": "2024-10-01",
+      "end": "2024-10-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282024-10-01T09%3A00%3A00Z%29%3A1%3A%282024-10-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "8c5c40459d4f1cbeeb66b60faaf108a693d1d33f0e04561cddd461748e3e1ca2"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2024-10-01T09%3A00%3A00Z%2C2024-10-31T09%3A00%3A01Z",
+        "sha256": "74060aca83ab91f8af4d1f647eb9d1a708370025afc533375f91e0bb3e8e5e63"
+      }
+    },
+    {
+      "start": "2024-11-01",
+      "end": "2024-11-30",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282024-11-01T09%3A00%3A00Z%29%3A1%3A%282024-11-30T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "b5d8274fe66cad3cbee0f22b522f6f959311ceee6578912804e24b058edf706d"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2024-11-01T09%3A00%3A00Z%2C2024-11-30T09%3A00%3A01Z",
+        "sha256": "d64ea4317becdb430caa2ef64c72c303415fdac0398cb45e23ba3e0e020c4802"
+      }
+    },
+    {
+      "start": "2024-12-01",
+      "end": "2024-12-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282024-12-01T09%3A00%3A00Z%29%3A1%3A%282024-12-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "0fdeffa028ccc6beeaa62fc9cecd392907de11cfca40682075c0a188b0ba3019"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2024-12-01T09%3A00%3A00Z%2C2024-12-31T09%3A00%3A01Z",
+        "sha256": "2048332f90c17e26e47bc218fc389cb741b5afd6aa8f2c5184f69470018279a1"
+      }
+    },
+    {
+      "start": "2025-01-01",
+      "end": "2025-01-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282025-01-01T09%3A00%3A00Z%29%3A1%3A%282025-01-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "f51314e998042725ec5efc3392da27847923a93cc462ebc88e093468ec33dcfb"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2025-01-01T09%3A00%3A00Z%2C2025-01-31T09%3A00%3A01Z",
+        "sha256": "bd24df5487454ab4b1867175018203717829b5d9f3614a9a3e255b6a2b1acf6c"
+      }
+    },
+    {
+      "start": "2025-02-01",
+      "end": "2025-02-28",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282025-02-01T09%3A00%3A00Z%29%3A1%3A%282025-02-28T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "651c20fe805444186ec1d03ce6b09771592d9a9c4cf0dfb20592be9c827b7272"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2025-02-01T09%3A00%3A00Z%2C2025-02-28T09%3A00%3A01Z",
+        "sha256": "fbc088d00a021230374191ce41df44b109d1ace9d484c3fefc32808bb0af58c4"
+      }
+    },
+    {
+      "start": "2025-03-01",
+      "end": "2025-03-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282025-03-01T09%3A00%3A00Z%29%3A1%3A%282025-03-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "1e2836242edb68f3aae8a10a843a698258c4322e8d63ba71b195d52290886d8a"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2025-03-01T09%3A00%3A00Z%2C2025-03-31T09%3A00%3A01Z",
+        "sha256": "be6c445bd1a1f67f587f185fb41ffe1fb78ece7d6aa5f3d60598d9628dbcec96"
+      }
+    },
+    {
+      "start": "2025-04-01",
+      "end": "2025-04-30",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282025-04-01T09%3A00%3A00Z%29%3A1%3A%282025-04-30T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "6acc59f8dbb7400fe7a13aa14f0b240d8df960b744aeb94cf792c893998bd111"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2025-04-01T09%3A00%3A00Z%2C2025-04-30T09%3A00%3A01Z",
+        "sha256": "dc223932bc8b3f41aba1b006dc77d7f5c58d974d87a1aa11f0ed9d078140aabe"
+      }
+    },
+    {
+      "start": "2025-05-01",
+      "end": "2025-05-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282025-05-01T09%3A00%3A00Z%29%3A1%3A%282025-05-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "3a537e8c0e408f6c8da385a4071afddce086c275931ca276bc7df68179f6dcf8"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2025-05-01T09%3A00%3A00Z%2C2025-05-31T09%3A00%3A01Z",
+        "sha256": "cb8d14a409318987eeaeea923ea37eec6e33b225205058a305c99cfca249b6f2"
+      }
+    },
+    {
+      "start": "2025-06-01",
+      "end": "2025-06-30",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282025-06-01T09%3A00%3A00Z%29%3A1%3A%282025-06-30T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "7105e73fa7578d6800ac37d3af15b7f0b335cbe24676457a4ab6593ee8032999"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2025-06-01T09%3A00%3A00Z%2C2025-06-30T09%3A00%3A01Z",
+        "sha256": "d61789f7a40b09755548f55e451c00614e31655ae5c7aa1d2acb033b87702091"
+      }
+    },
+    {
+      "start": "2025-07-01",
+      "end": "2025-07-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282025-07-01T09%3A00%3A00Z%29%3A1%3A%282025-07-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "3d67b0797fc4437b0684e09a645cc27faf196b15a132b0239d517e8d6eafe1ea"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2025-07-01T09%3A00%3A00Z%2C2025-07-31T09%3A00%3A01Z",
+        "sha256": "4216d124f35f09298042b69cb9c28d19bf30cb066b53ec1894a8926a1cdbb733"
+      }
+    },
+    {
+      "start": "2025-08-01",
+      "end": "2025-08-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282025-08-01T09%3A00%3A00Z%29%3A1%3A%282025-08-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "7412d62d7c03b20e3d19dccc663085f3635e402ccf4483aadbd6733cd49ae79b"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2025-08-01T09%3A00%3A00Z%2C2025-08-31T09%3A00%3A01Z",
+        "sha256": "c3dd3b1c03f987805d6c5962b91bbb91215bb6939741b2421ac7194f1a327751"
+      }
+    },
+    {
+      "start": "2025-09-01",
+      "end": "2025-09-30",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282025-09-01T09%3A00%3A00Z%29%3A1%3A%282025-09-30T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "28793c817f3c6b5531cac42278070620f92b7ced21e8129440d7b748f4058b84"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2025-09-01T09%3A00%3A00Z%2C2025-09-30T09%3A00%3A01Z",
+        "sha256": "33711d349fdc2748d2b7cd32787dc4164f4950233d34a2dfd0d09ce68a6a5a9e"
+      }
+    },
+    {
+      "start": "2025-10-01",
+      "end": "2025-10-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282025-10-01T09%3A00%3A00Z%29%3A1%3A%282025-10-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "838faf73ed67e9ee82a93a15fb07947c5766abf9423665f3e7a75b5dd08d65c8"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2025-10-01T09%3A00%3A00Z%2C2025-10-31T09%3A00%3A01Z",
+        "sha256": "05cd9f237b3075b8196c1a23a69c315f8e1739d4124c258a4b073bfc9684fa31"
+      }
+    },
+    {
+      "start": "2025-11-01",
+      "end": "2025-11-30",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282025-11-01T09%3A00%3A00Z%29%3A1%3A%282025-11-30T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "8f41d01f29d7ed7cbc867e516a674a96213f6182eeff2acf810bccd4f8081fa7"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2025-11-01T09%3A00%3A00Z%2C2025-11-30T09%3A00%3A01Z",
+        "sha256": "ae8df0a1dd524d575316fc5849176733bb11ef5931105b5102b81ddb348ef7fd"
+      }
+    },
+    {
+      "start": "2025-12-01",
+      "end": "2025-12-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282025-12-01T09%3A00%3A00Z%29%3A1%3A%282025-12-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "442974f911590c4bbe791daab873fbed0c73c67b90d82b4f571fefcb03c9b77c"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2025-12-01T09%3A00%3A00Z%2C2025-12-31T09%3A00%3A01Z",
+        "sha256": "f0a7c98a33e2b505558bb89ecbdcd4a111728d24b25f95cd61410eb165c32bc4"
+      }
+    },
+    {
+      "start": "2026-01-01",
+      "end": "2026-01-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282026-01-01T09%3A00%3A00Z%29%3A1%3A%282026-01-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "1ea32a6b9e884734c325b847bc2ea0da623f87f5dbe7c35845e175377aefa4ed"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2026-01-01T09%3A00%3A00Z%2C2026-01-31T09%3A00%3A01Z",
+        "sha256": "1bdf1e8064af69a8664a5460285cf96165d8c8820b190eb4ea39bc191e6b8c8d"
+      }
+    },
+    {
+      "start": "2026-02-01",
+      "end": "2026-02-28",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282026-02-01T09%3A00%3A00Z%29%3A1%3A%282026-02-28T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "567cf5c44067487f51ee9b75bdc68511f6b5c5b1725d0007df200a9d3e73b568"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2026-02-01T09%3A00%3A00Z%2C2026-02-28T09%3A00%3A01Z",
+        "sha256": "d8cc11ae97fda682480c360a8702afd208effaf1db81c86e5fffddc331ce90f0"
+      }
+    },
+    {
+      "start": "2026-03-01",
+      "end": "2026-03-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282026-03-01T09%3A00%3A00Z%29%3A1%3A%282026-03-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "2cbc67023d5bbe43e4bc30f51c0b154e4b1fdef337d3be9f65e3fbf0fc362bac"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2026-03-01T09%3A00%3A00Z%2C2026-03-31T09%3A00%3A01Z",
+        "sha256": "70dcfe3d7d16bba229c161d5e40e2822a7bf5f64c583c4f52895d68ea919e409"
+      }
+    },
+    {
+      "start": "2026-04-01",
+      "end": "2026-04-30",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282026-04-01T09%3A00%3A00Z%29%3A1%3A%282026-04-30T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "e44b5afec22ae07ee932029ee399edcd5c8182374498b7b9c5cdf5ef6a3795b8"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2026-04-01T09%3A00%3A00Z%2C2026-04-30T09%3A00%3A01Z",
+        "sha256": "e2cf7e0ccb7275b94e0be43c5fc4e3806cf4217ce1c99619185252d88790041d"
+      }
+    },
+    {
+      "start": "2026-05-01",
+      "end": "2026-05-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282026-05-01T09%3A00%3A00Z%29%3A1%3A%282026-05-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "483dcd5e7bfbe1cf99276f8e54bf3e701438b98ba7dd0c17a68557292a46f177"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2026-05-01T09%3A00%3A00Z%2C2026-05-31T09%3A00%3A01Z",
+        "sha256": "52149b007e354977ac6933a1557e6524ed9d10d405f419725585830f6e9d5a0c"
+      }
+    },
+    {
+      "start": "2026-06-01",
+      "end": "2026-06-30",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282026-06-01T09%3A00%3A00Z%29%3A1%3A%282026-06-30T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "cc5f3fd8d7d45611a61035f5278cf9856429169e591a99e4cd77f0d08ae32713"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2026-06-01T09%3A00%3A00Z%2C2026-06-30T09%3A00%3A01Z",
+        "sha256": "8e9e922c64ac7d1d9c3b76e0e27a2e2b86abad74db7db3b5140529606abd21a7"
+      }
+    },
+    {
+      "start": "2026-07-01",
+      "end": "2026-07-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282026-07-01T09%3A00%3A00Z%29%3A1%3A%282026-07-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "4578e3acc6a7ffef16691edf6208ed7fab7af50b5562c194d6a9bb414a0fe72a"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2026-07-01T09%3A00%3A00Z%2C2026-07-31T09%3A00%3A01Z",
+        "sha256": "70967c54e1e8ed8a0cce4e588dd8b4c6513f61973bb4759abcd4a87720f56581"
+      }
+    },
+    {
+      "start": "2026-08-01",
+      "end": "2026-08-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282026-08-01T09%3A00%3A00Z%29%3A1%3A%282026-08-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "ccca8d953012c70f019875dc7d0c4fef5753ab9701375f0409717fbd6a0c0232"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2026-08-01T09%3A00%3A00Z%2C2026-08-31T09%3A00%3A01Z",
+        "sha256": "4286790c6aef806dd78051ff3b7a20eb13348de2838878c14610259735f506a5"
+      }
+    },
+    {
+      "start": "2026-09-01",
+      "end": "2026-09-30",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282026-09-01T09%3A00%3A00Z%29%3A1%3A%282026-09-30T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "e164dcd55c89b52f4c52d1cf1e6cea1304745822a7e064d8b6d205aea7a6dd36"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2026-09-01T09%3A00%3A00Z%2C2026-09-30T09%3A00%3A01Z",
+        "sha256": "dd841ac4096c6a566d26fdb73bd4a85a809d5a5ad520181a43483d1c8db66ba1"
+      }
+    },
+    {
+      "start": "2026-10-01",
+      "end": "2026-10-31",
+      "sst": {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?analysed_sst%5B%282026-10-01T09%3A00%3A00Z%29%3A1%3A%282026-10-31T09%3A00%3A00Z%29%5D%5B%2835.65%29%3A15%3A%2836.25%29%5D%5B%28-75.42%29%3A15%3A%28-74.82%29%5D",
+        "sha256": "86beb70887e8e841e809b6a5f68ffad2a28a6fffb1a218283a7d7aa3ebf6a610"
+      },
+      "cmr": {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C1996881146-POCLOUD&page_size=100&temporal=2026-10-01T09%3A00%3A00Z%2C2026-10-31T09%3A00%3A01Z",
+        "sha256": "7aa9d27dfd0f67f7494bf5998bb9e662086aee825a644ece5fb04f0f8df1afea"
+      }
+    }
+  ]
+}

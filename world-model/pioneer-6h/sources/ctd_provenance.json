@@ -1,0 +1,231 @@
+{
+  "asset_csv_sha256": "a42a47384a257407ae4d63177b2140164223b97824878359535b5780cd43d132",
+  "asset_url": "https://raw.githubusercontent.com/oceanobservatories/asset-management/4466ceaa325eb23e125eff7c9850dd000fc79aef/deployment/CP10CNSM_Deploy.csv",
+  "chunks": [
+    {
+      "file": "ctd-2024-04-03--2024-05-01.csv.gz",
+      "sha256_csv": "3a163fbf32c877babe375280bc8946708c76a99a031490a4848b2b3d908c2e09",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2024-04-03T00:00:00Z&time%3C2024-05-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2024-05-01--2024-06-01.csv.gz",
+      "sha256_csv": "a7296765cc67732fa8693ce382fe51b442891dbb041ea252fbfaf63098f70c4b",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2024-05-01T00:00:00Z&time%3C2024-06-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2024-06-01--2024-07-01.csv.gz",
+      "sha256_csv": "922005430c8282994081a38cc7c66595a071d52436d65b04bb2523482400e167",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2024-06-01T00:00:00Z&time%3C2024-07-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2024-07-01--2024-08-01.csv.gz",
+      "sha256_csv": "afe7544f86f5160aef6708667f1a3cbab0520e4040c3ca985ded8d1fc77dad78",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2024-07-01T00:00:00Z&time%3C2024-08-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2024-08-01--2024-09-01.csv.gz",
+      "sha256_csv": "eb8f7ef0c5d40936de9075ba9ef71259f824fbda3340cf0cb5ee863ed9b8e880",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2024-08-01T00:00:00Z&time%3C2024-09-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2024-09-01--2024-10-01.csv.gz",
+      "sha256_csv": "2f60abed4654e59d5ac07887c1da4967740a505493180c84f9b66162b52a9119",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2024-09-01T00:00:00Z&time%3C2024-10-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2024-10-01--2024-11-01.csv.gz",
+      "sha256_csv": "503ff00aaa4588290d05ad9a4c04d147fabf7242ba89e31145b863cac04ee8b5",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2024-10-01T00:00:00Z&time%3C2024-11-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2024-11-01--2024-12-01.csv.gz",
+      "sha256_csv": "5d677d8a031287c61a8cc60bb9e3a39db5a6edf72ff6eed54590f6980c622a2f",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2024-11-01T00:00:00Z&time%3C2024-12-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2024-12-01--2025-01-01.csv.gz",
+      "sha256_csv": "3ee6f50f6f955fb9e6ac6c4a787f6c0f76f7fb2cdb9b792c114217606176cddb",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2024-12-01T00:00:00Z&time%3C2025-01-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2025-01-01--2025-02-01.csv.gz",
+      "sha256_csv": "76ccc1bb34177bcf3ac4bcf389559ea8cd0ea7f204426370524bae140d3b3846",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2025-01-01T00:00:00Z&time%3C2025-02-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2025-02-01--2025-03-01.csv.gz",
+      "sha256_csv": "fb4e97a835c1716229db8e78fedb2cdf06c89e4afdc76b33642028972b2ec2d7",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2025-02-01T00:00:00Z&time%3C2025-03-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2025-03-01--2025-04-01.csv.gz",
+      "sha256_csv": "8836225791ab8d33034cf440abae33a8eaa908397b75067005c6bf7d58ffdd42",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2025-03-01T00:00:00Z&time%3C2025-04-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2025-04-01--2025-05-01.csv.gz",
+      "sha256_csv": "9237da890ff3bc601c3077704cf9c76055755da0f7c68193a6c39010fd584771",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2025-04-01T00:00:00Z&time%3C2025-05-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2025-05-01--2025-06-01.csv.gz",
+      "sha256_csv": "bb767bb27dc034d64851b17360eb3a90b0a903bfe53b38ba6bfdf780ac1dc319",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2025-05-01T00:00:00Z&time%3C2025-06-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2025-06-01--2025-07-01.csv.gz",
+      "sha256_csv": "954a5e2e7abb21e5fe229fdf57810439af021ca555dbc482c30e1b20728d0af8",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2025-06-01T00:00:00Z&time%3C2025-07-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2025-07-01--2025-08-01.csv.gz",
+      "sha256_csv": "049fd4903491fa62360a2c61598abfb2cd79a2c6e69ad831a2c6b8e3ed13b663",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2025-07-01T00:00:00Z&time%3C2025-08-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2025-08-01--2025-09-01.csv.gz",
+      "sha256_csv": "586cbfd732d4857150407c1ccdcefa0ec9f7d0859ef4a975af8e1057886e7dbf",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2025-08-01T00:00:00Z&time%3C2025-09-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2025-09-01--2025-10-01.csv.gz",
+      "sha256_csv": "748748e90504852ad1821b6c034c57f654785acee1a89428bac73210ff97ab22",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2025-09-01T00:00:00Z&time%3C2025-10-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2025-10-01--2025-11-01.csv.gz",
+      "sha256_csv": "5775622587dea716a07b8ad5fbd58d7a42057871d283a8630ee635dd1a5130f0",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2025-10-01T00:00:00Z&time%3C2025-11-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2025-11-01--2025-12-01.csv.gz",
+      "sha256_csv": "042285a8fbe894b25cda9aafd522674d5d71bafee75420a41c80d4dd45573a8a",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2025-11-01T00:00:00Z&time%3C2025-12-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2025-12-01--2026-01-01.csv.gz",
+      "sha256_csv": "c867d8205a8b87f78e40e0d179b3d22dd6ee29cdcf2d5db71bca418ad3efecd3",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2025-12-01T00:00:00Z&time%3C2026-01-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2026-01-01--2026-02-01.csv.gz",
+      "sha256_csv": "94ce56da4083f8c5d5967cb5cf19c614f14d074ee839a704dd79d07c563fecd7",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-01-01T00:00:00Z&time%3C2026-02-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2026-02-01--2026-03-01.csv.gz",
+      "sha256_csv": "8a5e944742babfe3d06ab40df31ead3ecb073ce2c076fe5baf2575cae5f65acf",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-02-01T00:00:00Z&time%3C2026-03-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2026-03-01--2026-04-01.csv.gz",
+      "sha256_csv": "2bc6cb3dcfdc1f011de7912888cf4f88c04d1de97979a4a8ff488f9214781765",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-03-01T00:00:00Z&time%3C2026-04-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2026-04-01--2026-05-01.csv.gz",
+      "sha256_csv": "17bc1a5c87d9c63ea9fcd19fa6d5bca592b80e49f6935ff5ed0719d9b85390b8",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-04-01T00:00:00Z&time%3C2026-05-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2026-05-01--2026-06-01.csv.gz",
+      "sha256_csv": "af59f2b846807efd669c9f4317726c69dee54f8e16235302ab3bfe89094914b1",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-05-01T00:00:00Z&time%3C2026-06-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2026-06-01--2026-07-01.csv.gz",
+      "sha256_csv": "7889b98bcc35d10701d6a0616be20e74e65e015731f2fdf8f17d61b2bf873667",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-06-01T00:00:00Z&time%3C2026-07-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2026-07-01--2026-08-01.csv.gz",
+      "sha256_csv": "6bc28ab0eb56b8c7b408c692eec712e6d18ab98ee36637558e9b97213ea1e565",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-07-01T00:00:00Z&time%3C2026-08-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2026-08-01--2026-09-01.csv.gz",
+      "sha256_csv": "4e8860e9015a0c1872a7b693735eb1027e7da8c1bfa186bbdc1c5190981c8bfd",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-08-01T00:00:00Z&time%3C2026-09-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2026-09-01--2026-10-01.csv.gz",
+      "sha256_csv": "369cb00ecacf9540e22268c0f4da35768add62094d0799acf4d01820845d8b7c",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-09-01T00:00:00Z&time%3C2026-10-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2026-10-01--2026-11-01.csv.gz",
+      "sha256_csv": "d59e56e43c058b5344c322c68440b8f9b2d3a6870d05fa3b9c46784695ba69aa",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-10-01T00:00:00Z&time%3C2026-11-01T00:00:00Z"
+    },
+    {
+      "file": "ctd-2026-11-01--2026-11-25.csv.gz",
+      "sha256_csv": "b3f92dac5d9ea68dfcc3f359710ae1c334f7deac438663bc95413591acf06f56",
+      "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-11-01T00:00:00Z&time%3C2026-11-25T00:00:00Z"
+    }
+  ],
+  "counts": {
+    "pass_pair_rows": 316111,
+    "raw_rows": 342799,
+    "unassigned_or_overlapping_rows": 662
+  },
+  "deployments": [
+    {
+      "depth_m": 7.0,
+      "lat": 35.94988,
+      "lon": -75.11943,
+      "number": 1,
+      "sensor_uid": "CGINS-CTDBPC-50004",
+      "start": "2024-04-03T13:57:00",
+      "stop": "2025-04-05T11:52:00"
+    },
+    {
+      "depth_m": 7.0,
+      "lat": 35.95097,
+      "lon": -75.13082,
+      "number": 2,
+      "sensor_uid": "CGINS-CTDBPC-50108",
+      "start": "2025-04-02T14:01:00",
+      "stop": "2025-11-01T16:06:00"
+    },
+    {
+      "depth_m": 7.0,
+      "lat": 35.950317,
+      "lon": -75.11953,
+      "number": 3,
+      "sensor_uid": "CGINS-CTDBPC-07208",
+      "start": "2025-11-02T14:28:00",
+      "stop": "2026-05-01T12:11:00"
+    },
+    {
+      "depth_m": 7.0,
+      "lat": 35.950617,
+      "lon": -75.13145,
+      "number": 4,
+      "sensor_uid": "CGINS-CTDBPC-50004",
+      "start": "2026-04-28T13:43:00",
+      "stop": null
+    }
+  ],
+  "exactly_on_the_hour": 19613,
+  "exclusive_end_utc": "2026-11-25T00:00:00Z",
+  "first_hour": "2024-04-03T14:00:00Z",
+  "hourly_csv_sha256": "d917bc74429f07593502155c42678fa27db99146de2e2a4da50e897f96f07b81",
+  "hours": 19811,
+  "hours_per_deployment": {
+    "1": 6983,
+    "2": 4646,
+    "3": 3858,
+    "4": 4324
+  },
+  "hours_with_conflicting_best_rows_excluded": 0,
+  "instrument_page": "https://oceanobservatories.org/site/cp10cnsm/",
+  "last_hour": "2026-11-24T23:00:00Z",
+  "pair_qc_frequencies_temp_salinity": {
+    "1,1": 316111,
+    "1,3": 26688
+  },
+  "reference_designator": "CP10CNSM-RID27-03-CTDBPC000",
+  "rule": "Latest paired finite temperature and practical salinity at or before each whole UTC hour, both aggregate QC=1 (PASS), maximum age 15 minutes. Both record and hour belong to exactly one identical asset deployment; ambiguous overlaps excluded. Reported timestamps are used; original data receipt times are unavailable. No interpolation. Do not cross deployment boundaries in forecast pairs.",
+  "source_metadata": "https://erddap.dataexplorer.oceanobservatories.org/erddap/info/ooi-cp10cnsm-rid27-03-ctdbpc000/index.html",
+  "start_utc": "2024-04-03T00:00:00Z"
+}
