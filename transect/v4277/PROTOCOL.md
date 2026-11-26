@@ -1,0 +1,13 @@
+# V4277 detector comparison
+
+This protocol was specified before inspecting V4277 model outputs. The unit of evaluation is the complete 600-frame MBARI Benthic Difficult clip from Ventana dive V4277. The two midwater dives are reserved. Both detectors receive the same original frames. Each result must declare success for every frame, including valid zero-detection frames. Missing or failed inference stops the comparison.
+
+## Matching and denominators
+
+Score localization against all eligible published boxes, with no predicted-class requirement. Match independently per detector and per frame at bounding-box intersection over union (IoU) ≥ 0.50 in original image pixels. First maximize the number of eligible one-to-one pairs, then the sum of their IoUs. Sort reference rows by numeric track ID and predictions by sighting ID before applying SciPy's linear assignment. An expert box can match at most one prediction per model; a prediction can match at most one expert box. No threshold tuning or averaging across dives.
+
+An appearance is a published box in one frame. Report appearance recall (matched reference appearances / reference appearances), prediction match rate (matched predictions / all predictions), counts and model agreement. Unmatched predictions need visual adjudication for biological interpretation. A published track is reached if its expert individual has one or more matched appearances. Report the fraction of visible annotated frames reached for each expert track, the median of those fractions with equal weight per track, and the counts reached by both methods, just one, or neither. These coverage measures do not establish detector identity continuity. There are no human review-time observations in this automated evaluation.
+
+## Review selection
+
+Build four groups of annotated appearances: missed by both detectors, localized only by Ecotype, localized only by Megalodon, localized by both. Select up to three distinct tracks per group, ranked by the number of appearances in that group, then by increasing track ID. For shared misses, prioritize expert tracks never reached by either detector across the clip. Within a selected track use the lower median qualifying frame. Empty groups stay visible. Also show up to three unmatched proposals from each detector, using the highest confidence, then earlier frame and sighting ID, across different frames. These are targeted review examples, not prevalence estimates. Display the full counts and all reference-track coverages alongside them. [Benchmark dataset and CC BY-SA 4.0 license](https://huggingface.co/datasets/MBARI-org/DeepSea-MOT)
