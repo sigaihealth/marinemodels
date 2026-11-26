@@ -1,0 +1,8 @@
+.privacy-split{align-items:start}
+.privacy-body{max-width:62ch}
+.privacy-body p+p{margin-top:1rem}
+.privacy-updated{font-size:.86rem;color:#c6d6cd;margin-top:1rem}
+.privacy-table{max-height:none;margin-top:1.6rem}
+.privacy-table caption{text-align:left;padding-bottom:.5rem;color:var(--muted)}
+.privacy-table th[scope=row]{font-weight:600;background:none}
+.privacy-body code{font-size:.9em;overflow-wrap:anywhere}

@@ -18,6 +18,7 @@ PAGES = {
     "plankton-lab": ("Plankton lab", "index"),
     "field-studies": ("Field studies", "index"),
     "collaborate": ("Contribute", "index"),
+    "data-and-privacy": ("Data and privacy", "index"),
     "sigai-plankton": ("SIG.AI Plankton Classifier", "plankton-lab"),
     "plankscope": ("PlankScope comparison", "plankton-lab"),
     "try-mobilenet": ("MobileNet classifier", "plankton-lab"),

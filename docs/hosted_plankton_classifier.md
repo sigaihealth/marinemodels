@@ -1,6 +1,6 @@
 # SIG.AI Plankton Classifier
 
-Researchers can choose a sample or submit a single opaque grayscale or RGB PNG crop. SIG.AI processes the original pixels on its server and returns three candidates from 101 categories. Scores rank the categories for that image. Images are processed in memory. The application does not retain submissions. [Open the browser trial](https://ocean.sig.ai/sigai-plankton.html)
+Researchers can choose a sample or submit a single opaque grayscale or RGB PNG crop. SIG.AI processes the original pixels on its server and returns three candidates from 101 categories. Scores rank the categories for that image. SIG.AI keeps submitted images to evaluate and improve the classifier. See [Data and privacy](https://ocean.sig.ai/data-and-privacy.html) for what is stored, for how long, and how to request deletion. [Open the browser trial](https://ocean.sig.ai/sigai-plankton.html)
 
 ## Optional IFCB reference check
 
