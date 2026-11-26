@@ -6,8 +6,6 @@
   <meta name="theme-color" content="#092e34">
   <meta name="description" content="What SIG.AI Ocean does with images you send to the plankton classifier, what stays on your device, and how to contact us.">
   <title>Data and privacy · SIG.AI Ocean</title>
-  <!-- DRAFT. Every <mark> holds a decision to make before publishing. Search this file for "DECIDE". -->
-  <!-- Source form for site/data-and-privacy.html. scripts/sync_navigation.py and scripts/sync_site_metadata.py regenerate the marked nav and sharing blocks. -->
   <link rel="preload" href="assets/fonts/instrumentserif.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/ocean.css">
   <link rel="stylesheet" href="assets/workspace.css">
@@ -48,74 +46,81 @@
 <!-- ocean-nav:end --></div>
 
 <main id="main">
-<div class="cover"><section class="hub-hero wrap">
-<div>
+<div class="cover"><section class="hub-hero wrap"><div>
   <p class="eyebrow station">Data and privacy</p>
   <h1>What happens to <br>your data.</h1>
-  <p class="standfirst">Most tools on this site run in your browser. One sends an image to SIG.AI, and we keep the images it receives. This page explains what we keep, why, and how to ask us to delete it.</p>
-  <p class="privacy-updated">Last updated <mark>[DECIDE: date this page goes live]</mark>.</p>
-</div>
-</section></div>
+  <p class="standfirst">Classifying a crop and contributing it to research are separate choices. You can use the hosted classifier and download its predictions without adding your image to a research collection.</p>
+  <p class="privacy-updated">Updated November 26, 2026 (UTC).</p>
+</div></section></div>
 
 <section class="wrap hub-section" aria-labelledby="where">
-  <p class="eyebrow">At a glance</p><h2 id="where">Where each tool runs</h2>
+  <h2 id="where">Where each tool runs</h2>
   <div class="result-table privacy-table">
     <table>
-      <caption>What each tool sends to SIG.AI</caption>
-      <thead><tr><th scope="col">Tool</th><th scope="col">Runs on</th><th scope="col">Sent to SIG.AI</th></tr></thead>
+      <caption>How each tool handles the files and values you select</caption>
+      <thead><tr><th scope="col">Tool</th><th scope="col">Where it runs</th><th scope="col">What happens to your input</th></tr></thead>
       <tbody>
-        <tr><th scope="row"><a href="sigai-plankton.html">SIG.AI Plankton Classifier</a></th><td>SIG.AI server</td><td>The image you choose and the options you select. We keep the image.</td></tr>
-        <tr><th scope="row"><a href="try-plankton.html">WHOI Northeast Shelf classifier</a></th><td>Your browser</td><td>Nothing</td></tr>
-        <tr><th scope="row"><a href="try-trained-plankton.html">Morphology baseline</a></th><td>Your browser</td><td>Nothing</td></tr>
-        <tr><th scope="row"><a href="try-mobilenet.html">MobileNet export</a></th><td>Your browser</td><td>Nothing. Your model file and image stay on your device.</td></tr>
-        <tr><th scope="row"><a href="plankscope.html">PlankScope comparison</a></th><td>Your browser</td><td>Nothing. CSV files are read on your device.</td></tr>
-        <tr><th scope="row"><a href="try-ocean-color.html">Ocean color</a></th><td>Your browser</td><td>Nothing</td></tr>
-        <tr><th scope="row"><a href="try-forecast.html">GLONET forecast explorer</a></th><td>Your browser</td><td>Nothing</td></tr>
-        <tr><th scope="row"><a href="visual-transect.html">Transect</a> and <a href="v4277.html">V4277</a> reviews</th><td>Your browser</td><td>Nothing. Your review decisions and notes are saved in this browser only.</td></tr>
+        <tr><th scope="row"><a href="sigai-plankton.html">SIG.AI Plankton Classifier</a></th><td>SIG.AI’s hosted service</td><td>Classifying sends the original PNG and your selected model options to the server. It processes the crop in memory. A separate contribution action lets you save a crop for research.</td></tr>
+        <tr><th scope="row"><a href="try-plankton.html">WHOI Northeast Shelf classifier</a></th><td>Your browser</td><td>Your crop stays on your device. When you run the classifier, your browser requests the model weights from Hugging Face.</td></tr>
+        <tr><th scope="row"><a href="try-trained-plankton.html">Morphology baseline</a> and <a href="try-mobilenet.html">MobileNet export</a></th><td>Your browser</td><td>Your image and any model file you open are used on your device.</td></tr>
+        <tr><th scope="row"><a href="plankscope.html">PlankScope comparison</a></th><td>Your browser</td><td>The selected CSV files are compared locally.</td></tr>
+        <tr><th scope="row"><a href="try-ocean-color.html">Ocean color</a> and <a href="try-forecast.html">GLONET forecast explorer</a></th><td>Your browser</td><td>The reflectance calculation and the selection of archived forecast values run on your device.</td></tr>
+        <tr><th scope="row"><a href="visual-transect.html">Transect</a> and <a href="v4277.html">V4277</a> reviews</th><td>Your browser</td><td>When you save a review, its decisions and notes go into this browser’s local storage. You can export a separate file.</td></tr>
       </tbody>
     </table>
   </div>
 </section>
 
 <section class="wrap hub-section hub-split privacy-split" aria-labelledby="uploads">
-  <div><p class="eyebrow">Plankton classifier</p><h2 id="uploads">Images you send <br>to the classifier</h2></div>
+  <div><h2 id="uploads">Classifying a crop</h2></div>
   <div class="privacy-body">
-    <p><strong>What we keep.</strong> When you select Classify crop, we store the image, the options you chose, the suggestions the classifier returned and the time of the request. <mark>[DECIDE: confirm this list matches what the server stores. We recommend not storing IP addresses with images.]</mark> <mark>[DECIDE: the four built-in examples are already public. We recommend not storing those again.]</mark></p>
-    <p><strong>Why we keep it.</strong> We use the images to measure how well the classifier performs, find the categories it confuses, and <mark>[DECIDE: train and evaluate future versions of the classifier / evaluate future versions only]</mark>.</p>
-    <p><strong>Who can see it.</strong> <mark>[DECIDE: SIG.AI staff / SIG.AI staff and named research collaborators]</mark> working on the classifier. We don’t publish your images or share them outside that group without your permission.</p>
-    <p><strong>How long we keep it.</strong> <mark>[DECIDE: for example, 24 months after upload, or until you ask us to delete it]</mark>.</p>
-    <p><strong>Before you send an image.</strong> Send only images you have the right to share. By selecting Classify crop, you allow sig.ai Inc. to keep and use the image as described here. Microscope crops rarely contain personal information. If an image shows a person or any personal details, don’t send it.</p>
-    <p><strong>Deleting an image.</strong> Email <a href="mailto:ocean@sig.ai">ocean@sig.ai</a> with the <code>input_sha256</code> value from the result file you can download after classification. Without the file, you can compute the checksum of your PNG, for example with <code>shasum -a 256 crop.png</code>. We will delete the image and its stored results within <mark>[DECIDE: 30 days]</mark> and confirm by email.</p>
-    <p><strong>Earlier uploads.</strong> Before <mark>[DECIDE: date storage starts]</mark>, the classifier processed images in memory and did not keep them.</p>
+    <p>Choosing a file displays its name in your browser. Selecting <strong>Classify crop</strong> sends the PNG bytes, including any embedded metadata, to the SIG.AI service on Vercel. Use a microscope crop you have permission to process and remove personal or sensitive information before sending it.</p>
+    <p>The application returns predictions without saving the submitted crop or its prediction results. This applies to your own PNGs and the built-in examples. The optional reference and collection settings change how the model ranks the image. A recommendation for expert review appears in your result; you choose whether to share it with an expert.</p>
+    <p>Downloading the prediction JSON saves a copy on your device. It includes an image fingerprint and, for your own upload, the file name. Review it before sharing.</p>
+  </div>
+</section>
+
+<section class="wrap hub-section hub-split privacy-split" aria-labelledby="contributions">
+  <div><h2 id="contributions">Contributing an image <br>for research</h2></div>
+  <div class="privacy-body">
+    <p>After classifying your own image, you can separately give SIG.AI permission to store its pixels and use them to train and evaluate plankton classifiers. Contribute only if you hold the rights or have permission for both uses. Research contributions began with this release on November 26, 2026 (UTC). Built-in examples are excluded.</p>
+    <p><strong>What is stored.</strong> The contribution service re-encodes the image to discard the original PNG metadata. It saves the resulting crop with a receipt identifier, the consent version and timing information for expiry. The contribution record excludes the uploaded file name, IP address and classifier predictions.</p>
+    <p><strong>Who has access.</strong> SIG.AI restricts the research collection to authorized project personnel working on the classifier or administering its storage. Vercel hosts it in a private Blob store in the Washington, D.C., United States region (iad1). Individual contributions have no public download link.</p>
+    <p><strong>Retention.</strong> A contribution expires 28 days after submission. A daily cleanup removes expired records. You can remove yours sooner using its receipt.</p>
+  </div>
+</section>
+
+<section class="wrap hub-section hub-split privacy-split" aria-labelledby="withdraw">
+  <div><h2 id="withdraw">Withdrawing a contribution</h2></div>
+  <div class="privacy-body">
+    <p>Download the private receipt when you contribute. To delete the stored crop, open the <a href="sigai-plankton.html#withdraw-contribution">withdrawal section of the classifier</a>, select the receipt and confirm removal. Anyone with the receipt can remove that contribution. Keep it private.</p>
+    <p>The receipt contains a deletion token. The image fingerprint in an ordinary prediction download identifies the input but does not authorize deletion. If you lose the receipt, email <a href="mailto:ocean@sig.ai">ocean@sig.ai</a> for help. Include the receipt identifier if you have it. We may need more information to locate the record and verify your request. Keep the secret token out of email and public issues.</p>
+    <p>Withdrawal deletes the stored crop. To prevent an interrupted upload from restoring it, the service temporarily keeps a marker containing only the receipt identifier. The daily cleanup removes markers at least one day old, normally within two days of withdrawal. It cannot undo training or evaluation that was completed before withdrawal. Copies you download to your own device are under your control.</p>
   </div>
 </section>
 
 <section class="wrap hub-section hub-split privacy-split" aria-labelledby="else">
-  <div><p class="eyebrow">Everything else</p><h2 id="else">Logs, cookies <br>and contributions</h2></div>
+  <div><h2 id="else">Site requests, local storage <br>and external services</h2></div>
   <div class="privacy-body">
-    <p><strong>Request logs.</strong> Our hosting provider, Vercel, records standard details of each request, such as IP address, browser type and time, to run and secure the site. These logs are kept for <mark>[DECIDE: confirm the log retention period on your Vercel plan]</mark>.</p>
-    <p><strong>Stored images.</strong> Uploaded images are stored with <mark>[DECIDE: storage provider and region]</mark>.</p>
-    <p><strong>Cookies and analytics.</strong> This site doesn’t use analytics, advertising or tracking cookies. The transect and V4277 review pages save your review decisions in your browser’s local storage, which never leaves your device. Clearing this site’s data removes them.</p>
-    <p><strong>Contributions.</strong> The contribution form opens on GitHub and creates a public issue, so anything you post there is visible to everyone. GitHub’s own privacy statement applies. To share restricted material or ask something privately, email us instead.</p>
-    <p><strong>Other sites.</strong> Links to archives, papers and model pages take you to sites with their own policies. Pages on this site don’t load content from those sites until you follow a link.</p>
+    <p><strong>Hosting.</strong> Your browser contacts Vercel to load the site and its assets. Request metadata can include network and browser information, time, path, selected classifier options and response status. The application uses a temporary in-memory rate limit. Vercel documents a one-hour runtime-log viewing window for our current Hobby plan. Infrastructure and security records are governed by Vercel’s own policies. <a href="https://vercel.com/docs/logs/runtime#limits">Vercel runtime log limits</a> · <a href="https://vercel.com/legal/privacy-policy">Vercel privacy notice</a></p>
+    <p><strong>Browser storage.</strong> The Ocean application does not set advertising or analytics cookies. Clearing site data removes review notes saved in this browser. Downloaded files remain on your device until you delete them.</p>
+    <p><strong>External services.</strong> Hugging Face receives a model-download request when you run the WHOI tool. Opening an OOI notebook moves your work to your signed-in Jupyter workspace, where files and results can be saved. External model demos and repositories have their own data practices.</p>
+    <p><strong>Public contributions.</strong> The contribution form opens on GitHub. Submitting it publishes a public issue. Share links to openly available material or an access-request page. For restricted material, ask us about a suitable transfer method before sending files.</p>
   </div>
 </section>
 
 <section class="wrap hub-section hub-split privacy-split" aria-labelledby="results">
-  <div><p class="eyebrow">Using the results</p><h2 id="results">Suggestions, <br>not identifications</h2></div>
+  <div><h2 id="results">Using the results</h2></div>
   <div class="privacy-body">
-    <p>Classifier suggestions and forecast outputs on this site are provisional. Treat them as candidates for expert review, not as the basis for operational, regulatory or safety decisions.</p>
-    <p>Images, data and models from other organizations keep their own licenses, which are shown next to each item.</p>
+    <p>Classifier suggestions and forecast outputs are provisional research results. Seek expert review before using them for operational, regulatory or safety decisions. Third-party data and models carry the licenses cited alongside them.</p>
   </div>
 </section>
 
 <section class="wrap hub-section hub-split privacy-split" aria-labelledby="contact">
-  <div><p class="eyebrow">Contact</p><h2 id="contact">Write to us</h2></div>
+  <div><h2 id="contact">Contact SIG.AI Ocean</h2></div>
   <div class="privacy-body">
-    <p>Email <a href="mailto:ocean@sig.ai">ocean@sig.ai</a> to delete an upload, share restricted data, correct something on the site, raise a licensing concern or ask a question you’d rather not post publicly.</p>
-    <p>To report a security problem, email the same address with “Security” in the subject line. Please don’t open a public GitHub issue for it.</p>
-    <p>SIG.AI Ocean is run by sig.ai Inc. The company’s <a href="https://sig.ai/privacy">privacy policy</a> and <a href="https://sig.ai/terms">terms of use</a> also apply, including your rights to know about and delete your information. Where they differ from this page about the ocean site, this page applies. <mark>[DECIDE: have counsel confirm this precedence sentence]</mark></p>
-    <p>If we change how we handle uploads, we will update this page and its date before the change takes effect.</p>
+    <p>For a contribution or privacy question, a correction or a licensing concern, email <a href="mailto:ocean@sig.ai">ocean@sig.ai</a>. To report a security issue privately, use the same address with “Security” in the subject line.</p>
+    <p>SIG.AI Ocean is operated by sig.ai inc. See the company’s <a href="https://sig.ai/privacy">privacy policy</a> and <a href="https://sig.ai/terms">terms of use</a> for company-wide practices and contact details.</p>
   </div>
 </section>
 </main>

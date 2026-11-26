@@ -108,7 +108,7 @@
           </div>
         </div>
       </fieldset>
-      <p class="send-note">Selecting <strong>Classify crop</strong> sends the image to SIG.AI, which keeps it to improve the classifier. <a href="data-and-privacy.html#uploads">How we use uploaded images</a>. The first run can take several seconds.</p>
+      <p class="send-note"><strong>Classify crop</strong> sends this PNG to SIG.AI for in-memory processing. The service discards the image after classification. After you classify your own crop, you can separately choose to contribute it for research. <a href="data-and-privacy.html#uploads">How SIG.AI handles images</a></p>
       <p id="run-progress" role="status"></p>
       <button class="primary" type="submit" id="run" disabled>Classify crop</button>
       <button id="cancel" type="button" hidden>Cancel</button>
@@ -136,8 +136,30 @@
         </section>
         <p id="version" class="caption"></p>
         <a id="download" class="text-link" download="sigai-plankton-prediction.json">Download result as JSON</a>
+        <section id="contribution-choice" class="context-choice" aria-labelledby="contribution-title" hidden>
+          <h3 id="contribution-title">Contribute this crop</h3>
+          <p>This optional step sends the PNG again. SIG.AI strips the file metadata and keeps the image pixels. The contribution expires after 28 days and is removed at the next daily cleanup. You can withdraw it sooner. <a href="data-and-privacy.html#contributions">How SIG.AI uses contributions</a></p>
+          <label><input type="checkbox" id="contribution-consent" autocomplete="off"> I have the right to share this crop and allow SIG.AI to use its pixels to train and evaluate plankton classifiers.</label>
+          <button id="contribute" class="primary" type="button" disabled>Contribute this crop</button>
+        </section>
       </div>
+      <p id="contribution-status" role="status"></p>
+      <section id="contribution-receipts" class="receipt-panel" aria-labelledby="receipts-title" hidden>
+        <h3 id="receipts-title">Your withdrawal receipts</h3>
+        <p>Save your receipt before leaving this page. Anyone with the file can withdraw that contribution. Keep it private.</p>
+        <ul id="receipt-list"></ul>
+      </section>
     </section>
+  </section>
+  <section id="withdraw-contribution" class="wrap trial-method" aria-labelledby="withdraw-title">
+    <h2 id="withdraw-title">Withdraw a contribution</h2>
+    <p>Choose the private JSON receipt you saved when you contributed the crop. Selecting the file reads it in this browser. Selecting <strong>Withdraw contribution</strong> sends the receipt ID and its deletion key to SIG.AI to remove the stored contribution.</p>
+    <form id="withdraw-form">
+      <label class="file-label" for="withdraw-receipt">Withdrawal receipt (.json)</label>
+      <input id="withdraw-receipt" type="file" accept=".json,application/json">
+      <button id="withdraw-button" class="primary" type="submit" disabled>Withdraw contribution</button>
+    </form>
+    <p id="withdraw-status" role="status"></p>
   </section>
   <section id="expanded-evidence" class="wrap trial-method" aria-labelledby="expanded-title">
     <h2 id="expanded-title">How well does the classifier transfer?</h2>
