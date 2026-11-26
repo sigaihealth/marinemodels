@@ -2,11 +2,11 @@
 
 The November event and the next three distinct wave-defined storms use the same frozen tide-and-current model. Persistence carries the latest measured salinity forward. Lower mean absolute error (MAE) is better. A positive gain favors the fixed model.
 
-Wave coverage through **2026-11-26T02:00:00Z**. Latest usable CTD **2026-11-25T04:00:00Z**. Latest usable currents **2026-11-25T04:00:00Z**.
+Wave coverage through **2026-11-26T03:00:00Z**. Latest usable CTD **2026-11-25T04:00:00Z**. Latest usable currents **2026-11-25T04:00:00Z**.
 
 | Storm (UTC onset) | Status | Verified / window hours | Persistence MAE | Fixed model MAE | Gain |
 |---|---|---:|---:|---:|---:|
-| November · 2026-11-24 | wave window open or unconfirmed | 20 / 48 | 0.4510 | 0.4306 | 0.0204 |
+| November · 2026-11-24 | wave window open or unconfirmed | 20 / 49 | 0.4510 | 0.4306 | 0.0204 |
 | Next 1 | Awaiting a qualifying event | — | — | — | — |
 | Next 2 | Awaiting a qualifying event | — | — | — | — |
 | Next 3 | Awaiting a qualifying event | — | — | — | — |
