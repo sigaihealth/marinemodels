@@ -1,0 +1,35 @@
+{
+  "model_sha256": "f8c2fa186b81b6fcc53b801b54d35cdc68f1891f48636f9b4458fd29e964a683",
+  "wave_observed_through": "2026-11-26T02:00:00Z",
+  "ctd_through": "2026-11-25T04:00:00Z",
+  "currents_through": "2026-11-25T04:00:00Z",
+  "forecast_count": 26,
+  "storms": [
+    {
+      "slot": "November",
+      "onset": "2026-11-24T15:00:00Z",
+      "window_start": "2026-11-24T03:00:00Z",
+      "window_end": "2026-11-26T02:00:00Z",
+      "status": "wave window open or unconfirmed",
+      "hours_in_window": 48,
+      "forecast_hours": 26,
+      "paired": 20,
+      "missing_pairs": 28,
+      "persistence_mae": 0.45099488723129433,
+      "fixed_mae": 0.43059858294151104,
+      "gain": 0.020396304289783285,
+      "additional_pairs": 0,
+      "additional_persistence_mae": null,
+      "additional_fixed_mae": null,
+      "additional_gain": null,
+      "recorded_before_valid": 0
+    }
+  ],
+  "successor_summary": {
+    "complete": 0,
+    "mean_gain": null,
+    "wins": 0,
+    "verdict": "The three-storm result is pending."
+  },
+  "study_complete": false
+}

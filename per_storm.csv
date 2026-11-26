@@ -1,0 +1,2 @@
+slot,onset,window_start,window_end,status,hours_in_window,forecast_hours,paired,missing_pairs,persistence_mae,fixed_mae,gain,additional_pairs,additional_persistence_mae,additional_fixed_mae,additional_gain,recorded_before_valid
+November,2026-11-24T15:00:00Z,2026-11-24T03:00:00Z,2026-11-26T02:00:00Z,wave window open or unconfirmed,48,26,20,28,0.45099488723129433,0.43059858294151104,0.020396304289783285,0,,,,0

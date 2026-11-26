@@ -1,0 +1,224 @@
+{
+  "as_of": "2026-11-26T02:00:00Z",
+  "retrieved_at": "2026-11-26T02:55:01Z",
+  "ctd_through": "2026-11-25T04:00:00Z",
+  "currents_through": "2026-11-25T04:00:00Z",
+  "tides_through": "2026-11-26T23:00:00Z",
+  "waves_through": "2026-11-26T02:00:00Z",
+  "wave_bounds_source": {
+    "catalog": "https://thredds.cdip.ucsd.edu/thredds/catalog/cdip/archive/192p1/catalog.xml",
+    "catalog_sha256": "93a3d1ba32f027d1342752a13fb9378a7232280deed5012e807cb5b4220ca784",
+    "sources": [
+      {
+        "url": "https://thredds.cdip.ucsd.edu/thredds/dodsC/cdip/realtime/192p1_rt.nc",
+        "deployment": "192p1_d09",
+        "metadata_sha256": "0ab02f9d43e31614ec564477c69259225ffa719287c36bdca0c10d6deaf26215",
+        "time_axis_sha256": "22c6586edc80470b8faa71f587d916e0230a7061e533e1fbc5005cb95e086ab2",
+        "chunks": [
+          {
+            "url": "https://thredds.cdip.ucsd.edu/thredds/dodsC/cdip/realtime/192p1_rt.nc.ascii?waveTime[7147:1:9162],waveHs[7147:1:9162],waveFlagPrimary[7147:1:9162],waveTimeBounds[7147:1:9162][0:1:1]",
+            "sha256": "4a1dc199efd9cc0859bac4d12f7ae8546eb352d60e38344d4dd188db02c6b43a"
+          }
+        ]
+      }
+    ],
+    "last_actual_native_time": "2026-11-26T01:56:40Z",
+    "last_qc_pass_native_time": "2026-11-26T01:56:40Z"
+  },
+  "critical_missing_wave_hours": [],
+  "pending_single_high_hour": null,
+  "sources": {
+    "ctd": {
+      "asset_csv_sha256": "a42a47384a257407ae4d63177b2140164223b97824878359535b5780cd43d132",
+      "asset_url": "https://raw.githubusercontent.com/oceanobservatories/asset-management/master/deployment/CP10CNSM_Deploy.csv",
+      "chunks": [
+        {
+          "file": "ctd-2026-10-31--2026-11-01.csv.gz",
+          "sha256_csv": "ee80c1a79422ac06b35397581094d71b37fdaae62248bff7a099db2aaa929d03",
+          "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-10-31T00:00:00Z&time%3C2026-11-01T00:00:00Z"
+        },
+        {
+          "file": "ctd-2026-11-01--2026-11-26.csv.gz",
+          "sha256_csv": "d67d5111c5aaae9d34507c218067da1e0eee56b5e8711099b52d49a1e1ecd4e2",
+          "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-11-01T00:00:00Z&time%3C2026-11-26T03:00:00Z"
+        }
+      ],
+      "counts": {
+        "pass_pair_rows": 9668,
+        "raw_rows": 9668
+      },
+      "deployments": [
+        {
+          "depth_m": 7.0,
+          "lat": 35.94988,
+          "lon": -75.11943,
+          "number": 1,
+          "sensor_uid": "CGINS-CTDBPC-50004",
+          "start": "2024-04-03T13:57:00",
+          "stop": "2025-04-05T11:52:00"
+        },
+        {
+          "depth_m": 7.0,
+          "lat": 35.95097,
+          "lon": -75.13082,
+          "number": 2,
+          "sensor_uid": "CGINS-CTDBPC-50108",
+          "start": "2025-04-02T14:01:00",
+          "stop": "2025-11-01T16:06:00"
+        },
+        {
+          "depth_m": 7.0,
+          "lat": 35.950317,
+          "lon": -75.11953,
+          "number": 3,
+          "sensor_uid": "CGINS-CTDBPC-07208",
+          "start": "2025-11-02T14:28:00",
+          "stop": "2026-05-01T12:11:00"
+        },
+        {
+          "depth_m": 7.0,
+          "lat": 35.950617,
+          "lon": -75.13145,
+          "number": 4,
+          "sensor_uid": "CGINS-CTDBPC-50004",
+          "start": "2026-04-28T13:43:00",
+          "stop": null
+        }
+      ],
+      "exactly_on_the_hour": 605,
+      "exclusive_end_utc": "2026-11-26T03:00:00Z",
+      "first_hour": "2026-10-31T00:00:00Z",
+      "hourly_csv_sha256": "bde16560e28dbf9478f078e7f2a5e32730996b52a3cd6d526ec125c991d77fe9",
+      "hours": 605,
+      "hours_per_deployment": {
+        "4": 605
+      },
+      "hours_with_conflicting_best_rows_excluded": 0,
+      "instrument_page": "https://oceanobservatories.org/site/cp10cnsm/",
+      "last_hour": "2026-11-25T04:00:00Z",
+      "pair_qc_frequencies_temp_salinity": {
+        "1,1": 9668
+      },
+      "reference_designator": "CP10CNSM-RID27-03-CTDBPC000",
+      "rule": "Latest paired finite temperature and practical salinity at or before each whole UTC hour, both aggregate QC=1 (PASS), maximum age 15 minutes. Both record and hour belong to exactly one identical asset deployment; ambiguous overlaps excluded. Reported timestamps are used; original data receipt times are unavailable. No interpolation. Do not cross deployment boundaries in forecast pairs.",
+      "source_metadata": "https://erddap.dataexplorer.oceanobservatories.org/erddap/info/ooi-cp10cnsm-rid27-03-ctdbpc000/index.html",
+      "start_utc": "2026-10-31T00:00:00Z"
+    },
+    "currents": {
+      "station": "CP10CNSM-RID26-04-VELPTA000",
+      "dataset": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.html",
+      "asset_url": "https://raw.githubusercontent.com/oceanobservatories/asset-management/master/deployment/CP10CNSM_Deploy.csv",
+      "asset_sha256": "a42a47384a257407ae4d63177b2140164223b97824878359535b5780cd43d132",
+      "deployments": [
+        {
+          "number": 1,
+          "start": "2024-04-03T13:57:00",
+          "stop": "2025-04-05T11:52:00",
+          "sensor": "CGINS-VELPTA-12747",
+          "lat": 35.94988,
+          "lon": -75.11943,
+          "nominal_depth_m": 7.0
+        },
+        {
+          "number": 2,
+          "start": "2025-04-02T14:01:00",
+          "stop": "2025-11-01T16:06:00",
+          "sensor": "CGINS-VELPTA-11386",
+          "lat": 35.95097,
+          "lon": -75.13082,
+          "nominal_depth_m": 7.0
+        },
+        {
+          "number": 3,
+          "start": "2025-11-02T14:28:00",
+          "stop": "2026-05-01T12:11:00",
+          "sensor": "CGINS-VELPTA-11417",
+          "lat": 35.950317,
+          "lon": -75.11953,
+          "nominal_depth_m": 7.0
+        },
+        {
+          "number": 4,
+          "start": "2026-04-28T13:43:00",
+          "stop": null,
+          "sensor": "CGINS-VELPTA-12234",
+          "lat": 35.950617,
+          "lon": -75.13145,
+          "nominal_depth_m": 7.0
+        }
+      ],
+      "native_first": "2026-10-30T22:45:00Z",
+      "native_last": "2026-11-25T04:00:00Z",
+      "most_common_native_intervals_s": [
+        [
+          900,
+          2421
+        ]
+      ],
+      "counts": {
+        "native_rows": 2422,
+        "accepted_with_nominal_depth_only": 2422
+      },
+      "requested_start": "2026-10-31T00:00:00Z",
+      "requested_last_issue": "2026-11-26T02:00:00Z",
+      "issue_count": 605,
+      "first_issue": "2026-10-31T00:00:00Z",
+      "last_issue": "2026-11-25T04:00:00Z",
+      "units": "m/s, eastward and northward",
+      "rule": "Paired finite east and north QARTOD aggregate 1. Unique deployment; measured depth 3\u201312 m if available; otherwise nominal 7 m. Mean of at least two distinct vectors in (t\u221275 min,t\u221215 min]; latest source age <=30 min. No interpolation. Historical source receipt time is unknown.",
+      "sha256": "f43e6a543db84e714a5747ae17588dcdefa09c29337eb704ac1b0cc9d42025ad",
+      "sources": [
+        {
+          "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-10-30T22:45:00Z&time%3C2026-11-01T00:00:00Z",
+          "raw_sha256": "06bbf764ed22b6fd01bf3288bd991987de0b2dda3d27489390628eade1616a02"
+        },
+        {
+          "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-11-01T00:00:00Z&time%3C2026-11-26T02:00:01Z",
+          "raw_sha256": "c0cafccb90c3ead8bc3bba4ee900cc37ff7580c20524b08745a1aa1f909bf6a3"
+        }
+      ]
+    },
+    "tides": {
+      "station": {
+        "id": "8651370",
+        "name": "Duck",
+        "state": "NC",
+        "latitude": 36.1833,
+        "longitude": -75.7467
+      },
+      "datum": "Mean Lower Low Water (MLLW)",
+      "datum_epoch": "1983-2001",
+      "datum_acceptance": "Sep 26 2011",
+      "n_published_constituents": 37,
+      "product": "hourly astronomical tide predictions (metres, UTC)",
+      "validation": "Exactly one finite model prediction per hour; no gaps or observation fills.",
+      "first": "2026-10-31T00:00:00Z",
+      "last": "2026-11-26T23:00:00Z",
+      "n_hours": 648,
+      "minimum_m": -0.104,
+      "maximum_m": 1.398,
+      "sources": [
+        {
+          "url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=sigai_pioneer_research&begin_date=20261031&end_date=20261126&datum=MLLW&station=8651370&time_zone=gmt&units=metric&interval=h&format=json",
+          "raw_sha256": "932685f6c915557d73a4fca28f86c39949d0f9f320c3e213c035669639214fb8",
+          "n_hours": 648
+        }
+      ],
+      "metadata_sha256_by_url": {
+        "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8651370.json?units=metric": "bd409548c7d9ccffef82ab9d5aea39f153030ef35fe1a4c30e091cf96887b914",
+        "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8651370/datums.json?units=metric": "af38527964ad9849f31161e9e6b09999d4ded82c29a38a3d5ac647c69f8eb76f",
+        "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8651370/harcon.json?units=metric": "ace14d046df852ff001cb12e2059ba8ce8fddde380570e984aa488e69583e2eb"
+      },
+      "tides_csv_sha256": "d20292198032b9144b11c14e088094cb64c8d227136c9e7ac9c153058c282b13"
+    }
+  },
+  "deployment_asset_url": "https://raw.githubusercontent.com/oceanobservatories/asset-management/master/deployment/CP10CNSM_Deploy.csv",
+  "deployment_asset_sha256": "a42a47384a257407ae4d63177b2140164223b97824878359535b5780cd43d132",
+  "data_sha256": {
+    "ctd_hourly.csv": "bde16560e28dbf9478f078e7f2a5e32730996b52a3cd6d526ec125c991d77fe9",
+    "currents.csv": "f43e6a543db84e714a5747ae17588dcdefa09c29337eb704ac1b0cc9d42025ad",
+    "events.csv": "7e138ca2180104392dbd143463e57ac84b137c0808ec95d529dd857645f8c3da",
+    "tides.csv": "d20292198032b9144b11c14e088094cb64c8d227136c9e7ac9c153058c282b13",
+    "wave_hourly.csv": "c5311b32a4d45c5ce0627ee354ea0ae5a55e2b6b76ad23290ae75dbf894f3281"
+  }
+}
