@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import re
 import shutil
+import subprocess
 
 SITE = Path(__file__).resolve().parents[1] / "site"
 CACHE = "public, max-age=31536000, immutable"
@@ -55,6 +56,19 @@ def merge_rule(rules, rule):
         raise ValueError(f"Resolve existing Vercel rule for {rule['source']} before publishing")
 
 
+def stage_mcp(release, config):
+    package = SITE.parent / "mcp"
+    api = release / "api"
+    api.mkdir(exist_ok=True)
+    subprocess.run(["npm", "ci", "--no-audit", "--no-fund"], cwd=package, check=True)
+    subprocess.run(["npm", "run", "bundle", "--", "--outfile=" + str((api / "mcp.js").resolve())],
+                   cwd=package, check=True)
+    rule = {"maxDuration": 60, "excludeFiles": "{model_data,public}/**"}
+    functions = config.setdefault("functions", {})
+    if functions.setdefault("api/mcp.js", rule) != rule:
+        raise ValueError("Resolve the existing MCP function settings before publishing")
+
+
 def stage(release):
     config_path = release / "vercel.json"
     config = json.loads(config_path.read_text())
@@ -64,6 +78,7 @@ def stage(release):
     if public.resolve().is_relative_to(SITE):
         raise ValueError("Stage outside the site source directory")
     # Keep stable URLs for external publications, source downloads and existing bookmarks.
+    stage_mcp(release, config)
     shutil.copytree(SITE, public, dirs_exist_ok=True)
     prefix = version_assets(public)
     for page in SITE.glob("*.html"):

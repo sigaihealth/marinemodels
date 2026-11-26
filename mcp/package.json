@@ -1,0 +1,17 @@
+{
+  "name": "sigai-ocean-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Model Context Protocol interface for SIG.AI Ocean",
+  "engines": { "node": ">=22.12" },
+  "scripts": {
+    "test": "node --test test.cjs",
+    "bundle": "esbuild handler.cjs --bundle --platform=node --target=node22 --format=cjs --legal-comments=eof",
+    "start": "node local.cjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": { "esbuild": "0.28.2" }
+}
