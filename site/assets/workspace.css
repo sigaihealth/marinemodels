@@ -2,7 +2,7 @@
 .hub-hero{padding-block:clamp(3rem,6vw,6.3rem)}
 .hub-hero h1{font-size:clamp(4.5rem,7.7vw,7.65rem);line-height:.93}
 .hub-actions{display:flex;align-items:center;flex-wrap:wrap;gap:1rem 1.55rem;margin-top:1.65rem}
-.hub-actions .primary{margin:0}.hub-actions .text-link{color:#e3f1e8}
+.hub-actions .primary{margin:0}.hub-hero .text-link{color:#e3f1e8}
 .instrument-plate{background:#143b3d;border:1px solid #54746e;padding:1.15rem}
 .plate-images{display:grid;grid-template-columns:1.3fr 1fr;align-items:stretch;gap:.7rem;margin:.9rem 0}
 .plate-images img{width:100%;height:clamp(8.5rem,12vw,13rem);object-fit:contain;background:#b9bcb8}

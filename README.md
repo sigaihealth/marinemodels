@@ -23,7 +23,7 @@ The site navigation groups the [world model](https://ocean.sig.ai/world-model.ht
 
 For the existing Vercel project, run `python3 scripts/prepare_site_release.py --release /path/to/linked/staging-project` before deployment. This stages the public files, writes content-versioned asset URLs and preserves the existing inference configuration. HTML can revalidate on each visit, while the versioned assets and content-hashed report media can be cached for a year.
 
-To reproduce the archived forecast used by the physics explorer, run `uv run extract_glonet_subset.py --output forecast.json --audit-manifest forecast-audit.json` from the repository root. The script retrieves the selected OceanBench chunks and records their URLs and checksums. Compare the result with `site/assets/glonet-midatlantic-2024.json`.
+To reproduce the archived forecast used by the physics explorer, run `uv run extract_glonet_subset.py --output forecast.json --audit-manifest forecast-audit.json` from the repository root. The script retrieves the selected OceanBench chunks and records their URLs and checksums. Compare the result with `site/assets/glonet-midatlantic-2024.json`. The explorer displays practical salinity as a dimensionless value. The download retains OceanBench’s original `1e-3` units string in `archiveUnits` for provenance.
 
 ## Run the Pioneer event replay
 

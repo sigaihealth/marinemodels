@@ -39,7 +39,7 @@ SITES = [
 DEPTHS = [0.494025, 47.373692, 92.326073]
 VARIABLES = {
     "thetao": {"name": "Potential temperature", "units": "°C", "archiveUnits": "degrees_C"},
-    "so": {"name": "Salinity", "units": "10⁻³", "archiveUnits": "1e-3"},
+    "so": {"name": "Practical salinity", "units": "dimensionless", "archiveUnits": "1e-3"},
 }
 LEADS = 10
 MAX_DOWNLOAD_BYTES = 5_000_000

@@ -114,11 +114,11 @@ function drawChart() {
 
 function render() {
   const { run, site, variable, profile } = current();
-  const unit = variable.units;
+  const quantity = variable.name + " (" + variable.units + ")";
   const depth = Number(menu.depth.value).toFixed(2);
   element("plot-heading").textContent = variable.name;
   element("context").textContent = "36.00°N, " + locationLabel(site) + " · " + depth + " m · Reference " + run.referenceDate + " UTC";
-  const suffix = variable.archiveUnits === "1e-3" ? " × " + unit : " " + unit;
+  const suffix = variable.units === "dimensionless" ? "" : " " + variable.units;
   const available = profile.forecast.filter(Number.isFinite);
   const range = available.length ? "The GLONET range is " + rangeLabel(available, suffix) +
     " across " + available.length + (available.length === 1 ? " daily mean." : " daily means.") :
@@ -130,8 +130,8 @@ function render() {
   const note = alternatingLeadNote(profile.forecast, suffix);
   element("lead-pattern").textContent = note;
   element("lead-pattern").hidden = !note;
-  canvas.setAttribute("aria-label", variable.name + " at " + depth + " m across ten lead days, compared with GLO12 persistence. Daily values follow the chart.");
-  element("table-caption").textContent = variable.name + " (" + unit + "). Difference is GLONET minus persistence.";
+  canvas.setAttribute("aria-label", quantity + " at " + depth + " m across ten lead days, compared with GLO12 persistence. Daily values follow the chart.");
+  element("table-caption").textContent = quantity + ". Difference is GLONET minus persistence.";
   const rows = run.dates.map((day, i) => {
     const row = document.createElement("tr");
     const forecast = profile.forecast[i];
