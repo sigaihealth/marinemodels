@@ -1,2 +1,2 @@
 slot,onset,window_start,window_end,status,hours_in_window,forecast_hours,paired,missing_pairs,persistence_mae,fixed_mae,gain,additional_pairs,additional_persistence_mae,additional_fixed_mae,additional_gain,recorded_before_valid
-November,2026-11-24T15:00:00Z,2026-11-24T03:00:00Z,2026-11-26T14:00:00Z,wave window open or unconfirmed,60,26,20,40,0.45099488723129433,0.43059858294151104,0.020396304289783285,0,,,,0
+November,2026-11-24T15:00:00Z,2026-11-24T03:00:00Z,2026-11-27T00:00:00Z,wave window open or unconfirmed,70,48,43,27,0.42963208381544465,0.422362915665758,0.0072691681496866445,23,0.41105573301905357,0.41520146586075535,-0.004145732841701777,0
