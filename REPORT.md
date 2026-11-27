@@ -2,16 +2,16 @@
 
 The November event and the next three distinct wave-defined storms use the same frozen tide-and-current model. Persistence carries the latest measured salinity forward. Lower mean absolute error (MAE) is better. A positive gain favors the fixed model.
 
-Wave coverage through **2026-11-27T00:00:00Z**. Latest usable CTD **2026-11-26T03:00:00Z**. Latest usable currents **2026-11-26T02:00:00Z**.
+Wave coverage through **2026-11-27T14:00:00Z**. Latest usable CTD **2026-11-26T03:00:00Z**. Latest usable currents **2026-11-26T03:00:00Z**.
 
 | Storm (UTC onset) | Status | Verified / window hours | Persistence MAE | Fixed model MAE | Gain |
 |---|---|---:|---:|---:|---:|
-| November · 2026-11-24 | wave window open or unconfirmed | 43 / 70 | 0.4296 | 0.4224 | 0.0073 |
+| November · 2026-11-24 | wave window open or unconfirmed | 43 / 84 | 0.4296 | 0.4224 | 0.0073 |
 | Next 1 | Awaiting a qualifying event | — | — | — | — |
 | Next 2 | Awaiting a qualifying event | — | — | — | — |
 | Next 3 | Awaiting a qualifying event | — | — | — | — |
 
-**November follow-up.** 48 forecasts have been saved for this window. 5 still await a usable verification. 23 verified hours are additional to the 20 examined when the model was frozen. On those additional hours persistence MAE is 0.4111 and fixed-model MAE is 0.4152. The open-window denominator can grow until the storm closes.
+**November follow-up.** 49 forecasts have been saved for this window. 6 still await a usable verification. 23 verified hours are additional to the 20 examined when the model was frozen. On those additional hours persistence MAE is 0.4111 and fixed-model MAE is 0.4152. The open-window denominator can grow until the storm closes.
 
 **Independent follow-up.** 0/3 subsequent storms fully scored. The three-storm result is pending.
 

@@ -1,10 +1,10 @@
 {
-  "as_of": "2026-11-27T00:00:00Z",
-  "retrieved_at": "2026-11-27T00:41:40Z",
+  "as_of": "2026-11-27T14:00:00Z",
+  "retrieved_at": "2026-11-27T14:02:36Z",
   "ctd_through": "2026-11-26T03:00:00Z",
-  "currents_through": "2026-11-26T02:00:00Z",
+  "currents_through": "2026-11-26T03:00:00Z",
   "tides_through": "2026-11-27T23:00:00Z",
-  "waves_through": "2026-11-27T00:00:00Z",
+  "waves_through": "2026-11-27T14:00:00Z",
   "wave_bounds_source": {
     "catalog": "https://thredds.cdip.ucsd.edu/thredds/catalog/cdip/archive/192p1/catalog.xml",
     "catalog_sha256": "93a3d1ba32f027d1342752a13fb9378a7232280deed5012e807cb5b4220ca784",
@@ -12,25 +12,26 @@
       {
         "url": "https://thredds.cdip.ucsd.edu/thredds/dodsC/cdip/realtime/192p1_rt.nc",
         "deployment": "192p1_d09",
-        "metadata_sha256": "9bc46c6582909a72e3c3eda331d6dd432ad6a004f4135909a552f471c1a6014c",
-        "time_axis_sha256": "a661330a8bb1513fab316e997374bbae12bfa29c61543c6c88963cc8dd1b1295",
+        "metadata_sha256": "cde2d6f44464d3631bb5dff5d77799b6a642fa5f7fbd81350f14ae492a83253b",
+        "time_axis_sha256": "3c71542d73e80a6fa48c49d82332c340659bd95e62418667daab743ef184bbef",
         "chunks": [
           {
             "url": "https://thredds.cdip.ucsd.edu/thredds/dodsC/cdip/realtime/192p1_rt.nc.ascii?waveTime[7147:1:9194],waveHs[7147:1:9194],waveFlagPrimary[7147:1:9194],waveTimeBounds[7147:1:9194][0:1:1]",
             "sha256": "001db87bc6e8feafa8438be4d11956c269870be0245b75503ef65053c54f30bc"
           },
           {
-            "url": "https://thredds.cdip.ucsd.edu/thredds/dodsC/cdip/realtime/192p1_rt.nc.ascii?waveTime[9195:1:9206],waveHs[9195:1:9206],waveFlagPrimary[9195:1:9206],waveTimeBounds[9195:1:9206][0:1:1]",
-            "sha256": "97e9a54197894502f1113256b82dbb3270c01e7d8c3fed10cbec4d8447f73a95"
+            "url": "https://thredds.cdip.ucsd.edu/thredds/dodsC/cdip/realtime/192p1_rt.nc.ascii?waveTime[9195:1:9232],waveHs[9195:1:9232],waveFlagPrimary[9195:1:9232],waveTimeBounds[9195:1:9232][0:1:1]",
+            "sha256": "672523df88d34f4fe4bc55a668a0baf7c6889aa943a281083510d0d0f306a7b8"
           }
         ]
       }
     ],
-    "last_actual_native_time": "2026-11-26T23:56:40Z",
-    "last_qc_pass_native_time": "2026-11-26T23:56:40Z"
+    "last_actual_native_time": "2026-11-27T13:56:40Z",
+    "last_qc_pass_native_time": "2026-11-27T13:56:40Z"
   },
   "critical_missing_wave_hours": [
-    "2026-11-26T16:00:00Z"
+    "2026-11-26T16:00:00Z",
+    "2026-11-27T03:00:00Z"
   ],
   "pending_single_high_hour": null,
   "sources": {
@@ -46,7 +47,7 @@
         {
           "file": "ctd-2026-11-01--2026-11-27.csv.gz",
           "sha256_csv": "dce22ea43fac8886a84099d89a1d9c1c70ab67ff4ebfdc00786f516f8b5b69bd",
-          "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-11-01T00:00:00Z&time%3C2026-11-27T01:00:00Z"
+          "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid27-03-ctdbpc000.csv?time,sea_water_temperature,sea_water_practical_salinity,sea_water_temperature_qc_agg,sea_water_practical_salinity_qc_agg,depth_reading&time%3E=2026-11-01T00:00:00Z&time%3C2026-11-27T15:00:00Z"
         }
       ],
       "counts": {
@@ -92,7 +93,7 @@
         }
       ],
       "exactly_on_the_hour": 628,
-      "exclusive_end_utc": "2026-11-27T01:00:00Z",
+      "exclusive_end_utc": "2026-11-27T15:00:00Z",
       "first_hour": "2026-10-31T00:00:00Z",
       "hourly_csv_sha256": "36cef67a6bf7c8aac4f8c27ea5dcb37c1cfed9d539083fa6c0ad1a833b634f98",
       "hours": 628,
@@ -154,33 +155,33 @@
         }
       ],
       "native_first": "2026-10-30T22:45:00Z",
-      "native_last": "2026-11-26T02:00:00Z",
+      "native_last": "2026-11-26T03:00:00Z",
       "most_common_native_intervals_s": [
         [
           900,
-          2509
+          2513
         ]
       ],
       "counts": {
-        "native_rows": 2510,
-        "accepted_with_nominal_depth_only": 2510
+        "native_rows": 2514,
+        "accepted_with_nominal_depth_only": 2514
       },
       "requested_start": "2026-10-31T00:00:00Z",
-      "requested_last_issue": "2026-11-27T00:00:00Z",
-      "issue_count": 627,
+      "requested_last_issue": "2026-11-27T14:00:00Z",
+      "issue_count": 628,
       "first_issue": "2026-10-31T00:00:00Z",
-      "last_issue": "2026-11-26T02:00:00Z",
+      "last_issue": "2026-11-26T03:00:00Z",
       "units": "m/s, eastward and northward",
       "rule": "Paired finite east and north QARTOD aggregate 1. Unique deployment; measured depth 3\u201312 m if available; otherwise nominal 7 m. Mean of at least two distinct vectors in (t\u221275 min,t\u221215 min]; latest source age <=30 min. No interpolation. Historical source receipt time is unknown.",
-      "sha256": "41555f53878520b8963a508277200fa366c243d995366fb055e9db4e5bbef6ff",
+      "sha256": "7fa31616a72302b248f7fd5bddd1a189fc35df8e534edc92067d719b4812a23b",
       "sources": [
         {
           "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-10-30T22:45:00Z&time%3C2026-11-01T00:00:00Z",
           "raw_sha256": "06bbf764ed22b6fd01bf3288bd991987de0b2dda3d27489390628eade1616a02"
         },
         {
-          "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-11-01T00:00:00Z&time%3C2026-11-27T00:00:01Z",
-          "raw_sha256": "33f12c5255e0b112a230e42aed3551a975b5cc1aed6dee9d0ab0bb40340cc6d6"
+          "url": "https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-cp10cnsm-rid26-04-velpta000.csv?time,eastward_sea_water_velocity,northward_sea_water_velocity,eastward_sea_water_velocity_qc_agg,northward_sea_water_velocity_qc_agg,depth_reading&time%3E=2026-11-01T00:00:00Z&time%3C2026-11-27T14:00:01Z",
+          "raw_sha256": "bcdbae1e363d305756d070987dd3e123755e2b33ebbefeef238e3ba417757d46"
         }
       ]
     },
@@ -222,9 +223,9 @@
   "deployment_asset_sha256": "a42a47384a257407ae4d63177b2140164223b97824878359535b5780cd43d132",
   "data_sha256": {
     "ctd_hourly.csv": "36cef67a6bf7c8aac4f8c27ea5dcb37c1cfed9d539083fa6c0ad1a833b634f98",
-    "currents.csv": "41555f53878520b8963a508277200fa366c243d995366fb055e9db4e5bbef6ff",
-    "events.csv": "0b8d772bb36ceffd60f02a6595956e00cb289b92e95d25cd7763267e523125cb",
+    "currents.csv": "7fa31616a72302b248f7fd5bddd1a189fc35df8e534edc92067d719b4812a23b",
+    "events.csv": "72370cd8179a283ac553b446896897de95efcf05b3ed874137baec906b269f12",
     "tides.csv": "bdb9a8b11915ba96105203182be793bfb6b8bd2d9ba35973d81992bfd1e6b115",
-    "wave_hourly.csv": "1b594c45254e17374a3fa3be6e0f3127c99b2685b9135d38b7e4366d9633d707"
+    "wave_hourly.csv": "565b6fc86dfdefbc45f20f01d81735ec881981f302839878fe672c53cfcaf46f"
   }
 }
