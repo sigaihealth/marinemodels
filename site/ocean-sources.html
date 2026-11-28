@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#092e34">
+  <meta name="description" content="Search 667 marine datasets, AI models, benchmarks and data services, with licences, sign-up requirements and a dated link check for each.">
+  <title>Source atlas · SIG.AI Ocean</title>
+  <link rel="stylesheet" href="assets/ocean.css">
+  <link rel="stylesheet" href="assets/ocean-sources.css">
+  <script defer src="assets/ocean-sources.js"></script>
+<link rel="stylesheet" href="assets/navigation.css">
+<!-- ocean-sharing:start -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="canonical" href="https://ocean.sig.ai/ocean-sources.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SIG.AI Ocean">
+<meta property="og:title" content="Source atlas · SIG.AI Ocean">
+<meta property="og:description" content="Search 667 marine datasets, AI models, benchmarks and data services, with licences, sign-up requirements and a dated link check for each.">
+<meta property="og:url" content="https://ocean.sig.ai/ocean-sources.html">
+<meta property="og:image" content="https://ocean.sig.ai/assets/ocean-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SIG.AI Ocean research workspaces with an illustrated ocean cross-section.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Source atlas · SIG.AI Ocean">
+<meta name="twitter:description" content="Search 667 marine datasets, AI models, benchmarks and data services, with licences, sign-up requirements and a dated link check for each.">
+<meta name="twitter:image" content="https://ocean.sig.ai/assets/ocean-share.jpg">
+<meta name="twitter:image:alt" content="SIG.AI Ocean research workspaces with an illustrated ocean cross-section.">
+<!-- ocean-sharing:end -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="masthead">
+  <!-- ocean-nav:start -->
+<div class="ocean-header"><div class="ocean-bar">
+  <a class="ocean-brand" href="./" aria-label="SIG.AI Ocean home">SIG.AI<span>Ocean</span></a>
+  <nav aria-label="Main navigation">
+    <a href="world-model.html">World model</a>
+    <a href="model-catalog.html" aria-current="location">Model workspace</a>
+    <a href="plankton-lab.html">Plankton lab</a>
+    <a href="field-studies.html">Field studies</a>
+    <a href="collaborate.html">Contribute</a>
+  </nav>
+</div></div>
+<div class="ocean-context"><div class="ocean-bar">
+  <nav aria-label="Breadcrumb"><a href="model-catalog.html">Model workspace</a> <span class="ocean-separator" aria-hidden="true">/</span> <span class="ocean-current" aria-current="page">Source atlas</span></nav>
+</div></div>
+<!-- ocean-nav:end -->
+  <div class="sources-intro wrap">
+    <div>
+      <h1>Source atlas</h1>
+      <p>Datasets, models, benchmarks and data services for marine AI, gathered in a November 2026 survey. Each entry lists its licence, whether it needs an account, how to get it and whether its link answered when we last checked. The <a href="model-catalog.html">model workspace</a> holds the smaller set we have tested in depth.</p>
+    </div>
+    <a class="primary" href="assets/ocean-sources.json">Download as JSON</a>
+  </div>
+</div>
+
+<main id="main" class="wrap sources-main">
+  <section class="sources-stats" id="stats" aria-label="Summary" aria-live="polite">
+    <p class="sources-loading">Loading 667 sources…</p>
+  </section>
+  <div class="sources-filters" role="search">
+    <div class="sources-row">
+      <label class="visually-hidden" for="q">Search sources</label>
+      <input type="search" id="q" placeholder="Search names, operators, regions, instruments…">
+      <label class="visually-hidden" for="kind">Kind</label>
+      <select id="kind"><option value="">All kinds</option></select>
+      <label class="visually-hidden" for="licence">Licence</label>
+      <select id="licence"><option value="">Any licence</option></select>
+      <label class="visually-hidden" for="signup">Sign-up</label>
+      <select id="signup"><option value="">Any sign-up</option><option value="none">No sign-up</option><option value="account">Free account</option><option value="restricted">Application or restricted</option></select>
+      <label class="visually-hidden" for="status">Link status</label>
+      <select id="status"><option value="">Any link status</option></select>
+    </div>
+    <div class="sources-lanes" id="lanes" role="group" aria-label="Lane"></div>
+    <p class="sources-count" id="count"></p>
+  </div>
+  <div id="list">
+    <noscript><p class="sources-empty">This list needs JavaScript. You can <a href="assets/ocean-sources.json">download every source as JSON</a> instead.</p></noscript>
+  </div>
+  <p class="sources-note" id="note">Link status comes from one automated request per source from a single network. “Account or access needed” means the server answered but asked for credentials; many of those sources are free once you sign up. “API endpoint” means the address accepts programmatic requests only. Licence groups are a quick reading of each source’s stated terms, so check the original terms before you rely on them. To suggest a source or a correction, <a href="collaborate.html">contribute it</a>.</p>
+</main>
+
+<footer><div class="wrap footer-head"><span class="wordmark"><strong>SIG.AI</strong><span>Ocean</span></span><div class="links"><a href="collaborate.html">Share a dataset, model or finding</a><a href="https://github.com/sigaihealth/marinemodels">Code and data</a><a href="data-and-privacy.html">Data and privacy</a><a href="mailto:ocean@sig.ai">ocean@sig.ai</a></div></div></footer>
+</body>
+</html>
