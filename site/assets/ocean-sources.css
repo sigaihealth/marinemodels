@@ -8,8 +8,8 @@
 .sources-stats div{display:grid;gap:.15rem}
 .sources-stats b{font:400 2.2rem/1 var(--serif);font-variant-numeric:tabular-nums}
 .sources-stats span{font-size:.78rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
-.sources-loading{color:var(--muted)}
-.sources-filters{position:sticky;top:0;z-index:3;background:var(--foam);display:grid;gap:.7rem;padding-block:1rem .8rem;border-bottom:1px solid var(--rule)}
+.sources-main [hidden]{display:none!important}
+.sources-filters{position:sticky;top:0;z-index:3;background:var(--foam);display:grid;grid-template-columns:minmax(0,1fr);gap:.7rem;padding-block:1rem .8rem;border-bottom:1px solid var(--rule)}
 .sources-row{display:flex;flex-wrap:wrap;gap:.55rem}
 .sources-row input,.sources-row select{font:inherit;font-size:.95rem;color:var(--ink);background:#fff;border:1px solid var(--rule);border-radius:3px;padding:.55rem .7rem;max-width:100%}
 .sources-row input{flex:1 1 18rem;min-width:0}
@@ -22,10 +22,11 @@
 .sources-lane{margin-top:2.2rem}
 .sources-lane h2{font-size:clamp(2rem,3vw,2.6rem);display:flex;align-items:baseline;gap:.7rem}
 .sources-lane h2 span{font:600 .85rem var(--sans);color:var(--muted);letter-spacing:.06em}
+.lane-tested{margin-top:.35rem;font-weight:600;font-size:.92rem}
 .source{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.3rem 1.4rem;padding-block:1rem;border-bottom:1px solid var(--rule)}
-.source h3{font:600 1.02rem/1.35 var(--sans);letter-spacing:0}
-.source .meta{font-size:.88rem;color:var(--muted)}
-.source .desc{font-size:.95rem;margin-top:.25rem;max-width:84ch}
+.source h3{font:600 1.02rem/1.35 var(--sans);letter-spacing:0;overflow-wrap:anywhere}
+.source .meta{font-size:.88rem;color:var(--muted);overflow-wrap:anywhere}
+.source .desc{font-size:.95rem;margin-top:.25rem;max-width:84ch;overflow-wrap:anywhere}
 .source .tags{display:flex;flex-wrap:wrap;gap:.35rem;justify-content:flex-end;align-content:flex-start}
 .tag{font-size:.74rem;font-weight:600;padding:.22rem .5rem;border-radius:3px;background:#e4eee8;white-space:nowrap}
 .tag.ok{background:#dcefdf;color:#1d5b33}.tag.login{background:#e1e8f5;color:#2e4778}.tag.api{background:#ece6f5;color:#4a3878}

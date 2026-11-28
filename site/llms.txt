@@ -1,0 +1,31 @@
+# SIG.AI Ocean
+
+> Research workspace for marine AI from SIG.AI: a catalog of tested ocean models, a source atlas of 667 marine datasets, models, benchmarks and data services, plankton image classifiers, archived ocean forecasts and storm studies at the Ocean Observatories Initiative Pioneer array.
+
+Classifier suggestions and forecasts on this site are provisional and meant for expert review. Images, data and models from other organizations keep their own licences, which are listed with each item.
+
+## Find data and models
+
+- [Source atlas](https://ocean.sig.ai/ocean-sources.html): 667 marine datasets, AI models, benchmarks and data services with licence, sign-up requirement, access method and a dated link check for each.
+- [Source atlas data (JSON)](https://ocean.sig.ai/assets/ocean-sources.json): the same records as one JSON array, with fields name, kind, lane_name, operator, country_or_region, description, license, licence_group, registration, sign_up, access_method, access_url, example_access, source_url and check.
+- [Model workspace](https://ocean.sig.ai/model-catalog.html): ocean models tested in depth, grouped by task, with inputs, outputs, licences, compute needs and evaluation protocols.
+- [Model workspace data (JSON)](https://ocean.sig.ai/assets/model-catalog.json): the model workspace records.
+
+## Use the tools
+
+- [MCP server](https://ocean.sig.ai/api/mcp): a public Streamable HTTP Model Context Protocol server, registered as io.github.sigaihealth/ocean. Tools: search_sources, search_models, list_datasets, get_pioneer_observations, get_glonet_forecast, get_pioneer_storm_scores, estimate_chlorophyll and classify_plankton. No account is needed.
+- [Agent access guide](https://ocean.sig.ai/collaborate.html#agent-access): how to connect a research agent.
+- [Plankton lab](https://ocean.sig.ai/plankton-lab.html): classify plankton images in the browser and compare classifiers.
+- [Ocean color](https://ocean.sig.ai/try-ocean-color.html): NASA's OC3M chlorophyll estimate from MODIS reflectance.
+- [GLONET forecast explorer](https://ocean.sig.ai/try-forecast.html): archived GLONET forecasts compared with persistence.
+
+## Research
+
+- [World model](https://ocean.sig.ai/world-model.html): forecasting the water column at the Pioneer array.
+- [Field studies](https://ocean.sig.ai/field-studies.html): storm studies and underwater transect reviews.
+- [Data and privacy](https://ocean.sig.ai/data-and-privacy.html): what happens to images sent to the classifier.
+
+## Optional
+
+- [Source code and data](https://github.com/sigaihealth/marinemodels)
+- Contact: ocean@sig.ai

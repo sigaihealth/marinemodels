@@ -1,6 +1,6 @@
 {
   "name": "sigai-ocean-mcp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Model Context Protocol interface for SIG.AI Ocean",
   "engines": { "node": ">=22.12" },

@@ -70,6 +70,7 @@
 <section class="catalog-lane" id="ocean-physics" aria-labelledby="ocean-physics-title">
   <h2 id="ocean-physics-title">Ocean physics forecasting</h2>
   <p class="lane-description">Ingest dated ocean analyses and model-specific atmospheric forcing. Use GLONET as the default baseline for global forecasts and retain persistence as a low-cost reference.</p>
+  <p class="lane-atlas"><a href="ocean-sources.html#ocean-physics-forecasting">Browse 74 datasets, models and services for this task in the source atlas</a></p>
   <div class="lane-actions"><a href="try-forecast.html" class="primary">Explore an archived forecast</a></div>
   <div class="comparison">
     <h3>How to compare</h3>
@@ -153,6 +154,7 @@
 <section class="catalog-lane" id="waves" aria-labelledby="waves-title">
   <h2 id="waves-title">Waves</h2>
   <p class="lane-description">Combine gridded wave state and weather forcing to forecast sea state. Match a station’s exposure and the model’s offshore grid before using a buoy for validation.</p>
+  <p class="lane-atlas"><a href="ocean-sources.html#waves">Browse 29 datasets, models and services for this task in the source atlas</a></p>
   <div class="comparison">
     <h3>How to compare</h3>
     <p>Hold out whole storms and stations. Score significant wave height in meters, period in seconds and direction using circular error. Match mean, peak and swell definitions before comparing.</p>
@@ -179,6 +181,7 @@
 <section class="catalog-lane" id="biogeochemistry" aria-labelledby="biogeochemistry-title">
   <h2 id="biogeochemistry-title">Biogeochemistry</h2>
   <p class="lane-description">Forecast chemical or biological concentrations from gridded history and environmental drivers. Surface chlorophyll, dissolved oxygen, nutrients and carbon each need their own observations and units.</p>
+  <p class="lane-atlas"><a href="ocean-sources.html#biogeochemistry">Browse 28 datasets, models and services for this task in the source atlas</a></p>
   <div class="comparison">
     <h3>How to compare</h3>
     <p>Match analyte, depth, basin, sampling interval and forecast lead. Compare against seasonal climatology and persistence on years excluded from fitting. Report errors by season and sampling coverage.</p>
@@ -218,6 +221,7 @@
 <section class="catalog-lane" id="satellite" aria-labelledby="satellite-title">
   <h2 id="satellite-title">Satellite ocean color and radar</h2>
   <p class="lane-description">Prepare georeferenced satellite tiles. Optical ocean color uses spectral reflectance. Sentinel-1 radar measures backscatter and needs a separate preprocessing and evaluation workflow.</p>
+  <p class="lane-atlas"><a href="ocean-sources.html#satellite-ocean-color-and-radar">Browse 57 datasets, models and services for this task in the source atlas</a></p>
   <div class="lane-actions"><a href="try-ocean-color.html" class="primary">Run from reflectance values</a></div>
   <div class="comparison">
     <h3>How to compare</h3>
@@ -315,6 +319,7 @@
 <section class="catalog-lane" id="plankton" aria-labelledby="plankton-title">
   <h2 id="plankton-title">Plankton imaging</h2>
   <p class="lane-description">Classify microscope crops and preserve instrument, sample time, crop identifier and sampled volume. In the Pioneer pilot, WHOI and PlankScope each produced a prediction for the same 24 images.</p>
+  <p class="lane-atlas"><a href="ocean-sources.html#plankton-imaging">Browse 92 datasets, models and services for this task in the source atlas</a></p>
   <div class="lane-actions"><a href="try-plankton.html" class="primary">Run on a microscope image</a> <a href="sigai-plankton.html" class="primary">Try the SIG.AI classifier</a> <a href="try-trained-plankton.html" class="primary">Try the morphology baseline</a> <a href="try-mobilenet.html" class="primary">Run a personal MobileNet export</a> <a href="plankton-lab.html#notebooks" class="primary">Compare the PML prototype modes</a></div>
   <div class="comparison">
     <h3>How to compare</h3>
@@ -482,6 +487,7 @@
 <section class="catalog-lane" id="underwater-imagery" aria-labelledby="underwater-imagery-title">
   <h2 id="underwater-imagery-title">Underwater imagery</h2>
   <p class="lane-description">Accept camera frames from dives or fixed stations for detection and segmentation. Pass cropped organisms to identification models. Above-water catch photographs form a separate test domain.</p>
+  <p class="lane-atlas"><a href="ocean-sources.html#underwater-imagery">Browse 66 datasets, models and services for this task in the source atlas</a></p>
   <div class="lane-actions"><a href="visual-transect.html" class="primary">Review the ROV transect trial</a> <a href="https://huggingface.co/spaces/imageomics/bioclip-2-demo" class="primary">Open Imageomics’ hosted demo</a></div>
   <div class="comparison">
     <h3>How to compare</h3>
@@ -579,6 +585,7 @@
 <section class="catalog-lane" id="coral-reefs" aria-labelledby="coral-reefs-title">
   <h2 id="coral-reefs-title">Coral reefs</h2>
   <p class="lane-description">Segment coral in underwater photographs or transect frames. Keep masks, expert-assigned groups and the area denominator together when estimating cover.</p>
+  <p class="lane-atlas"><a href="ocean-sources.html#coral-reefs">Browse 26 datasets, models and services for this task in the source atlas</a></p>
   <div class="comparison">
     <h3>How to compare</h3>
     <p>Hold out reefs or transects. Compare binary masks on the same valid pixels, then report error in coral cover as percentage points. Species-level tests require separate reference labels.</p>
@@ -605,6 +612,7 @@
 <section class="catalog-lane" id="bioacoustics" aria-labelledby="bioacoustics-title">
   <h2 id="bioacoustics-title">Bioacoustics</h2>
   <p class="lane-description">Process hydrophone recordings with their sample rate, station, time and duty cycle. Train a small supervised classifier on embeddings when a target sound has no released detector.</p>
+  <p class="lane-atlas"><a href="ocean-sources.html#bioacoustics">Browse 47 datasets, models and services for this task in the source atlas</a></p>
   <div class="comparison">
     <h3>How to compare</h3>
     <p>Compare models on the same species, call type, frequency band and time window. Hold out recorder-days or sites. Report event recall at a fixed false-alarm rate per recording hour and separate clip-level scores.</p>
@@ -659,6 +667,7 @@
 <section class="catalog-lane" id="language" aria-labelledby="language-title">
   <h2 id="language-title">Language and scientific Q&amp;A</h2>
   <p class="lane-description">Give each language model the same approved measurements, data-quality flags and retrieved sources. Evaluate text questions separately from interpretation of sonar or microscope imagery.</p>
+  <p class="lane-atlas"><a href="ocean-sources.html#language-and-scientific-q-a">Browse 25 datasets, models and services for this task in the source atlas</a></p>
   <div class="comparison">
     <h3>How to compare</h3>
     <p>Pin the model version and evidence packet. Grade numerical accuracy, citation support and abstention on missing evidence. Blind reviewers to model identity and record latency, GPU memory or API cost.</p>
