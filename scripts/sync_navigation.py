@@ -26,6 +26,7 @@ PAGES = {
     "try-trained-plankton": ("Morphology baseline", "plankton-lab"),
     "try-ocean-color": ("Ocean color", "model-catalog"),
     "try-forecast": ("GLONET forecast explorer", "model-catalog"),
+    "ocean-sources": ("Source atlas", "model-catalog"),
     "pioneer-storm": ("Pioneer storm study", "field-studies"),
     "pioneer_playback": ("Storm playback", "pioneer-storm"),
     "visual-transect": ("Underwater transect review", "field-studies"),
