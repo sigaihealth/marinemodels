@@ -38,7 +38,7 @@ def model_card(model):
     ])
 
 
-def task_lane(lane, models):
+def task_lane(lane, models, atlas):
     slug = escape(lane["slug"])
     actions = [link(entry["action"], entry["actionUrl"], "primary") for entry in (lane, *models)
                if entry.get("actionUrl")]
@@ -47,6 +47,10 @@ def task_lane(lane, models):
         f'  <h2 id="{slug}-title">{escape(lane["name"])}</h2>',
         f'  <p class="lane-description">{escape(lane["workflow"])}</p>',
     ]
+    sources = [s for s in atlas if s.get("lane_name") == lane["name"]]
+    if sources:
+        lines.append(f'  <p class="lane-atlas"><a href="ocean-sources.html#{escape(sources[0]["lane_slug"])}">'
+                     f'Browse {len(sources)} datasets, models and services for this task in the source atlas</a></p>')
     if actions:
         lines.append(f'  <div class="lane-actions">{" ".join(actions)}</div>')
     lines.extend([
@@ -65,7 +69,7 @@ def task_lane(lane, models):
     return "\n".join(lines)
 
 
-def render(data):
+def render(data, atlas):
     lanes = data["lanes"]
     lines = [
         '<aside aria-label="Task selection">',
@@ -74,7 +78,7 @@ def render(data):
         '  <nav id="lanes" aria-labelledby="task-label">',
         *("    " + link(lane["name"], "#" + lane["slug"]) for lane in lanes),
         '  </nav>', '</aside>', '<div id="lane-content">',
-        *(task_lane(lane, [m for m in data["models"] if m["lane"] == lane["id"]]) for lane in lanes),
+        *(task_lane(lane, [m for m in data["models"] if m["lane"] == lane["id"]], atlas) for lane in lanes),
         '</div>',
     ]
     return "\n".join(lines)
@@ -85,13 +89,14 @@ def main():
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     data = json.loads((SITE / "assets/model-catalog.json").read_text(encoding="utf-8"))
+    atlas = json.loads((SITE / "assets/ocean-sources.json").read_text(encoding="utf-8"))
     page = SITE / "model-catalog.html"
     source = page.read_text(encoding="utf-8")
     if source.count(START) != 1 or source.count(END) != 1:
         raise ValueError(f"Expected one pair of catalog markers in {page}")
     before, section = source.split(START)
     _, after = section.split(END)
-    result = f"{before}{START}\n{render(data)}\n{END}{after}"
+    result = f"{before}{START}\n{render(data, atlas)}\n{END}{after}"
     if result != source:
         if args.check:
             print("Catalog HTML is out of date. Run python3 scripts/sync_model_catalog.py.")

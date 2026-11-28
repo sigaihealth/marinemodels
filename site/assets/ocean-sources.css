@@ -22,6 +22,7 @@
 .sources-lane{margin-top:2.2rem}
 .sources-lane h2{font-size:clamp(2rem,3vw,2.6rem);display:flex;align-items:baseline;gap:.7rem}
 .sources-lane h2 span{font:600 .85rem var(--sans);color:var(--muted);letter-spacing:.06em}
+.lane-tested{margin-top:.35rem;font-weight:600;font-size:.92rem}
 .source{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.3rem 1.4rem;padding-block:1rem;border-bottom:1px solid var(--rule)}
 .source h3{font:600 1.02rem/1.35 var(--sans);letter-spacing:0;overflow-wrap:anywhere}
 .source .meta{font-size:.88rem;color:var(--muted);overflow-wrap:anywhere}

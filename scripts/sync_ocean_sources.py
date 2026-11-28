@@ -81,11 +81,13 @@ def entry(r):
 
 
 def render_list(rows):
+    catalog = {l["name"]: l["slug"] for l in json.loads((ROOT / "site/assets/model-catalog.json").read_text(encoding="utf-8"))["lanes"]}
     groups = {}
     for r in rows:
         groups.setdefault(r["lane_name"], []).append(r)
     return "\n".join(
         f'<section class="sources-lane" id="{escape(items[0]["lane_slug"])}"><h2>{escape(name)} <span>{len(items)}</span></h2>'
+        + (f'<p class="lane-tested"><a href="model-catalog.html#{escape(catalog[name])}">Tested models for this task in the model workspace</a></p>' if name in catalog else "")
         + "".join(entry(r) for r in items) + "</section>"
         for name, items in sorted(groups.items()))
 

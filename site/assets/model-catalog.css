@@ -18,6 +18,7 @@
 .comparison h3{font:700 1rem/1.5 var(--sans);margin-bottom:.2rem}
 .comparison p{font-size:1rem}
 .comparison a,.catalog-links a{font-size:.95rem;font-weight:650}
+.lane-atlas{margin-top:.75rem;font-weight:600}
 .list-tools{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.55rem;color:var(--muted)}
 .list-tools label{display:flex;align-items:center;gap:.6rem}.list-tools select{font-size:.95rem}
 .model-card{border-top:1px solid var(--rule)}
