@@ -50,7 +50,7 @@ async function call(name, args = {}) {
 
 test("MCP handshake, tool discovery, dataset directory and source links", async () => {
   const {tools} = await client.listTools();
-  assert.equal(tools.length, 7);
+  assert.equal(tools.length, 8);
   const {resources} = await client.listResources();
   const data = JSON.parse((await client.readResource({uri: resources[0].uri})).contents[0].text);
   assert.deepEqual(data, (await call("list_datasets")).datasets);
@@ -127,4 +127,25 @@ test("HTTP endpoint rejects unsupported methods and unrelated browser origins", 
   const rejected = await fetch(url, {method: "POST", headers: {origin: "https://example.org"}});
   assert.equal(rejected.status, 403);
   assert.match(rejected.headers.get("cache-control"), /no-store/);
+});
+
+test("source atlas search filters by kind, licence and link status, and pages repeatably", async () => {
+  const atlas = require("../site/assets/ocean-sources.json");
+  const all = await call("search_sources", {limit: 12});
+  assert.equal(all.total, atlas.length);
+  assert.ok(all.lanes.includes("plankton-imaging"));
+  const ifcb = await call("search_sources", {query: "IFCB", kind: "dataset", licence: "open", limit: 12});
+  assert.ok(ifcb.total > 0);
+  for (const r of ifcb.records) {
+    assert.equal(r.kind, "dataset");
+    assert.equal(r.licence_group, "Open");
+    assert.match(r.workspace, /^https:\/\/ocean\.sig\.ai\/ocean-sources\.html#/);
+  }
+  const broken = await call("search_sources", {link_status: "broken", limit: 12});
+  assert.equal(broken.total, atlas.filter(s => s.check?.status === "broken").length);
+  const next = await call("search_sources", {offset: 5, limit: 5});
+  assert.equal(next.records[0].name, (await call("search_sources", {limit: 12})).records[5].name);
+  const summary = JSON.parse((await client.readResource({uri: "ocean://workspace/sources"})).contents[0].text);
+  assert.equal(summary.total, atlas.length);
+  assert.equal(summary.lanes.reduce((n, lane) => n + lane.count, 0), atlas.length);
 });

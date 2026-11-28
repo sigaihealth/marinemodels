@@ -2,6 +2,7 @@ const {createHash} = require("node:crypto");
 const {McpServer} = require("@modelcontextprotocol/sdk/server/mcp.js");
 const {z} = require("zod");
 const catalog = require("../site/assets/model-catalog.json");
+const atlas = require("../site/assets/ocean-sources.json");
 const archive = require("../site/assets/glonet-midatlantic-2024.json");
 const {pioneer} = require("../world-model/evidence.json");
 const whoi = require("../site/assets/whoi-coscinodiscus-reference.json");
@@ -14,6 +15,9 @@ const scoresURL = "https://raw.githubusercontent.com/sigaihealth/marinemodels/pi
 const reportURL = "https://github.com/sigaihealth/marinemodels/blob/pioneer-storm-scores/REPORT.md";
 const methodsURL = "https://github.com/sigaihealth/marinemodels/tree/main/world-model/pioneer-fixed-confirmation";
 const lanes = new Map(catalog.lanes.map(lane => [lane.id, lane]));
+const atlasLanes = [...new Set(atlas.map(s => s.lane_slug))].sort();
+const licenceGroups = {open: "Open", "share-alike": "Share-alike", "non-commercial-or-restricted": "Non-commercial or restricted", unclear: "Unclear"};
+const linkStatuses = ["ok", "needs login", "api", "broken", "error", "unreachable", "no link"];
 const datasets = [
   {id: "pioneer-gianna", title: pioneer.name + " · Winter Storm Gianna", instrument: "IFCB, CTD, fluorometer and meteorology",
     source: pioneer.sources.station, workspace: origin + "/pioneer_playback.html", tool: "get_pioneer_observations"},
@@ -37,7 +41,7 @@ function search(text, query) {
 }
 
 function createServer(fetcher = fetch) {
-  const server = new McpServer({name: "sigai-ocean", version: "1.0.0"}, {
+  const server = new McpServer({name: "sigai-ocean", version: "1.1.0"}, {
     instructions: "Cite source URLs and identify the instrument, site and dates. Model suggestions, archived forecasts and measured observations have different evidentiary status."
   });
   function tool(name, title, description, inputSchema, execute, openWorldHint = false) {
@@ -58,6 +62,22 @@ function createServer(fetcher = fetch) {
   tool("list_datasets", "Find Ocean datasets", "Find public collections by title, instrument or ID, with sources and available Ocean tools.",
     {query}, ({query}) => ({datasets: datasets.filter(d => search([d.id, d.title, d.instrument].join(" "), query)),
       source: origin + "/collaborate.html#agent-access"}));
+
+  tool("search_sources", "Search the Ocean source atlas", "Find marine datasets, AI models, benchmarks and data services from the 667-entry source atlas, with licence, sign-up requirement, access method, a command or URL to try and a dated link check.",
+    {query, lane: z.enum(atlasLanes).optional(), kind: z.enum(["dataset", "model", "benchmark", "service"]).optional(),
+      licence: z.enum(Object.keys(licenceGroups)).optional(), sign_up: z.enum(["none", "account", "restricted"]).optional(),
+      link_status: z.enum(linkStatuses).optional(), ...pagination},
+    ({query, lane, kind, licence, sign_up, link_status, offset, limit}) => {
+      const rows = atlas.filter(s => (!lane || s.lane_slug === lane) && (!kind || s.kind === kind)
+        && (!licence || s.licence_group === licenceGroups[licence]) && (!sign_up || s.sign_up === sign_up)
+        && (!link_status || s.check?.status === link_status)
+        && search([s.name, s.operator, s.country_or_region, s.description, s.lane_name, s.access_method, s.license].join(" "), query)
+      ).map(s => ({name: s.name, kind: s.kind, lane: s.lane_slug, operator: s.operator, country_or_region: s.country_or_region,
+        description: s.description, license: s.license, licence_group: s.licence_group, registration: s.registration,
+        access_method: s.access_method, access_url: s.access_url, example_access: s.example_access, source_url: s.source_url,
+        link_check: s.check, workspace: origin + "/ocean-sources.html#" + s.lane_slug}));
+      return {lanes: atlasLanes, ...page(rows, offset, limit), source: origin + "/assets/ocean-sources.json"};
+    });
 
   tool("search_models", "Search Ocean models", "Find models and their licenses, availability, benchmarks and trial links within a scientific task lane.",
     {query, lane: z.enum(catalog.lanes.map(lane => lane.slug)).optional(), ...pagination}, ({query, lane, offset, limit}) => {
@@ -126,6 +146,14 @@ function createServer(fetcher = fetch) {
   server.registerResource("datasets", resourceURI, {title: "Ocean research datasets", mimeType: "application/json",
     description: "Dataset sources and the Ocean tools that can use them."}, async () => ({
     contents: [{uri: resourceURI, mimeType: "application/json", text: JSON.stringify(datasets)}]
+  }));
+  const atlasURI = "ocean://workspace/sources";
+  server.registerResource("sources", atlasURI, {title: "Ocean source atlas", mimeType: "application/json",
+    description: "Lanes, counts and download location for the 667-entry source atlas. Use search_sources for records."}, async () => ({
+    contents: [{uri: atlasURI, mimeType: "application/json", text: JSON.stringify({
+      total: atlas.length, page: origin + "/ocean-sources.html", data: origin + "/assets/ocean-sources.json",
+      lanes: atlasLanes.map(slug => ({slug, name: atlas.find(s => s.lane_slug === slug).lane_name, count: atlas.filter(s => s.lane_slug === slug).length})),
+      kinds: Object.fromEntries(["dataset", "model", "benchmark", "service"].map(k => [k, atlas.filter(s => s.kind === k).length]))})}]
   }));
   return server;
 }
